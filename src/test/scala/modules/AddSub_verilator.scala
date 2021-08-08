@@ -33,7 +33,7 @@ class SUB_INTEGER_verilator(dut: AddSub, roundSel: UInt) extends PeekPokeTester(
     poke(dut.io.in2, in2.S)
     step(5)
     //println(" -> "+out.asInstanceOf[String])
-    expect(dut.io.outIEEE, out.U)
+    expect(dut.io.out, out.U)
     step(5)
    }
   println(" ------------------------------------- ")

@@ -16,6 +16,9 @@ object Config {
   val forOUT    = EXP + SIG + 1
   val forSimMemOUT = 64
 
+  val roundingMode   = hardfloat.consts.round_near_maxMag
+  val detectTininess = hardfloat.consts.tininess_afterRounding
+
   def round_near_even   = "b000".asUInt(3.W)
   def round_minMag      = "b001".asUInt(3.W)
   def round_min         = "b010".asUInt(3.W)
@@ -35,15 +38,16 @@ object Config {
    case 64 => 53
   }
 
-  def Mux3IN (sel: Bits, in0: Bits, in1: Bits, in2: Bits): Bits = {
-    var out = RegInit(0.U(32.W))
-    switch(sel){
-      is("b10".U) { out := in0 }
-      is("b01".U) { out := in1 }
-      is("b11".U) { out := in2 }
-    }
-    out
-  }
+
+  // def Mux3IN (sel: Bits, in0: Bits, in1: Bits, in2: Bits): Bits = {
+  //   var out = RegInit(0.U(32.W))
+  //   switch(sel){
+  //     is("b10".U) { out := in0 }
+  //     is("b01".U) { out := in1 }
+  //     is("b11".U) { out := in2 }
+  //   }
+  //   out
+  // }
 }
 
 object Utils{

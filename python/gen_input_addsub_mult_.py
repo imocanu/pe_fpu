@@ -1,4 +1,5 @@
 from common import *
+from bitstring import BitArray
 
 #https://github.com/robclewley/ieee754_simulation
 
@@ -87,81 +88,45 @@ for in1, in2 in zip(random_float_in_1, random_float_in_2):
     if DEBUG:
         print(in1, "*", in2, "=", ssw)
 
+test_INT_1 = np.random.randint(-INT_range, INT_range, size=(1, totalNR), dtype=np.int32).reshape(-1)
+print(test_INT_1)
+test_INT_2 = np.random.randint(-INT_range, INT_range, size=(1, totalNR), dtype=np.int32).reshape(-1)
+print(test_INT_2)
 
-for i in random_INT_in_1:
-    random_INT_1.append(int(i)) 
+random_INT_1_bin = []
+for i in test_INT_1:
+    random_INT_1_bin.append(np.binary_repr(i, width=32))
+    random_INT_1.append(i) 
 
-for i in random_INT_in_2:
-    random_INT_2.append(int(i)) 
+random_INT_2_bin = []
+for i in test_INT_2:
+    random_INT_2_bin.append(np.binary_repr(i, width=32))
+    random_INT_2.append(i) 
 
 for in1, in2 in zip(random_INT_1, random_INT_2):   
-    rez32 = core.single(in1) + core.single(in2)
-    ssw = str(rez32)
-    ssw = ssw.replace(" ", "")
+    rez32 = np.sum([in1 , in2], dtype=np.int32)
+    testBIN = core.single(np.binary_repr(rez32, width=32))
+    ssw = str(testBIN)
+    ssw = ssw.replace(" ", "") 
     random_INT_ADD.append(ssw)
 
-    rez32 = core.single(in1) - core.single(in2)
-    ssw = str(rez32)
-    ssw = ssw.replace(" ", "")
-    random_INT_SUB.append(ssw)
+    # rez32 = core.single(in1) - core.single(in2)
+    # ssw = str(rez32)
+    # ssw = ssw.replace(" ", "")
+    # random_INT_SUB.append(ssw)
 
-    rez32 = core.single(in1) * core.single(in2)
-    ssw = str(rez32)
-    ssw = ssw.replace(" ", "")
-    random_INT_MUL.append(ssw)
+    # rez32 = core.single(in1) * core.single(in2)
+    # ssw = str(rez32)
+    # ssw = ssw.replace(" ", "")
+    # random_INT_MUL.append(ssw)
 
-
-
-fp32_constants_BIN_dummy.append(random_float_in_1_bin[0])
-fp32_constants_BIN_dummy.append(random_float_in_1_bin[0])
-fp32_constants_BIN_dummy.append(random_float_in_1_bin[0])
-fp32_constants_BIN_dummy.append(random_float_in_1_bin[0])
-fp32_constants_BIN_dummy.append(random_float_in_1_bin[0])
-fp32_constants_BIN_dummy.append(random_float_in_1_bin[0])
-
-
-def operationsForConstants(constants, dummy, in1, in2, add, sub, mul):
-    # in1.append("@")
-    # in2.append("@")
-    # add.append("@")
-    # sub.append("@")
-    # mul.append("@")
-    for i, j in zip(constants, dummy):
-
-        in1.append(i)
-        in2.append(j)
-
-        rez32 = core.single(i) + core.single(j)
-        ssw = str(rez32)
-        ssw = ssw.replace(" ", "")
-        add.append(ssw)
-
-        rez32 = core.single(i) - core.single(j)
-        ssw = str(rez32)
-        ssw = ssw.replace(" ", "")
-        sub.append(ssw)
-
-        rez32 = core.single(i) * core.single(j)
-        ssw = str(rez32)
-        ssw = ssw.replace(" ", "")
-        mul.append(ssw)
-
-
-if addConstants:
-    operationsForConstants( fp32_constants_BIN, 
-                            fp32_constants_BIN_dummy, 
-                            random_float_in_1_bin, 
-                            random_float_in_2_bin,
-                            random_float_ADD_bin,
-                            random_float_SUB_bin, 
-                            random_float_MUL_bin)
 
 
 
 # INPUT_1_INT
-write2file(int32_genInput_1, random_INT_1)
+write2file(int32_genInput_1, random_INT_1_bin)
 # INPUT_2_INT
-write2file(int32_genInput_2, random_INT_2)
+write2file(int32_genInput_2, random_INT_2_bin)
 # ADD_INT
 write2file(int32_ADD_result, random_INT_ADD)
 # SUB_INT

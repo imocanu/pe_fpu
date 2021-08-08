@@ -50,6 +50,13 @@ testAddSub:
 	rm -rf diagram
 	sbt "testOnly modules.AddSub_test"
 
+testrecFN2INT:
+	rm -rf diagram
+	sbt "testOnly other.recFN2INT_test"
+
+testAddSubFull:
+	sbt "testOnly modules.AddSub_test_full"
+
 show-config:
 	$(VERILATOR) -V
 

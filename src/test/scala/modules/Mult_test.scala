@@ -16,8 +16,6 @@ class MUL_INTEGER_round_select(dut: Mult, roundSel: UInt) extends PeekPokeTester
   
   poke(dut.io.useINT, true.B)
   step(2)
-  poke(dut.io.round,TestUtils.getRound(roundSel))
-  step(2)
 
    for (i <- 0 to input_1.size - 1) {
      val in1 = input_1(i).toLong
@@ -43,8 +41,6 @@ class MUL_FP32_round_select(dut: Mult, roundSel: UInt) extends PeekPokeTester(du
   println(" ----->  Operation is MUL ( FP32 )")
   
   poke(dut.io.useINT, false.B)
-  step(2)
-  poke(dut.io.round,TestUtils.getRound(roundSel))
   step(2)
 
    for (i <- 0 to input_1.size - 1) {
@@ -72,65 +68,65 @@ class Mult_test_1(dut: Mult) extends PeekPokeTester(dut) {
   step(5)
 }
 
-class MUL_round_select(dut: Mult, roundSel: UInt) extends PeekPokeTester(dut) {
-  var input_1    = TestUtils.read(TestUtils.INPUT_1)
-  var input_2    = TestUtils.read(TestUtils.INPUT_2)
-  var mul_output = TestUtils.read(TestUtils.MUL_RESULT)
+// class MUL_round_select(dut: Mult, roundSel: UInt) extends PeekPokeTester(dut) {
+//   var input_1    = TestUtils.read(TestUtils.INPUT_1)
+//   var input_2    = TestUtils.read(TestUtils.INPUT_2)
+//   var mul_output = TestUtils.read(TestUtils.MUL_RESULT)
 
-  println(" ----->  Operation is MUL")
+//   println(" ----->  Operation is MUL")
 
-  if(roundSel == TestUtils.round_near_even_UINT)
-  {
-    println(" ----->  round_near_even_UINT")
-    poke(dut.io.round, TestUtils.round_near_even)
-  }
-  else  if(roundSel == TestUtils.round_minMag_UINT)
-  {
-    println(" ----->  round_minMag_UINT")
-    poke(dut.io.round, TestUtils.round_minMag)
-  } 
-  else  if(roundSel == TestUtils.round_min_UINT)
-  {
-    println(" ----->  round_min_UINT")
-    poke(dut.io.round, TestUtils.round_min)
-  } 
-  else  if(roundSel == TestUtils.round_max_UINT)
-  {
-    println(" ----->  round_max_UINT")
-    poke(dut.io.round, TestUtils.round_max)
-  } 
-  else  if(roundSel == TestUtils.round_near_maxMag_UINT)
-  {
-    println(" ----->  round_near_maxMag_UINT")
-    poke(dut.io.round, TestUtils.round_near_maxMag)
-  } 
-  else if(roundSel == TestUtils.round_odd_UINT)
-  {
-    println(" ----->  round_odd_UINT")
-    poke(dut.io.round, TestUtils.round_odd)
-  } 
-  else
-  {
-    println(" ----->  round value is Invalid")
-    println(" ----->  Default is : round_near_maxMag")
-    poke(dut.io.round, TestUtils.round_near_maxMag)
-  }  
+//   if(roundSel == TestUtils.round_near_even_UINT)
+//   {
+//     println(" ----->  round_near_even_UINT")
+//     poke(dut.io.round, TestUtils.round_near_even)
+//   }
+//   else  if(roundSel == TestUtils.round_minMag_UINT)
+//   {
+//     println(" ----->  round_minMag_UINT")
+//     poke(dut.io.round, TestUtils.round_minMag)
+//   } 
+//   else  if(roundSel == TestUtils.round_min_UINT)
+//   {
+//     println(" ----->  round_min_UINT")
+//     poke(dut.io.round, TestUtils.round_min)
+//   } 
+//   else  if(roundSel == TestUtils.round_max_UINT)
+//   {
+//     println(" ----->  round_max_UINT")
+//     poke(dut.io.round, TestUtils.round_max)
+//   } 
+//   else  if(roundSel == TestUtils.round_near_maxMag_UINT)
+//   {
+//     println(" ----->  round_near_maxMag_UINT")
+//     poke(dut.io.round, TestUtils.round_near_maxMag)
+//   } 
+//   else if(roundSel == TestUtils.round_odd_UINT)
+//   {
+//     println(" ----->  round_odd_UINT")
+//     poke(dut.io.round, TestUtils.round_odd)
+//   } 
+//   else
+//   {
+//     println(" ----->  round value is Invalid")
+//     println(" ----->  Default is : round_near_maxMag")
+//     poke(dut.io.round, TestUtils.round_near_maxMag)
+//   }  
 
-  step(2)
+//   step(2)
 
-  for (i <- 0 to input_1.size - 1) {
-    val in1 = "b"+ input_1(i)
-    val in2 = "b"+ input_2(i)
-    val out = "b"+ mul_output(i)
-    poke(dut.io.in1, in1.U)
-    poke(dut.io.in2, in2.U)
-    step(5)
-    //println(" -> "+out.asInstanceOf[String])
-    expect(dut.io.outIEEE, out.U)
-    step(5)
-  }
-  println(" ------------------------------------- ")
-}
+//   for (i <- 0 to input_1.size - 1) {
+//     val in1 = "b"+ input_1(i)
+//     val in2 = "b"+ input_2(i)
+//     val out = "b"+ mul_output(i)
+//     poke(dut.io.in1, in1.U)
+//     poke(dut.io.in2, in2.U)
+//     step(5)
+//     //println(" -> "+out.asInstanceOf[String])
+//     expect(dut.io.outIEEE, out.U)
+//     step(5)
+//   }
+//   println(" ------------------------------------- ")
+// }
 
 class Mult_test extends ChiselFlatSpec with Matchers {
 

@@ -15,7 +15,6 @@ import scala.sys.process.{Process, ProcessLogger}
 //Standard IEEE formats (‘fN’)
 //Recoded formats (‘recFN’)
 //Raw deconstructions (‘rawFN’)
-
 // fNToRecFN -recFNToFN -iNToRecFN -recFNToIN -recFNToRecFN
 
 class PE_FPU extends Module {
@@ -45,7 +44,7 @@ class PE_FPU extends Module {
     // val mem1R1W_RD_FLAG = Input(Bool())
 
     val useINT_ALL      = Input(Bool())
-    val round_ALL       = Input(UInt(3.W))
+    //val round_ALL       = Input(UInt(3.W))
     val simMemOut       = Input(Bits(Config.forSimMemOUT.W))
 
     val addsum_1_final  = Output(Bits(Config.forIN.W))  
@@ -79,7 +78,7 @@ class PE_FPU extends Module {
   val addsub_2_op   = RegNext(io.addsub_2_op)
 
   val useINT_ALL   = RegNext(io.useINT_ALL)
-  val round_ALL   = RegNext(io.round_ALL)
+  //val round_ALL    = RegNext(io.round_ALL)
 
   // val mem1R1W_WR_FLAG = RegNext(io.mem1R1W_WR_FLAG)
   // val mem1R1W_RD_FLAG = RegNext(io.mem1R1W_RD_FLAG)
@@ -113,15 +112,15 @@ class PE_FPU extends Module {
   mux_1_out := mux_1.io.outIEEE
   val mux_2 = Module( new Mux3() )
   mux_2.io.sel := mux_2_sel
-  mux_2.io.in0 := addsum_1_out
-  mux_2.io.in1 := Yi
-  mux_2.io.in2 := a1
+  mux_2.io.in0 := Xi
+  mux_2.io.in1 := B1
+  mux_2.io.in2 := addsum_1_out
   mux_2_out := mux_2.io.outIEEE
 
   val mux_3 = Module( new Mux3() )
   mux_3.io.sel := mux_3_sel
   mux_3.io.in0 := Yj
-  mux_3.io.in1 := a1
+  mux_3.io.in1 := a2
   mux_3.io.in2 := 0.U(Config.WIDTH.W)
   mux_3_out := mux_3.io.outIEEE
   val mux_4 = Module( new Mux3() )
@@ -137,14 +136,14 @@ class PE_FPU extends Module {
   val mult_1 = Module( new Mult() )
   mult_1.io.in1     := mux_1_out
   mult_1.io.in2     := mux_2_out
-  mult_1.io.round   := round_ALL
+  //mult_1.io.round   := round_ALL
   mult_1.io.useINT  := useINT_ALL
   mult_1_out        := mult_1.io.outIEEE
 
   val mult_2 = Module( new Mult() )
   mult_2.io.in1     := mux_3_out
   mult_2.io.in2     := mux_4_out
-  mult_2.io.round   := round_ALL
+  //mult_2.io.round   := round_ALL
   mult_2.io.useINT  := useINT_ALL
   mult_2_out        := mult_2.io.outIEEE
 
@@ -161,11 +160,9 @@ class PE_FPU extends Module {
   val mux_6 = Module( new Mux3())
   mux_6.io.sel := mux_6_sel
   mux_6.io.in0 := Xi
-  mux_6.io.in1 := B2
+  mux_6.io.in1 := mult_2_out
   mux_6.io.in2 := 0.U(Config.WIDTH.W)
   mux_6_out := mux_6.io.outIEEE
-
-//io.DEBUG_OUT_layer_3 := Mux(true.B, DEBUG_mux3_5, DEBUG_mux3_6)
 
 //=======================================
 // Layer 4  :  ADD/SUB_1
@@ -176,7 +173,7 @@ class PE_FPU extends Module {
   addsub_1.io.in2 := mux_6_out
   //addsub_1.io.round := round_ALL
   addsub_1.io.useINT := useINT_ALL
-  addsum_1_out := addsub_1.io.outIEEE
+  addsum_1_out := addsub_1.io.out
 
 //=======================================
 // Layer 5  :  MUX_7
@@ -186,7 +183,6 @@ class PE_FPU extends Module {
   mux_7.io.in0 := mult_1_out
   mux_7.io.in1 := addsum_1_out
   mux_7.io.in2 := 0.U(Config.WIDTH.W)
-
   mux_7_out := mux_7.io.outIEEE
 
 //=======================================
@@ -198,7 +194,7 @@ class PE_FPU extends Module {
   addsub_2.io.in2 := mem1R1W_out(15,0)
   //addsub_2.io.round := round_ALL
   addsub_2.io.useINT := useINT_ALL
-  addsum_2_out := addsub_2.io.outIEEE
+  addsum_2_out := addsub_2.io.out
 
   io.addsum_1_final := addsum_1_out
   io.addsum_2_final := addsum_2_out
@@ -225,13 +221,6 @@ object PE_FPU extends App {
       "--output-file", verilogName),
     Seq(ChiselGeneratorAnnotation(() => new PE_FPU))
   )
-
-  // (new ChiselStage).execute(
-  //   Array("--compiler", "sverilog",
-  //     "--target-dir", verilogDir,
-  //     "--output-file", verilogName),
-  //   Seq(ChiselGeneratorAnnotation(() => new PE_FPU))
-  // )
 
   val targetDir = "diagram"
   (new ElkStage).execute(Array("--target-dir", targetDir),

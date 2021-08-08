@@ -35,7 +35,8 @@ object TestUtils {
     val INT_MUL_RESULT = rootDir+"int32_MUL_result.txt"
 
     // PE use cases
-    val PE_FP32_TEST_3_RESULT = rootDir+"pe_output_test3_bin.txt"
+    val PE_FP32_TEST_3_RESULT = rootDir+"pe_out_test3_FP32_result.txt"
+    val PE_INT_TEST_3_RESULT  = rootDir+"pe_out_test3_INT_result.txt"
 
     def getPath(){
         println("=> ROOT dir <==================")
@@ -49,6 +50,12 @@ object TestUtils {
             result += line
         }
         //println(result)
+        result
+    }
+
+    def readEmpty() : ArrayBuffer[String] = {
+        var result = ArrayBuffer[String]()
+        result += "00000000000000000000000000000000"
         result
     }
 

@@ -8,13 +8,13 @@ import core
 
 random.seed(123)
 ##### DEFAULT PARAMS ####
-totalNR = 10
+totalNR = 200
 FLOAT_range = 999999999999999999
 # SCALA - INT    -2,147,483,648 to 2,147,483,647   2147483648
 # SCALA - LONG   -9,223,372,036,854,775,808 to     9223372036854775807
 # SCALA - FLOAT  -1.40129846432481707e-45 to 3.40282346638528860e+38
 # SCALA - DOUBLE -4.94065645841246544e-324 to 1.79769313486231570e+308
-INT_range = 2147483648
+INT_range = 2147483648 / 1000
 DEBUG = False
 addConstants = False
 ########################
@@ -37,7 +37,8 @@ int32_ADD_result = rootDir+"int32_ADD_result.txt"
 int32_SUB_result = rootDir+"int32_SUB_result.txt"
 int32_MUL_result = rootDir+"int32_MUL_result.txt"
 
-pe_output_test3_result = rootDir+"pe_output_test3_bin.txt"
+pe_out_test3_FP32_result = rootDir+"pe_out_test3_FP32_result.txt"
+pe_out_test3_INT_result  = rootDir+"pe_out_test3_INT_result.txt"
 
 
 rounding_modes = [
