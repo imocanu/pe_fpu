@@ -5,17 +5,21 @@ import os
 import decimal
 import random
 import core
+import sys
 
 random.seed(123)
 ##### DEFAULT PARAMS ####
-totalNR = 200
-FLOAT_range = 999999999999999999
+totalNR = 1
+FLOAT_range = 9999  #99999   #999999999
 # SCALA - INT    -2,147,483,648 to 2,147,483,647   2147483648
 # SCALA - LONG   -9,223,372,036,854,775,808 to     9223372036854775807
 # SCALA - FLOAT  -1.40129846432481707e-45 to 3.40282346638528860e+38
 # SCALA - DOUBLE -4.94065645841246544e-324 to 1.79769313486231570e+308
-INT_range = 2147483648 / 1000
-DEBUG = False
+max_INT_range =  32767    # 2147483647         # -32768 to 32767
+min_INT_range = -32768    # -2147483648
+# INT16 -32768 to 32767
+# INT32 -2147483648 to 2147483647
+DEBUG = True
 addConstants = False
 ########################
 
@@ -39,6 +43,9 @@ int32_MUL_result = rootDir+"int32_MUL_result.txt"
 
 pe_out_test3_FP32_result = rootDir+"pe_out_test3_FP32_result.txt"
 pe_out_test3_INT_result  = rootDir+"pe_out_test3_INT_result.txt"
+
+pe_out_test4_FP32_result = rootDir+"pe_out_test4_FP32_result.txt"
+pe_out_test4_POW_result  = rootDir+"pe_out_test4_POW_result.txt"
 
 
 rounding_modes = [
@@ -77,13 +84,14 @@ def getContextInfo():
     #define_context = core.context_registry()
     #fp32context = define_context(8, 23, rounding=core.ROUND_HALF_UP)  
     print("[*]Total generated inputs : ", totalNR)
-    print(" > FLOAT_range : ", -FLOAT_range, " - ", FLOAT_range)  
-    print(" > INT_range   : ", -INT_range, " - ", INT_range)
+    print(" > FLOAT range : ", -FLOAT_range, "  : ", FLOAT_range)  
+    print(" > INT range   : ", min_INT_range, " : ", max_INT_range)
     print("--")
     print("[*] Root Dir   : ", rootDir)
     print("--")
     print("[*] Constants  : ", addConstants)
     print("[*] Full Debug : ", DEBUG)
+    #print(sys.maxsize, np.int32(INT_range), np.int32(INT_range*2))
 
 def binary(num):
     return ''.join('{:0>8b}'.format(c) for c in struct.pack('!f', num))

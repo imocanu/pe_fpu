@@ -24,8 +24,6 @@ class Mult extends Module {
   val fN_in2  = RegNext(io.in2)
 
   val mulRecFN = Module(new MulRecFN(Config.EXP, Config.SIG))
-  mulRecFN.io.a := recFNFromFN(Config.EXP, Config.SIG, io.in1)
-  mulRecFN.io.b := recFNFromFN(Config.EXP, Config.SIG, io.in2)
   mulRecFN.io.roundingMode   := Config.roundingMode
   mulRecFN.io.detectTininess := Config.detectTininess
 
@@ -47,7 +45,7 @@ class Mult extends Module {
 
     mulRecFN.io.a := iNToRecFN_1_out
     mulRecFN.io.b := iNToRecFN_2_out
-    println("## USE INTEGER 32 ##")
+    println("## INPUT INTEGER 32 ##")
   } .otherwise {
 
     val recFN_from_fN_in1 = RegNext(recFNFromFN(Config.EXP, Config.SIG, fN_in1))
@@ -55,12 +53,13 @@ class Mult extends Module {
 
     mulRecFN.io.a := recFN_from_fN_in1
     mulRecFN.io.b := recFN_from_fN_in2
-    println("## USE FP 32 ##")
+    println("## INPUT FP 32 ##")
   }
 
   val outIEEE_out   = RegNext(Utils.ieee(mulRecFN.io.out))
   io.outIEEE := outIEEE_out
   //printf("=> %b",io.out.asUInt())
+  //printf("\n[DEBUG] Mult in1 : %b", outIEEE_out)
 }
 
 object Mult extends App {

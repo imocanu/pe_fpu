@@ -41,13 +41,14 @@ class MUL_FP32_round_select(dut: Mult, roundSel: UInt) extends PeekPokeTester(du
   println(" ----->  Operation is MUL ( FP32 )")
   
   poke(dut.io.useINT, false.B)
-  step(2)
+  step(5)
 
    for (i <- 0 to input_1.size - 1) {
      val in1 = "b"+ input_1(i)
      val in2 = "b"+ input_2(i)
      val out = "b"+ test_output(i)
     poke(dut.io.in1, in1.U)
+    step(5)
     poke(dut.io.in2, in2.U)
     step(5)
     //println(" -> "+out.asInstanceOf[String])
@@ -165,13 +166,13 @@ class Mult_test extends ChiselFlatSpec with Matchers {
     } should be (true)
   }
 
-  "run MUL_INTEGER_round_select" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-    "--backend-name", "firrtl",
-    "--target-dir", targetDir+"_INT"
-    ),
-    () => new Mult ) { c =>
-    new MUL_INTEGER_round_select (c, TestUtils.round_near_maxMag_UINT)
-    } should be (true)
-  }
+  // "run MUL_INTEGER_round_select" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //   "--backend-name", "firrtl",
+  //   "--target-dir", targetDir+"_INT"
+  //   ),
+  //   () => new Mult ) { c =>
+  //   new MUL_INTEGER_round_select (c, TestUtils.round_near_maxMag_UINT)
+  //   } should be (true)
+  // }
 }

@@ -30,7 +30,7 @@ class MUX:
         
         if DEBUG:
             print("[ mux", self.id, "]", self.in1, " ", self.in2, " ", self.in3)
-            print("    sel: ", self.sel , "-> out :", self.out)
+            print("         [sel]: ", self.sel , "-> out :", self.out)
 
     def get_OUT(self):
         return self.out
@@ -58,7 +58,7 @@ class MULT:
         self.out = str(rez32)
         self.out = self.out.replace(" ", "")
         if DEBUG: 
-            print("[ MULT", self.id, "]", self.in1, "*", self.in2, "=", self.out)
+            print("[MULT", self.id, "]", self.in1, "*", self.in2, "=", self.out)
     
     def get_OUT(self):
         return self.out
@@ -136,7 +136,7 @@ class PE_FPU:
         self.ADDSUB_1.id = 1
         self.ADDSUB_2 = ADDSUB()
         self.ADDSUB_2.id = 2
-        self.sim_Mem_OUT = ""
+        self.sim_Mem_OUT = "00000000000000000000000000000000"
 
         # INT or FP32
         self.MULT_1.useINT = False
@@ -171,6 +171,7 @@ class PE_FPU:
         self.ADDSUB_2_OUT = self.ADDSUB_2.get_OUT()
     
     def run_PE(self):
+        print("---------->START - PE_FPU<----------------------")
         self.refresh()
         self.mux_1.set_INPUTS(self.ADDSUB_1_OUT, self.Yi, self.a1)
         self.refresh()
@@ -187,7 +188,7 @@ class PE_FPU:
         self.MULT_2.set_INPUTS(self.mux_3_out, self.mux_4_out)
         self.refresh()
 
-        self.mux_5.set_INPUTS(self.Yi, self.MULT_1_out, "[DontCare]")
+        self.mux_5.set_INPUTS(self.Yi, self.MULT_1_out, self.sim_Mem_OUT)
         self.refresh()
         
         self.mux_6.set_INPUTS(self.Xi, self.MULT_2_out, "[DontCare]")
@@ -199,8 +200,9 @@ class PE_FPU:
         self.mux_7.set_INPUTS(self.MULT_1_out, self.ADDSUB_1_OUT, "[DontCare]") 
         self.refresh()
 
-        self.ADDSUB_2.set_INPUTS(self.mux_7_out, self.Xi)
+        self.ADDSUB_2.set_INPUTS(self.mux_7_out, self.sim_Mem_OUT)
         self.refresh()
+        print("---------->END   - PE_FPU<----------------------")
     
     def useINT(self):
         self.MULT_1.useINT = True

@@ -50,12 +50,19 @@ testAddSub:
 	rm -rf diagram
 	sbt "testOnly modules.AddSub_test"
 
+testMult:
+	rm -rf diagram
+	sbt "testOnly modules.Mult_test"
+
 testrecFN2INT:
 	rm -rf diagram
 	sbt "testOnly other.recFN2INT_test"
 
 testAddSubFull:
 	sbt "testOnly modules.AddSub_test_full"
+
+testDistance:
+	sbt "testOnly top.PE_FPU_distance_test"
 
 show-config:
 	$(VERILATOR) -V

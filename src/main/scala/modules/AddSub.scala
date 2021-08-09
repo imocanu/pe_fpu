@@ -21,14 +21,16 @@ class AddSub extends Module {
     val out      = Output(UInt(Config.forOUT.W))
   })
 
-  // Select Operator 
+  // Operator 
   val op_sel      = RegNext(io.op)
-  // Use INT Flag
+  // INT Flag
   val useINT_sel  = WireDefault(io.useINT)
 
   // fn -> Reg_1 -> Reg_2 -> recFN
   val fN_in1  = RegNext(io.in1)
+  //printf("\n[DEBUG] AddSub in1 : %b", fN_in1)
   val fN_in2  = RegNext(io.in2)
+  //printf("\n[DEBUG] AddSub in2 : %b", fN_in2)
 
   val addRecFN = Module(new AddRecFN(Config.EXP, Config.SIG))
   addRecFN.io.subOp := op_sel
@@ -95,6 +97,7 @@ class AddSub extends Module {
 object AddSub extends App {
  val verilogDir = "rtl"
  val verilogName = "AddSub"
+
  (new ChiselStage).execute(
    Array("--compiler", "verilog",
      "--target-dir", verilogDir,
@@ -102,6 +105,10 @@ object AddSub extends App {
    Seq(ChiselGeneratorAnnotation(() => new AddSub))
  )
 
+ val targetDir = "diagram"
+ (new ElkStage).execute(Array("--target-dir", targetDir),
+   Seq(ChiselGeneratorAnnotation(() => new AddSub))
+ )
 //  (new ChiselStage).execute(
 //    Array("-X", "sverilog",
 //      "--target-dir", verilogDir,
@@ -116,8 +123,4 @@ object AddSub extends App {
 //    Seq(ChiselGeneratorAnnotation(() => new AddSub))
 //  )
 
- val targetDir = "diagram"
- (new ElkStage).execute(Array("--target-dir", targetDir),
-   Seq(ChiselGeneratorAnnotation(() => new AddSub))
- )
 }

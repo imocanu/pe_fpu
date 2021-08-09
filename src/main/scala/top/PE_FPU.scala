@@ -44,7 +44,6 @@ class PE_FPU extends Module {
     // val mem1R1W_RD_FLAG = Input(Bool())
 
     val useINT_ALL      = Input(Bool())
-    //val round_ALL       = Input(UInt(3.W))
     val simMemOut       = Input(Bits(Config.forSimMemOUT.W))
 
     val addsum_1_final  = Output(Bits(Config.forIN.W))  
@@ -102,7 +101,7 @@ class PE_FPU extends Module {
   val mux_7_out = RegInit(0.U(32.W))
 
 //=======================================
-// Layer 1  :  4 x MUX3IN
+// Layer 1  :  4 x MUX3 IN
 //=======================================
   val mux_1 = Module( new Mux3() )
   mux_1.io.sel := mux_1_sel
@@ -136,14 +135,12 @@ class PE_FPU extends Module {
   val mult_1 = Module( new Mult() )
   mult_1.io.in1     := mux_1_out
   mult_1.io.in2     := mux_2_out
-  //mult_1.io.round   := round_ALL
   mult_1.io.useINT  := useINT_ALL
   mult_1_out        := mult_1.io.outIEEE
 
   val mult_2 = Module( new Mult() )
   mult_2.io.in1     := mux_3_out
   mult_2.io.in2     := mux_4_out
-  //mult_2.io.round   := round_ALL
   mult_2.io.useINT  := useINT_ALL
   mult_2_out        := mult_2.io.outIEEE
 
@@ -171,7 +168,6 @@ class PE_FPU extends Module {
   addsub_1.io.op  := addsub_1_op
   addsub_1.io.in1 := mux_5_out
   addsub_1.io.in2 := mux_6_out
-  //addsub_1.io.round := round_ALL
   addsub_1.io.useINT := useINT_ALL
   addsum_1_out := addsub_1.io.out
 
@@ -191,8 +187,7 @@ class PE_FPU extends Module {
   val addsub_2 = Module(new AddSub())
   addsub_2.io.op  := addsub_2_op
   addsub_2.io.in1 := mux_7_out
-  addsub_2.io.in2 := mem1R1W_out(15,0)
-  //addsub_2.io.round := round_ALL
+  addsub_2.io.in2 := mem1R1W_out(31, 16)
   addsub_2.io.useINT := useINT_ALL
   addsum_2_out := addsub_2.io.out
 

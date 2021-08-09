@@ -18,8 +18,8 @@ if DEBUG:
     print("gen_IN_3 :", random_float_in_3)
     print("gen_IN_4 :", random_float_in_4)
 
-random_INT_in_1 = numpy.random.uniform(-INT_range, INT_range, size=(1, totalNR)).reshape(-1)
-random_INT_in_2 = numpy.random.uniform(-INT_range, INT_range, size=(1, totalNR)).reshape(-1)
+random_INT_in_1 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
+random_INT_in_2 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
 
 
 random_float_ADD_bin = []
@@ -88,10 +88,10 @@ for in1, in2 in zip(random_float_in_1, random_float_in_2):
     if DEBUG:
         print(in1, "*", in2, "=", ssw)
 
-test_INT_1 = np.random.randint(-INT_range, INT_range, size=(1, totalNR), dtype=np.int32).reshape(-1)
-print(test_INT_1)
-test_INT_2 = np.random.randint(-INT_range, INT_range, size=(1, totalNR), dtype=np.int32).reshape(-1)
-print(test_INT_2)
+test_INT_1 = np.random.randint(min_INT_range, max_INT_range, size=(1, totalNR), dtype=np.int16).reshape(-1)
+#print(test_INT_1)
+test_INT_2 = np.random.randint(min_INT_range, max_INT_range, size=(1, totalNR), dtype=np.int16).reshape(-1)
+#print(test_INT_2)
 
 random_INT_1_bin = []
 for i in test_INT_1:
@@ -110,15 +110,17 @@ for in1, in2 in zip(random_INT_1, random_INT_2):
     ssw = ssw.replace(" ", "") 
     random_INT_ADD.append(ssw)
 
-    # rez32 = core.single(in1) - core.single(in2)
-    # ssw = str(rez32)
-    # ssw = ssw.replace(" ", "")
-    # random_INT_SUB.append(ssw)
+    rez32 = np.subtract(in1 , in2, dtype=np.int32)
+    testBIN = core.single(np.binary_repr(rez32, width=32))
+    ssw = str(testBIN)
+    ssw = ssw.replace(" ", "") 
+    random_INT_SUB.append(ssw)
 
-    # rez32 = core.single(in1) * core.single(in2)
-    # ssw = str(rez32)
-    # ssw = ssw.replace(" ", "")
-    # random_INT_MUL.append(ssw)
+    rez32 = np.multiply(in1 , in2, dtype=np.int32)
+    testBIN = core.single(np.binary_repr(rez32, width=32))
+    ssw = str(testBIN)
+    ssw = ssw.replace(" ", "") 
+    random_INT_MUL.append(ssw)
 
 
 
