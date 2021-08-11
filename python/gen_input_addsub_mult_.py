@@ -103,7 +103,25 @@ for i in test_INT_2:
     random_INT_2_bin.append(np.binary_repr(i, width=32))
     random_INT_2.append(i) 
 
-for in1, in2 in zip(random_INT_1, random_INT_2):   
+for in1, in2 in zip(random_INT_1, random_INT_2):
+
+    # rez16 = bin(in1 + in2)
+    # rez16 = str(rez16)
+    # print(">>>> DEBUG_1 :", rez16)
+    # rez16 = rez16.replace("0b", "")
+    # print(">>>> DEBUG_2 :", rez16)
+    # #rez16 = bin(np.binary_repr(in1, width=32) + np.binary_repr(in2, width=32))    
+    # rez32 = np.sum([in1 , in2], dtype=np.int32)
+    
+    # testBIN = core.single(np.binary_repr(rez32, width=32))
+    # print(">>>> DEBUG   :", rez16, rez32)
+    # #rez16 = str(core.single(str(rez16)))
+    # #rez16 = rez16.replace(" ", "") 
+    # #print(">>>> DEBUG   :", rez16)
+    # ssw = str(testBIN)
+    # ssw = ssw.replace(" ", "") 
+    # random_INT_ADD.append(ssw)
+
     rez32 = np.sum([in1 , in2], dtype=np.int32)
     testBIN = core.single(np.binary_repr(rez32, width=32))
     ssw = str(testBIN)

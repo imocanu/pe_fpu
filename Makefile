@@ -64,6 +64,9 @@ testAddSubFull:
 testDistance:
 	sbt "testOnly top.PE_FPU_distance_test"
 
+testDot:
+	sbt "testOnly top.PE_FPU_dot_test"
+
 show-config:
 	$(VERILATOR) -V
 

@@ -187,7 +187,7 @@ class PE_FPU extends Module {
   val addsub_2 = Module(new AddSub())
   addsub_2.io.op  := addsub_2_op
   addsub_2.io.in1 := mux_7_out
-  addsub_2.io.in2 := mem1R1W_out(31, 16)
+  addsub_2.io.in2 := mem1R1W_out(15, 0)
   addsub_2.io.useINT := useINT_ALL
   addsum_2_out := addsub_2.io.out
 

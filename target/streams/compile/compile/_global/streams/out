@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/other/FloatingPoint.scala:25:41: method do_toBool in class Bits is deprecated (since 3.2): Use asBool instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m        val sequence = VecInit((~value).toBool)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

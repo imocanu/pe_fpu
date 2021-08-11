@@ -22,7 +22,7 @@ object FloatingPoint {
     }
 
     private def countZerosFromTheLeft(value: UInt): UInt = {
-        val sequence = VecInit((~value).toBools)
+        val sequence = VecInit((~value))
         val res = Array.tabulate(sequence.getWidth)(n => Wire(UInt(1.W)))
         for (i <- 0 to sequence.getWidth-1) {
             if(i == sequence.getWidth-1) {
@@ -105,7 +105,7 @@ class FloatingPoint(exp: Int, man: Int) extends Bundle {
 
     def toInt(a: UInt, s: UInt): SInt = {
         val res = Wire(SInt())
-        when(s(0).toBool) {
+        when(s(0)) {
             res := -(a.asSInt)
         }
         .otherwise{

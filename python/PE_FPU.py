@@ -3,11 +3,11 @@ from common import *
 class MUX:
     def __init__(self):
         self.id = 0
-        self.in1  = 0.0
-        self.in2  = 0.0
-        self.in3  = 0.0
+        self.in1  = ""
+        self.in2  = ""
+        self.in3  = ""
         self.sel = 0
-        self.out = 0.0
+        self.out = 0
 
     def set_Sel(self, val):
         self.sel = val
@@ -52,11 +52,16 @@ class MULT:
 
     def calc(self):
         if(self.useINT):
-            self.in1 = int(self.in1)
-            self.in2 = int(self.in2)
-        rez32 = core.single(self.in1) * core.single(self.in2)
-        self.out = str(rez32)
-        self.out = self.out.replace(" ", "")
+            rez32 = np.multiply(self.in1 , self.in2, dtype=np.int32)
+            testBIN = core.single(np.binary_repr(rez32, width=32))
+            ssw = str(testBIN)
+            ssw = ssw.replace(" ", "") 
+            self.out = ssw
+        else:
+            rez32 = core.single(self.in1) * core.single(self.in2)
+            self.out = str(rez32)
+            self.out = self.out.replace(" ", "")
+
         if DEBUG: 
             print("[MULT", self.id, "]", self.in1, "*", self.in2, "=", self.out)
     
@@ -67,8 +72,8 @@ class MULT:
 class ADDSUB:
     def __init__(self):
         self.id = 0
-        self.in1  = 0.0
-        self.in2  = 0.0
+        self.in1  = 0
+        self.in2  = 0
         self.round = ""
         self.op = False
         self.useINT = False
@@ -80,20 +85,32 @@ class ADDSUB:
         self.calc()
 
     def calc(self):
-        if(self.useINT):
-            self.in1 = int(self.in1)
-            self.in2 = int(self.in2)
-
         if(self.op):
-            rez32 = core.single(self.in1) - core.single(self.in2)
-            self.out = str(rez32)
-            self.out = self.out.replace(" ", "")
+            if(self.useINT):
+                rez32 = np.sum([self.in1 , self.in2], dtype=np.int32)
+                testBIN = core.single(np.binary_repr(rez32, width=32))
+                ssw = str(testBIN)
+                ssw = ssw.replace(" ", "")
+                self.out = ssw
+            else: 
+                rez32 = core.single(self.in1) - core.single(self.in2)
+                self.out = str(rez32)
+                self.out = self.out.replace(" ", "")
+
             if DEBUG:
                 print("[ SUB", self.id, "]", self.in1, "-", self.in2, "=", self.out)
         else:
-            rez32 = core.single(self.in1) + core.single(self.in2)
-            self.out = str(rez32)
-            self.out = self.out.replace(" ", "")
+            if(self.useINT):
+                    rez32 = np.subtract(in1 , in2, dtype=np.int32)
+                    testBIN = core.single(np.binary_repr(rez32, width=32))
+                    ssw = str(testBIN)
+                    ssw = ssw.replace(" ", "") 
+                    self.out = ssw
+            else:
+                rez32 = core.single(self.in1) + core.single(self.in2)
+                self.out = str(rez32)
+                self.out = self.out.replace(" ", "")
+
             if DEBUG:
                 print("[ ADD", self.id, "]", self.in1, "+", self.in2, "=", self.out)
 
@@ -103,6 +120,12 @@ class ADDSUB:
 
 class PE_FPU:
     def __init__(self, Yi="", a1="", Xi="", B1="", Yj="", a2="", Xj="", B2=""):
+        # CLOCK
+        self.clock = 0
+
+        # PE FLAG
+        self.useINT = False
+        
         # INPUTS
         self.Yi = Yi
         self.a1 = a1
@@ -138,7 +161,7 @@ class PE_FPU:
         self.ADDSUB_2.id = 2
         self.sim_Mem_OUT = "00000000000000000000000000000000"
 
-        # INT or FP32
+        # FLAGS : INT or FP32
         self.MULT_1.useINT = False
         self.MULT_2.useINT = False  
         self.ADDSUB_1.useINT = False 
@@ -171,7 +194,10 @@ class PE_FPU:
         self.ADDSUB_2_OUT = self.ADDSUB_2.get_OUT()
     
     def run_PE(self):
-        print("---------->START - PE_FPU<----------------------")
+        self.clock = self.clock + 1
+        print("~"*50)
+        print("    *****> Start CLOCK [",str(self.clock),"] - PE_FPU <*****")
+        print("~"*50)
         self.refresh()
         self.mux_1.set_INPUTS(self.ADDSUB_1_OUT, self.Yi, self.a1)
         self.refresh()
@@ -202,9 +228,8 @@ class PE_FPU:
 
         self.ADDSUB_2.set_INPUTS(self.mux_7_out, self.sim_Mem_OUT)
         self.refresh()
-        print("---------->END   - PE_FPU<----------------------")
     
-    def useINT(self):
+    def enableINT(self):
         self.MULT_1.useINT = True
         self.MULT_2.useINT = True  
         self.ADDSUB_1.useINT = True 
