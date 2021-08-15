@@ -89,9 +89,9 @@ for in1, in2 in zip(random_float_in_1, random_float_in_2):
         print(in1, "*", in2, "=", ssw)
 
 test_INT_1 = np.random.randint(min_INT_range, max_INT_range, size=(1, totalNR), dtype=np.int16).reshape(-1)
-#print(test_INT_1)
+print(test_INT_1)
 test_INT_2 = np.random.randint(min_INT_range, max_INT_range, size=(1, totalNR), dtype=np.int16).reshape(-1)
-#print(test_INT_2)
+print(test_INT_2)
 
 random_INT_1_bin = []
 for i in test_INT_1:
@@ -101,13 +101,28 @@ for i in test_INT_1:
 random_INT_2_bin = []
 for i in test_INT_2:
     random_INT_2_bin.append(np.binary_repr(i, width=32))
-    random_INT_2.append(i) 
+    random_INT_2.append(i)
+
 
 for in1, in2 in zip(random_INT_1, random_INT_2):
+    print("SUM :", in1+in2)
 
-    # rez16 = bin(in1 + in2)
+def binaryToDecimal(binary):
+     
+    binary1 = binary
+    decimal, i, n = 0, 0, 0
+    while(binary != 0):
+        dec = binary % 10
+        decimal = decimal + dec * pow(2, i)
+        binary = binary//10
+        i += 1
+    print(decimal) 
+
+for in1, in2 in zip(random_INT_1_bin, random_INT_2_bin):
+    pass
+    # rez16 = bin(np.binary_repr(in1, width=32))
     # rez16 = str(rez16)
-    # print(">>>> DEBUG_1 :", rez16)
+    # print(">>>> DEBUG_1 :", str(in1), str(in2), " = ", rez16)
     # rez16 = rez16.replace("0b", "")
     # print(">>>> DEBUG_2 :", rez16)
     # #rez16 = bin(np.binary_repr(in1, width=32) + np.binary_repr(in2, width=32))    
@@ -122,23 +137,25 @@ for in1, in2 in zip(random_INT_1, random_INT_2):
     # ssw = ssw.replace(" ", "") 
     # random_INT_ADD.append(ssw)
 
-    rez32 = np.sum([in1 , in2], dtype=np.int32)
-    testBIN = core.single(np.binary_repr(rez32, width=32))
-    ssw = str(testBIN)
-    ssw = ssw.replace(" ", "") 
-    random_INT_ADD.append(ssw)
 
-    rez32 = np.subtract(in1 , in2, dtype=np.int32)
-    testBIN = core.single(np.binary_repr(rez32, width=32))
-    ssw = str(testBIN)
-    ssw = ssw.replace(" ", "") 
-    random_INT_SUB.append(ssw)
 
-    rez32 = np.multiply(in1 , in2, dtype=np.int32)
-    testBIN = core.single(np.binary_repr(rez32, width=32))
-    ssw = str(testBIN)
-    ssw = ssw.replace(" ", "") 
-    random_INT_MUL.append(ssw)
+    # rez32 = np.sum([in1 , in2], dtype=np.int32)
+    # testBIN = core.single(np.binary_repr(rez32, width=32))
+    # ssw = str(testBIN)
+    # ssw = ssw.replace(" ", "") 
+    # random_INT_ADD.append(ssw)
+
+    # rez32 = np.subtract(in1 , in2, dtype=np.int32)
+    # testBIN = core.single(np.binary_repr(rez32, width=32))
+    # ssw = str(testBIN)
+    # ssw = ssw.replace(" ", "") 
+    # random_INT_SUB.append(ssw)
+
+    # rez32 = np.multiply(in1 , in2, dtype=np.int32)
+    # testBIN = core.single(np.binary_repr(rez32, width=32))
+    # ssw = str(testBIN)
+    # ssw = ssw.replace(" ", "") 
+    # random_INT_MUL.append(ssw)
 
 
 

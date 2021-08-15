@@ -17,19 +17,19 @@ class Mux_test_1(dut: Mux3) extends PeekPokeTester(dut) {
   step(5)
   poke(dut.io.sel, "b00".U)
   step(5)
-  expect(dut.io.outIEEE, in0)  // in0
+  expect(dut.io.out, in0)  // in0
   step(5)
   poke(dut.io.sel, "b01".U)
   step(5)
-  expect(dut.io.outIEEE, in1)  // in1
+  expect(dut.io.out, in1)  // in1
   step(5)
   poke(dut.io.sel, "b10".U)
   step(5)
-  expect(dut.io.outIEEE, in2)  // 12
+  expect(dut.io.out, in2)  // 12
   step(5)
   poke(dut.io.sel, "b11".U)
   step(5)
-  expect(dut.io.outIEEE, "b00000000000000000000000000000000".U)  // 72
+  expect(dut.io.out, "b00000000000000000000000000000000".U)  // 72
   step(5)
 }
 

@@ -44,6 +44,7 @@ class PE_FPU extends Module {
     // val mem1R1W_RD_FLAG = Input(Bool())
 
     val useINT_ALL      = Input(Bool())
+    //val round_ALL       = Input(UInt(3.W))
     val simMemOut       = Input(Bits(Config.forSimMemOUT.W))
 
     val addsum_1_final  = Output(Bits(Config.forIN.W))  
@@ -108,26 +109,26 @@ class PE_FPU extends Module {
   mux_1.io.in0 := addsum_1_out
   mux_1.io.in1 := Yi
   mux_1.io.in2 := a1
-  mux_1_out := mux_1.io.outIEEE
+  mux_1_out := mux_1.io.out
   val mux_2 = Module( new Mux3() )
   mux_2.io.sel := mux_2_sel
   mux_2.io.in0 := Xi
   mux_2.io.in1 := B1
   mux_2.io.in2 := addsum_1_out
-  mux_2_out := mux_2.io.outIEEE
+  mux_2_out := mux_2.io.out
 
   val mux_3 = Module( new Mux3() )
   mux_3.io.sel := mux_3_sel
   mux_3.io.in0 := Yj
   mux_3.io.in1 := a2
   mux_3.io.in2 := 0.U(Config.WIDTH.W)
-  mux_3_out := mux_3.io.outIEEE
+  mux_3_out := mux_3.io.out
   val mux_4 = Module( new Mux3() )
   mux_4.io.sel := mux_4_sel
   mux_4.io.in0 := Xj
   mux_4.io.in1 := B2
   mux_4.io.in2 := 0.U(Config.WIDTH.W)
-  mux_4_out := mux_4.io.outIEEE
+  mux_4_out := mux_4.io.out
 
 //=======================================
 // Layer 2  :  Multiply
@@ -136,13 +137,15 @@ class PE_FPU extends Module {
   mult_1.io.in1     := mux_1_out
   mult_1.io.in2     := mux_2_out
   mult_1.io.useINT  := useINT_ALL
-  mult_1_out        := mult_1.io.outIEEE
+  mult_1.io.round   := Config.roundingMode
+  mult_1_out        := mult_1.io.out
 
   val mult_2 = Module( new Mult() )
   mult_2.io.in1     := mux_3_out
   mult_2.io.in2     := mux_4_out
   mult_2.io.useINT  := useINT_ALL
-  mult_2_out        := mult_2.io.outIEEE
+  mult_2.io.round   := Config.roundingMode
+  mult_2_out        := mult_2.io.out
 
 //=======================================
 // Layer 3  :  2 X MUX from Multiply
@@ -152,14 +155,14 @@ class PE_FPU extends Module {
   mux_5.io.in0 := Yi
   mux_5.io.in1 := mult_1_out
   mux_5.io.in2 := mem1R1W_out(31, 16)
-  mux_5_out := mux_5.io.outIEEE
+  mux_5_out := mux_5.io.out
 
   val mux_6 = Module( new Mux3())
   mux_6.io.sel := mux_6_sel
   mux_6.io.in0 := Xi
   mux_6.io.in1 := mult_2_out
   mux_6.io.in2 := 0.U(Config.WIDTH.W)
-  mux_6_out := mux_6.io.outIEEE
+  mux_6_out := mux_6.io.out
 
 //=======================================
 // Layer 4  :  ADD/SUB_1
@@ -179,7 +182,7 @@ class PE_FPU extends Module {
   mux_7.io.in0 := mult_1_out
   mux_7.io.in1 := addsum_1_out
   mux_7.io.in2 := 0.U(Config.WIDTH.W)
-  mux_7_out := mux_7.io.outIEEE
+  mux_7_out := mux_7.io.out
 
 //=======================================
 // Layer 6  :  ADD/SUB_2

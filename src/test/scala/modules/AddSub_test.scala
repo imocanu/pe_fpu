@@ -11,7 +11,7 @@ import utils.TestUtils
 // http://weitz.de/ieee/
 
 
-class SUB_INTEGER_round_select(dut: AddSub, roundSel: UInt) extends PeekPokeTester(dut) {
+class SUB_INTEGER_simple(dut: AddSub, roundSel: UInt) extends PeekPokeTester(dut) {
   var input_1     = TestUtils.read(TestUtils.INT_INPUT_1)
   var input_2     = TestUtils.read(TestUtils.INT_INPUT_2)
   var test_output = TestUtils.read(TestUtils.INT_SUB_RESULT)
@@ -19,51 +19,7 @@ class SUB_INTEGER_round_select(dut: AddSub, roundSel: UInt) extends PeekPokeTest
   println(" ----->  Operation is SUB ( INT )")
   
   poke(dut.io.op, true.B)
-  step(2)
   poke(dut.io.useINT, true.B)
-  step(10)
-
-  for (i <- 0 to input_1.size - 1) 
-  {
-    val in1 = "b"+input_1(i)
-    step(2)
-    val in2 = "b"+input_2(i)
-    step(2)
-    val out = "b"+test_output(i)
-    step(2)
-    poke(dut.io.in1, in1.U)
-    step(2)
-    poke(dut.io.in2, in2.U)
-    step(10)
-    
-    if(expect(dut.io.out, out.U))
-    {
-          step(5)
-          println(" -> "+out.asInstanceOf[String]+" : PASS")
-    }
-    else
-    {
-          step(5)
-          println(" ITER -> "+i)
-          println(" IN_1 -> "+in1.asInstanceOf[String])
-          println(" IN_2 -> "+in2.asInstanceOf[String])
-          println(" REZ  -> "+out.asInstanceOf[String]+" : TEST FAIL")
-          input_1 = TestUtils.readEmpty()
-    } 
-  }
-}
-
-class ADD_INTEGER_round_select(dut: AddSub, roundSel: UInt) extends PeekPokeTester(dut) {
-  var input_1     = TestUtils.read(TestUtils.INT_INPUT_1)
-  var input_2     = TestUtils.read(TestUtils.INT_INPUT_2)
-  var test_output = TestUtils.read(TestUtils.INT_ADD_RESULT)
-
-  println(" ----->  Operation is ADD ( INT16 range )")
-  
-
-  poke(dut.io.op, false.B)
-  poke(dut.io.useINT, true.B)
-  step(5)
 
   var in1 = ""
   var in2 = ""
@@ -76,12 +32,11 @@ class ADD_INTEGER_round_select(dut: AddSub, roundSel: UInt) extends PeekPokeTest
     out = "b"+test_output(i)
     poke(dut.io.in1, in1.U)
     poke(dut.io.in2, in2.U)
-    step(5)
+    step(20)
 
     if(expect(dut.io.out, out.U))
     {
-          step(5)
-          //println(" -> "+out.asInstanceOf[String]+" : PASS")
+          println(" -> "+out.asInstanceOf[String]+" : PASS")
     }
     else
     {
@@ -89,7 +44,45 @@ class ADD_INTEGER_round_select(dut: AddSub, roundSel: UInt) extends PeekPokeTest
           println(" IN_1 -> "+in1.asInstanceOf[String])
           println(" IN_2 -> "+in2.asInstanceOf[String])
           println(" REZ  -> "+out.asInstanceOf[String]+" : TEST FAIL")
-          input_1 = TestUtils.readEmpty()
+          System.exit(0)
+    } 
+  }
+}
+
+class ADD_INTEGER_simple(dut: AddSub, roundSel: UInt) extends PeekPokeTester(dut) {
+  var input_1     = TestUtils.read(TestUtils.INT_INPUT_1)
+  var input_2     = TestUtils.read(TestUtils.INT_INPUT_2)
+  var test_output = TestUtils.read(TestUtils.INT_ADD_RESULT)
+
+  println(" ----->  Operation is ADD ( INT )")
+  
+  poke(dut.io.op, false.B)
+  poke(dut.io.useINT, true.B)
+
+  var in1 = ""
+  var in2 = ""
+  var out = ""
+
+  for (i <- 0 to input_1.size - 1) 
+  {
+    in1 = "b"+input_1(i)
+    in2 = "b"+input_2(i)
+    out = "b"+test_output(i)
+    poke(dut.io.in1, in1.U)
+    poke(dut.io.in2, in2.U)
+    step(20)
+
+    if(expect(dut.io.out, out.U))
+    {
+          println(" -> "+out.asInstanceOf[String]+" : PASS")
+    }
+    else
+    {
+          println(" ITER -> "+i)
+          println(" IN_1 -> "+in1.asInstanceOf[String])
+          println(" IN_2 -> "+in2.asInstanceOf[String])
+          println(" REZ  -> "+out.asInstanceOf[String]+" : TEST FAIL")
+          System.exit(0)
     } 
   }
 }
@@ -483,7 +476,7 @@ class AddSub_test extends ChiselFlatSpec with Matchers {
   //   } should be (true)
   // }
 
-  "run ADD_INTEGER_round_select" should "pass" in {
+  "run ADD_INTEGER_simple" should "pass" in {
     chisel3.iotesters.Driver.execute(Array(
       "--fint-write-vcd",
       "--backend-name", "firrtl",
@@ -491,21 +484,21 @@ class AddSub_test extends ChiselFlatSpec with Matchers {
       "--top-name" , vcdName,
       "--output-file", vcdName),
       () => new AddSub ) { c =>
-      new ADD_INTEGER_round_select (c, TestUtils.round_near_maxMag_UINT)
+      new ADD_INTEGER_simple (c, TestUtils.round_near_maxMag_UINT)
     } should be (true)
   }
 
-  // "run SUB_INTEGER_round_select" should "pass" in {
-  //   chisel3.iotesters.Driver.execute(Array(
-  //     "--fint-write-vcd",
-  //     "--backend-name", "firrtl",
-  //     "--target-dir", targetDir+"_ADD_INT",
-  //     "--top-name" , vcdName,
-  //     "--output-file", vcdName),
-  //     () => new AddSub ) { c =>
-  //     new SUB_INTEGER_round_select (c, TestUtils.round_near_maxMag_UINT)
-  //   } should be (true)
-  // }
+  "run SUB_INTEGER_simple" should "pass" in {
+    chisel3.iotesters.Driver.execute(Array(
+      "--fint-write-vcd",
+      "--backend-name", "firrtl",
+      "--target-dir", targetDir+"_SUB_INT",
+      "--top-name" , vcdName,
+      "--output-file", vcdName),
+      () => new AddSub ) { c =>
+      new SUB_INTEGER_simple (c, TestUtils.round_near_maxMag_UINT)
+    } should be (true)
+  }
 
   //   "run SUB_INTEGER_round_select" should "pass" in {
   //   chisel3.iotesters.Driver.execute(Array(

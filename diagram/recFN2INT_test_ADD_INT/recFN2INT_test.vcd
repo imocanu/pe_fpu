@@ -1,0 +1,1198 @@
+$date
+2021-08-15T19:13+0000
+$end
+$version
+0.2
+$end
+$comment
+
+$end
+$timescale 1ps  $end
+$scope module recFN2INT $end
+ $var wire 29 ! recFNToIN_io_in_lo $end
+ $var wire 32 ( io_out $end
+ $var wire 1 , recFNToIN_io_in_rawIn_isZero $end
+ $var wire 5 4 recFNToIN_io_in_rawIn_normDist $end
+ $var wire 1 6 recFNToIN_io_in_rawIn__sign $end
+ $var wire 3 ; recFNToIN_io_in_hi_lo $end
+ $var wire 23 G recFNToIN_io_in_lo_lo $end
+ $var wire 1 J recFNToIN_io_in_rawIn_isZeroFractIn $end
+ $var wire 1 K recFNToIN_io_in_rawIn_isZeroExpIn $end
+ $var wire 23 R recFNToIN_io_in_rawIn_fractIn $end
+ $var wire 10 W recFNToIN_io_in_rawIn__sExp $end
+ $var wire 1 \ io_signed $end
+ $var wire 23 ^ recFNToIN_io_in_rawIn_out_sig_lo $end
+ $var wire 25 h recFNToIN_io_in_rawIn__sig $end
+ $var wire 32 m recFNToIN_out $end
+ $var wire 4 u recFNToIN_io_in_hi $end
+ $var wire 1 { clock $end
+ $var wire 6 ~ recFNToIN_io_in_lo_hi $end
+ $var wire 9 "' recFNToIN_io_in_rawIn_adjustedExp $end
+ $var wire 1 ". recFNToIN_io_in_rawIn_isSpecial $end
+ $var wire 3 "/ io_round $end
+ $var wire 1 "3 recFNToIN_io_in_rawIn_out_sig_hi_lo $end
+ $var wire 23 "5 recFNToIN_io_in_rawIn_subnormFract $end
+ $var wire 8 "6 recFNToIN_io_in_rawIn_expIn $end
+ $var wire 2 "9 recFNToIN_io_in_rawIn_out_sig_hi $end
+ $var wire 32 "; in_FN $end
+ $var wire 32 "? io_in $end
+ $var wire 1 "E reset $end
+ $var wire 1 "I recFNToIN_io_in_rawIn__isZero $end
+ $var wire 1 "P recFNToIN_io_in_rawIn_sign $end
+ $var wire 1 "Q recFNToIN_io_in_rawIn__isNaN $end
+  $scope module recFNToIN $end
+   $var wire 1 " rawIn__isZero $end
+   $var wire 1 # _roundIncr_T_7 $end
+   $var wire 1 $ _rawIn_out_isInf_T $end
+   $var wire 1 % magGeOne $end
+   $var wire 32 & roundedInt $end
+   $var wire 1 ' common_inexact $end
+   $var wire 1 ) roundingMode_max $end
+   $var wire 10 * _rawIn_out_sExp_T $end
+   $var wire 32 + excOut $end
+   $var wire 1 - _rawIn_out_isInf_T_2 $end
+   $var wire 1 . roundingMode_odd $end
+   $var wire 1 / _common_inexact_T_1 $end
+   $var wire 1 0 _roundIncr_near_even_T_3 $end
+   $var wire 1 1 _common_overflow_T_14 $end
+   $var wire 23 2 shiftedSig_lo $end
+   $var wire 1 3 _io_out_T $end
+   $var wire 1 5 _common_overflow_T_8 $end
+   $var wire 1 7 roundingMode_near_even $end
+   $var wire 2 8 _common_inexact_T $end
+   $var wire 2 9 _roundIncr_near_even_T_6 $end
+   $var wire 1 : _common_overflow_T_17 $end
+   $var wire 9 < rawIn_exp $end
+   $var wire 1 = _common_overflow_T_2 $end
+   $var wire 1 > _rawIn_out_isNaN_T_1 $end
+   $var wire 2 ? _rawIn_isSpecial_T $end
+   $var wire 32 @ _roundedInt_T_2 $end
+   $var wire 22 A _alignedSig_T $end
+   $var wire 1 B _magJustBelowOne_T $end
+   $var wire 1 C _roundIncr_T_6 $end
+   $var wire 1 D rawIn_isSpecial $end
+   $var wire 1 E _roundIncr_T_9 $end
+   $var wire 1 F _excSign_T $end
+   $var wire 8 H posExp $end
+   $var wire 3 I io_roundingMode $end
+   $var wire 1 L magGeOne_atOverflowEdge $end
+   $var wire 1 M rawIn_out_sig_hi_lo $end
+   $var wire 1 N _common_overflow_T_5 $end
+   $var wire 30 O _roundCarryBut2_T $end
+   $var wire 5 P _shiftedSig_T_2 $end
+   $var wire 1 Q _common_overflow_T_11 $end
+   $var wire 55 S shiftedSig $end
+   $var wire 1 T magJustBelowOne $end
+   $var wire 32 U unroundedInt $end
+   $var wire 1 V _rawIn_out_isInf_T_1 $end
+   $var wire 25 X rawIn__sig $end
+   $var wire 1 Y _roundIncr_T_3 $end
+   $var wire 1 Z _roundIncr_near_maxMag_T_1 $end
+   $var wire 32 [ _io_out_T_1 $end
+   $var wire 32 ] _excOut_T_1 $end
+   $var wire 1 _ _magJustBelowOne_T_1 $end
+   $var wire 1 ` rawIn__isNaN $end
+   $var wire 1 a rawIn__isInf $end
+   $var wire 1 b _roundIncr_near_even_T_5 $end
+   $var wire 33 c _roundedInt_T_1 $end
+   $var wire 24 d _shiftedSig_T $end
+   $var wire 1 e invalidExc $end
+   $var wire 33 f alignedSig_hi $end
+   $var wire 34 g alignedSig $end
+   $var wire 1 i excSign $end
+   $var wire 1 j _roundIncr_near_even_T_8 $end
+   $var wire 1 k _roundedInt_T_4 $end
+   $var wire 32 l _complUnroundedInt_T $end
+   $var wire 23 n rawIn_out_sig_lo $end
+   $var wire 1 o _roundCarryBut2_T_1 $end
+   $var wire 1 p _roundedInt_T $end
+   $var wire 1 q rawIn__sign $end
+   $var wire 2 r _roundIncr_near_even_T_2 $end
+   $var wire 33 s io_in $end
+   $var wire 1 t _common_overflow_T_13 $end
+   $var wire 2 v _roundIncr_near_even_T $end
+   $var wire 1 w rawIn_isZero $end
+   $var wire 1 x _common_overflow_T_7 $end
+   $var wire 1 y _roundIncr_T_5 $end
+   $var wire 31 z _excOut_T_3 $end
+   $var wire 1 | roundingMode_min $end
+   $var wire 1 } roundCarryBut2 $end
+   $var wire 1 "! _common_overflow_T $end
+   $var wire 31 "" _common_overflow_T_1 $end
+   $var wire 1 "# _common_overflow_T_16 $end
+   $var wire 5 "$ _shiftedSig_T_1 $end
+   $var wire 1 "% _common_overflow_T_10 $end
+   $var wire 1 "& _common_overflow_T_4 $end
+   $var wire 1 "( _roundIncr_T_8 $end
+   $var wire 32 ") io_out $end
+   $var wire 1 "* _roundIncr_T_2 $end
+   $var wire 1 "+ _excOut_T $end
+   $var wire 3 ", _rawIn_isZero_T $end
+   $var wire 10 "- rawIn__sExp $end
+   $var wire 1 "0 _common_inexact_T_2 $end
+   $var wire 1 "1 _roundIncr_near_maxMag_T $end
+   $var wire 1 "2 _roundIncr_near_even_T_4 $end
+   $var wire 1 "4 common_overflow $end
+   $var wire 1 "7 io_signedOut $end
+   $var wire 1 "8 _roundIncr_T $end
+   $var wire 1 ": _roundIncr_near_even_T_7 $end
+   $var wire 1 "< roundIncr_near_even $end
+   $var wire 32 "= _roundedInt_T_3 $end
+   $var wire 1 "> _common_overflow_T_3 $end
+   $var wire 32 "@ _unroundedInt_T $end
+   $var wire 1 "A roundingMode_near_maxMag $end
+   $var wire 25 "B _rawIn_out_sig_T $end
+   $var wire 1 "C _roundIncr_T_1 $end
+   $var wire 1 "D roundIncr_near_maxMag $end
+   $var wire 1 "F _roundIncr_near_even_T_1 $end
+   $var wire 1 "G _rawIn_out_sign_T $end
+   $var wire 1 "H _common_overflow_T_12 $end
+   $var wire 1 "J roundIncr $end
+   $var wire 1 "K alignedSig_lo $end
+   $var wire 1 "L _common_overflow_T_6 $end
+   $var wire 1 "M _common_overflow_T_15 $end
+   $var wire 1 "N _roundIncr_T_4 $end
+   $var wire 2 "O rawIn_out_sig_hi $end
+   $var wire 1 "R _excOut_T_2 $end
+   $var wire 1 "S _common_overflow_T_9 $end
+   $var wire 32 "T complUnroundedInt $end
+   $var wire 1 "U _rawIn_out_isNaN_T $end
+  $upscope $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+b00 v
+xT
+b00000 P
+x"4
+0o
+0=
+0"1
+1"!
+bxxxxxxxxxx *
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx s
+b0000000000000000000000000000000001010111001101100010110 S
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx m
+b000000000000000000000000000000000 f
+1"0
+bxxxxxxxxxxxxxxxxxxxxxxxxx "B
+b00001 4
+b11111111111111111111111111111111 l
+0V
+x5
+bxxxxxxxxxxxxxxxxxxxxxxxx d
+x"G
+x"*
+b01 9
+0"F
+x1
+x"C
+bxxxxxxxxxxxxxxxxxxxxxxx n
+x"&
+0a
+0L
+1B
+0D
+b0000000000000000000000000000000001 g
+1'
+0)
+bxxx ",
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxx !
+0"Q
+1"A
+b10000000000000000000000000000000 ]
+xx
+x"N
+b10000000000000000000000000000000 +
+x"H
+b1010111001101100010110 A
+b00000000000000000000000000000000 "=
+x:
+x%
+0"2
+x"D
+xQ
+bxxxxx "$
+1M
+bxxxxxxxxxxxxxxxxxxxxxxx G
+b0000000000000000000000000000000 ""
+x6
+0".
+b11111111111111111111111111111111 "T
+xb
+0{
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "?
+0"(
+x"<
+0w
+bxxxxxxxxxxxxxxxxxxxxxxx R
+0E
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ";
+00
+x}
+b00000000000000000000000000000000 "@
+b010001 ~
+xZ
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (
+xq
+b00000000000000000000000000000000 [
+x$
+1"K
+b00000000000000000000000000000000 U
+b011010001 "'
+07
+0"
+x"E
+b000000000000000000000000000000 O
+bxxxxxxxxx <
+0k
+0N
+1/
+xi
+1F
+0|
+bxxxxxxxxxx "-
+0J
+b100000000000000000000000000000000 c
+0-
+xe
+b100 I
+x3
+bxx ?
+b01 "9
+xt
+x_
+bxxxxxxxx H
+0"%
+x"7
+b0011010001 W
+xp
+0"S
+x>
+bxxxxxxxxxxxxxxxxxxxxxxx 2
+x"P
+b00000000000000000000000000000000 &
+0Y
+0"M
+x"J
+bxxxxxxxxxxxxxxxxxxxxxxxxx h
+x"L
+0"I
+0#
+b01 r
+1"3
+1"+
+xj
+b01 8
+bxxxxxxxxxxxxxxxxxxxxxxx ^
+xy
+bxxxxxxxxxxxxxxxxxxxxxxxxx X
+0K
+b01011100110110001011000 "5
+0.
+b0000000000000000000000000000000 z
+b00000000000000000000000000000000 ")
+b01 "O
+x">
+x`
+bxxxxxxxx "6
+xC
+b011 ;
+b00000000000000000000000000000000 @
+x"U
+x"8
+x"#
+bxxxx u
+0"R
+0,
+bxxx "/
+1":
+x\
+$end
+#1
+bxxxxxxxxxx *
+b0000000000000000000000 A
+bxxxxxxxxxx "-
+b00000000000000000000000000000000 m
+b00000001001110111001001011001010 U
+x$
+b111000 ~
+x%
+bxxxxx P
+b00000001001110111001001011001010 "@
+0":
+0"K
+0/
+b10000000000000000000000000000000 ")
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ";
+bxxxxxxxx "6
+bxxx ",
+x"N
+b00 9
+bxxxxxxxxxxxxxxxxxxxxxxx 2
+x"U
+bxxxxxxxxxxxxxxxxxxxxxxxxx X
+b00000000000000000000000000000000 (
+b0000001001110111001001011001010 ""
+1{
+b100111000 "'
+b0000000100111011100100101100101000000000000000000000000 S
+bxxxx u
+bxxxxxxxx H
+b000000010011101110010010110010100 f
+0B
+b0000000100111011100100101100101000 g
+b00 r
+bxx ?
+x"4
+bxxxxxxxxxxxxxxxxxxxxxxx n
+b0100111000 W
+bxxxxxxxxxxxxxxxxxxxxxxx ^
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxx !
+1=
+bxxxxxxxxx <
+bxxxxxxxxxxxxxxxxxxxxxxxxx "B
+bxxxxxxxxxxxxxxxxxxxxxxxxx h
+b00 8
+bxxxxxxxxxxxxxxxxxxxxxxx R
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx s
+x3
+0'
+b10000000000000000000000000000000 [
+bxxxxxxxxxxxxxxxxxxxxxxxx d
+1V
+bxxxxx "$
+x">
+b100 ;
+bxxxxxxxxxxxxxxxxxxxxxxx G
+#2
+0{
+#3
+b10000000000000000000000000000000 (
+1{
+b10000000000000000000000000000000 m
+#4
+0{
+#5
+1{
+#6
+0{
+#7
+1{
+#8
+0{
+#9
+1{
+#10
+b001 "/
+b00000000010001100001101010011110 "?
+0"E
+0{
+#11
+b00000000000000000000000000000000 [
+b00011000011010100111100 n
+b00000000000000000000000000000000 U
+b00011000011010100111100 2
+1B
+0"4
+b0100011000011010100111100 h
+b00011000011010100111100 "5
+b01 ?
+b00000100011000011010100111100 !
+b0010000001 *
+b0000000000000000000000000000000000011000011010100111100 S
+b000001 ~
+b010 ;
+b000011000011010100111100 d
+b00000000 "6
+0%
+b010 ",
+b00011000011010100111100 ^
+b00011000011010100111100 G
+1{
+b010000001 <
+b0100011000011010100111100 "B
+0p
+b0011000011010100111100 A
+b001000000100011000011010100111100 s
+b10000001 H
+b010000001 "'
+0"P
+1'
+b0010000001 W
+b00000000000000000000000000000000 "T
+b10001100001101010011110 R
+b0100011000011010100111100 X
+b00000000000000000000000000000000 ")
+b01 r
+1#
+0"G
+b00000000000000000000000000000000 "@
+b0010 u
+1"(
+b000000000000000000000000000000000 f
+b00000000010001100001101010011110 ";
+b01 9
+1":
+0q
+b00000 P
+b00000 4
+1"K
+03
+b0010000001 "-
+b0000000000000000000000000000000001 g
+1K
+06
+#12
+0{
+#13
+b00000000000000000000000000000000 (
+1{
+b00000000000000000000000000000000 m
+#14
+0{
+#15
+1{
+#16
+0{
+#17
+1{
+#18
+0{
+#19
+1{
+#20
+0{
+#21
+1{
+#22
+0{
+#23
+1{
+#24
+0{
+#25
+1{
+#26
+0{
+#27
+1{
+#28
+0{
+#29
+1{
+#30
+0{
+#31
+1{
+#32
+0{
+#33
+1{
+#34
+0{
+#35
+1{
+#36
+0{
+#37
+1{
+#38
+0{
+#39
+1{
+#40
+0{
+#41
+1{
+#42
+0{
+#43
+1{
+#44
+0{
+#45
+1{
+#46
+0{
+#47
+1{
+#48
+0{
+#49
+1{
+#50
+b00000000010001100110101011001010 "?
+0{
+#51
+b0000000000000000000000000000000000011001101010110010100 S
+b00000000010001100110101011001010 ";
+b00000100011001101010110010100 !
+b00011001101010110010100 "5
+b0100011001101010110010100 h
+b00011001101010110010100 2
+b00011001101010110010100 G
+b0011001101010110010100 A
+b00011001101010110010100 n
+1{
+b0100011001101010110010100 X
+b0100011001101010110010100 "B
+b001000000100011001101010110010100 s
+b00011001101010110010100 ^
+b10001100110101011001010 R
+b000011001101010110010100 d
+#52
+0{
+#53
+1{
+#54
+0{
+#55
+1{
+#56
+0{
+#57
+1{
+#58
+0{
+#59
+1{
+#60
+0{
+#61
+1{
+#62
+0{
+#63
+1{
+#64
+0{
+#65
+1{
+#66
+0{
+#67
+1{
+#68
+0{
+#69
+1{
+#70
+0{
+#71
+1{
+#72
+0{
+#73
+1{
+#74
+0{
+#75
+1{
+#76
+0{
+#77
+1{
+#78
+0{
+#79
+1{
+#80
+0{
+#81
+1{
+#82
+0{
+#83
+1{
+#84
+0{
+#85
+1{
+#86
+0{
+#87
+1{
+#88
+0{
+#89
+1{
+#90
+b00000000010000001010110101101000 "?
+0{
+#91
+b0100000010101101011010000 X
+b0000000000000000000000000000000000000010101101011010000 S
+b00000010101101011010000 n
+b10000001010110101101000 R
+b00000010101101011010000 ^
+b001000000100000010101101011010000 s
+b000000010101101011010000 d
+b0100000010101101011010000 "B
+b00000010101101011010000 "5
+1{
+b00000010101101011010000 G
+b0100000010101101011010000 h
+b00000100000010101101011010000 !
+b00000010101101011010000 2
+b0000010101101011010000 A
+b00000000010000001010110101101000 ";
+#92
+0{
+#93
+1{
+#94
+0{
+#95
+1{
+#96
+0{
+#97
+1{
+#98
+0{
+#99
+1{
+#100
+0{
+#101
+1{
+#102
+0{
+#103
+1{
+#104
+0{
+#105
+1{
+#106
+0{
+#107
+1{
+#108
+0{
+#109
+1{
+#110
+0{
+#111
+1{
+#112
+0{
+#113
+1{
+#114
+0{
+#115
+1{
+#116
+0{
+#117
+1{
+#118
+0{
+#119
+1{
+#120
+0{
+#121
+1{
+#122
+0{
+#123
+1{
+#124
+0{
+#125
+1{
+#126
+0{
+#127
+1{
+#128
+0{
+#129
+1{
+#130
+0{
+b00000000010111011100011111100100 "?
+#131
+b01110111000111111001000 2
+b01110111000111111001000 "5
+b01110111000111111001000 G
+b0000000000000000000000000000000001110111000111111001000 S
+b1110111000111111001000 A
+b01110111000111111001000 ^
+b01110111000111111001000 n
+b001110111000111111001000 d
+b10111011100011111100100 R
+1{
+b00000000010111011100011111100100 ";
+b00000101110111000111111001000 !
+b0101110111000111111001000 X
+b0101110111000111111001000 "B
+b0101110111000111111001000 h
+b001000000101110111000111111001000 s
+#132
+0{
+#133
+1{
+#134
+0{
+#135
+1{
+#136
+0{
+#137
+1{
+#138
+0{
+#139
+1{
+#140
+0{
+#141
+1{
+#142
+0{
+#143
+1{
+#144
+0{
+#145
+1{
+#146
+0{
+#147
+1{
+#148
+0{
+#149
+1{
+#150
+0{
+#151
+1{
+#152
+0{
+#153
+1{
+#154
+0{
+#155
+1{
+#156
+0{
+#157
+1{
+#158
+0{
+#159
+1{
+#160
+0{
+#161
+1{
+#162
+0{
+#163
+1{
+#164
+0{
+#165
+1{
+#166
+0{
+#167
+1{
+#168
+0{
+#169
+1{
+#170
+b00000000100010111101111010010001 "?
+0{
+#171
+b00001000010111101111010010001 !
+b0100010111101111010010001 "B
+0K
+b000010111101111010010001 d
+b0100010111101111010010001 X
+b0010111101111010010001 A
+b000010 ~
+b010000010 <
+b00000001 "6
+b00010111101111010010001 R
+b10000010 H
+b00010111101111010010001 n
+b0000000000000000000000000000000000010111101111010010001 S
+b0010000010 "-
+b00010111101111010010001 G
+b0010000010 *
+b0010000010 W
+b010000010 "'
+1{
+b00010111101111010010001 ^
+b00000000100010111101111010010001 ";
+b001000001000010111101111010010001 s
+b00010111101111010010001 2
+b0100010111101111010010001 h
+#172
+0{
+#173
+1{
+#174
+0{
+#175
+1{
+#176
+0{
+#177
+1{
+#178
+0{
+#179
+1{
+#180
+0{
+#181
+1{
+#182
+0{
+#183
+1{
+#184
+0{
+#185
+1{
+#186
+0{
+#187
+1{
+#188
+0{
+#189
+1{
+#190
+0{
+#191
+1{
+#192
+0{
+#193
+1{
+#194
+0{
+#195
+1{
+#196
+0{
+#197
+1{
+#198
+0{
+#199
+1{
+#200
+0{
+#201
+1{
+#202
+0{
+#203
+1{
+#204
+0{
+#205
+1{
+#206
+0{
+#207
+1{
+#208
+0{
+#209
+1{
+#210
+b00000000010001001100000011101001 "?
+0{
+#211
+b0010000001 W
+b00010011000000111010010 n
+b0100010011000000111010010 h
+b0000000000000000000000000000000000010011000000111010010 S
+b00000100010011000000111010010 !
+b00010011000000111010010 ^
+b10001001100000011101001 R
+b0010000001 *
+b000001 ~
+b0100010011000000111010010 "B
+b001000000100010011000000111010010 s
+b00000000 "6
+b00010011000000111010010 "5
+b00010011000000111010010 2
+b0010011000000111010010 A
+1{
+b0100010011000000111010010 X
+b010000001 <
+b000010011000000111010010 d
+b00000000010001001100000011101001 ";
+b00010011000000111010010 G
+b10000001 H
+b0010000001 "-
+b010000001 "'
+1K
+#212
+0{
+#213
+1{
+#214
+0{
+#215
+1{
+#216
+0{
+#217
+1{
+#218
+0{
+#219
+1{
+#220
+0{
+#221
+1{
+#222
+0{
+#223
+1{
+#224
+0{
+#225
+1{
+#226
+0{
+#227
+1{
+#228
+0{
+#229
+1{
+#230
+0{
+#231
+1{
+#232
+0{
+#233
+1{
+#234
+0{
+#235
+1{
+#236
+0{
+#237
+1{
+#238
+0{
+#239
+1{
+#240
+0{
+#241
+1{
+#242
+0{
+#243
+1{
+#244
+0{
+#245
+1{
+#246
+0{
+#247
+1{
+#248
+0{
+#249
+1{
+#250
+b110 "/
+b01001101100111000011111011001000 "?
+0{
+#251
+0K
+b00011100 H
+b10 ?
+b000100111000011111011001000000000 f
+b0000000000000000000000 A
+b0100111000011111011001000 h
+0":
+b00010011100001111101100100000000 ")
+b100011100 <
+b00010011100001111101100100000000 &
+0"K
+b010011100001111101100100000000 O
+b10011011 "6
+b00111000011111011001000 n
+b00010011100001111101100100000000 U
+b00 9
+b0100011100 *
+b100011100 "'
+1%
+b00010011100001111101100100000000 "@
+1{
+b0100 u
+b00111000011111011001000 G
+b00010011100001111101100100000000 "=
+b100111000011111011001000 d
+b0100011100 W
+b00111000011111011001000 R
+0B
+b0100111000011111011001000 "B
+b00111000011111011001000 ^
+b00 r
+b011100 ~
+b0100011100 "-
+b0100111000011111011001000 X
+b11100 P
+b010001110000111000011111011001000 s
+b11100 "$
+0'
+01
+b01110000111000011111011001000 !
+b00111000011111011001000 2
+0"!
+b100 ",
+b100 ;
+b00010011100001111101100100000000 [
+0"(
+b0001001110000111110110010000000000 g
+b0001001110000111110110010000000000000000000000000000000 S
+b00010011100001111101100100000000 "T
+b01001101100111000011111011001000 ";
+#252
+0{
+#253
+1{
+b00010011100001111101100100000000 m
+b00010011100001111101100100000000 (
+#254
+0{
+#255
+1{
+#256
+0{
+#257
+1{
+#258
+0{
+#259
+1{
+#260
+b010 "/
+0{
+#261
+1{
+#262
+0{
+#263
+1{
+#264
+0{
+#265
+1{
+#266
+0{
+#267
+1{
+#268
+0{
+#269
+1{
+#270
+b011 "/
+0{
+#271
+1{
+#272
+0{
+#273
+1{
+#274
+0{
+#275
+1{
+#276
+0{
+#277
+1{
+#278
+0{
+#279
+1{
+#280
+b001 "/
+0{
+#281
+1{
+#282
+0{
+#283
+1{
+#284
+0{
+#285
+1{
+#286
+0{
+#287
+1{
+#288
+0{
+#289
+1{
+#290
+b000 "/
+0{
+#291
+1{
+#292
+0{
+#293
+1{
+#294
+0{
+#295
+1{
+#296
+0{
+#297
+1{
+#298
+0{
+#299
+1{
+#300
+b100 "/
+0{
+#301
+1{
+#302
+0{
+#303
+1{
+#304
+0{
+#305
+1{
+#306
+0{
+#307
+1{
+#308
+0{
+#309
+1{

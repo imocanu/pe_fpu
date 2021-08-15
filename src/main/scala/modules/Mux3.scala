@@ -15,7 +15,7 @@ class Mux3 extends Module {
     val in1        = Input(Bits(Config.forIN.W))
     val in2        = Input(Bits(Config.forIN.W))
     val sel        = Input(Bits(2.W))
-    val outIEEE    = Output(Bits(Config.forIN.W))
+    val out        = Output(Bits(Config.forIN.W))
   })
 
   var out_W = WireDefault(0.U(32.W))
@@ -31,7 +31,7 @@ class Mux3 extends Module {
     is("b11".U) { out_W := 0.U(32.W)}
   }
 
-  io.outIEEE := out_W
+  io.out := out_W
 }
 
 object Mux3 extends App {

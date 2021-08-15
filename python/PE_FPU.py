@@ -26,10 +26,11 @@ class MUX:
         elif(self.sel == 3):
             self.out = self.in3
         else:
+            self.sel = 1
             self.out = self.in1
         
         if DEBUG:
-            print("[ mux", self.id, "]", self.in1, " ", self.in2, " ", self.in3)
+            print("[ mux", self.id, "]", self.in1, ":", self.in2, ":", self.in3)
             print("         [sel]: ", self.sel , "-> out :", self.out)
 
     def get_OUT(self):
@@ -39,24 +40,32 @@ class MUX:
 class MULT:
     def __init__(self):
         self.id = 0
-        self.in1  = ""
-        self.in2  = ""
-        self.round = ""
+        self.in1  = 0
+        self.in2  = 0
+        self.ba1 = 0
+        self.ba2 = 0
+        self.round = 0
         self.useINT = False
-        self.out = ""
+        self.out = 0
     
     def set_INPUTS(self, in1, in2):
         self.in1 = in1
         self.in2 = in2
+        self.ba1 = BitArray(bin=self.in1).int
+        self.ba2 = BitArray(bin=self.in2).int
         self.calc()
 
     def calc(self):
         if(self.useINT):
-            rez32 = np.multiply(self.in1 , self.in2, dtype=np.int32)
+            # rez32 = np.multiply(self.in1 , self.in2, dtype=np.int32)
+            # testBIN = core.single(np.binary_repr(rez32, width=32))
+            # ssw = str(testBIN)
+            # ssw = ssw.replace(" ", "") 
+            # self.out = ssw
+            rez32 = np.multiply(self.ba1 , self.ba2, dtype=np.int32)
             testBIN = core.single(np.binary_repr(rez32, width=32))
-            ssw = str(testBIN)
-            ssw = ssw.replace(" ", "") 
-            self.out = ssw
+            self.out = str(testBIN)
+            self.out = self.out.replace(" ", "") 
         else:
             rez32 = core.single(self.in1) * core.single(self.in2)
             self.out = str(rez32)
@@ -74,24 +83,33 @@ class ADDSUB:
         self.id = 0
         self.in1  = 0
         self.in2  = 0
-        self.round = ""
+        self.ba1 = 0
+        self.ba2 = 0
+        self.round = 0
         self.op = False
         self.useINT = False
-        self.out = 0.0
+        self.out = 0
 
     def set_INPUTS(self, in1, in2):
         self.in1  = in1
         self.in2  = in2
+        self.ba1 = BitArray(bin=self.in1).int
+        self.ba2 = BitArray(bin=self.in2).int
         self.calc()
 
     def calc(self):
         if(self.op):
             if(self.useINT):
-                rez32 = np.sum([self.in1 , self.in2], dtype=np.int32)
+                # rez32 = np.sum([self.in1 , self.in2], dtype=np.int32)
+                # testBIN = core.single(np.binary_repr(rez32, width=32))
+                # ssw = str(testBIN)
+                # ssw = ssw.replace(" ", "")
+                # self.out = ssw
+                rez32 = np.subtract(self.ba1 , self.ba2, dtype=np.int32)
                 testBIN = core.single(np.binary_repr(rez32, width=32))
-                ssw = str(testBIN)
-                ssw = ssw.replace(" ", "")
-                self.out = ssw
+                self.out = str(testBIN)
+                self.out = self.out.replace(" ", "") 
+
             else: 
                 rez32 = core.single(self.in1) - core.single(self.in2)
                 self.out = str(rez32)
@@ -101,11 +119,15 @@ class ADDSUB:
                 print("[ SUB", self.id, "]", self.in1, "-", self.in2, "=", self.out)
         else:
             if(self.useINT):
-                    rez32 = np.subtract(in1 , in2, dtype=np.int32)
+                    # rez32 = np.subtract(in1 , in2, dtype=np.int32)
+                    # testBIN = core.single(np.binary_repr(rez32, width=32))
+                    # ssw = str(testBIN)
+                    # ssw = ssw.replace(" ", "") 
+                    # self.out = ssw
+                    rez32 = np.sum([self.ba1 , self.ba2], dtype=np.int32)
                     testBIN = core.single(np.binary_repr(rez32, width=32))
-                    ssw = str(testBIN)
-                    ssw = ssw.replace(" ", "") 
-                    self.out = ssw
+                    self.out = str(testBIN)
+                    self.out = self.out.replace(" ", "") 
             else:
                 rez32 = core.single(self.in1) + core.single(self.in2)
                 self.out = str(rez32)
@@ -162,6 +184,7 @@ class PE_FPU:
         self.sim_Mem_OUT = "00000000000000000000000000000000"
 
         # FLAGS : INT or FP32
+        self.allINT = False
         self.MULT_1.useINT = False
         self.MULT_2.useINT = False  
         self.ADDSUB_1.useINT = False 
@@ -230,8 +253,16 @@ class PE_FPU:
         self.refresh()
     
     def enableINT(self):
+        self.allINT = True
         self.MULT_1.useINT = True
         self.MULT_2.useINT = True  
         self.ADDSUB_1.useINT = True 
         self.ADDSUB_2.useINT = True 
+    
+    def disableINT(self):
+        self.allINT = False
+        self.MULT_1.useINT = False
+        self.MULT_2.useINT = False  
+        self.ADDSUB_1.useINT = False 
+        self.ADDSUB_2.useINT = False 
 

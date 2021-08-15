@@ -67,6 +67,9 @@ testDistance:
 testDot:
 	sbt "testOnly top.PE_FPU_dot_test"
 
+test0:
+	sbt "testOnly top.PE_FP32_test0"
+
 show-config:
 	$(VERILATOR) -V
 

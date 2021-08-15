@@ -16,15 +16,21 @@ class Mult extends Module {
     val in1      = Input(Bits(Config.forIN.W))
     val in2      = Input(Bits(Config.forIN.W))
     val useINT   = Input(Bool())
-    val outIEEE  = Output(UInt(Config.forOUT.W))
+    val round    = Input(UInt(3.W))
+    val out      = Output(UInt(Config.forOUT.W))
   })
+
+  // INT flag
+  val useINT_sel  = WireDefault(io.useINT)
+  // Rounding mode 
+  val round_mode  = WireDefault(io.round)
 
   // fn -> Reg_1 -> Reg_2 -> recFN
   val fN_in1  = RegNext(io.in1)
   val fN_in2  = RegNext(io.in2)
 
   val mulRecFN = Module(new MulRecFN(Config.EXP, Config.SIG))
-  mulRecFN.io.roundingMode   := Config.roundingMode
+  mulRecFN.io.roundingMode   := round_mode
   mulRecFN.io.detectTininess := Config.detectTininess
 
   when(io.useINT){
@@ -32,14 +38,14 @@ class Mult extends Module {
     val iNToRecFN_1 = Module(new INToRecFN(Config.WIDTH, Config.EXP, Config.SIG))
     iNToRecFN_1.io.signedIn := true.B
     iNToRecFN_1.io.in := fN_in1
-    iNToRecFN_1.io.roundingMode   := Config.roundingMode
+    iNToRecFN_1.io.roundingMode   := round_mode
     iNToRecFN_1.io.detectTininess := Config.detectTininess
     val iNToRecFN_1_out  = RegNext(iNToRecFN_1.io.out)
 
     val iNToRecFN_2 = Module(new INToRecFN(Config.WIDTH, Config.EXP, Config.SIG))
     iNToRecFN_2.io.signedIn := true.B
     iNToRecFN_2.io.in := fN_in2
-    iNToRecFN_2.io.roundingMode   := Config.roundingMode
+    iNToRecFN_2.io.roundingMode   := round_mode
     iNToRecFN_2.io.detectTininess := Config.detectTininess
     val iNToRecFN_2_out  = RegNext(iNToRecFN_2.io.out)
 
@@ -56,10 +62,27 @@ class Mult extends Module {
     println("## INPUT FP 32 ##")
   }
 
-  val outIEEE_out   = RegNext(Utils.ieee(mulRecFN.io.out))
-  io.outIEEE := outIEEE_out
-  //printf("=> %b",io.out.asUInt())
-  //printf("\n[DEBUG] Mult in1 : %b", outIEEE_out)
+  val mulRecFN_out  = RegNext(mulRecFN.io.out)
+
+  when(useINT_sel){
+
+    val recFNToIN = Module(new RecFNToIN(Config.EXP, Config.SIG, Config.WIDTH))
+    recFNToIN.io.in           := mulRecFN_out
+    recFNToIN.io.roundingMode := round_mode
+    recFNToIN.io.signedOut    := true.B
+    val recFNToIN_out = RegNext(recFNToIN.io.out)
+
+    io.out := recFNToIN_out
+    println("## OUTPUT INTEGER 32 ##")
+
+  } .otherwise {
+
+    val out_IEEE_FP32 = RegNext(Utils.ieee(mulRecFN_out))
+    io.out := out_IEEE_FP32
+    println("## OUTPUT FP 32 ##")
+
+  }
+
 }
 
 object Mult extends App {

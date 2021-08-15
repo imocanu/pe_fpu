@@ -24,17 +24,24 @@ object TestUtils {
     val rootDir = "python/gen/"
     val INPUT_1 = rootDir+"fpu32_generated_1.txt"
     val INPUT_2 = rootDir+"fpu32_generated_2.txt"
+    val INPUT_3 = rootDir+"fpu32_generated_3.txt"
+    val INPUT_4 = rootDir+"fpu32_generated_4.txt"
     val ADD_RESULT = rootDir+"fpu32_ADD_result.txt"
     val SUB_RESULT = rootDir+"fpu32_SUB_result.txt"
     val MUL_RESULT = rootDir+"fpu32_MUL_result.txt"
 
     val INT_INPUT_1 = rootDir+"int32_generated_1.txt"
     val INT_INPUT_2 = rootDir+"int32_generated_2.txt"
+    val INT_INPUT_3 = rootDir+"int32_generated_3.txt"
+    val INT_INPUT_4 = rootDir+"int32_generated_4.txt"
     val INT_ADD_RESULT = rootDir+"int32_ADD_result.txt"
     val INT_SUB_RESULT = rootDir+"int32_SUB_result.txt"
     val INT_MUL_RESULT = rootDir+"int32_MUL_result.txt"
 
     // PE use cases
+    val PE_FP32_TEST_0_RESULT  = rootDir+"pe_out_test0_FP32_result.txt"
+    val PE_INT_TEST_0_RESULT  = rootDir+"pe_out_test0_INT_result.txt"
+
     val PE_FP32_TEST_3_RESULT  = rootDir+"pe_out_test3_FP32_result.txt"
     val PE_INT_TEST_3_RESULT   = rootDir+"pe_out_test3_INT_result.txt"
     val PE_FP32_TEST_4_RESULT  = rootDir+"pe_out_test4_FP32_result.txt"
