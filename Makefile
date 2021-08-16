@@ -61,14 +61,20 @@ testrecFN2INT:
 testAddSubFull:
 	sbt "testOnly modules.AddSub_test_full"
 
+test0:
+	sbt "testOnly top.PE_FP32_test0"
+
 testEuclidean:
 	sbt "testOnly top.PE_FPU_euclidean_test"
 
+testManhattan:
+	sbt "testOnly top.PE_FPU_manhattan_test"
+
+testVectorSum:
+	sbt "testOnly top.PE_FPU_vectorsum_test"
+
 testDot:
 	sbt "testOnly top.PE_FPU_dot_test"
-
-test0:
-	sbt "testOnly top.PE_FP32_test0"
 
 show-config:
 	$(VERILATOR) -V

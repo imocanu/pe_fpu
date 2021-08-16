@@ -1,15 +1,13 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top.PE_FPU_dot_test, org.scalatest.tools.Framework$$anon$1@3787bc87, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mPE_FPU_dot_test:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_FP32_test5_dot[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_INT_test5_dot[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top.PE_FPU_manhattan_test, org.scalatest.tools.Framework$$anon$1@2263816, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mPE_FPU_manhattan_test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_FP32_test6_manhattan[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  false was not true (PE_FPU_dot_test.scala:173)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 10 seconds, 903 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  false was not true (PE_FPU_manhattan_test.scala:108)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 9 seconds, 373 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 1, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 1, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
 [0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
-[0m[[0m[31merror[0m] [0m[0m	top.PE_FPU_dot_test[0m
+[0m[[0m[31merror[0m] [0m[0m	top.PE_FPU_manhattan_test[0m
 [0m[[0m[31merror[0m] [0m[0m(Test / [31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m
