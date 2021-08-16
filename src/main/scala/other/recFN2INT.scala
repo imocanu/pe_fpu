@@ -16,16 +16,16 @@ class recFN2INT extends Module {
   val io = IO(new Bundle {
     val signed   = Input(Bool())
     val round    = Input(UInt(3.W))
-    val in       = Input(Bits(Config.forIN.W))
-    val out      = Output(UInt(Config.forOUT.W))
+    val in       = Input(Bits(16.W))
+    val out      = Output(UInt(17.W))
   })
 
     val in_FN = RegNext(io.in)
     val round_mode  = WireDefault(io.round)
   
-    val recFNToIN = Module(new RecFNToIN(Config.EXP, Config.SIG, Config.WIDTH))
-    recFNToIN.io.in           := recFNFromFN(Config.EXP, Config.SIG, in_FN)
-    recFNToIN.io.roundingMode := Config.roundingMode
+    val recFNToIN = Module(new RecFNToIN(5, 11, 16))
+    recFNToIN.io.in           := recFNFromFN(5, 11, in_FN)
+    recFNToIN.io.roundingMode := round_mode
     recFNToIN.io.signedOut    := io.signed
 
     val recFNToIN_out = RegNext(recFNToIN.io.out)

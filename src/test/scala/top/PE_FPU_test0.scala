@@ -149,17 +149,18 @@ class PE_FP32_test0 extends ChiselFlatSpec with Matchers {
  val vcdName = "PE_FP32_test0"
  val targetDir = "diagram/" + vcdName
 
-  // "run PE_FP32_test0_FP32" should "pass" in {
-  // chisel3.iotesters.Driver.execute(Array(
-  //   "--fint-write-vcd",
-  //   "--backend-name", "firrtl",
-  //   "--target-dir", targetDir+"_FP32",
-  //   "--top-name" , vcdName,
-  //   "--output-file", vcdName),
-  //   () => new PE_FPU ) { c =>
-  //   new PE_FP32_test0_FP32 (c)
-  //   } should be (true)
-  // }
+ 
+  "run PE_FP32_test0_FP32" should "pass" in {
+  chisel3.iotesters.Driver.execute(Array(
+    "--fint-write-vcd",
+    "--backend-name", "firrtl",
+    "--target-dir", targetDir+"_FP32",
+    "--top-name" , vcdName,
+    "--output-file", vcdName),
+    () => new PE_FPU ) { c =>
+    new PE_FP32_test0_FP32 (c)
+    } should be (true)
+  }
 
 
   "run PE_test0_INT" should "pass" in {

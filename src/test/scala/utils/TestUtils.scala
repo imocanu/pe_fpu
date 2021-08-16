@@ -44,8 +44,18 @@ object TestUtils {
 
     val PE_FP32_TEST_3_RESULT  = rootDir+"pe_out_test3_FP32_result.txt"
     val PE_INT_TEST_3_RESULT   = rootDir+"pe_out_test3_INT_result.txt"
+
     val PE_FP32_TEST_4_RESULT  = rootDir+"pe_out_test4_FP32_result.txt"
-    val PE_POW_TEST_4_RESULT   = rootDir+"pe_out_test4_POW_result.txt"
+    val PE_INT_TEST_4_RESULT   = rootDir+"pe_out_test4_INT_result.txt"
+
+    val PE_FP32_TEST_5_RESULT  = rootDir+"pe_out_test5_DOT_FP32_result.txt"
+    val PE_INT_TEST_5_RESULT   = rootDir+"pe_out_test5_DOT_INT_result.txt"
+
+    val PE_FP32_TEST_6_RESULT  = rootDir+"pe_out_test6_MAN_FP32_result.txt"
+    val PE_INT_TEST_6_RESULT   = rootDir+"pe_out_test6_MAN_INT_result.txt"
+
+    val PE_FP32_TEST_7_RESULT  = rootDir+"pe_out_test7_VEC_FP32_result.txt"
+    val PE_INT_TEST_7_RESULT   = rootDir+"pe_out_test7_INT_FP32_result.txt"
 
     def getPath(){
         println("=> ROOT dir <==================")

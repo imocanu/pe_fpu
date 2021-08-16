@@ -29,27 +29,28 @@ class recFN2INT_test_1(dut: recFN2INT) extends PeekPokeTester(dut) {
   val a: immutable.Seq[Int] = (0 to 5).map(_ => r.nextInt(10000000))
   val y = a.map( x => {
     val bin = x.toBinaryString
-    val zero = 32 - bin.length
+    val zero = 8 - bin.length
     List.fill(zero)(0).mkString("") ++ bin
   })
   //println(scala.util.Random.shuffle(y))
-  for (generatedBIN <- y) 
-  {
-      println("Input "+generatedBIN+" = "+Integer.parseInt(generatedBIN, 2).toString())
-      val testBin = "b"+generatedBIN
-      poke(dut.io.in, testBin.U)
-      step(20)
-      val rez = Integer.parseInt(generatedBIN, 2)
-      expect(dut.io.out, rez.S)
-  }
+  // for (generatedBIN <- y) 
+  // {
+  //     println("Input "+generatedBIN+" = "+Integer.parseInt(generatedBIN, 2).toString())
+  //     val testBin = "b"+generatedBIN
+  //     poke(dut.io.in, testBin.U)
+  //     step(20)
+  //     val rez = Integer.parseInt(generatedBIN, 2)
+  //     expect(dut.io.out, rez.S)
+  // }
 
   println(" ----->  [NOT generated] : ") 
 
+  val tt = "b11111111111111111100101011010110" 
   poke(dut.io.round, TestUtils.round_odd)
-  poke(dut.io.in, "b01001101100111000011111011001000".U)
-  step(5)
-  val qq =  "h4d9c3ec8".U 
-  expect(dut.io.out, Integer.parseInt("4d9c3ec8", 16))
+  poke(dut.io.in, "h447a0000".U(32.W))
+  step(20)
+  expect(dut.io.out, -13610.S)
+  
   poke(dut.io.round, TestUtils.round_min)
   poke(dut.io.in, "b01001101100111000011111011001000".U)
   step(5)  

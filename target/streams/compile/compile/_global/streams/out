@@ -1,22 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/top/PE_FPU.scala:111:25: value out is not a member of chisel3.Bundle{val in0: chisel3.UInt; val in1: chisel3.UInt; val in2: chisel3.UInt; val sel: chisel3.UInt; val outIEEE: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m  mux_1_out := mux_1.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/top/PE_FPU.scala:117:25: value out is not a member of chisel3.Bundle{val in0: chisel3.UInt; val in1: chisel3.UInt; val in2: chisel3.UInt; val sel: chisel3.UInt; val outIEEE: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m  mux_2_out := mux_2.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/top/PE_FPU.scala:124:25: value out is not a member of chisel3.Bundle{val in0: chisel3.UInt; val in1: chisel3.UInt; val in2: chisel3.UInt; val sel: chisel3.UInt; val outIEEE: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m  mux_3_out := mux_3.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/top/PE_FPU.scala:130:25: value out is not a member of chisel3.Bundle{val in0: chisel3.UInt; val in1: chisel3.UInt; val in2: chisel3.UInt; val sel: chisel3.UInt; val outIEEE: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m  mux_4_out := mux_4.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/top/PE_FPU.scala:155:25: value out is not a member of chisel3.Bundle{val in0: chisel3.UInt; val in1: chisel3.UInt; val in2: chisel3.UInt; val sel: chisel3.UInt; val outIEEE: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m  mux_5_out := mux_5.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/top/PE_FPU.scala:162:25: value out is not a member of chisel3.Bundle{val in0: chisel3.UInt; val in1: chisel3.UInt; val in2: chisel3.UInt; val sel: chisel3.UInt; val outIEEE: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m  mux_6_out := mux_6.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/top/PE_FPU.scala:182:25: value out is not a member of chisel3.Bundle{val in0: chisel3.UInt; val in1: chisel3.UInt; val in2: chisel3.UInt; val sel: chisel3.UInt; val outIEEE: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m  mux_7_out := mux_7.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m7 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/modules/Mult_16.scala:73:42: value roundingMode is not a member of chisel3.Bundle{val in1: chisel3.UInt; val in2: chisel3.UInt; val useINT: chisel3.Bool; val round: chisel3.UInt; val out: chisel3.UInt}[0m
+[0m[[0m[31merror[0m] [0m[0m    recFNToRecFN.io.roundingMode   := io.roundingMode[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/modules/Mult_16.scala:74:42: value detectTininess is not a member of chisel3.Bundle{val in1: chisel3.UInt; val in2: chisel3.UInt; val useINT: chisel3.Bool; val round: chisel3.UInt; val out: chisel3.UInt}[0m
+[0m[[0m[31merror[0m] [0m[0m    recFNToRecFN.io.detectTininess := io.detectTininess[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

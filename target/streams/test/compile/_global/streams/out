@@ -1,4 +1,11 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/other/recFN2INT_test.scala:52:35: no arguments allowed for nullary macro method asSInt: ()chisel3.SInt[0m
-[0m[[0m[31merror[0m] [0m[0m  expect(dut.io.out, qq.asSInt(32.W))[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/modules/Mult_test.scala:303:26: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : modules.Mult[0m
+[0m[[0m[31merror[0m] [0m[0m required: modules.Mult_16[0m
+[0m[[0m[31merror[0m] [0m[0m      new MUL_round_all (c, TestUtils.round_near_maxMag_UINT)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/modules/Mult_test.scala:303:7: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : modules.MUL_round_all[0m
+[0m[[0m[31merror[0m] [0m[0m required: chisel3.iotesters.PeekPokeTester[modules.Mult][0m
+[0m[[0m[31merror[0m] [0m[0m      new MUL_round_all (c, TestUtils.round_near_maxMag_UINT)[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

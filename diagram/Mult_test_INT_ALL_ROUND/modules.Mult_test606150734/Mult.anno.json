@@ -1,7 +1,7 @@
 [
   {
     "class":"firrtl.stage.FirrtlFileAnnotation",
-    "file":"test_run_dir/modules.Mult_test486073687/Mult.lo.fir"
+    "file":"diagram/Mult_test_INT_ALL_ROUND/modules.Mult_test606150734/Mult.lo.fir"
   },
   {
     "class":"firrtl.transforms.CombinationalPath",
@@ -46,6 +46,6 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxTargetDirAnno",
-    "targetDir":"test_run_dir/modules.Mult_test486073687"
+    "targetDir":"diagram/Mult_test_INT_ALL_ROUND/modules.Mult_test606150734"
   }
 ]

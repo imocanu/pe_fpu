@@ -61,8 +61,8 @@ testrecFN2INT:
 testAddSubFull:
 	sbt "testOnly modules.AddSub_test_full"
 
-testDistance:
-	sbt "testOnly top.PE_FPU_distance_test"
+testEuclidean:
+	sbt "testOnly top.PE_FPU_euclidean_test"
 
 testDot:
 	sbt "testOnly top.PE_FPU_dot_test"

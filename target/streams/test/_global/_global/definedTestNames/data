@@ -1,1 +1,1 @@
-["modules.AddSub_test","tester.INToRecFNSpec","modules.Mult_test","top.PE_FP32_test0","modules.AddSub_test_FULL","top.PE_FPU_test","other.recFN2INT_test","modules.Mux3_test","top.PE_FPU_distance_test","top.PE_FPU_dot_test"]
+["modules.AddSub_test","tester.INToRecFNSpec","modules.Mult_test","top.PE_FP32_test0","modules.AddSub_test_FULL","top.PE_FPU_euclidean_test","top.PE_FPU_test","other.recFN2INT_test","modules.Mux3_test","top.PE_FPU_dot_test"]
