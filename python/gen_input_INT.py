@@ -62,6 +62,7 @@ print(random_INT_1_bin)
 print(random_INT_2_bin)
 print(random_INT_1)
 print(random_INT_2)
+random_TEST = []
 for in1, in2 in zip(random_INT_1_bin, random_INT_2_bin):
 
     ba1 = BitArray(bin=in1).int
@@ -94,14 +95,34 @@ for in1, in2 in zip(random_INT_1_bin, random_INT_2_bin):
 
     ba1 = BitArray(bin=in1).int
     ba2 = BitArray(bin=in2).int
+    
+    convBA1 = str(core.single(float(ba1)))
+    print(float(ba1))
+    convBA1 = convBA1.replace(" ", "")
+    convBA2 = str(core.single(float(ba1)))
+    convBA2 = convBA2.replace(" ", "")
+    finalREZ = core.single(convBA1) * core.single(convBA2)
+    testSSW = str(finalREZ)
+    testSSW = testSSW.replace(" ", "")
+
     rez32 = np.multiply(ba1 , ba2, dtype=np.int32)
     testBIN = singleA(np.binary_repr(rez32, width=32))
     ssw = str(testBIN)
     ssw = ssw.replace(" ", "") 
     random_INT_MUL.append(ssw)
+    random_TEST.append(testSSW)
+
+    # ba1 = BitArray(bin=in1).int
+    # ba2 = BitArray(bin=in2).int
+    # rez32 = np.multiply(ba1 , ba2, dtype=np.int32)
+    # testBIN = singleA(np.binary_repr(rez32, width=32))
+    # ssw = str(testBIN)
+    # ssw = ssw.replace(" ", "") 
+    # random_INT_MUL.append(ssw)
 
 
 print(random_INT_MUL)
+print(random_TEST)
 
 # INPUT_1_INT
 write2file(int32_genInput_1, random_INT_1_bin)

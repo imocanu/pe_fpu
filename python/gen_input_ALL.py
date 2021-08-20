@@ -160,16 +160,16 @@ for in1, in2 in zip(random_INT_1_bin, random_INT_2_bin):
 
 
 
-# INPUT_1_INT
-write2file(int32_genInput_1, random_INT_1_bin)
-# INPUT_2_INT
-write2file(int32_genInput_2, random_INT_2_bin)
-# ADD_INT
-write2file(int32_ADD_result, random_INT_ADD)
-# SUB_INT
-write2file(int32_SUB_result, random_INT_SUB)
-# MUL_INT
-write2file(int32_MUL_result, random_INT_MUL)
+# # INPUT_1_INT
+# write2file(int32_genInput_1, random_INT_1_bin)
+# # INPUT_2_INT
+# write2file(int32_genInput_2, random_INT_2_bin)
+# # ADD_INT
+# write2file(int32_ADD_result, random_INT_ADD)
+# # SUB_INT
+# write2file(int32_SUB_result, random_INT_SUB)
+# # MUL_INT
+# write2file(int32_MUL_result, random_INT_MUL)
 
 # INPUT_1
 write2file(fpu32_genInput_1, random_float_in_1_bin)

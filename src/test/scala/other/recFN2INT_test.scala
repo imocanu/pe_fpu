@@ -22,55 +22,41 @@ import utils.TestUtils
 class recFN2INT_test_1(dut: recFN2INT) extends PeekPokeTester(dut) {
 
   println(" ----->  Operation is recFN -> INT ")
-  poke(dut.io.signed, true.B)
-  poke(dut.io.round, TestUtils.round_minMag)
-
-  val r = scala.util.Random
-  val a: immutable.Seq[Int] = (0 to 5).map(_ => r.nextInt(10000000))
-  val y = a.map( x => {
-    val bin = x.toBinaryString
-    val zero = 8 - bin.length
-    List.fill(zero)(0).mkString("") ++ bin
-  })
-  //println(scala.util.Random.shuffle(y))
-  // for (generatedBIN <- y) 
-  // {
-  //     println("Input "+generatedBIN+" = "+Integer.parseInt(generatedBIN, 2).toString())
-  //     val testBin = "b"+generatedBIN
-  //     poke(dut.io.in, testBin.U)
-  //     step(20)
-  //     val rez = Integer.parseInt(generatedBIN, 2)
-  //     expect(dut.io.out, rez.S)
-  // }
 
   println(" ----->  [NOT generated] : ") 
 
-  val tt = "b11111111111111111100101011010110" 
+  //val in_test = "b00000000000001001001001111100000".U
+  val in_test = 300.S
+  //val in_test = "h493E0".U
+  //int 00000000000001001001001111100000    
+  // fn 01001000100100100111110000000000
+  val out_test = 300000.S
+
   poke(dut.io.round, TestUtils.round_odd)
-  poke(dut.io.in, "h447a0000".U(32.W))
+  poke(dut.io.in, in_test)
   step(20)
-  expect(dut.io.out, -13610.S)
+  expect(dut.io.out, out_test)
   
   poke(dut.io.round, TestUtils.round_min)
-  poke(dut.io.in, "b01001101100111000011111011001000".U)
-  step(5)  
-  expect(dut.io.out, 327670016.S)
+  poke(dut.io.in, in_test)
+  step(20)
+  expect(dut.io.out, out_test)
   poke(dut.io.round, TestUtils.round_max)
-  poke(dut.io.in, "b01001101100111000011111011001000".U)
-  step(5)  
-  expect(dut.io.out, 327670016.S)
+  poke(dut.io.in, in_test)
+  step(20)
+  expect(dut.io.out, out_test)
   poke(dut.io.round, TestUtils.round_minMag)
-  poke(dut.io.in, "b01001101100111000011111011001000".U)
-  step(5)  
-  expect(dut.io.out, 327670016.S)
+  poke(dut.io.in, in_test)
+  step(20)
+  expect(dut.io.out, out_test)
   poke(dut.io.round, TestUtils.round_near_even)
-  poke(dut.io.in, "b01001101100111000011111011001000".U)
-  step(5)  
-  expect(dut.io.out, 327670016.S)
+  poke(dut.io.in, in_test)
+  step(20)
+  expect(dut.io.out, out_test)
   poke(dut.io.round, TestUtils.round_near_maxMag)
-  poke(dut.io.in, "b01001101100111000011111011001000".U)
-  step(5)  
-  expect(dut.io.out, 327670016.S)
+  poke(dut.io.in, in_test)
+  step(20)
+  expect(dut.io.out, out_test)
 }
 
 

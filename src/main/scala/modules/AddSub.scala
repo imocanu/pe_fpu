@@ -28,9 +28,7 @@ class AddSub extends Module {
 
   // fn -> Reg_1 -> Reg_2 -> recFN
   val fN_in1  = RegNext(io.in1)
-  //printf("\n[DEBUG] AddSub in1 : %b", fN_in1)
   val fN_in2  = RegNext(io.in2)
-  //printf("\n[DEBUG] AddSub in2 : %b", fN_in2)
 
   val addRecFN = Module(new AddRecFN(Config.EXP, Config.SIG))
   addRecFN.io.subOp := op_sel
@@ -109,18 +107,5 @@ object AddSub extends App {
  (new ElkStage).execute(Array("--target-dir", targetDir),
    Seq(ChiselGeneratorAnnotation(() => new AddSub))
  )
-//  (new ChiselStage).execute(
-//    Array("-X", "sverilog",
-//      "--target-dir", verilogDir,
-//      "--output-file", verilogName),
-//    Seq(ChiselGeneratorAnnotation(() => new AddSub))
-//  )
-
-//  (new ChiselStage).execute(
-//    Array("-X", "high",
-//      "--target-dir", verilogDir,
-//      "--output-file", verilogName),
-//    Seq(ChiselGeneratorAnnotation(() => new AddSub))
-//  )
 
 }

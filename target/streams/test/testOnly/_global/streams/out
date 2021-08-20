@@ -1,13 +1,13 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top.PE_FPU_manhattan_test, org.scalatest.tools.Framework$$anon$1@2263816, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mPE_FPU_manhattan_test:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_FP32_test6_manhattan[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(modules.Mult_test, org.scalatest.tools.Framework$$anon$1@1c9d0bd1, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMult_test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun MUL_round_all[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  false was not true (PE_FPU_manhattan_test.scala:108)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 9 seconds, 373 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  false was not true (Mult_test.scala:302)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 8 seconds, 689 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 1, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
 [0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
-[0m[[0m[31merror[0m] [0m[0m	top.PE_FPU_manhattan_test[0m
+[0m[[0m[31merror[0m] [0m[0m	modules.Mult_test[0m
 [0m[[0m[31merror[0m] [0m[0m(Test / [31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m

@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/modules/Mult_16.scala:73:42: value roundingMode is not a member of chisel3.Bundle{val in1: chisel3.UInt; val in2: chisel3.UInt; val useINT: chisel3.Bool; val round: chisel3.UInt; val out: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m    recFNToRecFN.io.roundingMode   := io.roundingMode[0m
-[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/modules/Mult_16.scala:74:42: value detectTininess is not a member of chisel3.Bundle{val in1: chisel3.UInt; val in2: chisel3.UInt; val useINT: chisel3.Bool; val round: chisel3.UInt; val out: chisel3.UInt}[0m
-[0m[[0m[31merror[0m] [0m[0m    recFNToRecFN.io.detectTininess := io.detectTininess[0m
-[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/other/recFN2INT.scala:19:26: not found: value S[0m
+[0m[[0m[31merror[0m] [0m[0m    val in       = Input(S(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
