@@ -41,13 +41,13 @@ def test_7_vectorsum_FP32():
 
         pe_1.run_PE()
 
-        # pe_1.sim_Mem_OUT = pe_1.ADDSUB_1_OUT
+        pe_1.sim_Mem_OUT = pe_1.ADDSUB_1_OUT
 
-        # pe_1.run_PE()
+        pe_1.run_PE()
 
-        # pe_1.mux_7.set_Sel(2)
-        # pe_1.sim_Mem_OUT = pe_1.ADDSUB_1_OUT
-        # pe_1.run_PE()
+        pe_1.mux_7.set_Sel(2)
+        pe_1.sim_Mem_OUT = pe_1.ADDSUB_1_OUT
+        pe_1.run_PE()
 
 
     print("#"*50)

@@ -74,10 +74,16 @@ class MUL_FP32_simple(dut: Mult) extends PeekPokeTester(dut) {
 class Mult_test_1(dut: Mult) extends PeekPokeTester(dut) {
 
   step(5)
-  poke(dut.io.in1, "b01000001010000000000000000000000".asUInt(32.W))  // 12
-  poke(dut.io.in2, "b01000000110000000000000000000000".asUInt(32.W))  // 6
+  //poke(dut.io.round, "b111".U(3.W))
   step(5)
-  expect(dut.io.out, "b01000010100100000000000000000000".U)  // 72
+  poke(dut.io.useINT, true.B)
+  step(5)
+  poke(dut.io.in1, 17210.S(32.W))
+  step(5)
+  poke(dut.io.in2, 19732.S(32.W))
+  step(10)
+  println(s"[DEBUG] out ${peek(dut.io.out)}")
+  expect(dut.io.out, 339587720.S(32.W))
   step(5)
 }
 
@@ -294,15 +300,32 @@ class Mult_test extends ChiselFlatSpec with Matchers {
 //    } should be (true)
 //  }
 
-   "run MUL_round_all" should "pass" in {
+
+
+
+
+  //  "run MUL_round_all" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_INT_ALL_ROUND"
+  //     ),
+  //     () => new Mult ) { c =>
+  //     new MUL_round_all (c, TestUtils.round_near_maxMag_UINT)
+  //   } should be (true)
+  // }
+     "run TEST_1" should "pass" in {
     chisel3.iotesters.Driver.execute(Array(
       "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_INT_ALL_ROUND"
+      "--target-dir", targetDir+"_INT"
       ),
       () => new Mult ) { c =>
-      new MUL_round_all (c, TestUtils.round_near_maxMag_UINT)
+      new Mult_test_1 (c)
     } should be (true)
   }
+
+
+
+
 
 
   // "run MUL_FP32_simple" should "pass" in {

@@ -21,9 +21,9 @@ class Mult extends Module {
   })
 
   // INT flag
-  val useINT_sel  = WireDefault(io.useINT)
+  val useINT_sel  = RegNext(io.useINT)
   // Rounding mode 
-  val round_mode  = WireDefault(io.round)
+  val round_mode  = RegNext(io.round)
 
   // fn -> Reg_1 -> Reg_2 -> recFN
   val fN_in1  = RegNext(io.in1)
@@ -77,8 +77,8 @@ class Mult extends Module {
 
   } .otherwise {
 
-    val out_IEEE_FP32 = RegNext(Utils.ieee(mulRecFN_out))
-    io.out := out_IEEE_FP32
+    val out_FP32 = RegNext(Utils.ieee(mulRecFN_out))
+    io.out := out_FP32
     println("## OUTPUT FP 32 ##")
 
   }

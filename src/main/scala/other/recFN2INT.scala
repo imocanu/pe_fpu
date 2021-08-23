@@ -17,41 +17,31 @@ class recFN2INT extends Module {
     val signed   = Input(Bool())
     val round    = Input(UInt(3.W))
     val in       = Input(Bits(32.W))
-    val out      = Output(UInt(33.W))
+    val out      = Output(Bits(32.W))
   })
 
+    //val in_test = RegNext(io.in)
+    //val in_test = WireDefault(io.in.asSInt)
     val in_test = RegNext(io.in)
-    val round_mode  = WireDefault(io.round)
+    val round_mode  = RegNext(io.round)
 
-    val iNToRecFN = Module(new INToRecFN(Config.EXP, Config.SIG, Config.WIDTH))
-    iNToRecFN.io.signedIn := true.B
-    iNToRecFN.io.in := "b01001000100100100111110000000000".U // in_test
-    iNToRecFN.io.roundingMode   := round_mode
-    iNToRecFN.io.detectTininess := Config.detectTininess
-    val mid = RegNext(iNToRecFN.io.out)
-
-
-
-    val addRecFN = Module(new AddRecFN(Config.EXP, Config.SIG))
-    addRecFN.io.subOp := false.B
-    addRecFN.io.a :=  mid // OK recFNFromFN(Config.EXP, Config.SIG, in_test)
-    addRecFN.io.b :=  mid // OK recFNFromFN(Config.EXP, Config.SIG, in_test)
-    addRecFN.io.roundingMode   := round_mode
-    addRecFN.io.detectTininess := Config.detectTininess
-    val add = RegNext(addRecFN.io.out)
+    val iNToRecFN_1 = Module(new INToRecFN(Config.WIDTH, Config.EXP, Config.SIG))
+    iNToRecFN_1.io.signedIn := true.B
+    iNToRecFN_1.io.in := in_test 
+    // "b11111111111110110000001111101010".asUInt(32.W)
+    iNToRecFN_1.io.roundingMode   := round_mode
+    iNToRecFN_1.io.detectTininess := hardfloat.consts.tininess_afterRounding
+    val iNToRecFN_1_out  = RegNext(iNToRecFN_1.io.out)
 
 
-  
     val recFNToIN = Module(new RecFNToIN(Config.EXP, Config.SIG, Config.WIDTH))
-    recFNToIN.io.in :=  add //add // recFNFromFN(Config.EXP, Config.SIG, mid)
-      // OK recFNFromFN(Config.EXP, Config.SIG, in_test)
-      //fNFromRecFN(Config.EXP, Config.SIG, recFNFromFN(Config.EXP, Config.SIG, mid))  
+    recFNToIN.io.in           := iNToRecFN_1_out
     recFNToIN.io.roundingMode := round_mode
     recFNToIN.io.signedOut    := true.B
     val recFNToIN_out = RegNext(recFNToIN.io.out)
 
     io.out := recFNToIN_out
-    //io.out := fNFromRecFN(Config.EXP, Config.SIG, mid)
+    //io.out := iNToRecFN_1_out
 }
 
 object recFN2INT extends App {

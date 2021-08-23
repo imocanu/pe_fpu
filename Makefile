@@ -21,12 +21,13 @@ VERILATOR_FLAGS += --assert
 # Run make to compile model, with as many CPUs as are free
 VERILATOR_FLAGS += --build -j
 # Run Verilator in debug mode
-#VERILATOR_FLAGS += --debug
+# VERILATOR_FLAGS += --debug
 # Add this trace to get a backtrace in gdb
 #VERILATOR_FLAGS += --gdbbt
-VERILATOR_FLAGS += --Mdir cplusplus --exe verilatorC++/AddSub_main.cpp
+
+#VERILATOR_FLAGS += --Mdir cplusplus --exe verilatorC++/AddSub_main.cpp
 # Input files for Verilator
-VERILATOR_INPUT = rtl/AddSub_Top.v
+#VERILATOR_INPUT = rtl/AddSub.v
 
 buildVM:
 	sbt compile run -Dhttp.proxyHost=proxy-chain.intel.com -Dhttps.proxyHost=proxy-chain.intel.com -Dhttp.proxyPort=911 -Dhttps.proxyPort=911
@@ -43,7 +44,7 @@ test:
 	sbt test -DwriteVcd=1
 
 clean:
-	rm -rf project/target rtl/ChiselTop.v rtl/Main.* quartus/db target test_run_dir generated diagram
+	rm -rf project/target target test_run_dir generated diagram
 	rm -rf rtl/*.json rtl/*.fir project/project python/__pycache__
 
 testAddSub:
@@ -61,6 +62,9 @@ testrecFN2INT:
 testAddSubFull:
 	sbt "testOnly modules.AddSub_test_full"
 
+testAddSubMul32:
+	sbt "testOnly other.AddSubMul32_test"
+
 test0:
 	sbt "testOnly top.PE_FP32_test0"
 
@@ -71,7 +75,7 @@ testManhattan:
 	sbt "testOnly top.PE_FPU_manhattan_test"
 
 testVectorSum:
-	sbt "testOnly top.PE_FPU_vectorsum_test"
+	sbt "testOnly top.PE_FPU_vector_sum_test"
 
 testDot:
 	sbt "testOnly top.PE_FPU_dot_test"
@@ -81,16 +85,25 @@ show-config:
 
 verilatorTest:
 	rm -rf cplusplus/*
+	mkdir -p cplusplus/AddSub_module
+	mkdir -p cplusplus/Mult_module
 	@echo
 	@echo "-- Verilator coverage example"
 
 	@echo
-	@echo "-- VERILATE ----------------"
-	$(VERILATOR) $(VERILATOR_FLAGS) $(VERILATOR_INPUT)
+	@echo "-- COMPILE ----------------"
+	@echo "-- AddSub module"
+	$(VERILATOR) $(VERILATOR_FLAGS) --Mdir cplusplus --exe verilatorC++/AddSub_module/AddSub_main.cpp rtl/AddSub.v
+	@echo "-- Mult module"
+	$(VERILATOR) $(VERILATOR_FLAGS) --Mdir cplusplus --exe verilatorC++/Mult_module/Mult_main.cpp rtl/Mult.v
+	@echo "-- AddSumMul module"
+	$(VERILATOR) $(VERILATOR_FLAGS) --Mdir cplusplus --exe verilatorC++/AddSubMul32_module/AddSubMul32_main.cpp rtl/AddSubMul32.v
 
 	@echo
 	@echo "-- RUN ---------------------"
-	cplusplus/VAddSub_Top
+	# cplusplus/VAddSub
+	# cplusplus/VMult
+	cplusplus/VAddSubMul32
 
 	@echo
 	@echo "-- DONE --------------------"
