@@ -48,7 +48,7 @@ class FSM_PE():
                 print("SUM INIT")
                 self.state = sum.START
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.mux_5.set_Sel(0)
                     pe_1.mux_6.set_Sel(0)
                     pe_1.mux_7.set_Sel(0)
@@ -57,61 +57,62 @@ class FSM_PE():
                     pe_1.mux_10.set_Sel(0)
 
                 # PE - Master - runSUM_V3
-                all_pe[0].tosum_1 = all_pe[0].mux_9_out
-                all_pe[0].tosum_2 = all_pe[1].mux_9_out
+                self.all_pe[0].tosum_1 = self.all_pe[0].mux_9_out
+                self.all_pe[0].tosum_2 = self.all_pe[1].mux_9_out
 
                 # PE - Slaves - runSUM_V3
-                all_pe[1].tosum_1 = all_pe[2].mux_9_out
-                all_pe[1].tosum_2 = all_pe[3].mux_9_out
+                self.all_pe[1].tosum_1 = self.all_pe[2].mux_9_out
+                self.all_pe[1].tosum_2 = self.all_pe[3].mux_9_out
 
-                all_pe[2].tosum_1 = all_pe[4].mux_9_out
-                all_pe[2].tosum_2 = all_pe[5].mux_9_out
+                self.all_pe[2].tosum_1 = self.all_pe[4].mux_9_out
+                self.all_pe[2].tosum_2 = self.all_pe[5].mux_9_out
 
-                all_pe[3].tosum_1 = all_pe[6].mux_9_out
-                all_pe[3].tosum_2 = all_pe[7].mux_9_out
+                self.all_pe[3].tosum_1 = self.all_pe[6].mux_9_out
+                self.all_pe[3].tosum_2 = self.all_pe[7].mux_9_out
 
                 print("~"*50)
                 counter = -1
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     counter = counter +1
                     print("  [NO Clock - dbg",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
                 print("~"*50)
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.clock_PE()
 
                 counter = -1
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     counter = counter +1
-                    print("  [dbg",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
+                    print("  [dbg PE",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
 
             elif(self.state == sum.START):
                 print("SUM START")
                 self.state = sum.STOP
-
+                clockNO = 0
                 for i in range(2):
-
+                    clockNO = clockNO + 1
+                    print("  -> clock no :", clockNO, "<-         MUX_9_OUT                          MUX_10_OUT ")
                     # PE - Master - runSUM_V3
-                    all_pe[0].tosum_1 = all_pe[0].mux_9_out
-                    all_pe[0].tosum_2 = all_pe[1].mux_9_out
+                    self.all_pe[0].tosum_1 = self.all_pe[0].mux_9_out
+                    self.all_pe[0].tosum_2 = self.all_pe[1].mux_9_out
 
                     # PE - Slaves - runSUM_V3
-                    all_pe[1].tosum_1 = all_pe[2].mux_9_out
-                    all_pe[1].tosum_2 = all_pe[3].mux_9_out
+                    self.all_pe[1].tosum_1 = self.all_pe[2].mux_9_out
+                    self.all_pe[1].tosum_2 = self.all_pe[3].mux_9_out
 
-                    all_pe[2].tosum_1 = all_pe[4].mux_9_out
-                    all_pe[2].tosum_2 = all_pe[5].mux_9_out
+                    self.all_pe[2].tosum_1 = self.all_pe[4].mux_9_out
+                    self.all_pe[2].tosum_2 = self.all_pe[5].mux_9_out
 
-                    all_pe[3].tosum_1 = all_pe[6].mux_9_out
-                    all_pe[3].tosum_2 = all_pe[7].mux_9_out
+                    self.all_pe[3].tosum_1 = self.all_pe[6].mux_9_out
+                    self.all_pe[3].tosum_2 = self.all_pe[7].mux_9_out
 
-                    for pe_1 in all_pe:
+                    for pe_1 in self.all_pe:
                         pe_1.clock_PE()
 
                     counter = -1
-                    for pe_1 in all_pe:
+                    for pe_1 in self.all_pe:
                         counter = counter +1
-                        print("  [dbg",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
+                        print("  [dbg PE",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
                     print("~"*50)
 
             elif(self.state == sum.STOP):
@@ -131,7 +132,7 @@ class FSM_PE():
                 print("SUM INIT")
                 self.state = sum.START
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.mux_5.set_Sel(0)
                     pe_1.mux_6.set_Sel(0)
                     pe_1.mux_7.set_Sel(0)
@@ -140,77 +141,80 @@ class FSM_PE():
                     pe_1.mux_10.set_Sel(0)
 
                 # PE - Master - runSUM_4_in_2_out
-                all_pe[0].tosum_1 = all_pe[1].mux_9_out
-                all_pe[0].tosum_2 = all_pe[1].mux_10_out
-                all_pe[0].tosum_3 = all_pe[0].mux_9_out
-                all_pe[0].tosum_4 = all_pe[0].mux_10_out
+                self.all_pe[0].tosum_1 = self.all_pe[1].mux_9_out
+                self.all_pe[0].tosum_2 = self.all_pe[1].mux_10_out
+                self.all_pe[0].tosum_3 = self.all_pe[0].mux_9_out
+                self.all_pe[0].tosum_4 = self.all_pe[0].mux_10_out
 
                 # PE - Slaves - runSUM_4_in_2_out
-                all_pe[1].tosum_1 = all_pe[2].mux_9_out
-                all_pe[1].tosum_2 = all_pe[2].mux_10_out
-                all_pe[1].tosum_3 = all_pe[3].mux_9_out
-                all_pe[1].tosum_4 = all_pe[3].mux_10_out
+                self.all_pe[1].tosum_1 = self.all_pe[2].mux_9_out
+                self.all_pe[1].tosum_2 = self.all_pe[2].mux_10_out
+                self.all_pe[1].tosum_3 = self.all_pe[3].mux_9_out
+                self.all_pe[1].tosum_4 = self.all_pe[3].mux_10_out
 
-                all_pe[2].tosum_1 = all_pe[4].mux_9_out
-                all_pe[2].tosum_2 = all_pe[4].mux_10_out
-                all_pe[2].tosum_3 = all_pe[5].mux_9_out
-                all_pe[2].tosum_4 = all_pe[5].mux_10_out
+                self.all_pe[2].tosum_1 = self.all_pe[4].mux_9_out
+                self.all_pe[2].tosum_2 = self.all_pe[4].mux_10_out
+                self.all_pe[2].tosum_3 = self.all_pe[5].mux_9_out
+                self.all_pe[2].tosum_4 = self.all_pe[5].mux_10_out
 
-                all_pe[3].tosum_1 = all_pe[6].mux_9_out
-                all_pe[3].tosum_2 = all_pe[6].mux_10_out
-                all_pe[3].tosum_3 = all_pe[7].mux_9_out
-                all_pe[3].tosum_4 = all_pe[7].mux_10_out
+                self.all_pe[3].tosum_1 = self.all_pe[6].mux_9_out
+                self.all_pe[3].tosum_2 = self.all_pe[6].mux_10_out
+                self.all_pe[3].tosum_3 = self.all_pe[7].mux_9_out
+                self.all_pe[3].tosum_4 = self.all_pe[7].mux_10_out
 
                 print("~"*50)
                 counter = -1
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     counter = counter +1
                     print("  [NO Clock - dbg",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
                 print("~"*50)
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.clock_PE()
 
                 counter = -1
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     counter = counter +1
-                    print("  [dbg",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
+                    print("  [dbg PE",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
 
             elif(self.state == sum.START):
                 print("SUM START")
                 self.state = sum.STOP
 
+                clockNO = 0
                 for i in range(3):
+                    clockNO = clockNO + 1
+                    print("  -> clock no :", clockNO, "<-         MUX_9_OUT                          MUX_10_OUT ")
 
                     # PE - Master - runSUM_4_in_2_out
-                    all_pe[0].tosum_1 = all_pe[1].mux_9_out
-                    all_pe[0].tosum_2 = all_pe[1].mux_10_out
-                    all_pe[0].tosum_3 = all_pe[0].mux_9_out
-                    all_pe[0].tosum_4 = all_pe[0].mux_10_out
+                    self.all_pe[0].tosum_1 = self.all_pe[1].mux_9_out
+                    self.all_pe[0].tosum_2 = self.all_pe[1].mux_10_out
+                    self.all_pe[0].tosum_3 = self.all_pe[0].mux_9_out
+                    self.all_pe[0].tosum_4 = self.all_pe[0].mux_10_out
 
                      # PE - Slaves - runSUM_4_in_2_out
-                    all_pe[1].tosum_1 = all_pe[2].mux_9_out
-                    all_pe[1].tosum_2 = all_pe[2].mux_10_out
-                    all_pe[1].tosum_3 = all_pe[3].mux_9_out
-                    all_pe[1].tosum_4 = all_pe[3].mux_10_out
+                    self.all_pe[1].tosum_1 = self.all_pe[2].mux_9_out
+                    self.all_pe[1].tosum_2 = self.all_pe[2].mux_10_out
+                    self.all_pe[1].tosum_3 = self.all_pe[3].mux_9_out
+                    self.all_pe[1].tosum_4 = self.all_pe[3].mux_10_out
 
-                    all_pe[2].tosum_1 = all_pe[4].mux_9_out
-                    all_pe[2].tosum_2 = all_pe[4].mux_10_out
-                    all_pe[2].tosum_3 = all_pe[5].mux_9_out
-                    all_pe[2].tosum_4 = all_pe[5].mux_10_out
+                    self.all_pe[2].tosum_1 = self.all_pe[4].mux_9_out
+                    self.all_pe[2].tosum_2 = self.all_pe[4].mux_10_out
+                    self.all_pe[2].tosum_3 = self.all_pe[5].mux_9_out
+                    self.all_pe[2].tosum_4 = self.all_pe[5].mux_10_out
 
-                    all_pe[3].tosum_1 = all_pe[6].mux_9_out
-                    all_pe[3].tosum_2 = all_pe[6].mux_10_out
-                    all_pe[3].tosum_3 = all_pe[7].mux_9_out
-                    all_pe[3].tosum_4 = all_pe[7].mux_10_out
+                    self.all_pe[3].tosum_1 = self.all_pe[6].mux_9_out
+                    self.all_pe[3].tosum_2 = self.all_pe[6].mux_10_out
+                    self.all_pe[3].tosum_3 = self.all_pe[7].mux_9_out
+                    self.all_pe[3].tosum_4 = self.all_pe[7].mux_10_out
 
-                    for pe_1 in all_pe:
+                    for pe_1 in self.all_pe:
                         pe_1.clock_PE()
 
                     counter = -1
-                    for pe_1 in all_pe:
+                    for pe_1 in self.all_pe:
                         counter = counter +1
-                        print("  [dbg",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
+                        print("  [dbg PE",counter,"] : ", pe_1.mux_9_out, " ", pe_1.mux_10_out)
                     print("~"*50)
 
             elif(self.state == sum.STOP):
@@ -324,7 +328,7 @@ class FSM_PE():
             if(self.state == L2.INIT):
                 print("L2 INIT")
                 self.state = L2.SUM
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
 
                     pe_1.mux_1.set_Sel(1) 
                     pe_1.mux_2.set_Sel(1) 
@@ -347,21 +351,21 @@ class FSM_PE():
                 print("L2 SUM")
                 self.state = L2.MUL
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.clock_PE()
 
             elif(self.state == L2.MUL):
                 print("L2 MUL")
                 self.state = L2.STOP
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.clock_PE()
 
             elif(self.state == L2.STOP):
                 print("L2 STOP")
                 self.state = L2.STOP
                 pe_number = 0
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_number = pe_number + 1
                     print("> PE OUTPUT ", pe_number)
                     print("   MUX_9_OUT  :", pe_1.mux_9_out)
@@ -376,7 +380,7 @@ class FSM_PE():
             if(self.state == DOT.INIT):
                 print("DOT INIT")
                 self.state = DOT.SUM
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
 
                     pe_1.mux_1.set_Sel(0) 
                     pe_1.mux_2.set_Sel(0) 
@@ -399,27 +403,51 @@ class FSM_PE():
                 print("DOT SUM")
                 self.state = DOT.MUL
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.clock_PE()
 
             elif(self.state == DOT.MUL):
                 print("DOT MUL")
                 self.state = DOT.STOP
 
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_1.clock_PE()
 
             elif(self.state == DOT.STOP):
                 print("DOT STOP")
                 self.state = DOT.STOP
                 pe_number = 0
-                for pe_1 in all_pe:
+                for pe_1 in self.all_pe:
                     pe_number = pe_number + 1
                     print("> PE OUTPUT ", pe_number)
                     print("   MUX_9_OUT  :", pe_1.mux_9_out)
                     print("   MUX_10_OUT :", pe_1.mux_10_out)
 
                 break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
