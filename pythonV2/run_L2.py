@@ -36,4 +36,5 @@ fsm.setStates(states)
 fsm.setAllPE(all_pe)
 fsm.runTYPE_L2() # L2 type
 fsm.runSUM_4_in_2_out()
+#fsm.runSUM_V1()
 print("-"*50)
