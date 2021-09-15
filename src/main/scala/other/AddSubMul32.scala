@@ -24,20 +24,20 @@ class AddSubMul32 extends Module {
   io.outMul := input_0 * input_1
 }
 
-object AddSubMul32 extends App {
- val verilogDir = "rtl"
- val verilogName = "AddSubMul32"
+// object AddSubMul32 extends App {
+//  val verilogDir = "rtl"
+//  val verilogName = "AddSubMul32"
 
- (new ChiselStage).execute(
-   Array("--compiler", "verilog",
-     "--target-dir", verilogDir,
-     "--output-file", verilogName),
-   Seq(ChiselGeneratorAnnotation(() => new AddSubMul32))
- )
+//  (new ChiselStage).execute(
+//    Array("--compiler", "verilog",
+//      "--target-dir", verilogDir,
+//      "--output-file", verilogName),
+//    Seq(ChiselGeneratorAnnotation(() => new AddSubMul32))
+//  )
 
- val targetDir = "diagram"
- (new ElkStage).execute(Array("--target-dir", targetDir),
-   Seq(ChiselGeneratorAnnotation(() => new AddSubMul32))
- )
+//  val targetDir = "diagram"
+//  (new ElkStage).execute(Array("--target-dir", targetDir),
+//    Seq(ChiselGeneratorAnnotation(() => new AddSubMul32))
+//  )
 
-}
+// }

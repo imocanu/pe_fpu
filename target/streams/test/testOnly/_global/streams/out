@@ -1,11 +1,11 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(other.AddSubMul32_test, org.scalatest.tools.Framework$$anon$1@5c46f898, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mAddSubMul32_test:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun ADDSUBMUL_INTEGER[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(v2pack.L2_test, org.scalatest.tools.Framework$$anon$1@1b39e82, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mL2_test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun L2_test_simple[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 464 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 6 seconds, 491 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	other.AddSubMul32_test[0m
+[0m[[0m[0mdebug[0m] [0m[0m	v2pack.L2_test[0m

@@ -1,4 +1,286 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/other/AddSubMul32_test.scala:47:30: not found: value $out_add[0m
-[0m[[0m[31merror[0m] [0m[0m    if(expect(dut.io.outAdd, $out_add))[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:11:32: not found: type PE_FPU[0m
+[0m[[0m[31merror[0m] [0m[0mclass PE_FP32_test3_case (dut: PE_FPU) extends PeekPokeTester(dut) {[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:11:63: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mclass PE_FP32_test3_case (dut: PE_FPU) extends PeekPokeTester(dut) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:21:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)  [0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:22:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.useINT_ALL, false.B)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:23:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:24:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m31_sel, "b10".U) // pin 3[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:25:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:26:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m32_sel, "b01".U) // pin 2 [0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:27:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:28:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m33_sel, "b11".U) // DontCare[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:29:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:30:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m34_sel, "b11".U) // DontCare[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:31:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:32:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m35_sel, "b01".U) // pin 2[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:33:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:34:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m36_sel, "b00".U) // pin 1[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:35:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:36:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m37_sel, "b01".U) // pin 2[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:37:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:38:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.addsub_1_op, false.B) // ADD[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:39:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:40:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.addsub_2_op, false.B) // ADD[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:42:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(20)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:50:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)  [0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:51:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Yi, "b00000000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:52:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:53:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.a1, in1.U)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:54:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:55:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Xi, in2.U)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:56:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:57:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.B1, in2.U)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:58:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:59:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Yj, "b00000000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:60:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:61:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.a2, "b00000000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:62:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:63:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Xj, "b00000000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:64:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:65:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.B2, "b00000000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:67:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(20)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:69:8: not found: value expect[0m
+[0m[[0m[31merror[0m] [0m[0m    if(expect(dut.io.addsum_1_final, out.U))[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:85:31: not found: type PE_FPU[0m
+[0m[[0m[31merror[0m] [0m[0mclass PE_INT_test3_case (dut: PE_FPU) extends PeekPokeTester(dut) {[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:85:62: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mclass PE_INT_test3_case (dut: PE_FPU) extends PeekPokeTester(dut) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:95:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)  [0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:96:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.useINT_ALL, true.B)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:97:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:98:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m31_sel, "b10".U) // pin 3[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:99:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:100:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m32_sel, "b01".U) // pin 2 [0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:101:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:102:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m33_sel, "b11".U) // DontCare[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:103:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:104:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m34_sel, "b11".U) // DontCare[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:105:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:106:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m35_sel, "b01".U) // pin 2[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:107:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:108:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m36_sel, "b00".U) // pin 1[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:109:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:110:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.m37_sel, "b01".U) // pin 2[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:111:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:112:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.addsub_1_op, false.B) // ADD[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:113:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:114:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.addsub_2_op, false.B) // ADD[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:116:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(20)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:124:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)  [0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:125:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Yi, 0.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:126:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:127:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.a1, input_1(i).toInt.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:128:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:129:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Xi, input_2(i).toInt.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:130:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:131:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.B1, input_2(i).toInt.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:132:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:133:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Yj, 0.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:134:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:135:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.a2, 0.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:136:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:137:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.Xj, 0.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:138:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(2)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:139:5: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m    poke(dut.io.B2, 0.S)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:141:5: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m    step(20)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:143:8: not found: value expect[0m
+[0m[[0m[31merror[0m] [0m[0m    if(expect(dut.io.addsum_1_final, out.U))[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:159:17: not found: type PE_FPU[0m
+[0m[[0m[31merror[0m] [0m[0mclass PE_1(dut: PE_FPU) extends PeekPokeTester(dut) {[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:159:48: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mclass PE_1(dut: PE_FPU) extends PeekPokeTester(dut) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:160:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(5)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:161:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.Yi, "b01000000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:162:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.a1, "b01100000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:163:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.Xi, "b01110000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:164:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.B1, "b01110000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:166:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.Yj, "b01000000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:167:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.a2, "b01100000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:168:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.Xj, "b01110000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:169:3: not found: value poke[0m
+[0m[[0m[31merror[0m] [0m[0m  poke(dut.io.B2, "b01110000000000000000000000000000".U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:170:3: not found: value step[0m
+[0m[[0m[31merror[0m] [0m[0m  step(5)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/test/scala/top/PE_FPU_test.scala:212:15: not found: type PE_FPU[0m
+[0m[[0m[31merror[0m] [0m[0m    () => new PE_FPU ) { c =>[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m95 errors found[0m

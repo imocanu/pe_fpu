@@ -65,6 +65,9 @@ testAddSubFull:
 testAddSubMul32:
 	sbt "testOnly other.AddSubMul32_test"
 
+testL2:
+	sbt "testOnly v2pack.L2_test"
+
 test0:
 	sbt "testOnly top.PE_FP32_test0"
 

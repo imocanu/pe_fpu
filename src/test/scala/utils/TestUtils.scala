@@ -14,6 +14,9 @@ object TestUtils {
     def round_near_maxMag = "b100".asUInt(3.W)
     def round_odd         = "b110".asUInt(3.W)
 
+    def tininess_beforeRounding = 0.U(1.W)
+    def tininess_afterRounding  = 1.U(1.W)
+
     var round_near_even_UINT   = "b000".asUInt(3.W)
     var round_minMag_UINT      = "b000".asUInt(3.W)
     var round_min_UINT         = "b000".asUInt(3.W)

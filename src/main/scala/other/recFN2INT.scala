@@ -17,31 +17,41 @@ class recFN2INT extends Module {
     val signed   = Input(Bool())
     val round    = Input(UInt(3.W))
     val in       = Input(Bits(32.W))
-    val out      = Output(Bits(32.W))
+    val out      = Output(Bits(33.W))
   })
 
-    //val in_test = RegNext(io.in)
-    //val in_test = WireDefault(io.in.asSInt)
     val in_test = RegNext(io.in)
     val round_mode  = RegNext(io.round)
 
     val iNToRecFN_1 = Module(new INToRecFN(Config.WIDTH, Config.EXP, Config.SIG))
     iNToRecFN_1.io.signedIn := true.B
     iNToRecFN_1.io.in := in_test 
-    // "b11111111111110110000001111101010".asUInt(32.W)
     iNToRecFN_1.io.roundingMode   := round_mode
     iNToRecFN_1.io.detectTininess := hardfloat.consts.tininess_afterRounding
     val iNToRecFN_1_out  = RegNext(iNToRecFN_1.io.out)
 
+    val addRecFN = Module(new AddRecFN(Config.EXP, Config.SIG))
+    addRecFN.io.subOp := false.B
+    addRecFN.io.a := iNToRecFN_1_out
+    addRecFN.io.b := iNToRecFN_1_out
+    addRecFN.io.roundingMode   := round_mode	
+    addRecFN.io.detectTininess := hardfloat.consts.tininess_afterRounding
+    val addRecFN_out  = RegNext(addRecFN.io.out)
+
+    val mulRecFN = Module(new MulRecFN(Config.EXP, Config.SIG))
+    mulRecFN.io.roundingMode   := round_mode
+    mulRecFN.io.detectTininess := hardfloat.consts.tininess_afterRounding
+    mulRecFN.io.a := addRecFN_out
+    mulRecFN.io.b := addRecFN_out
+    val mulRecFN_out  = RegNext(mulRecFN.io.out)
 
     val recFNToIN = Module(new RecFNToIN(Config.EXP, Config.SIG, Config.WIDTH))
-    recFNToIN.io.in           := iNToRecFN_1_out
+    recFNToIN.io.in           :=  mulRecFN_out
     recFNToIN.io.roundingMode := round_mode
     recFNToIN.io.signedOut    := true.B
     val recFNToIN_out = RegNext(recFNToIN.io.out)
 
     io.out := recFNToIN_out
-    //io.out := iNToRecFN_1_out
 }
 
 object recFN2INT extends App {

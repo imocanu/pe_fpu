@@ -13,8 +13,10 @@ import layered.stage._
 
 class Mult extends Module {
   val io = IO(new Bundle {
-    val in1      = Input(Bits(Config.forIN.W))
-    val in2      = Input(Bits(Config.forIN.W))
+    val in0      = Input(SInt(Config.forIN.W))
+    val in1      = Input(SInt(Config.forIN.W))
+    val fp0      = Input(Bits(Config.forIN.W))
+    val fp1      = Input(Bits(Config.forIN.W))
     val useINT   = Input(Bool())
     val round    = Input(UInt(3.W))
     val out      = Output(UInt(Config.forOUT.W))
@@ -26,14 +28,24 @@ class Mult extends Module {
   val round_mode  = RegNext(io.round)
 
   // fn -> Reg_1 -> Reg_2 -> recFN
+  val fN_in0  = RegNext(io.in0)
   val fN_in1  = RegNext(io.in1)
-  val fN_in2  = RegNext(io.in2)
+
+  val fN_fp0  = RegNext(io.fp0)
+  val fN_fp1  = RegNext(io.fp1)
 
   val mulRecFN = Module(new MulRecFN(Config.EXP, Config.SIG))
   mulRecFN.io.roundingMode   := round_mode
   mulRecFN.io.detectTininess := Config.detectTininess
 
   when(io.useINT){
+
+    val iNToRecFN_0 = Module(new INToRecFN(Config.WIDTH, Config.EXP, Config.SIG))
+    iNToRecFN_0.io.signedIn := true.B
+    iNToRecFN_0.io.in := fN_in0
+    iNToRecFN_0.io.roundingMode   := round_mode
+    iNToRecFN_0.io.detectTininess := Config.detectTininess
+    val iNToRecFN_0_out  = RegNext(iNToRecFN_0.io.out)
 
     val iNToRecFN_1 = Module(new INToRecFN(Config.WIDTH, Config.EXP, Config.SIG))
     iNToRecFN_1.io.signedIn := true.B
@@ -42,23 +54,16 @@ class Mult extends Module {
     iNToRecFN_1.io.detectTininess := Config.detectTininess
     val iNToRecFN_1_out  = RegNext(iNToRecFN_1.io.out)
 
-    val iNToRecFN_2 = Module(new INToRecFN(Config.WIDTH, Config.EXP, Config.SIG))
-    iNToRecFN_2.io.signedIn := true.B
-    iNToRecFN_2.io.in := fN_in2
-    iNToRecFN_2.io.roundingMode   := round_mode
-    iNToRecFN_2.io.detectTininess := Config.detectTininess
-    val iNToRecFN_2_out  = RegNext(iNToRecFN_2.io.out)
-
-    mulRecFN.io.a := iNToRecFN_1_out
-    mulRecFN.io.b := iNToRecFN_2_out
+    mulRecFN.io.a := iNToRecFN_0_out
+    mulRecFN.io.b := iNToRecFN_1_out
     println("## INPUT INTEGER 32 ##")
   } .otherwise {
 
-    val recFN_from_fN_in1 = RegNext(recFNFromFN(Config.EXP, Config.SIG, fN_in1))
-    val recFN_from_fN_in2 = RegNext(recFNFromFN(Config.EXP, Config.SIG, fN_in2))
+    val recFN_from_fN_fp0 = RegNext(recFNFromFN(Config.EXP, Config.SIG, fN_fp0))
+    val recFN_from_fN_fp1 = RegNext(recFNFromFN(Config.EXP, Config.SIG, fN_fp1))
 
-    mulRecFN.io.a := recFN_from_fN_in1
-    mulRecFN.io.b := recFN_from_fN_in2
+    mulRecFN.io.a := recFN_from_fN_fp0
+    mulRecFN.io.b := recFN_from_fN_fp1
     println("## INPUT FP 32 ##")
   }
 

@@ -4,6 +4,30 @@
     "file":"diagram/recFN2INT_test_ADD_INT/recFN2INT_test.lo.fir"
   },
   {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~recFN2INT|RoundAnyRawFNToRecFN_1",
+    "duplicate":"~recFN2INT|recFN2INT/addRecFN:AddRecFN/roundRawFNToRecFN:RoundRawFNToRecFN/roundAnyRawFNToRecFN:RoundAnyRawFNToRecFN_1",
+    "index":0.25
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~recFN2INT|RoundRawFNToRecFN",
+    "duplicate":"~recFN2INT|recFN2INT/addRecFN:AddRecFN/roundRawFNToRecFN:RoundRawFNToRecFN",
+    "index":0.3333333333333333
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~recFN2INT|RoundAnyRawFNToRecFN_2",
+    "duplicate":"~recFN2INT|recFN2INT/mulRecFN:MulRecFN/roundRawFNToRecFN:RoundRawFNToRecFN/roundAnyRawFNToRecFN:RoundAnyRawFNToRecFN_1",
+    "index":0.6666666666666666
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~recFN2INT|RoundRawFNToRecFN_1",
+    "duplicate":"~recFN2INT|recFN2INT/mulRecFN:MulRecFN/roundRawFNToRecFN:RoundRawFNToRecFN",
+    "index":0.75
+  },
+  {
     "class":"logger.LogLevelAnnotation",
     "globalLogLevel":{
       

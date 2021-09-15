@@ -1,1 +1,1 @@
-["modules.AddSub","modules.Mult","modules.Mult_16","modules.Mux3","other.AddSubMul32","other.recFN2INT","top.PE_FPU","top.PE_FPU_IMP"]
+["modules.AddSub","modules.Mult","modules.Mult_16","modules.Mux3","other.recFN2INT","top.PE","v2pack.AddSubPE","v2pack.L2_PE","v2pack.MultPE","v2pack.MuxPE"]

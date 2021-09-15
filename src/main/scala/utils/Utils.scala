@@ -26,6 +26,9 @@ object Config {
   def round_near_maxMag = "b100".asUInt(3.W)
   def round_odd         = "b110".asUInt(3.W)
 
+  def tininess_beforeRounding = 0.asUInt(1.W)
+  def tininess_afterRounding  = 1.asUInt(1.W)
+
   def exp(f: Int) = f match {
    case 16 => 5
    case 32 => 8

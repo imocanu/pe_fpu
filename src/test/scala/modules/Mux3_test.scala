@@ -33,20 +33,20 @@ class Mux_test_1(dut: Mux3) extends PeekPokeTester(dut) {
   step(5)
 }
 
-class Mux3_test extends ChiselFlatSpec with Matchers {
+// class Mux3_test extends ChiselFlatSpec with Matchers {
 
- val vcdName = "Mux3_test"
- val targetDir = "diagram/" + vcdName
+//  val vcdName = "Mux3_test"
+//  val targetDir = "diagram/" + vcdName
 
- "run Mux_test_1 " should "pass" in {
-   chisel3.iotesters.Driver.execute(Array(
-    "--fint-write-vcd",
-    "--backend-name", "firrtl",
-    "--target-dir", targetDir+"_Mux3_test",
-    "--top-name" , vcdName,
-    "--output-file", vcdName),
-     () => new Mux3 ) { c =>
-     new Mux_test_1 (c)
-   } should be (true)
- }
-}
+//  "run Mux_test_1 " should "pass" in {
+//    chisel3.iotesters.Driver.execute(Array(
+//     "--fint-write-vcd",
+//     "--backend-name", "firrtl",
+//     "--target-dir", targetDir+"_Mux3_test",
+//     "--top-name" , vcdName,
+//     "--output-file", vcdName),
+//      () => new Mux3 ) { c =>
+//      new Mux_test_1 (c)
+//    } should be (true)
+//  }
+// }

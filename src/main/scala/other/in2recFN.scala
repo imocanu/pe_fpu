@@ -27,4 +27,3 @@ class in2recFN extends Module {
   //println(io.outIEEE)
   //printf("\n[DEBUG] readData : %d", Utils.ieee(addRecFN.io.out))
 }
-

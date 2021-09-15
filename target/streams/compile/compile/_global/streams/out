@@ -1,4 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/other/recFN2INT.scala:30:34: value U is not a member of chisel3.UInt[0m
-[0m[[0m[31merror[0m] [0m[0m    iNToRecFN_1.io.in := in_test.U(32.W) // "b11111111111110110000001111101010".asUInt(32.W)[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/MultPE.scala:44:44: not found: type Mult[0m
+[0m[[0m[31merror[0m] [0m[0m   Seq(ChiselGeneratorAnnotation(() => new Mult))[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/MultPE.scala:49:44: not found: type Mult[0m
+[0m[[0m[31merror[0m] [0m[0m   Seq(ChiselGeneratorAnnotation(() => new Mult))[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
