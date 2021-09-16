@@ -13,43 +13,43 @@
     "class":"firrtl.transforms.DedupedResult",
     "original":"~L2_PE|INToRecFN",
     "duplicate":"~L2_PE|L2_PE/iNToRecFN_0:INToRecFN",
-    "index":0.07142857142857142
+    "index":0.06666666666666667
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~L2_PE|RoundAnyRawFNToRecFN_1",
     "duplicate":"~L2_PE|L2_PE/iNToRecFN_1:INToRecFN/roundAnyRawFNToRecFN:RoundAnyRawFNToRecFN",
-    "index":0.14285714285714285
+    "index":0.13333333333333333
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~L2_PE|INToRecFN_1",
     "duplicate":"~L2_PE|L2_PE/iNToRecFN_1:INToRecFN",
-    "index":0.21428571428571427
+    "index":0.2
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~L2_PE|RoundAnyRawFNToRecFN_2",
-    "duplicate":"~L2_PE|L2_PE/addRecFN:AddRecFN/roundRawFNToRecFN:RoundRawFNToRecFN/roundAnyRawFNToRecFN:RoundAnyRawFNToRecFN_2",
-    "index":0.35714285714285715
+    "duplicate":"~L2_PE|L2_PE/addModule:AddSubPE/addRecFN:AddRecFN/roundRawFNToRecFN:RoundRawFNToRecFN/roundAnyRawFNToRecFN:RoundAnyRawFNToRecFN_2",
+    "index":0.3333333333333333
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~L2_PE|RoundRawFNToRecFN",
-    "duplicate":"~L2_PE|L2_PE/addRecFN:AddRecFN/roundRawFNToRecFN:RoundRawFNToRecFN",
-    "index":0.42857142857142855
+    "duplicate":"~L2_PE|L2_PE/addModule:AddSubPE/addRecFN:AddRecFN/roundRawFNToRecFN:RoundRawFNToRecFN",
+    "index":0.4
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~L2_PE|RoundAnyRawFNToRecFN_3",
     "duplicate":"~L2_PE|L2_PE/mulRecFN:MulRecFN/roundRawFNToRecFN:RoundRawFNToRecFN/roundAnyRawFNToRecFN:RoundAnyRawFNToRecFN_2",
-    "index":0.7142857142857143
+    "index":0.7333333333333333
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~L2_PE|RoundRawFNToRecFN_1",
     "duplicate":"~L2_PE|L2_PE/mulRecFN:MulRecFN/roundRawFNToRecFN:RoundRawFNToRecFN",
-    "index":0.7857142857142857
+    "index":0.8
   },
   {
     "class":"logger.LogLevelAnnotation",

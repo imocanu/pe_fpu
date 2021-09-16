@@ -76,19 +76,19 @@ class Mult_16 extends Module {
   
 }
 
-object Mult_16 extends App {
- val verilogDir = "rtl"
- val verilogName = "Mult_16"
- (new ChiselStage).execute(
-   Array("-X", "verilog",
-     "--target-dir", verilogDir,
-     "--output-file", verilogName),
-   Seq(ChiselGeneratorAnnotation(() => new Mult_16))
- )
+// object Mult_16 extends App {
+//  val verilogDir = "rtl"
+//  val verilogName = "Mult_16"
+//  (new ChiselStage).execute(
+//    Array("-X", "verilog",
+//      "--target-dir", verilogDir,
+//      "--output-file", verilogName),
+//    Seq(ChiselGeneratorAnnotation(() => new Mult_16))
+//  )
 
- val targetDir = "diagram"
- (new ElkStage).execute(Array("--target-dir", targetDir),
-   Seq(ChiselGeneratorAnnotation(() => new Mult_16))
- )
-}
+//  val targetDir = "diagram"
+//  (new ElkStage).execute(Array("--target-dir", targetDir),
+//    Seq(ChiselGeneratorAnnotation(() => new Mult_16))
+//  )
+// }
 

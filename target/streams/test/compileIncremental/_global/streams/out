@@ -1,28 +1,28 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 31 products, 18 sources, 7 libraries[0m
-[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/test/scala/other/AddSubMul32_test.scala, ${BASE}/src/test/scala/modules/AddSub_verilator.scala, ${BASE}/src/test/scala/tester/ValExec_INToRecFN.scala, ${BASE}/src/test/scala/modules/AddSub_test.scala, ${BASE}/src/test/scala/modules/Mux3_test.scala, ${BASE}/src/test/scala/top/PE_FPU_dot_test.scala, ${BASE}/src/test/scala/utils/TestUtils.scala, ${BASE}/src/test/scala/top/PE_FPU_test.scala, ${BASE}/src/test/scala/tester/HardfloatTester.scala, ${BASE}/src/test/scala/modules/Mem1R1W_test.scala, ${BASE}/src/test/scala/other/recFN2INT_test.scala, ${BASE}/src/test/scala/top/PE_FPU_vector_sum_test.scala, ${BASE}/src/test/scala/tester/FMATester.scala, ${BASE}/src/test/scala/top/PE_FPU_manhattan_test.scala, ${BASE}/src/test/scala/top/PE_FPU_euclidean_test.scala, ${BASE}/src/test/scala/top/PE_FPU_test0.scala, ${BASE}/src/test/scala/modules/Mult_test.scala, ${BASE}/src/test/scala/v2pack/L2_test.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/test/scala/v2pack/L2_test.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 40 products, 20 sources, 7 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/test/scala/v2pack/AddSubPE_test.scala, ${BASE}/src/test/scala/other/AddSubMul32_test.scala, ${BASE}/src/test/scala/modules/AddSub_verilator.scala, ${BASE}/src/test/scala/tester/ValExec_INToRecFN.scala, ${BASE}/src/test/scala/modules/AddSub_test.scala, ${BASE}/src/test/scala/modules/Mux3_test.scala, ${BASE}/src/test/scala/top/PE_FPU_dot_test.scala, ${BASE}/src/test/scala/utils/TestUtils.scala, ${BASE}/src/test/scala/top/PE_FPU_test.scala, ${BASE}/src/test/scala/top/PE_v2pack_test.scala, ${BASE}/src/test/scala/tester/HardfloatTester.scala, ${BASE}/src/test/scala/modules/Mem1R1W_test.scala, ${BASE}/src/test/scala/other/recFN2INT_test.scala, ${BASE}/src/test/scala/top/PE_FPU_vector_sum_test.scala, ${BASE}/src/test/scala/tester/FMATester.scala, ${BASE}/src/test/scala/top/PE_FPU_manhattan_test.scala, ${BASE}/src/test/scala/top/PE_FPU_euclidean_test.scala, ${BASE}/src/test/scala/top/PE_FPU_test0.scala, ${BASE}/src/test/scala/modules/Mult_test.scala, ${BASE}/src/test/scala/v2pack/L2_test.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/test/scala/v2pack/AddSubPE_test.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/test/scala/v2pack/L2_test.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/test/scala/v2pack/AddSubPE_test.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(v2pack.L2_test, v2pack.L2_test_simple)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(v2pack.test_random_SUB_INT, v2pack.AddSubPE_test_simple, v2pack.test_random_SUB_FP32, v2pack.AddSubPE_test, v2pack.test_random_ADD_FP32, v2pack.test_random_ADD_INT)[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(v2pack.L2_test, v2pack.L2_test_simple)[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/test/scala/v2pack/L2_test.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: v2pack.L2_test, v2pack.L2_test_simple[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(v2pack.test_random_SUB_INT, v2pack.AddSubPE_test_simple, v2pack.test_random_SUB_FP32, v2pack.AddSubPE_test, v2pack.test_random_ADD_FP32, v2pack.test_random_ADD_INT)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/test/scala/v2pack/AddSubPE_test.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: v2pack.test_random_SUB_INT, v2pack.AddSubPE_test_simple, v2pack.test_random_SUB_FP32, v2pack.AddSubPE_test, v2pack.test_random_ADD_FP32, v2pack.test_random_ADD_INT[0m
 [0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
 [0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/imocanu/Public/PycharmProjects/pe_fpu/target/scala-2.12/test-classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.5.7:compile for Scala 2.12.13[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 432d760c for Scala compiler version 2.12.13[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 6f5ff35a for Scala compiler version 2.12.13[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-Xsource:2.11[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-P:chiselplugin:useBundlePlugin[0m
@@ -43,5 +43,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 4.719460197 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 6.758785558 s[0m
 [0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m

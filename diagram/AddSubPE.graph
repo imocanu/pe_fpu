@@ -1,0 +1,178 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node AddSubPE {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "AddSubPE"
+    
+    port clock {
+        ^port.side: WEST
+        label "clock"
+    }
+    port io_in_0 {
+        ^port.side: WEST
+        label "io_in_0"
+    }
+    port io_in_1 {
+        ^port.side: WEST
+        label "io_in_1"
+    }
+    port io_op {
+        ^port.side: WEST
+        label "io_op"
+    }
+    port io_rounding {
+        ^port.side: WEST
+        label "io_rounding"
+    }
+    port io_out {
+        ^port.side: EAST
+        label "io_out"
+    }
+    node submodule_addRecFN_AddRecFN {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "addRecFN"
+            
+        port io_subOp {
+            ^port.side: WEST
+            label "io_subOp"
+        }    
+        port io_a {
+            ^port.side: WEST
+            label "io_a"
+        }    
+        port io_b {
+            ^port.side: WEST
+            label "io_b"
+        }    
+        port io_roundingMode {
+            ^port.side: WEST
+            label "io_roundingMode"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node op {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "op"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node rounding {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "rounding"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node in_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "in_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node in_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "in_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node addRecFN_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "addRecFN_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node pad_25 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "pad"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "33"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node pad_26 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "pad"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "33"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    edge e158 : AddSubPE.io_op -> AddSubPE.op.in
+    edge e159 : AddSubPE.in_0.out -> pad_25.in1
+    edge e160 : AddSubPE.io_in_1 -> AddSubPE.in_1.in
+    edge e161 : pad_25.out -> AddSubPE.submodule_addRecFN_AddRecFN.io_a
+    edge e162 : AddSubPE.in_1.out -> pad_26.in1
+    edge e163 : AddSubPE.io_rounding -> AddSubPE.rounding.in
+    edge e164 : AddSubPE.rounding.out -> AddSubPE.submodule_addRecFN_AddRecFN.io_roundingMode
+    edge e165 : AddSubPE.op.out -> AddSubPE.submodule_addRecFN_AddRecFN.io_subOp
+    edge e166 : AddSubPE.io_in_0 -> AddSubPE.in_0.in
+    edge e167 : pad_26.out -> AddSubPE.submodule_addRecFN_AddRecFN.io_b
+    edge e168 : AddSubPE.submodule_addRecFN_AddRecFN.io_out -> AddSubPE.addRecFN_out.in
+    edge e169 : AddSubPE.addRecFN_out.out -> AddSubPE.io_out
+    
+}
+

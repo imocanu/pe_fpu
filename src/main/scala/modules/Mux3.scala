@@ -34,19 +34,19 @@ class Mux3 extends Module {
   io.out := out_W
 }
 
-object Mux3 extends App {
- val verilogDir = "rtl"
- val verilogName = "Mux3"
- (new ChiselStage).execute(
-   Array("-X", "verilog",
-     "--target-dir", verilogDir,
-     "--output-file", verilogName),
-   Seq(ChiselGeneratorAnnotation(() => new Mux3))
- )
+// object Mux3 extends App {
+//  val verilogDir = "rtl"
+//  val verilogName = "Mux3"
+//  (new ChiselStage).execute(
+//    Array("-X", "verilog",
+//      "--target-dir", verilogDir,
+//      "--output-file", verilogName),
+//    Seq(ChiselGeneratorAnnotation(() => new Mux3))
+//  )
 
- val targetDir = "diagram"
- (new ElkStage).execute(Array("--target-dir", targetDir),
-   Seq(ChiselGeneratorAnnotation(() => new Mux3))
- )
-}
+//  val targetDir = "diagram"
+//  (new ElkStage).execute(Array("--target-dir", targetDir),
+//    Seq(ChiselGeneratorAnnotation(() => new Mux3))
+//  )
+// }
 

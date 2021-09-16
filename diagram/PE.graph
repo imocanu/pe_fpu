@@ -1,0 +1,1657 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node PE {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "PE"
+    
+    port clock {
+        ^port.side: WEST
+        label "clock"
+    }
+    port reset {
+        ^port.side: WEST
+        label "reset"
+    }
+    port io_Xi_0 {
+        ^port.side: WEST
+        label "io_Xi_0"
+    }
+    port io_Yi_0 {
+        ^port.side: WEST
+        label "io_Yi_0"
+    }
+    port io_Xi_1 {
+        ^port.side: WEST
+        label "io_Xi_1"
+    }
+    port io_Yi_1 {
+        ^port.side: WEST
+        label "io_Yi_1"
+    }
+    port io_aggr_0 {
+        ^port.side: WEST
+        label "io_aggr_0"
+    }
+    port io_aggr_1 {
+        ^port.side: WEST
+        label "io_aggr_1"
+    }
+    port io_aggr_2 {
+        ^port.side: WEST
+        label "io_aggr_2"
+    }
+    port io_aggr_3 {
+        ^port.side: WEST
+        label "io_aggr_3"
+    }
+    port io_m_0_sel {
+        ^port.side: WEST
+        label "io_m_0_sel"
+    }
+    port io_m_1_sel {
+        ^port.side: WEST
+        label "io_m_1_sel"
+    }
+    port io_m_2_sel {
+        ^port.side: WEST
+        label "io_m_2_sel"
+    }
+    port io_m_3_sel {
+        ^port.side: WEST
+        label "io_m_3_sel"
+    }
+    port io_m_4_sel {
+        ^port.side: WEST
+        label "io_m_4_sel"
+    }
+    port io_m_5_sel {
+        ^port.side: WEST
+        label "io_m_5_sel"
+    }
+    port io_m_6_sel {
+        ^port.side: WEST
+        label "io_m_6_sel"
+    }
+    port io_m_7_sel {
+        ^port.side: WEST
+        label "io_m_7_sel"
+    }
+    port io_m_8_sel {
+        ^port.side: WEST
+        label "io_m_8_sel"
+    }
+    port io_m_9_sel {
+        ^port.side: WEST
+        label "io_m_9_sel"
+    }
+    port io_addsub_0_op {
+        ^port.side: WEST
+        label "io_addsub_0_op"
+    }
+    port io_addsub_1_op {
+        ^port.side: WEST
+        label "io_addsub_1_op"
+    }
+    port io_rounding {
+        ^port.side: WEST
+        label "io_rounding"
+    }
+    port io_tininess {
+        ^port.side: WEST
+        label "io_tininess"
+    }
+    port io_out_0 {
+        ^port.side: EAST
+        label "io_out_0"
+    }
+    port io_out_1 {
+        ^port.side: EAST
+        label "io_out_1"
+    }
+    node submodule_m00_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_0"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m01_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_1"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m02_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_2"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m03_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_3"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_multModule00_MultPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "multModule_0"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_multModule01_MultPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "multModule_1"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m04_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_4"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m05_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_5"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m06_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_6"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m07_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_7"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_addsubModule00_AddSubPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "addsubModule_0"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_op {
+            ^port.side: WEST
+            label "io_op"
+        }    
+        port io_rounding {
+            ^port.side: WEST
+            label "io_rounding"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_addsubModule01_AddSubPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "addsubModule_1"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_op {
+            ^port.side: WEST
+            label "io_op"
+        }    
+        port io_rounding {
+            ^port.side: WEST
+            label "io_rounding"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m08_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_8"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node submodule_m09_MuxPE {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "m_9"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port io_in_0 {
+            ^port.side: WEST
+            label "io_in_0"
+        }    
+        port io_in_1 {
+            ^port.side: WEST
+            label "io_in_1"
+        }    
+        port io_in_2 {
+            ^port.side: WEST
+            label "io_in_2"
+        }    
+        port io_sel {
+            ^port.side: WEST
+            label "io_sel"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node Xi_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Xi_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node Yi_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Yi_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node Xi_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Xi_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node Yi_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Yi_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node aggr_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "aggr_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node aggr_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "aggr_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node aggr_2 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "aggr_2"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node aggr_3 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "aggr_3"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_0_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_0_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_1_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_1_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_2_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_2_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_3_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_3_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_5_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_5_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_6_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_6_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_7_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_7_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_8_sel {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_8_sel"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node addsub_0_op {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "addsub_0_op"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node addsub_1_op {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "addsub_1_op"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node rounding {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "rounding"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node addsubModule_0_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "addsubModule_0_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node addsubModule_1_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "addsubModule_1_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node multModule_0_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "multModule_0_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node multModule_1_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "multModule_1_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_0_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_0_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_1_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_1_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_2_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_2_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_3_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_3_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_4_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_4_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_5_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_5_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_6_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_6_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_7_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_7_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_8_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_8_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node m_9_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "m_9_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_1 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit1 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node bits_2 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_2 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit3 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node bits_4 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_3 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit5 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node bits_6 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_4 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit7 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node bits_8 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_5 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit9 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_6 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit10 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_7 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit11 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_8 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit12 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_9 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit13 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_10 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit14 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_11 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit15 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_12 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit16 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_13 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit17 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node mux_14 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit18 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node lit19 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node lit20 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node lit21 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node lit22 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node lit23 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node lit24 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    edge e11 : PE.rounding.out -> PE.submodule_addsubModule01_AddSubPE.io_rounding
+    edge e12 : PE.m_0_out.out -> PE.submodule_multModule00_MultPE.io_in_0
+    edge e13 : mux_2.out -> PE.addsubModule_1_out.in
+    edge e14 : PE.io_m_7_sel -> PE.m_7_sel.in
+    edge e15 : PE.io_addsub_1_op -> PE.addsub_1_op.in
+    edge e16 : PE.reset -> mux_11.select
+    edge e17 : PE.m_9_out.out -> PE.io_out_1
+    edge e18 : PE.reset -> mux_9.select
+    edge e19 : PE.clock -> PE.submodule_addsubModule00_AddSubPE.clock
+    edge e20 : PE.m_6_sel.out -> PE.submodule_m06_MuxPE.io_sel
+    edge e21 : PE.lit13 -> mux_9.in1
+    edge e22 : mux_4.out -> PE.multModule_1_out.in
+    edge e23 : PE.clock -> PE.submodule_m04_MuxPE.clock
+    edge e24 : PE.clock -> PE.submodule_multModule01_MultPE.clock
+    edge e25 : PE.submodule_m06_MuxPE.io_out -> mux_11.in2
+    edge e26 : PE.clock -> PE.submodule_m03_MuxPE.clock
+    edge e27 : PE.addsubModule_0_out.out -> PE.submodule_m08_MuxPE.io_in_0
+    edge e28 : bits_6.out -> mux_3.in2
+    edge e29 : mux_13.out -> PE.m_8_out.in
+    edge e30 : PE.addsub_1_op.out -> PE.submodule_addsubModule01_AddSubPE.io_op
+    edge e31 : PE.aggr_2.out -> PE.submodule_m06_MuxPE.io_in_2
+    edge e32 : PE.submodule_addsubModule00_AddSubPE.io_out -> bits_2.in1
+    edge e33 : PE.lit14 -> mux_10.in1
+    edge e34 : PE.m_1_sel.out -> PE.submodule_m01_MuxPE.io_sel
+    edge e35 : PE.multModule_1_out.out -> PE.submodule_m07_MuxPE.io_in_1
+    edge e36 : PE.io_m_2_sel -> PE.m_2_sel.in
+    edge e37 : PE.reset -> mux_4.select
+    edge e38 : PE.m_5_sel.out -> PE.submodule_m05_MuxPE.io_sel
+    edge e39 : mux_5.out -> PE.m_0_out.in
+    edge e40 : PE.submodule_multModule00_MultPE.io_out -> bits_6.in1
+    edge e41 : mux_1.out -> PE.addsubModule_0_out.in
+    edge e42 : PE.io_aggr_0 -> PE.aggr_1.in
+    edge e43 : PE.reset -> mux_8.select
+    edge e44 : PE.reset -> mux_10.select
+    edge e45 : PE.lit18 -> mux_14.in1
+    edge e46 : PE.io_addsub_0_op -> PE.addsub_0_op.in
+    edge e47 : PE.lit3 -> mux_2.in1
+    edge e48 : PE.io_Xi_1 -> PE.Xi_1.in
+    edge e49 : PE.addsubModule_0_out.out -> PE.submodule_m01_MuxPE.io_in_1
+    edge e50 : PE.Xi_1.out -> PE.submodule_m02_MuxPE.io_in_0
+    edge e51 : PE.lit24 -> PE.submodule_m09_MuxPE.io_in_2
+    edge e52 : PE.m_5_out.out -> PE.submodule_addsubModule00_AddSubPE.io_in_1
+    edge e53 : PE.io_m_6_sel -> PE.m_6_sel.in
+    edge e54 : PE.lit19 -> PE.submodule_m00_MuxPE.io_in_2
+    edge e55 : PE.submodule_m02_MuxPE.io_out -> mux_7.in2
+    edge e56 : PE.io_aggr_0 -> PE.aggr_3.in
+    edge e57 : PE.clock -> PE.submodule_multModule00_MultPE.clock
+    edge e58 : PE.Yi_0.out -> PE.submodule_m05_MuxPE.io_in_0
+    edge e59 : mux_3.out -> PE.multModule_0_out.in
+    edge e60 : PE.lit10 -> mux_6.in1
+    edge e61 : mux_9.out -> PE.m_4_out.in
+    edge e62 : PE.multModule_0_out.out -> PE.submodule_m04_MuxPE.io_in_1
+    edge e63 : PE.lit22 -> PE.submodule_m03_MuxPE.io_in_2
+    edge e64 : PE.m_7_out.out -> PE.submodule_addsubModule01_AddSubPE.io_in_1
+    edge e65 : PE.reset -> mux_14.select
+    edge e66 : PE.m_3_out.out -> PE.submodule_multModule01_MultPE.io_in_1
+    edge e67 : PE.io_Yi_0 -> PE.Yi_0.in
+    edge e68 : PE.m_0_sel.out -> PE.submodule_m00_MuxPE.io_sel
+    edge e69 : PE.clock -> PE.submodule_m02_MuxPE.clock
+    edge e70 : PE.m_4_out.out -> PE.submodule_addsubModule00_AddSubPE.io_in_0
+    edge e71 : PE.clock -> PE.submodule_m09_MuxPE.clock
+    edge e72 : PE.m_0_sel.out -> PE.submodule_m04_MuxPE.io_sel
+    edge e73 : PE.m_8_out.out -> PE.io_out_0
+    edge e74 : PE.submodule_m07_MuxPE.io_out -> mux_12.in2
+    edge e75 : bits_8.out -> mux_4.in2
+    edge e76 : PE.m_7_sel.out -> PE.submodule_m09_MuxPE.io_sel
+    edge e77 : PE.reset -> mux_13.select
+    edge e78 : mux_8.out -> PE.m_3_out.in
+    edge e79 : PE.clock -> PE.submodule_m08_MuxPE.clock
+    edge e80 : PE.clock -> PE.submodule_m01_MuxPE.clock
+    edge e81 : PE.addsub_0_op.out -> PE.submodule_addsubModule00_AddSubPE.io_op
+    edge e82 : PE.lit15 -> mux_11.in1
+    edge e83 : PE.reset -> mux_3.select
+    edge e84 : PE.Yi_1.out -> PE.submodule_m07_MuxPE.io_in_0
+    edge e85 : PE.lit5 -> mux_3.in1
+    edge e86 : mux_12.out -> PE.m_7_out.in
+    edge e87 : PE.io_m_1_sel -> PE.m_1_sel.in
+    edge e88 : PE.clock -> PE.submodule_m00_MuxPE.clock
+    edge e89 : PE.multModule_1_out.out -> PE.submodule_m06_MuxPE.io_in_1
+    edge e90 : PE.aggr_1.out -> PE.submodule_m05_MuxPE.io_in_2
+    edge e91 : PE.submodule_m08_MuxPE.io_out -> mux_13.in2
+    edge e92 : PE.submodule_m03_MuxPE.io_out -> mux_8.in2
+    edge e93 : PE.lit11 -> mux_7.in1
+    edge e94 : PE.lit23 -> PE.submodule_m08_MuxPE.io_in_2
+    edge e95 : PE.reset -> mux_7.select
+    edge e96 : PE.lit16 -> mux_12.in1
+    edge e97 : PE.addsubModule_0_out.out -> PE.submodule_m00_MuxPE.io_in_1
+    edge e98 : PE.Yi_0.out -> PE.submodule_m01_MuxPE.io_in_0
+    edge e99 : PE.multModule_1_out.out -> PE.submodule_m09_MuxPE.io_in_1
+    edge e100 : PE.submodule_m00_MuxPE.io_out -> mux_5.in2
+    edge e101 : PE.io_m_5_sel -> PE.m_5_sel.in
+    edge e102 : PE.addsubModule_1_out.out -> PE.submodule_m03_MuxPE.io_in_1
+    edge e103 : PE.lit21 -> PE.submodule_m02_MuxPE.io_in_2
+    edge e104 : PE.m_8_sel.out -> PE.submodule_m08_MuxPE.io_sel
+    edge e105 : PE.submodule_multModule01_MultPE.io_out -> bits_8.in1
+    edge e106 : PE.m_1_out.out -> PE.submodule_multModule00_MultPE.io_in_1
+    edge e107 : mux_7.out -> PE.m_2_out.in
+    edge e108 : PE.m_6_out.out -> PE.submodule_addsubModule01_AddSubPE.io_in_0
+    edge e109 : PE.Xi_0.out -> PE.submodule_m04_MuxPE.io_in_0
+    edge e110 : PE.submodule_m04_MuxPE.io_out -> mux_9.in2
+    edge e111 : PE.rounding.out -> PE.submodule_addsubModule00_AddSubPE.io_rounding
+    edge e112 : PE.m_2_out.out -> PE.submodule_multModule01_MultPE.io_in_0
+    edge e113 : PE.io_aggr_0 -> PE.aggr_0.in
+    edge e114 : PE.io_Xi_0 -> PE.Xi_0.in
+    edge e115 : PE.io_aggr_0 -> PE.aggr_2.in
+    edge e116 : bits_2.out -> mux_1.in2
+    edge e117 : PE.clock -> PE.submodule_addsubModule01_AddSubPE.clock
+    edge e118 : PE.io_m_0_sel -> PE.m_0_sel.in
+    edge e119 : PE.reset -> mux_2.select
+    edge e120 : PE.clock -> PE.submodule_m07_MuxPE.clock
+    edge e121 : mux_11.out -> PE.m_6_out.in
+    edge e122 : PE.clock -> PE.submodule_m06_MuxPE.clock
+    edge e123 : PE.reset -> mux_6.select
+    edge e124 : PE.submodule_addsubModule01_AddSubPE.io_out -> bits_4.in1
+    edge e125 : PE.io_rounding -> PE.rounding.in
+    edge e126 : PE.m_3_sel.out -> PE.submodule_m03_MuxPE.io_sel
+    edge e127 : PE.submodule_m05_MuxPE.io_out -> mux_10.in2
+    edge e128 : PE.submodule_m09_MuxPE.io_out -> mux_14.in2
+    edge e129 : bits_4.out -> mux_2.in2
+    edge e130 : PE.Yi_1.out -> PE.submodule_m03_MuxPE.io_in_0
+    edge e131 : PE.reset -> mux_12.select
+    edge e132 : PE.lit20 -> PE.submodule_m01_MuxPE.io_in_2
+    edge e133 : PE.addsubModule_1_out.out -> PE.submodule_m02_MuxPE.io_in_1
+    edge e134 : PE.lit7 -> mux_4.in1
+    edge e135 : PE.io_Yi_1 -> PE.Yi_1.in
+    edge e136 : PE.io_m_8_sel -> PE.m_8_sel.in
+    edge e137 : PE.m_7_sel.out -> PE.submodule_m07_MuxPE.io_sel
+    edge e138 : PE.clock -> PE.submodule_m05_MuxPE.clock
+    edge e139 : mux_6.out -> PE.m_1_out.in
+    edge e140 : PE.aggr_0.out -> PE.submodule_m04_MuxPE.io_in_2
+    edge e141 : mux_10.out -> PE.m_5_out.in
+    edge e142 : PE.lit17 -> mux_13.in1
+    edge e143 : PE.Xi_1.out -> PE.submodule_m06_MuxPE.io_in_0
+    edge e144 : PE.submodule_m01_MuxPE.io_out -> mux_6.in2
+    edge e145 : PE.lit1 -> mux_1.in1
+    edge e146 : PE.reset -> mux_1.select
+    edge e147 : PE.lit12 -> mux_8.in1
+    edge e148 : PE.multModule_1_out.out -> PE.submodule_m05_MuxPE.io_in_1
+    edge e149 : PE.m_2_sel.out -> PE.submodule_m02_MuxPE.io_sel
+    edge e150 : PE.multModule_0_out.out -> PE.submodule_m08_MuxPE.io_in_1
+    edge e151 : PE.aggr_3.out -> PE.submodule_m07_MuxPE.io_in_2
+    edge e152 : mux_14.out -> PE.m_9_out.in
+    edge e153 : PE.addsubModule_1_out.out -> PE.submodule_m09_MuxPE.io_in_0
+    edge e154 : PE.Xi_0.out -> PE.submodule_m00_MuxPE.io_in_0
+    edge e155 : PE.io_m_3_sel -> PE.m_3_sel.in
+    edge e156 : PE.lit9 -> mux_5.in1
+    edge e157 : PE.reset -> mux_5.select
+    
+}
+

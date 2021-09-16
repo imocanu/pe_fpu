@@ -1,0 +1,270 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node MulRawFN {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "MulRawFN"
+    
+    port io_a_isNaN {
+        ^port.side: WEST
+        label "io_a_isNaN"
+    }
+    port io_a_isInf {
+        ^port.side: WEST
+        label "io_a_isInf"
+    }
+    port io_a_isZero {
+        ^port.side: WEST
+        label "io_a_isZero"
+    }
+    port io_a_sign {
+        ^port.side: WEST
+        label "io_a_sign"
+    }
+    port io_a_sExp {
+        ^port.side: WEST
+        label "io_a_sExp"
+    }
+    port io_a_sig {
+        ^port.side: WEST
+        label "io_a_sig"
+    }
+    port io_b_isNaN {
+        ^port.side: WEST
+        label "io_b_isNaN"
+    }
+    port io_b_isInf {
+        ^port.side: WEST
+        label "io_b_isInf"
+    }
+    port io_b_isZero {
+        ^port.side: WEST
+        label "io_b_isZero"
+    }
+    port io_b_sign {
+        ^port.side: WEST
+        label "io_b_sign"
+    }
+    port io_b_sExp {
+        ^port.side: WEST
+        label "io_b_sExp"
+    }
+    port io_b_sig {
+        ^port.side: WEST
+        label "io_b_sig"
+    }
+    port io_invalidExc {
+        ^port.side: EAST
+        label "io_invalidExc"
+    }
+    port io_rawOut_isNaN {
+        ^port.side: EAST
+        label "io_rawOut_isNaN"
+    }
+    port io_rawOut_isInf {
+        ^port.side: EAST
+        label "io_rawOut_isInf"
+    }
+    port io_rawOut_isZero {
+        ^port.side: EAST
+        label "io_rawOut_isZero"
+    }
+    port io_rawOut_sign {
+        ^port.side: EAST
+        label "io_rawOut_sign"
+    }
+    port io_rawOut_sExp {
+        ^port.side: EAST
+        label "io_rawOut_sExp"
+    }
+    port io_rawOut_sig {
+        ^port.side: EAST
+        label "io_rawOut_sig"
+    }
+    node submodule_mulFullRaw_MulFullRawFN {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "mulFullRaw"
+            
+        port io_a_isNaN {
+            ^port.side: WEST
+            label "io_a_isNaN"
+        }    
+        port io_a_isInf {
+            ^port.side: WEST
+            label "io_a_isInf"
+        }    
+        port io_a_isZero {
+            ^port.side: WEST
+            label "io_a_isZero"
+        }    
+        port io_a_sign {
+            ^port.side: WEST
+            label "io_a_sign"
+        }    
+        port io_a_sExp {
+            ^port.side: WEST
+            label "io_a_sExp"
+        }    
+        port io_a_sig {
+            ^port.side: WEST
+            label "io_a_sig"
+        }    
+        port io_b_isNaN {
+            ^port.side: WEST
+            label "io_b_isNaN"
+        }    
+        port io_b_isInf {
+            ^port.side: WEST
+            label "io_b_isInf"
+        }    
+        port io_b_isZero {
+            ^port.side: WEST
+            label "io_b_isZero"
+        }    
+        port io_b_sign {
+            ^port.side: WEST
+            label "io_b_sign"
+        }    
+        port io_b_sExp {
+            ^port.side: WEST
+            label "io_b_sExp"
+        }    
+        port io_b_sig {
+            ^port.side: WEST
+            label "io_b_sig"
+        }    
+        port io_invalidExc {
+            ^port.side: EAST
+            label "io_invalidExc"
+        }    
+        port io_rawOut_isNaN {
+            ^port.side: EAST
+            label "io_rawOut_isNaN"
+        }    
+        port io_rawOut_isInf {
+            ^port.side: EAST
+            label "io_rawOut_isInf"
+        }    
+        port io_rawOut_isZero {
+            ^port.side: EAST
+            label "io_rawOut_isZero"
+        }    
+        port io_rawOut_sign {
+            ^port.side: EAST
+            label "io_rawOut_sign"
+        }    
+        port io_rawOut_sExp {
+            ^port.side: EAST
+            label "io_rawOut_sExp"
+        }    
+        port io_rawOut_sig {
+            ^port.side: EAST
+            label "io_rawOut_sig"
+        }
+    
+    
+    }
+
+    node shr_333 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "shr"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "22"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_334 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "21"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node orr_335 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "orr"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cat_336 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "cat"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    edge e704 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> shr_333.in1
+    edge e705 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isInf -> MulRawFN.io_rawOut_isInf
+    edge e706 : MulRawFN.io_a_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isZero
+    edge e707 : MulRawFN.io_b_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sExp
+    edge e708 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sExp -> MulRawFN.io_rawOut_sExp
+    edge e709 : MulRawFN.io_a_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isInf
+    edge e710 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isNaN -> MulRawFN.io_rawOut_isNaN
+    edge e711 : bits_334.out -> orr_335.in1
+    edge e712 : MulRawFN.io_a_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isNaN
+    edge e713 : shr_333.out -> cat_336.in1
+    edge e714 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_invalidExc -> MulRawFN.io_invalidExc
+    edge e715 : MulRawFN.io_a_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sig
+    edge e716 : MulRawFN.io_a_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sign
+    edge e717 : cat_336.out -> MulRawFN.io_rawOut_sig
+    edge e718 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isZero -> MulRawFN.io_rawOut_isZero
+    edge e719 : MulRawFN.io_b_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sign
+    edge e720 : MulRawFN.io_b_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sig
+    edge e721 : MulRawFN.io_b_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isZero
+    edge e722 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sign -> MulRawFN.io_rawOut_sign
+    edge e723 : MulRawFN.io_a_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sExp
+    edge e724 : MulRawFN.io_b_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isInf
+    edge e725 : MulRawFN.io_b_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isNaN
+    edge e726 : orr_335.out -> cat_336.in2
+    edge e727 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> bits_334.in1
+    
+}
+

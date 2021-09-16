@@ -92,20 +92,20 @@ class AddSub extends Module {
   //printf("\n[DEBUG] readData : %d", Utils.ieee(addRecFN.io.out))
 }
 
-object AddSub extends App {
- val verilogDir = "rtl"
- val verilogName = "AddSub"
+// object AddSub extends App {
+//  val verilogDir = "rtl"
+//  val verilogName = "AddSub"
 
- (new ChiselStage).execute(
-   Array("--compiler", "verilog",
-     "--target-dir", verilogDir,
-     "--output-file", verilogName),
-   Seq(ChiselGeneratorAnnotation(() => new AddSub))
- )
+//  (new ChiselStage).execute(
+//    Array("--compiler", "verilog",
+//      "--target-dir", verilogDir,
+//      "--output-file", verilogName),
+//    Seq(ChiselGeneratorAnnotation(() => new AddSub))
+//  )
 
- val targetDir = "diagram"
- (new ElkStage).execute(Array("--target-dir", targetDir),
-   Seq(ChiselGeneratorAnnotation(() => new AddSub))
- )
+//  val targetDir = "diagram"
+//  (new ElkStage).execute(Array("--target-dir", targetDir),
+//    Seq(ChiselGeneratorAnnotation(() => new AddSub))
+//  )
 
-}
+// }

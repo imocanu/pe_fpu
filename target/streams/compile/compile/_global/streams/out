@@ -1,7 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/MultPE.scala:44:44: not found: type Mult[0m
-[0m[[0m[31merror[0m] [0m[0m   Seq(ChiselGeneratorAnnotation(() => new Mult))[0m
-[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/MultPE.scala:49:44: not found: type Mult[0m
-[0m[[0m[31merror[0m] [0m[0m   Seq(ChiselGeneratorAnnotation(() => new Mult))[0m
-[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/AddSubPE_4_testing.scala:77:3: not found: value addRecFN_out[0m
+[0m[[0m[31merror[0m] [0m[0m  addRecFN_out  := addRecFN.io.out[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/AddSubPE_4_testing.scala:82:34: not found: value addRecFN_out[0m
+[0m[[0m[31merror[0m] [0m[0m    recFNToIN.io.in           := addRecFN_out[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
 [0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

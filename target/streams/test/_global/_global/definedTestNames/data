@@ -1,1 +1,1 @@
-["modules.AddSub_test","tester.INToRecFNSpec","v2pack.L2_test","modules.AddSub_test_FULL","other.recFN2INT_test","other.AddSubMul32_test"]
+["modules.AddSub_test","tester.INToRecFNSpec","v2pack.L2_test","modules.AddSub_test_FULL","other.recFN2INT_test","v2pack.AddSubPE_test","top.PE_v2pack_test","other.AddSubMul32_test"]

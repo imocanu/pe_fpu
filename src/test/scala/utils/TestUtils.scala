@@ -2,6 +2,7 @@ package utils
 
 import scala.io.Source
 import scala.collection.mutable.ArrayBuffer
+import hardfloat._
 import chisel3._
 import chisel3.util.{is, switch}
 
@@ -16,6 +17,7 @@ object TestUtils {
 
     def tininess_beforeRounding = 0.U(1.W)
     def tininess_afterRounding  = 1.U(1.W)
+
 
     var round_near_even_UINT   = "b000".asUInt(3.W)
     var round_minMag_UINT      = "b000".asUInt(3.W)

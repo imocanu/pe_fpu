@@ -47,41 +47,14 @@ clean:
 	rm -rf project/target target test_run_dir generated diagram
 	rm -rf rtl/*.json rtl/*.fir project/project python/__pycache__
 
-testAddSub:
-	rm -rf diagram
-	sbt "testOnly modules.AddSub_test"
-
-testMult:
-	rm -rf diagram
-	sbt "testOnly modules.Mult_test"
-
-testrecFN2INT:
-	rm -rf diagram
-	sbt "testOnly other.recFN2INT_test"
-
-testAddSubFull:
-	sbt "testOnly modules.AddSub_test_full"
-
-testAddSubMul32:
-	sbt "testOnly other.AddSubMul32_test"
-
 testL2:
 	sbt "testOnly v2pack.L2_test"
 
-test0:
-	sbt "testOnly top.PE_FP32_test0"
+testPE:
+	sbt "testOnly top.PE_v2pack_test"
 
-testEuclidean:
-	sbt "testOnly top.PE_FPU_euclidean_test"
-
-testManhattan:
-	sbt "testOnly top.PE_FPU_manhattan_test"
-
-testVectorSum:
-	sbt "testOnly top.PE_FPU_vector_sum_test"
-
-testDot:
-	sbt "testOnly top.PE_FPU_dot_test"
+testAddSubPE:
+	sbt "testOnly v2pack.AddSubPE_test"
 
 show-config:
 	$(VERILATOR) -V
@@ -110,3 +83,41 @@ verilatorTest:
 
 	@echo
 	@echo "-- DONE --------------------"
+
+
+
+
+
+
+testAddSub:
+	rm -rf diagram
+	sbt "testOnly modules.AddSub_test"
+
+testMult:
+	rm -rf diagram
+	sbt "testOnly modules.Mult_test"
+
+testrecFN2INT:
+	rm -rf diagram
+	sbt "testOnly other.recFN2INT_test"
+
+testAddSubFull:
+	sbt "testOnly modules.AddSub_test_full"
+
+testAddSubMul32:
+	sbt "testOnly other.AddSubMul32_test"
+
+test0:
+	sbt "testOnly top.PE_FP32_test0"
+
+testEuclidean:
+	sbt "testOnly top.PE_FPU_euclidean_test"
+
+testManhattan:
+	sbt "testOnly top.PE_FPU_manhattan_test"
+
+testVectorSum:
+	sbt "testOnly top.PE_FPU_vector_sum_test"
+
+testDot:
+	sbt "testOnly top.PE_FPU_dot_test"

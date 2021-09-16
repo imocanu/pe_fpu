@@ -14,7 +14,7 @@ class MultPE extends Module {
     val tininess = Input(UInt(1.W))
     val out      = Output(Bits(Config.forOUT.W))
   })
-  // Round type
+  // Rounding type
   val rounding  = RegNext(io.rounding)
 
   // Tininess type
@@ -24,6 +24,7 @@ class MultPE extends Module {
   val in_0  = RegNext(io.in_0)
   val in_1  = RegNext(io.in_1)
 
+  // Mul module
   val mulRecFN = Module(new MulRecFN(Config.EXP, Config.SIG))
   mulRecFN.io.roundingMode   := Config.roundingMode
   mulRecFN.io.detectTininess := Config.detectTininess
