@@ -8,10 +8,10 @@ import layered.stage._
 
 class MultPE extends Module {
   val io = IO(new Bundle {
-    val in_0     = Input(Bits(Config.forIN.W))
-    val in_1     = Input(Bits(Config.forIN.W))
     val rounding = Input(UInt(3.W))
     val tininess = Input(UInt(1.W))
+    val in_0     = Input(Bits(Config.forIN.W))
+    val in_1     = Input(Bits(Config.forIN.W))
     val out      = Output(Bits(Config.forOUT.W))
   })
   // Rounding type
@@ -26,8 +26,8 @@ class MultPE extends Module {
 
   // Mul module
   val mulRecFN = Module(new MulRecFN(Config.EXP, Config.SIG))
-  mulRecFN.io.roundingMode   := Config.roundingMode
-  mulRecFN.io.detectTininess := Config.detectTininess
+  mulRecFN.io.roundingMode   := rounding
+  mulRecFN.io.detectTininess := tininess
   mulRecFN.io.a := in_0
   mulRecFN.io.b := in_1
   val mulRecFN_out  = RegNext(mulRecFN.io.out)

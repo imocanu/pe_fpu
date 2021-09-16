@@ -170,7 +170,7 @@ node MulRawFN {
     
     }
 
-    node shr_333 {
+    node shr_35 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -187,7 +187,7 @@ node MulRawFN {
             ^port.side: "EAST"
         }
     }
-    node bits_334 {
+    node bits_36 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -211,7 +211,7 @@ node MulRawFN {
             ^port.side: "EAST"
         }
     }
-    node orr_335 {
+    node orr_37 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -223,7 +223,7 @@ node MulRawFN {
             ^port.side: "EAST"
         }
     }
-    node cat_336 {
+    node cat_38 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -241,30 +241,30 @@ node MulRawFN {
             ^port.side: "EAST"
         }
     }
-    edge e704 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> shr_333.in1
-    edge e705 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isInf -> MulRawFN.io_rawOut_isInf
-    edge e706 : MulRawFN.io_a_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isZero
-    edge e707 : MulRawFN.io_b_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sExp
-    edge e708 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sExp -> MulRawFN.io_rawOut_sExp
-    edge e709 : MulRawFN.io_a_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isInf
-    edge e710 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isNaN -> MulRawFN.io_rawOut_isNaN
-    edge e711 : bits_334.out -> orr_335.in1
-    edge e712 : MulRawFN.io_a_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isNaN
-    edge e713 : shr_333.out -> cat_336.in1
-    edge e714 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_invalidExc -> MulRawFN.io_invalidExc
-    edge e715 : MulRawFN.io_a_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sig
-    edge e716 : MulRawFN.io_a_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sign
-    edge e717 : cat_336.out -> MulRawFN.io_rawOut_sig
-    edge e718 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isZero -> MulRawFN.io_rawOut_isZero
-    edge e719 : MulRawFN.io_b_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sign
-    edge e720 : MulRawFN.io_b_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sig
-    edge e721 : MulRawFN.io_b_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isZero
-    edge e722 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sign -> MulRawFN.io_rawOut_sign
-    edge e723 : MulRawFN.io_a_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sExp
-    edge e724 : MulRawFN.io_b_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isInf
-    edge e725 : MulRawFN.io_b_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isNaN
-    edge e726 : orr_335.out -> cat_336.in2
-    edge e727 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> bits_334.in1
+    edge e89 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isInf -> MulRawFN.io_rawOut_isInf
+    edge e90 : MulRawFN.io_a_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isZero
+    edge e91 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> bits_36.in1
+    edge e92 : MulRawFN.io_b_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sExp
+    edge e93 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sExp -> MulRawFN.io_rawOut_sExp
+    edge e94 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> shr_35.in1
+    edge e95 : orr_37.out -> cat_38.in2
+    edge e96 : MulRawFN.io_a_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isInf
+    edge e97 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isNaN -> MulRawFN.io_rawOut_isNaN
+    edge e98 : MulRawFN.io_a_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isNaN
+    edge e99 : shr_35.out -> cat_38.in1
+    edge e100 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_invalidExc -> MulRawFN.io_invalidExc
+    edge e101 : MulRawFN.io_a_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sig
+    edge e102 : MulRawFN.io_a_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sign
+    edge e103 : bits_36.out -> orr_37.in1
+    edge e104 : cat_38.out -> MulRawFN.io_rawOut_sig
+    edge e105 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isZero -> MulRawFN.io_rawOut_isZero
+    edge e106 : MulRawFN.io_b_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sign
+    edge e107 : MulRawFN.io_b_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sig
+    edge e108 : MulRawFN.io_b_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isZero
+    edge e109 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sign -> MulRawFN.io_rawOut_sign
+    edge e110 : MulRawFN.io_a_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sExp
+    edge e111 : MulRawFN.io_b_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isInf
+    edge e112 : MulRawFN.io_b_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isNaN
     
 }
 

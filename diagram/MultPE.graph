@@ -12,6 +12,18 @@ node MultPE {
         ^port.side: WEST
         label "clock"
     }
+    port reset {
+        ^port.side: WEST
+        label "reset"
+    }
+    port io_rounding {
+        ^port.side: WEST
+        label "io_rounding"
+    }
+    port io_tininess {
+        ^port.side: WEST
+        label "io_tininess"
+    }
     port io_in_0 {
         ^port.side: WEST
         label "io_in_0"
@@ -38,6 +50,10 @@ node MultPE {
             ^port.side: WEST
             label "io_b"
         }    
+        port io_roundingMode {
+            ^port.side: WEST
+            label "io_roundingMode"
+        }    
         port io_out {
             ^port.side: EAST
             label "io_out"
@@ -46,6 +62,19 @@ node MultPE {
     
     }
 
+    node rounding {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "rounding"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
     node in_0 {
         layout [ size: 30, 40 ]
         portConstraints: FIXED_SIDE
@@ -85,7 +114,7 @@ node MultPE {
             ^port.side: "EAST"
         }
     }
-    node pad_31 {
+    node pad_1 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -102,7 +131,7 @@ node MultPE {
             ^port.side: "EAST"
         }
     }
-    node pad_32 {
+    node pad_2 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -119,14 +148,16 @@ node MultPE {
             ^port.side: "EAST"
         }
     }
-    edge e187 : pad_31.out -> MultPE.submodule_mulRecFN_MulRecFN.io_a
-    edge e188 : MultPE.io_in_1 -> MultPE.in_1.in
-    edge e189 : MultPE.submodule_mulRecFN_MulRecFN.io_out -> MultPE.mulRecFN_out.in
-    edge e190 : MultPE.in_0.out -> pad_31.in1
-    edge e191 : MultPE.mulRecFN_out.out -> MultPE.io_out
-    edge e192 : MultPE.in_1.out -> pad_32.in1
-    edge e193 : MultPE.io_in_0 -> MultPE.in_0.in
-    edge e194 : pad_32.out -> MultPE.submodule_mulRecFN_MulRecFN.io_b
+    edge e11 : pad_1.out -> MultPE.submodule_mulRecFN_MulRecFN.io_a
+    edge e12 : MultPE.io_in_1 -> MultPE.in_1.in
+    edge e13 : MultPE.submodule_mulRecFN_MulRecFN.io_out -> MultPE.mulRecFN_out.in
+    edge e14 : MultPE.mulRecFN_out.out -> MultPE.io_out
+    edge e15 : MultPE.rounding.out -> MultPE.submodule_mulRecFN_MulRecFN.io_roundingMode
+    edge e16 : MultPE.io_in_0 -> MultPE.in_0.in
+    edge e17 : MultPE.io_rounding -> MultPE.rounding.in
+    edge e18 : MultPE.in_0.out -> pad_1.in1
+    edge e19 : pad_2.out -> MultPE.submodule_mulRecFN_MulRecFN.io_b
+    edge e20 : MultPE.in_1.out -> pad_2.in1
     
 }
 

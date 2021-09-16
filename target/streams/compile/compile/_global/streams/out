@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/AddSubPE_4_testing.scala:77:3: not found: value addRecFN_out[0m
-[0m[[0m[31merror[0m] [0m[0m  addRecFN_out  := addRecFN.io.out[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/AddSubPE_4_testing.scala:82:34: not found: value addRecFN_out[0m
-[0m[[0m[31merror[0m] [0m[0m    recFNToIN.io.in           := addRecFN_out[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/MultPE _4_testing.scala:73:29: not found: value addRecFN_out[0m
+[0m[[0m[31merror[0m] [0m[0m    recFN_out := Utils.ieee(addRecFN_out)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

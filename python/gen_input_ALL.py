@@ -12,11 +12,6 @@ random_float_in_2 = numpy.random.uniform(-FLOAT_range, FLOAT_range, size=(1, tot
 random_float_in_3 = numpy.random.uniform(-FLOAT_range, FLOAT_range, size=(1, totalNR)).reshape(-1)
 random_float_in_4 = numpy.random.uniform(-FLOAT_range, FLOAT_range, size=(1, totalNR)).reshape(-1)
 
-# if DEBUG: 
-#     print("gen_IN_1 :", random_float_in_1)
-#     print("gen_IN_2 :", random_float_in_2)
-#     print("gen_IN_3 :", random_float_in_3)
-#     print("gen_IN_4 :", random_float_in_4)
 
 random_float_ADD_bin = []
 random_float_SUB_bin = []

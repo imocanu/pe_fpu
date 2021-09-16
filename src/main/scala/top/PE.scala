@@ -38,8 +38,8 @@ class PE extends Module {
     val rounding    = Input(UInt(3.W))
     val tininess    = Input(UInt(1.W))
 
-    val out_0  = Output(Bits(Config.forIN.W))  
-    val out_1  = Output(Bits(Config.forIN.W))
+    val out_0  = Output(Bits(Config.forOUT.W))  
+    val out_1  = Output(Bits(Config.forOUT.W))
   })
 //====================================
 // INPUTS
@@ -51,7 +51,7 @@ class PE extends Module {
   val Yi_1  = RegNext(io.Yi_1)
 
 //====================================
-// INPUTS
+// INPUTS for Aggregation
 //====================================
   val aggr_0  = RegNext(io.aggr_0)
   val aggr_1  = RegNext(io.aggr_0)
@@ -60,7 +60,7 @@ class PE extends Module {
   val aggr_3  = RegNext(io.aggr_0)
 
 //====================================
-// Selectors
+// SELECTORS
 //====================================
   val m_0_sel  = RegNext(io.m_0_sel)
   val m_1_sel  = RegNext(io.m_1_sel)
@@ -84,21 +84,21 @@ class PE extends Module {
 //=======================================
 // Shared regs for INPUTS/OUTPUTS
 //=======================================
-  val addsubModule_0_out  = RegInit(0.U(32.W))
-  val addsubModule_1_out  = RegInit(0.U(32.W))
-  val multModule_0_out    = RegInit(0.U(32.W))
-  val multModule_1_out    = RegInit(0.U(32.W))
+  val addsubModule_0_out  = RegInit(0.U(Config.forOUT.W))
+  val addsubModule_1_out  = RegInit(0.U(Config.forOUT.W))
+  val multModule_0_out    = RegInit(0.U(Config.forOUT.W))
+  val multModule_1_out    = RegInit(0.U(Config.forOUT.W))
 
-  val m_0_out = RegInit(0.U(32.W)) 
-  val m_1_out = RegInit(0.U(32.W))  
-  val m_2_out = RegInit(0.U(32.W))
-  val m_3_out = RegInit(0.U(32.W))
-  val m_4_out = RegInit(0.U(32.W))
-  val m_5_out = RegInit(0.U(32.W))  
-  val m_6_out = RegInit(0.U(32.W))
-  val m_7_out = RegInit(0.U(32.W))
-  val m_8_out = RegInit(0.U(32.W))
-  val m_9_out = RegInit(0.U(32.W))
+  val m_0_out = RegInit(0.U(Config.forOUT.W)) 
+  val m_1_out = RegInit(0.U(Config.forOUT.W))  
+  val m_2_out = RegInit(0.U(Config.forOUT.W))
+  val m_3_out = RegInit(0.U(Config.forOUT.W))
+  val m_4_out = RegInit(0.U(Config.forOUT.W))
+  val m_5_out = RegInit(0.U(Config.forOUT.W))  
+  val m_6_out = RegInit(0.U(Config.forOUT.W))
+  val m_7_out = RegInit(0.U(Config.forOUT.W))
+  val m_8_out = RegInit(0.U(Config.forOUT.W))
+  val m_9_out = RegInit(0.U(Config.forOUT.W))
 
 //=======================================
 // Layer 1  :  4 x MUX IN
@@ -182,7 +182,7 @@ class PE extends Module {
   val m_7 = Module( new MuxPE() )
   m_7.io.sel  := m_7_sel
   m_7.io.in_0 := Yi_1
-  m_7.io.in_1 := multModule_1_out
+  m_7.io.in_1 := DontCare
   m_7.io.in_2 := aggr_3
   m_7.io.in_3 := DontCare
   m_7_out     := m_7.io.out

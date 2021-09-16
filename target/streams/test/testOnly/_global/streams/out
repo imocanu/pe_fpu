@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(v2pack.AddSubPE_test, org.scalatest.tools.Framework$$anon$1@3a17ffd2, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(v2pack.AddSubPE_test, org.scalatest.tools.Framework$$anon$1@42d7ba11, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAddSubPE_test:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mrun AddSubPE_test_simple[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
@@ -10,7 +10,7 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mrun test_random_SUB_FP32[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 31 seconds, 622 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 35 seconds, 917 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 5[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 5, failed 0, canceled 0, ignored 0, pending 0[0m[0m

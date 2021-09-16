@@ -58,16 +58,24 @@ class AddSubPE_4_testing extends Module {
   }
 
   // AddSub module
-  val addRecFN = Module(new AddRecFN(Config.EXP, Config.SIG))
-  addRecFN.io.subOp := op
-  addRecFN.io.a := Xi_recFN_0
-  addRecFN.io.b := Yi_recFN_0
-  addRecFN.io.roundingMode   := rounding	
-  addRecFN.io.detectTininess := tininess
+  // val addRecFN = Module(new AddRecFN(Config.EXP, Config.SIG))
+  // addRecFN.io.subOp := op
+  // addRecFN.io.a := Xi_recFN_0
+  // addRecFN.io.b := Yi_recFN_0
+  // addRecFN.io.roundingMode   := rounding	
+  // addRecFN.io.detectTininess := tininess
+  // val addRecFN_out  = RegNext(addRecFN.io.out)
+
+  val addRecFN = Module( new AddSubPE() )
+  addRecFN.io.op   := op
+  addRecFN.io.in_0 := Xi_recFN_0
+  addRecFN.io.in_1 := Yi_recFN_0
+  addRecFN.io.rounding  := rounding	
+  addRecFN.io.tininess  := tininess
   val addRecFN_out  = RegNext(addRecFN.io.out)
 
   when ( use_int ) {
-
+    // INT -> recFN
     val recFNToIN = Module(new RecFNToIN(Config.EXP, Config.SIG, Config.WIDTH))
     recFNToIN.io.signedOut    := true.B
     recFNToIN.io.in           := addRecFN_out
@@ -75,7 +83,7 @@ class AddSubPE_4_testing extends Module {
     recFN_out := recFNToIN.io.out
 
   } . otherwise {
-    
+    // FP -> recFN
     recFN_out := Utils.ieee(addRecFN_out)
 
   }

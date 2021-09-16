@@ -6,9 +6,6 @@ print("="*50)
 getContextInfo()
 print("="*50)
 
-#random_INT_in_1 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
-#random_INT_in_2 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
-
 # Rounding
 # up = always away from 0
 ROUND_UP = 'ROUND_UP'

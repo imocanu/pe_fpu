@@ -16,6 +16,10 @@ node MulRecFN {
         ^port.side: WEST
         label "io_b"
     }
+    port io_roundingMode {
+        ^port.side: WEST
+        label "io_roundingMode"
+    }
     port io_out {
         ^port.side: EAST
         label "io_out"
@@ -152,7 +156,7 @@ node MulRecFN {
     
     }
 
-    node bits_65 {
+    node bits_3 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -176,7 +180,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_66 {
+    node bits_4 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -200,7 +204,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_67 {
+    node eq_5 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -218,7 +222,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_68 {
+    node bits_6 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -242,7 +246,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_69 {
+    node eq_7 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -260,7 +264,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_70 {
+    node bits_8 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -284,7 +288,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_71 {
+    node not_9 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -296,7 +300,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_72 {
+    node not_10 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -308,7 +312,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_73 {
+    node bits_11 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -332,7 +336,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_74 {
+    node cat_12 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -350,7 +354,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_75 {
+    node bits_13 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -374,7 +378,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_76 {
+    node bits_14 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -398,7 +402,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_77 {
+    node eq_15 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -416,7 +420,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_78 {
+    node bits_16 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -440,7 +444,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_79 {
+    node eq_17 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -458,7 +462,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_80 {
+    node bits_18 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -482,7 +486,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_81 {
+    node not_19 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -494,7 +498,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_82 {
+    node not_20 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -506,7 +510,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_83 {
+    node bits_21 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -530,7 +534,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_84 {
+    node cat_22 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -548,7 +552,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_85 {
+    node and_23 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -566,7 +570,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_86 {
+    node and_24 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -584,7 +588,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_87 {
+    node eq_25 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -602,7 +606,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_88 {
+    node bits_26 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -626,7 +630,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node cvt_89 {
+    node cvt_27 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -638,7 +642,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_90 {
+    node cat_28 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -656,7 +660,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_91 {
+    node and_29 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -674,7 +678,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_92 {
+    node and_30 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -692,7 +696,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_93 {
+    node eq_31 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -710,7 +714,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_94 {
+    node bits_32 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -734,7 +738,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node cvt_95 {
+    node cvt_33 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -746,7 +750,7 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_96 {
+    node cat_34 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -764,70 +768,65 @@ node MulRecFN {
             ^port.side: "EAST"
         }
     }
-    node lit97 {
-        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
-        nodeSize.constraints: "NODE_LABELS"
-        label "4"
-    }
-    edge e256 : bits_65.out -> cvt_89.in1
-    edge e257 : bits_78.out -> eq_79.in1
-    edge e258 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sExp -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sExp
-    edge e259 : not_81.out -> and_92.in2
-    edge e260 : eq_93.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isZero
-    edge e261 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isNaN -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isNaN
-    edge e262 : bits_88.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sign
-    edge e263 : eq_79.out -> and_91.in1
-    edge e264 : eq_69.out -> and_86.in1
-    edge e265 : bits_65.out -> bits_68.in1
-    edge e266 : MulRecFN.io_b -> bits_83.in1
-    edge e267 : bits_75.out -> cvt_95.in1
-    edge e268 : bits_65.out -> bits_70.in1
-    edge e269 : eq_79.out -> and_92.in1
-    edge e270 : cat_90.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sig
-    edge e271 : bits_66.out -> eq_67.in1
-    edge e272 : and_91.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isNaN
-    edge e273 : and_92.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isInf
-    edge e274 : bits_94.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sign
-    edge e275 : cat_74.out -> cat_90.in1
-    edge e276 : bits_75.out -> bits_78.in1
-    edge e277 : eq_87.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isZero
-    edge e278 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_invalidExc -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_invalidExc
-    edge e279 : MulRecFN.io_a -> bits_65.in1
-    edge e280 : bits_75.out -> bits_80.in1
-    edge e281 : MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_out -> MulRecFN.io_out
-    edge e282 : bits_76.out -> eq_77.in1
-    edge e283 : and_86.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isInf
-    edge e284 : bits_70.out -> not_71.in1
-    edge e285 : cvt_89.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sExp
-    edge e286 : MulRecFN.io_a -> bits_88.in1
-    edge e287 : bits_65.out -> bits_66.in1
-    edge e288 : cat_96.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sig
-    edge e289 : MulRecFN.io_b -> bits_75.in1
-    edge e290 : bits_83.out -> cat_96.in2
-    edge e291 : bits_80.out -> not_81.in1
-    edge e292 : and_85.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isNaN
-    edge e293 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isZero -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isZero
-    edge e294 : not_72.out -> cat_74.in2
-    edge e295 : bits_70.out -> and_85.in2
-    edge e296 : MulRecFN.io_b -> bits_94.in1
-    edge e297 : bits_66.out -> eq_87.in1
-    edge e298 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sign -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sign
-    edge e299 : cvt_95.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sExp
-    edge e300 : bits_75.out -> bits_76.in1
-    edge e301 : eq_67.out -> not_72.in1
-    edge e302 : bits_76.out -> eq_93.in1
-    edge e303 : bits_80.out -> and_91.in2
-    edge e304 : not_82.out -> cat_84.in2
-    edge e305 : MulRecFN.lit97 -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_roundingMode
-    edge e306 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sig -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sig
-    edge e307 : bits_68.out -> eq_69.in1
-    edge e308 : eq_77.out -> not_82.in1
-    edge e309 : MulRecFN.io_a -> bits_73.in1
-    edge e310 : not_71.out -> and_86.in2
-    edge e311 : bits_73.out -> cat_90.in2
-    edge e312 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isInf -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isInf
-    edge e313 : cat_84.out -> cat_96.in1
-    edge e314 : eq_69.out -> and_85.in1
+    edge e21 : MulRecFN.io_b -> bits_32.in1
+    edge e22 : bits_4.out -> eq_25.in1
+    edge e23 : bits_21.out -> cat_34.in2
+    edge e24 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sExp -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sExp
+    edge e25 : not_10.out -> cat_12.in2
+    edge e26 : eq_31.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isZero
+    edge e27 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isNaN -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isNaN
+    edge e28 : bits_26.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sign
+    edge e29 : bits_4.out -> eq_5.in1
+    edge e30 : cat_12.out -> cat_28.in1
+    edge e31 : bits_13.out -> bits_14.in1
+    edge e32 : bits_14.out -> eq_31.in1
+    edge e33 : not_9.out -> and_24.in2
+    edge e34 : bits_13.out -> bits_18.in1
+    edge e35 : eq_5.out -> not_10.in1
+    edge e36 : bits_3.out -> bits_6.in1
+    edge e37 : eq_7.out -> and_23.in1
+    edge e38 : cat_28.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sig
+    edge e39 : cat_22.out -> cat_34.in1
+    edge e40 : and_29.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isNaN
+    edge e41 : and_30.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isInf
+    edge e42 : not_20.out -> cat_22.in2
+    edge e43 : bits_16.out -> eq_17.in1
+    edge e44 : not_19.out -> and_30.in2
+    edge e45 : bits_3.out -> cvt_27.in1
+    edge e46 : bits_32.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sign
+    edge e47 : eq_25.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isZero
+    edge e48 : MulRecFN.io_a -> bits_11.in1
+    edge e49 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_invalidExc -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_invalidExc
+    edge e50 : eq_15.out -> not_20.in1
+    edge e51 : bits_8.out -> not_9.in1
+    edge e52 : MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_out -> MulRecFN.io_out
+    edge e53 : and_24.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isInf
+    edge e54 : bits_13.out -> cvt_33.in1
+    edge e55 : bits_18.out -> not_19.in1
+    edge e56 : cvt_27.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sExp
+    edge e57 : MulRecFN.io_a -> bits_3.in1
+    edge e58 : MulRecFN.io_b -> bits_21.in1
+    edge e59 : cat_34.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sig
+    edge e60 : eq_7.out -> and_24.in1
+    edge e61 : bits_18.out -> and_29.in2
+    edge e62 : and_23.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isNaN
+    edge e63 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isZero -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isZero
+    edge e64 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sign -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sign
+    edge e65 : cvt_33.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sExp
+    edge e66 : bits_3.out -> bits_8.in1
+    edge e67 : eq_17.out -> and_30.in1
+    edge e68 : bits_13.out -> bits_16.in1
+    edge e69 : bits_6.out -> eq_7.in1
+    edge e70 : MulRecFN.io_b -> bits_13.in1
+    edge e71 : bits_3.out -> bits_4.in1
+    edge e72 : MulRecFN.io_roundingMode -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_roundingMode
+    edge e73 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sig -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sig
+    edge e74 : bits_8.out -> and_23.in2
+    edge e75 : bits_14.out -> eq_15.in1
+    edge e76 : bits_11.out -> cat_28.in2
+    edge e77 : MulRecFN.io_a -> bits_26.in1
+    edge e78 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isInf -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isInf
+    edge e79 : eq_17.out -> and_29.in1
     
 }
 

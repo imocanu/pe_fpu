@@ -9,14 +9,13 @@ import scala.sys.process.{Process, ProcessLogger}
 
 class AddSubPE extends Module {
   val io = IO(new Bundle {
-    val in_0     = Input(UInt(Config.forOUT.W))
-    val in_1     = Input(UInt(Config.forOUT.W))
     val op       = Input(Bool())
     val rounding = Input(UInt(3.W))
     val tininess = Input(UInt(1.W))
+    val in_0     = Input(UInt(Config.forOUT.W))
+    val in_1     = Input(UInt(Config.forOUT.W))
     val out      = Output(UInt(Config.forOUT.W))
   })
-
   // Operation : false "+" or true "-"
   val op = RegNext(io.op)
 
