@@ -19,9 +19,9 @@ module MuxPE(
   wire  _T = sel == 2'h0; // @[MuxPE.scala 28:14]
   wire  _T_1 = sel == 2'h1; // @[MuxPE.scala 32:20]
   wire  _T_2 = sel == 2'h2; // @[MuxPE.scala 36:20]
-  wire [31:0] _GEN_0 = _T_2 ? in_2 : 32'h0; // @[MuxPE.scala 37:3 MuxPE.scala 38:12 MuxPE.scala 42:12]
-  wire [31:0] _GEN_1 = _T_1 ? in_1 : _GEN_0; // @[MuxPE.scala 33:3 MuxPE.scala 34:12]
-  assign io_out = _T ? in_0 : _GEN_1; // @[MuxPE.scala 29:3 MuxPE.scala 30:12]
+  wire [31:0] _GEN_0 = _T_2 ? in_2 : 32'h0; // @[MuxPE.scala 37:3 38:12 42:12]
+  wire [31:0] _GEN_1 = _T_1 ? in_1 : _GEN_0; // @[MuxPE.scala 33:3 34:12]
+  assign io_out = _T ? in_0 : _GEN_1; // @[MuxPE.scala 29:3 30:12]
   always @(posedge clock) begin
     sel <= io_sel; // @[MuxPE.scala 22:21]
     in_0 <= io_in_0; // @[MuxPE.scala 23:21]
@@ -154,8 +154,7 @@ module MulRawFN(
   wire  mulFullRaw_io_rawOut_sign; // @[MulRecFN.scala 84:28]
   wire [9:0] mulFullRaw_io_rawOut_sExp; // @[MulRecFN.scala 84:28]
   wire [47:0] mulFullRaw_io_rawOut_sig; // @[MulRecFN.scala 84:28]
-  wire [25:0] io_rawOut_sig_hi = mulFullRaw_io_rawOut_sig[47:22]; // @[MulRecFN.scala 93:15]
-  wire  io_rawOut_sig_lo = |mulFullRaw_io_rawOut_sig[21:0]; // @[MulRecFN.scala 93:55]
+  wire  _io_rawOut_sig_T_2 = |mulFullRaw_io_rawOut_sig[21:0]; // @[MulRecFN.scala 93:55]
   MulFullRawFN mulFullRaw ( // @[MulRecFN.scala 84:28]
     .io_a_isNaN(mulFullRaw_io_a_isNaN),
     .io_a_isInf(mulFullRaw_io_a_isInf),
@@ -183,7 +182,7 @@ module MulRawFN(
   assign io_rawOut_isZero = mulFullRaw_io_rawOut_isZero; // @[MulRecFN.scala 90:15]
   assign io_rawOut_sign = mulFullRaw_io_rawOut_sign; // @[MulRecFN.scala 90:15]
   assign io_rawOut_sExp = mulFullRaw_io_rawOut_sExp; // @[MulRecFN.scala 90:15]
-  assign io_rawOut_sig = {io_rawOut_sig_hi,io_rawOut_sig_lo}; // @[Cat.scala 30:58]
+  assign io_rawOut_sig = {mulFullRaw_io_rawOut_sig[47:22],_io_rawOut_sig_T_2}; // @[Cat.scala 30:58]
   assign mulFullRaw_io_a_isNaN = io_a_isNaN; // @[MulRecFN.scala 86:21]
   assign mulFullRaw_io_a_isInf = io_a_isInf; // @[MulRecFN.scala 86:21]
   assign mulFullRaw_io_a_isZero = io_a_isZero; // @[MulRecFN.scala 86:21]
@@ -223,49 +222,40 @@ module RoundAnyRawFNToRecFN(
   wire  roundMask_msb_2 = roundMask_lsbs_1[6]; // @[primitives.scala 57:25]
   wire [5:0] roundMask_lsbs_2 = roundMask_lsbs_1[5:0]; // @[primitives.scala 58:26]
   wire [64:0] roundMask_shift = 65'sh10000000000000000 >>> roundMask_lsbs_2; // @[primitives.scala 77:58]
-  wire [15:0] _roundMask_T_7 = {{8'd0}, roundMask_shift[57:50]}; // @[Bitwise.scala 103:31]
+  wire [15:0] _GEN_0 = {{8'd0}, roundMask_shift[57:50]}; // @[Bitwise.scala 103:31]
+  wire [15:0] _roundMask_T_7 = _GEN_0 & 16'hff; // @[Bitwise.scala 103:31]
   wire [15:0] _roundMask_T_9 = {roundMask_shift[49:42], 8'h0}; // @[Bitwise.scala 103:65]
   wire [15:0] _roundMask_T_11 = _roundMask_T_9 & 16'hff00; // @[Bitwise.scala 103:75]
   wire [15:0] _roundMask_T_12 = _roundMask_T_7 | _roundMask_T_11; // @[Bitwise.scala 103:39]
-  wire [15:0] _GEN_0 = {{4'd0}, _roundMask_T_12[15:4]}; // @[Bitwise.scala 103:31]
-  wire [15:0] _roundMask_T_17 = _GEN_0 & 16'hf0f; // @[Bitwise.scala 103:31]
+  wire [15:0] _GEN_1 = {{4'd0}, _roundMask_T_12[15:4]}; // @[Bitwise.scala 103:31]
+  wire [15:0] _roundMask_T_17 = _GEN_1 & 16'hf0f; // @[Bitwise.scala 103:31]
   wire [15:0] _roundMask_T_19 = {_roundMask_T_12[11:0], 4'h0}; // @[Bitwise.scala 103:65]
   wire [15:0] _roundMask_T_21 = _roundMask_T_19 & 16'hf0f0; // @[Bitwise.scala 103:75]
   wire [15:0] _roundMask_T_22 = _roundMask_T_17 | _roundMask_T_21; // @[Bitwise.scala 103:39]
-  wire [15:0] _GEN_1 = {{2'd0}, _roundMask_T_22[15:2]}; // @[Bitwise.scala 103:31]
-  wire [15:0] _roundMask_T_27 = _GEN_1 & 16'h3333; // @[Bitwise.scala 103:31]
+  wire [15:0] _GEN_2 = {{2'd0}, _roundMask_T_22[15:2]}; // @[Bitwise.scala 103:31]
+  wire [15:0] _roundMask_T_27 = _GEN_2 & 16'h3333; // @[Bitwise.scala 103:31]
   wire [15:0] _roundMask_T_29 = {_roundMask_T_22[13:0], 2'h0}; // @[Bitwise.scala 103:65]
   wire [15:0] _roundMask_T_31 = _roundMask_T_29 & 16'hcccc; // @[Bitwise.scala 103:75]
   wire [15:0] _roundMask_T_32 = _roundMask_T_27 | _roundMask_T_31; // @[Bitwise.scala 103:39]
-  wire [15:0] _GEN_2 = {{1'd0}, _roundMask_T_32[15:1]}; // @[Bitwise.scala 103:31]
-  wire [15:0] _roundMask_T_37 = _GEN_2 & 16'h5555; // @[Bitwise.scala 103:31]
+  wire [15:0] _GEN_3 = {{1'd0}, _roundMask_T_32[15:1]}; // @[Bitwise.scala 103:31]
+  wire [15:0] _roundMask_T_37 = _GEN_3 & 16'h5555; // @[Bitwise.scala 103:31]
   wire [15:0] _roundMask_T_39 = {_roundMask_T_32[14:0], 1'h0}; // @[Bitwise.scala 103:65]
   wire [15:0] _roundMask_T_41 = _roundMask_T_39 & 16'haaaa; // @[Bitwise.scala 103:75]
-  wire [15:0] roundMask_hi = _roundMask_T_37 | _roundMask_T_41; // @[Bitwise.scala 103:39]
-  wire  roundMask_hi_1 = roundMask_shift[58]; // @[Bitwise.scala 109:18]
-  wire  roundMask_lo = roundMask_shift[59]; // @[Bitwise.scala 109:44]
-  wire  roundMask_hi_3 = roundMask_shift[60]; // @[Bitwise.scala 109:18]
-  wire  roundMask_lo_1 = roundMask_shift[61]; // @[Bitwise.scala 109:44]
-  wire  roundMask_hi_5 = roundMask_shift[62]; // @[Bitwise.scala 109:18]
-  wire  roundMask_lo_3 = roundMask_shift[63]; // @[Bitwise.scala 109:44]
-  wire [21:0] _roundMask_T_47 = {roundMask_hi,roundMask_hi_1,roundMask_lo,roundMask_hi_3,roundMask_lo_1,roundMask_hi_5,
-    roundMask_lo_3}; // @[Cat.scala 30:58]
-  wire [21:0] _roundMask_T_48 = ~_roundMask_T_47; // @[primitives.scala 74:36]
-  wire [21:0] _roundMask_T_49 = roundMask_msb_2 ? 22'h0 : _roundMask_T_48; // @[primitives.scala 74:21]
-  wire [21:0] roundMask_hi_6 = ~_roundMask_T_49; // @[primitives.scala 74:17]
-  wire [24:0] _roundMask_T_50 = {roundMask_hi_6,3'h7}; // @[Cat.scala 30:58]
-  wire  roundMask_hi_7 = roundMask_shift[0]; // @[Bitwise.scala 109:18]
-  wire  roundMask_lo_6 = roundMask_shift[1]; // @[Bitwise.scala 109:44]
-  wire  roundMask_lo_7 = roundMask_shift[2]; // @[Bitwise.scala 109:44]
-  wire [2:0] _roundMask_T_53 = {roundMask_hi_7,roundMask_lo_6,roundMask_lo_7}; // @[Cat.scala 30:58]
-  wire [2:0] _roundMask_T_54 = roundMask_msb_2 ? _roundMask_T_53 : 3'h0; // @[primitives.scala 61:24]
-  wire [24:0] _roundMask_T_55 = roundMask_msb_1 ? _roundMask_T_50 : {{22'd0}, _roundMask_T_54}; // @[primitives.scala 66:24]
-  wire [24:0] _roundMask_T_56 = roundMask_msb ? _roundMask_T_55 : 25'h0; // @[primitives.scala 61:24]
-  wire [24:0] _GEN_3 = {{24'd0}, doShiftSigDown1}; // @[RoundAnyRawFNToRecFN.scala 157:23]
-  wire [24:0] roundMask_hi_9 = _roundMask_T_56 | _GEN_3; // @[RoundAnyRawFNToRecFN.scala 157:23]
-  wire [26:0] roundMask = {roundMask_hi_9,2'h3}; // @[Cat.scala 30:58]
-  wire [25:0] shiftedRoundMask_lo = roundMask[26:1]; // @[RoundAnyRawFNToRecFN.scala 160:57]
-  wire [26:0] shiftedRoundMask = {1'h0,shiftedRoundMask_lo}; // @[Cat.scala 30:58]
+  wire [15:0] _roundMask_T_42 = _roundMask_T_37 | _roundMask_T_41; // @[Bitwise.scala 103:39]
+  wire [21:0] _roundMask_T_59 = {_roundMask_T_42,roundMask_shift[58],roundMask_shift[59],roundMask_shift[60],
+    roundMask_shift[61],roundMask_shift[62],roundMask_shift[63]}; // @[Cat.scala 30:58]
+  wire [21:0] _roundMask_T_60 = ~_roundMask_T_59; // @[primitives.scala 74:36]
+  wire [21:0] _roundMask_T_61 = roundMask_msb_2 ? 22'h0 : _roundMask_T_60; // @[primitives.scala 74:21]
+  wire [21:0] _roundMask_T_62 = ~_roundMask_T_61; // @[primitives.scala 74:17]
+  wire [24:0] _roundMask_T_63 = {_roundMask_T_62,3'h7}; // @[Cat.scala 30:58]
+  wire [2:0] _roundMask_T_70 = {roundMask_shift[0],roundMask_shift[1],roundMask_shift[2]}; // @[Cat.scala 30:58]
+  wire [2:0] _roundMask_T_71 = roundMask_msb_2 ? _roundMask_T_70 : 3'h0; // @[primitives.scala 61:24]
+  wire [24:0] _roundMask_T_72 = roundMask_msb_1 ? _roundMask_T_63 : {{22'd0}, _roundMask_T_71}; // @[primitives.scala 66:24]
+  wire [24:0] _roundMask_T_73 = roundMask_msb ? _roundMask_T_72 : 25'h0; // @[primitives.scala 61:24]
+  wire [24:0] _GEN_4 = {{24'd0}, doShiftSigDown1}; // @[RoundAnyRawFNToRecFN.scala 157:23]
+  wire [24:0] _roundMask_T_74 = _roundMask_T_73 | _GEN_4; // @[RoundAnyRawFNToRecFN.scala 157:23]
+  wire [26:0] roundMask = {_roundMask_T_74,2'h3}; // @[Cat.scala 30:58]
+  wire [26:0] shiftedRoundMask = {1'h0,roundMask[26:1]}; // @[Cat.scala 30:58]
   wire [26:0] _roundPosMask_T = ~shiftedRoundMask; // @[RoundAnyRawFNToRecFN.scala 161:28]
   wire [26:0] roundPosMask = _roundPosMask_T & roundMask; // @[RoundAnyRawFNToRecFN.scala 161:46]
   wire [26:0] _roundPosBit_T = io_in_sig & roundPosMask; // @[RoundAnyRawFNToRecFN.scala 162:40]
@@ -280,18 +270,18 @@ module RoundAnyRawFNToRecFN(
   wire [26:0] _roundedSig_T = io_in_sig | roundMask; // @[RoundAnyRawFNToRecFN.scala 172:32]
   wire [25:0] _roundedSig_T_2 = _roundedSig_T[26:2] + 25'h1; // @[RoundAnyRawFNToRecFN.scala 172:49]
   wire  _roundedSig_T_4 = ~anyRoundExtra; // @[RoundAnyRawFNToRecFN.scala 174:30]
-  wire [25:0] _roundedSig_T_7 = roundingMode_near_even & roundPosBit & _roundedSig_T_4 ? shiftedRoundMask_lo : 26'h0; // @[RoundAnyRawFNToRecFN.scala 173:25]
+  wire [25:0] _roundedSig_T_7 = roundingMode_near_even & roundPosBit & _roundedSig_T_4 ? roundMask[26:1] : 26'h0; // @[RoundAnyRawFNToRecFN.scala 173:25]
   wire [25:0] _roundedSig_T_8 = ~_roundedSig_T_7; // @[RoundAnyRawFNToRecFN.scala 173:21]
   wire [25:0] _roundedSig_T_9 = _roundedSig_T_2 & _roundedSig_T_8; // @[RoundAnyRawFNToRecFN.scala 172:61]
   wire [26:0] _roundedSig_T_10 = ~roundMask; // @[RoundAnyRawFNToRecFN.scala 178:32]
   wire [26:0] _roundedSig_T_11 = io_in_sig & _roundedSig_T_10; // @[RoundAnyRawFNToRecFN.scala 178:30]
   wire [25:0] _roundedSig_T_15 = roundingMode_odd & anyRound ? roundPosMask[26:1] : 26'h0; // @[RoundAnyRawFNToRecFN.scala 179:24]
-  wire [25:0] _GEN_4 = {{1'd0}, _roundedSig_T_11[26:2]}; // @[RoundAnyRawFNToRecFN.scala 178:47]
-  wire [25:0] _roundedSig_T_16 = _GEN_4 | _roundedSig_T_15; // @[RoundAnyRawFNToRecFN.scala 178:47]
+  wire [25:0] _GEN_5 = {{1'd0}, _roundedSig_T_11[26:2]}; // @[RoundAnyRawFNToRecFN.scala 178:47]
+  wire [25:0] _roundedSig_T_16 = _GEN_5 | _roundedSig_T_15; // @[RoundAnyRawFNToRecFN.scala 178:47]
   wire [25:0] roundedSig = roundIncr ? _roundedSig_T_9 : _roundedSig_T_16; // @[RoundAnyRawFNToRecFN.scala 171:16]
   wire [2:0] _sRoundedExp_T_1 = {1'b0,$signed(roundedSig[25:24])}; // @[RoundAnyRawFNToRecFN.scala 183:69]
-  wire [9:0] _GEN_5 = {{7{_sRoundedExp_T_1[2]}},_sRoundedExp_T_1}; // @[RoundAnyRawFNToRecFN.scala 183:40]
-  wire [10:0] sRoundedExp = $signed(io_in_sExp) + $signed(_GEN_5); // @[RoundAnyRawFNToRecFN.scala 183:40]
+  wire [9:0] _GEN_6 = {{7{_sRoundedExp_T_1[2]}},_sRoundedExp_T_1}; // @[RoundAnyRawFNToRecFN.scala 183:40]
+  wire [10:0] sRoundedExp = $signed(io_in_sExp) + $signed(_GEN_6); // @[RoundAnyRawFNToRecFN.scala 183:40]
   wire [8:0] common_expOut = sRoundedExp[8:0]; // @[RoundAnyRawFNToRecFN.scala 185:37]
   wire [22:0] common_fractOut = doShiftSigDown1 ? roundedSig[23:1] : roundedSig[22:0]; // @[RoundAnyRawFNToRecFN.scala 187:16]
   wire [3:0] _common_overflow_T = sRoundedExp[10:7]; // @[RoundAnyRawFNToRecFN.scala 194:30]
@@ -376,6 +366,7 @@ endmodule
 module MulRecFN(
   input  [32:0] io_a,
   input  [32:0] io_b,
+  input  [2:0]  io_roundingMode,
   output [32:0] io_out
 );
   wire  mulRawFN__io_a_isNaN; // @[MulRecFN.scala 113:26]
@@ -409,15 +400,13 @@ module MulRecFN(
   wire [8:0] mulRawFN_io_a_exp = io_a[31:23]; // @[rawFloatFromRecFN.scala 50:21]
   wire  mulRawFN_io_a_isZero = mulRawFN_io_a_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   wire  mulRawFN_io_a_isSpecial = mulRawFN_io_a_exp[8:7] == 2'h3; // @[rawFloatFromRecFN.scala 52:54]
-  wire  mulRawFN_io_a_out_sig_hi_lo = ~mulRawFN_io_a_isZero; // @[rawFloatFromRecFN.scala 60:39]
-  wire [22:0] mulRawFN_io_a_out_sig_lo = io_a[22:0]; // @[rawFloatFromRecFN.scala 60:51]
-  wire [1:0] mulRawFN_io_a_out_sig_hi = {1'h0,mulRawFN_io_a_out_sig_hi_lo}; // @[Cat.scala 30:58]
+  wire  _mulRawFN_io_a_out_sig_T = ~mulRawFN_io_a_isZero; // @[rawFloatFromRecFN.scala 60:39]
+  wire [1:0] mulRawFN_io_a_out_sig_hi = {1'h0,_mulRawFN_io_a_out_sig_T}; // @[Cat.scala 30:58]
   wire [8:0] mulRawFN_io_b_exp = io_b[31:23]; // @[rawFloatFromRecFN.scala 50:21]
   wire  mulRawFN_io_b_isZero = mulRawFN_io_b_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   wire  mulRawFN_io_b_isSpecial = mulRawFN_io_b_exp[8:7] == 2'h3; // @[rawFloatFromRecFN.scala 52:54]
-  wire  mulRawFN_io_b_out_sig_hi_lo = ~mulRawFN_io_b_isZero; // @[rawFloatFromRecFN.scala 60:39]
-  wire [22:0] mulRawFN_io_b_out_sig_lo = io_b[22:0]; // @[rawFloatFromRecFN.scala 60:51]
-  wire [1:0] mulRawFN_io_b_out_sig_hi = {1'h0,mulRawFN_io_b_out_sig_hi_lo}; // @[Cat.scala 30:58]
+  wire  _mulRawFN_io_b_out_sig_T = ~mulRawFN_io_b_isZero; // @[rawFloatFromRecFN.scala 60:39]
+  wire [1:0] mulRawFN_io_b_out_sig_hi = {1'h0,_mulRawFN_io_b_out_sig_T}; // @[Cat.scala 30:58]
   MulRawFN mulRawFN_ ( // @[MulRecFN.scala 113:26]
     .io_a_isNaN(mulRawFN__io_a_isNaN),
     .io_a_isInf(mulRawFN__io_a_isInf),
@@ -456,13 +445,13 @@ module MulRecFN(
   assign mulRawFN__io_a_isZero = mulRawFN_io_a_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   assign mulRawFN__io_a_sign = io_a[32]; // @[rawFloatFromRecFN.scala 58:25]
   assign mulRawFN__io_a_sExp = {1'b0,$signed(mulRawFN_io_a_exp)}; // @[rawFloatFromRecFN.scala 59:27]
-  assign mulRawFN__io_a_sig = {mulRawFN_io_a_out_sig_hi,mulRawFN_io_a_out_sig_lo}; // @[Cat.scala 30:58]
+  assign mulRawFN__io_a_sig = {mulRawFN_io_a_out_sig_hi,io_a[22:0]}; // @[Cat.scala 30:58]
   assign mulRawFN__io_b_isNaN = mulRawFN_io_b_isSpecial & mulRawFN_io_b_exp[6]; // @[rawFloatFromRecFN.scala 55:33]
   assign mulRawFN__io_b_isInf = mulRawFN_io_b_isSpecial & ~mulRawFN_io_b_exp[6]; // @[rawFloatFromRecFN.scala 56:33]
   assign mulRawFN__io_b_isZero = mulRawFN_io_b_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   assign mulRawFN__io_b_sign = io_b[32]; // @[rawFloatFromRecFN.scala 58:25]
   assign mulRawFN__io_b_sExp = {1'b0,$signed(mulRawFN_io_b_exp)}; // @[rawFloatFromRecFN.scala 59:27]
-  assign mulRawFN__io_b_sig = {mulRawFN_io_b_out_sig_hi,mulRawFN_io_b_out_sig_lo}; // @[Cat.scala 30:58]
+  assign mulRawFN__io_b_sig = {mulRawFN_io_b_out_sig_hi,io_b[22:0]}; // @[Cat.scala 30:58]
   assign roundRawFNToRecFN_io_invalidExc = mulRawFN__io_invalidExc; // @[MulRecFN.scala 122:39]
   assign roundRawFNToRecFN_io_in_isNaN = mulRawFN__io_rawOut_isNaN; // @[MulRecFN.scala 124:39]
   assign roundRawFNToRecFN_io_in_isInf = mulRawFN__io_rawOut_isInf; // @[MulRecFN.scala 124:39]
@@ -470,10 +459,11 @@ module MulRecFN(
   assign roundRawFNToRecFN_io_in_sign = mulRawFN__io_rawOut_sign; // @[MulRecFN.scala 124:39]
   assign roundRawFNToRecFN_io_in_sExp = mulRawFN__io_rawOut_sExp; // @[MulRecFN.scala 124:39]
   assign roundRawFNToRecFN_io_in_sig = mulRawFN__io_rawOut_sig; // @[MulRecFN.scala 124:39]
-  assign roundRawFNToRecFN_io_roundingMode = 3'h4; // @[MulRecFN.scala 125:39]
+  assign roundRawFNToRecFN_io_roundingMode = io_roundingMode; // @[MulRecFN.scala 125:39]
 endmodule
 module MultPE(
   input         clock,
+  input  [2:0]  io_rounding,
   input  [31:0] io_in_0,
   input  [31:0] io_in_1,
   output [32:0] io_out
@@ -481,23 +471,29 @@ module MultPE(
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
   reg [31:0] _RAND_1;
-  reg [63:0] _RAND_2;
+  reg [31:0] _RAND_2;
+  reg [63:0] _RAND_3;
 `endif // RANDOMIZE_REG_INIT
   wire [32:0] mulRecFN_io_a; // @[MultPE.scala 28:24]
   wire [32:0] mulRecFN_io_b; // @[MultPE.scala 28:24]
+  wire [2:0] mulRecFN_io_roundingMode; // @[MultPE.scala 28:24]
   wire [32:0] mulRecFN_io_out; // @[MultPE.scala 28:24]
+  reg [2:0] rounding; // @[MultPE.scala 18:26]
   reg [31:0] in_0; // @[MultPE.scala 24:22]
   reg [31:0] in_1; // @[MultPE.scala 25:22]
   reg [32:0] mulRecFN_out; // @[MultPE.scala 33:30]
   MulRecFN mulRecFN ( // @[MultPE.scala 28:24]
     .io_a(mulRecFN_io_a),
     .io_b(mulRecFN_io_b),
+    .io_roundingMode(mulRecFN_io_roundingMode),
     .io_out(mulRecFN_io_out)
   );
   assign io_out = mulRecFN_out; // @[MultPE.scala 35:10]
   assign mulRecFN_io_a = {{1'd0}, in_0}; // @[MultPE.scala 31:17]
   assign mulRecFN_io_b = {{1'd0}, in_1}; // @[MultPE.scala 32:17]
+  assign mulRecFN_io_roundingMode = rounding; // @[MultPE.scala 29:30]
   always @(posedge clock) begin
+    rounding <= io_rounding; // @[MultPE.scala 18:26]
     in_0 <= io_in_0; // @[MultPE.scala 24:22]
     in_1 <= io_in_1; // @[MultPE.scala 25:22]
     mulRecFN_out <= mulRecFN_io_out; // @[MultPE.scala 33:30]
@@ -539,11 +535,13 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  in_0 = _RAND_0[31:0];
+  rounding = _RAND_0[2:0];
   _RAND_1 = {1{`RANDOM}};
-  in_1 = _RAND_1[31:0];
-  _RAND_2 = {2{`RANDOM}};
-  mulRecFN_out = _RAND_2[32:0];
+  in_0 = _RAND_1[31:0];
+  _RAND_2 = {1{`RANDOM}};
+  in_1 = _RAND_2[31:0];
+  _RAND_3 = {2{`RANDOM}};
+  mulRecFN_out = _RAND_3[32:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -638,8 +636,8 @@ module AddRawFN(
   wire [3:0] _close_normDistReduced2_T_23 = close_reduced2SigSum[11] ? 4'h1 : _close_normDistReduced2_T_22; // @[Mux.scala 47:69]
   wire [3:0] close_normDistReduced2 = close_reduced2SigSum[12] ? 4'h0 : _close_normDistReduced2_T_23; // @[Mux.scala 47:69]
   wire [4:0] close_nearNormDist = {close_normDistReduced2, 1'h0}; // @[AddRecFN.scala 81:53]
-  wire [56:0] _GEN_3 = {{31'd0}, close_sigSum}; // @[AddRecFN.scala 82:38]
-  wire [56:0] _close_sigOut_T = _GEN_3 << close_nearNormDist; // @[AddRecFN.scala 82:38]
+  wire [56:0] _GEN_7 = {{31'd0}, close_sigSum}; // @[AddRecFN.scala 82:38]
+  wire [56:0] _close_sigOut_T = _GEN_7 << close_nearNormDist; // @[AddRecFN.scala 82:38]
   wire [57:0] _close_sigOut_T_1 = {_close_sigOut_T, 1'h0}; // @[AddRecFN.scala 82:59]
   wire [26:0] close_sigOut = _close_sigOut_T_1[26:0]; // @[AddRecFN.scala 82:63]
   wire  close_totalCancellation = ~(|close_sigOut[26:25]); // @[AddRecFN.scala 83:35]
@@ -663,30 +661,22 @@ module AddRawFN(
     far_reduced4SigSmaller_reducedVec_4,far_reduced4SigSmaller_reducedVec_3,far_reduced4SigSmaller_reducedVec_2,
     far_reduced4SigSmaller_reducedVec_1,far_reduced4SigSmaller_reducedVec_0}; // @[primitives.scala 125:20]
   wire [8:0] far_roundExtraMask_shift = 9'sh100 >>> alignDist[4:2]; // @[primitives.scala 77:58]
-  wire  far_roundExtraMask_hi = far_roundExtraMask_shift[1]; // @[Bitwise.scala 109:18]
-  wire  far_roundExtraMask_lo = far_roundExtraMask_shift[2]; // @[Bitwise.scala 109:44]
-  wire  far_roundExtraMask_hi_2 = far_roundExtraMask_shift[3]; // @[Bitwise.scala 109:18]
-  wire  far_roundExtraMask_lo_1 = far_roundExtraMask_shift[4]; // @[Bitwise.scala 109:44]
-  wire  far_roundExtraMask_hi_4 = far_roundExtraMask_shift[5]; // @[Bitwise.scala 109:18]
-  wire  far_roundExtraMask_lo_3 = far_roundExtraMask_shift[6]; // @[Bitwise.scala 109:44]
-  wire  far_roundExtraMask_lo_4 = far_roundExtraMask_shift[7]; // @[Bitwise.scala 109:44]
-  wire [6:0] far_roundExtraMask = {far_roundExtraMask_hi,far_roundExtraMask_lo,far_roundExtraMask_hi_2,
-    far_roundExtraMask_lo_1,far_roundExtraMask_hi_4,far_roundExtraMask_lo_3,far_roundExtraMask_lo_4}; // @[Cat.scala 30:58]
-  wire [25:0] far_alignedSigSmaller_hi = far_mainAlignedSigSmaller[28:3]; // @[AddRecFN.scala 94:38]
-  wire [6:0] _far_alignedSigSmaller_T_2 = far_reduced4SigSmaller & far_roundExtraMask; // @[AddRecFN.scala 95:76]
-  wire  far_alignedSigSmaller_lo = |far_mainAlignedSigSmaller[2:0] | |_far_alignedSigSmaller_T_2; // @[AddRecFN.scala 95:49]
-  wire [26:0] far_alignedSigSmaller = {far_alignedSigSmaller_hi,far_alignedSigSmaller_lo}; // @[Cat.scala 30:58]
-  wire [26:0] far_negAlignedSigSmaller_lo = ~far_alignedSigSmaller; // @[AddRecFN.scala 97:62]
-  wire [27:0] _far_negAlignedSigSmaller_T = {1'h1,far_negAlignedSigSmaller_lo}; // @[Cat.scala 30:58]
-  wire [27:0] far_negAlignedSigSmaller = _closeSubMags_T ? _far_negAlignedSigSmaller_T : {{1'd0}, far_alignedSigSmaller}
-    ; // @[AddRecFN.scala 97:39]
+  wire [6:0] far_roundExtraMask = {far_roundExtraMask_shift[1],far_roundExtraMask_shift[2],far_roundExtraMask_shift[3],
+    far_roundExtraMask_shift[4],far_roundExtraMask_shift[5],far_roundExtraMask_shift[6],far_roundExtraMask_shift[7]}; // @[Cat.scala 30:58]
+  wire [6:0] _far_alignedSigSmaller_T_3 = far_reduced4SigSmaller & far_roundExtraMask; // @[AddRecFN.scala 95:76]
+  wire  _far_alignedSigSmaller_T_5 = |far_mainAlignedSigSmaller[2:0] | |_far_alignedSigSmaller_T_3; // @[AddRecFN.scala 95:49]
+  wire [26:0] far_alignedSigSmaller = {far_mainAlignedSigSmaller[28:3],_far_alignedSigSmaller_T_5}; // @[Cat.scala 30:58]
+  wire [26:0] _far_negAlignedSigSmaller_T = ~far_alignedSigSmaller; // @[AddRecFN.scala 97:62]
+  wire [27:0] _far_negAlignedSigSmaller_T_1 = {1'h1,_far_negAlignedSigSmaller_T}; // @[Cat.scala 30:58]
+  wire [27:0] far_negAlignedSigSmaller = _closeSubMags_T ? _far_negAlignedSigSmaller_T_1 : {{1'd0},
+    far_alignedSigSmaller}; // @[AddRecFN.scala 97:39]
   wire [26:0] _far_sigSum_T = {far_sigLarger, 3'h0}; // @[AddRecFN.scala 98:36]
-  wire [27:0] _GEN_4 = {{1'd0}, _far_sigSum_T}; // @[AddRecFN.scala 98:41]
-  wire [27:0] _far_sigSum_T_2 = _GEN_4 + far_negAlignedSigSmaller; // @[AddRecFN.scala 98:41]
-  wire [27:0] _GEN_5 = {{27'd0}, _closeSubMags_T}; // @[AddRecFN.scala 98:68]
-  wire [27:0] far_sigSum = _far_sigSum_T_2 + _GEN_5; // @[AddRecFN.scala 98:68]
-  wire [26:0] _GEN_6 = {{26'd0}, far_sigSum[0]}; // @[AddRecFN.scala 99:67]
-  wire [26:0] _far_sigOut_T_2 = far_sigSum[27:1] | _GEN_6; // @[AddRecFN.scala 99:67]
+  wire [27:0] _GEN_3 = {{1'd0}, _far_sigSum_T}; // @[AddRecFN.scala 98:41]
+  wire [27:0] _far_sigSum_T_2 = _GEN_3 + far_negAlignedSigSmaller; // @[AddRecFN.scala 98:41]
+  wire [27:0] _GEN_4 = {{27'd0}, _closeSubMags_T}; // @[AddRecFN.scala 98:68]
+  wire [27:0] far_sigSum = _far_sigSum_T_2 + _GEN_4; // @[AddRecFN.scala 98:68]
+  wire [26:0] _GEN_5 = {{26'd0}, far_sigSum[0]}; // @[AddRecFN.scala 99:67]
+  wire [26:0] _far_sigOut_T_2 = far_sigSum[27:1] | _GEN_5; // @[AddRecFN.scala 99:67]
   wire [27:0] _far_sigOut_T_3 = _closeSubMags_T ? far_sigSum : {{1'd0}, _far_sigOut_T_2}; // @[AddRecFN.scala 99:25]
   wire [26:0] far_sigOut = _far_sigOut_T_3[26:0]; // @[AddRecFN.scala 99:83]
   wire  notSigNaN_invalidExc = io_a_isInf & io_b_isInf & _closeSubMags_T; // @[AddRecFN.scala 102:57]
@@ -708,7 +698,7 @@ module AddRawFN(
   wire [9:0] _common_sExpOut_T_2 = closeSubMags | _modNatAlignDist_T ? $signed(io_b_sExp) : $signed(io_a_sExp); // @[AddRecFN.scala 116:13]
   wire [4:0] _common_sExpOut_T_3 = closeSubMags ? close_nearNormDist : {{4'd0}, _closeSubMags_T}; // @[AddRecFN.scala 117:18]
   wire [5:0] _common_sExpOut_T_4 = {1'b0,$signed(_common_sExpOut_T_3)}; // @[AddRecFN.scala 117:66]
-  wire [9:0] _GEN_7 = {{4{_common_sExpOut_T_4[5]}},_common_sExpOut_T_4}; // @[AddRecFN.scala 117:13]
+  wire [9:0] _GEN_6 = {{4{_common_sExpOut_T_4[5]}},_common_sExpOut_T_4}; // @[AddRecFN.scala 117:13]
   wire  _io_invalidExc_T_2 = io_a_isNaN & ~io_a_sig[22]; // @[common.scala 84:46]
   wire  _io_invalidExc_T_5 = io_b_isNaN & ~io_b_sig[22]; // @[common.scala 84:46]
   assign io_invalidExc = _io_invalidExc_T_2 | _io_invalidExc_T_5 | notSigNaN_invalidExc; // @[AddRecFN.scala 121:71]
@@ -716,7 +706,7 @@ module AddRawFN(
   assign io_rawOut_isInf = io_a_isInf | io_b_isInf; // @[AddRecFN.scala 103:38]
   assign io_rawOut_isZero = addZeros | ~notNaN_isInfOut & closeSubMags & close_totalCancellation; // @[AddRecFN.scala 106:37]
   assign io_rawOut_sign = _notNaN_signOut_T_14 | _notNaN_signOut_T_18; // @[AddRecFN.scala 113:77]
-  assign io_rawOut_sExp = $signed(_common_sExpOut_T_2) - $signed(_GEN_7); // @[AddRecFN.scala 117:13]
+  assign io_rawOut_sExp = $signed(_common_sExpOut_T_2) - $signed(_GEN_6); // @[AddRecFN.scala 117:13]
   assign io_rawOut_sig = closeSubMags ? close_sigOut : far_sigOut; // @[AddRecFN.scala 118:28]
 endmodule
 module AddRecFN(
@@ -759,15 +749,13 @@ module AddRecFN(
   wire [8:0] addRawFN_io_a_exp = io_a[31:23]; // @[rawFloatFromRecFN.scala 50:21]
   wire  addRawFN_io_a_isZero = addRawFN_io_a_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   wire  addRawFN_io_a_isSpecial = addRawFN_io_a_exp[8:7] == 2'h3; // @[rawFloatFromRecFN.scala 52:54]
-  wire  addRawFN_io_a_out_sig_hi_lo = ~addRawFN_io_a_isZero; // @[rawFloatFromRecFN.scala 60:39]
-  wire [22:0] addRawFN_io_a_out_sig_lo = io_a[22:0]; // @[rawFloatFromRecFN.scala 60:51]
-  wire [1:0] addRawFN_io_a_out_sig_hi = {1'h0,addRawFN_io_a_out_sig_hi_lo}; // @[Cat.scala 30:58]
+  wire  _addRawFN_io_a_out_sig_T = ~addRawFN_io_a_isZero; // @[rawFloatFromRecFN.scala 60:39]
+  wire [1:0] addRawFN_io_a_out_sig_hi = {1'h0,_addRawFN_io_a_out_sig_T}; // @[Cat.scala 30:58]
   wire [8:0] addRawFN_io_b_exp = io_b[31:23]; // @[rawFloatFromRecFN.scala 50:21]
   wire  addRawFN_io_b_isZero = addRawFN_io_b_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   wire  addRawFN_io_b_isSpecial = addRawFN_io_b_exp[8:7] == 2'h3; // @[rawFloatFromRecFN.scala 52:54]
-  wire  addRawFN_io_b_out_sig_hi_lo = ~addRawFN_io_b_isZero; // @[rawFloatFromRecFN.scala 60:39]
-  wire [22:0] addRawFN_io_b_out_sig_lo = io_b[22:0]; // @[rawFloatFromRecFN.scala 60:51]
-  wire [1:0] addRawFN_io_b_out_sig_hi = {1'h0,addRawFN_io_b_out_sig_hi_lo}; // @[Cat.scala 30:58]
+  wire  _addRawFN_io_b_out_sig_T = ~addRawFN_io_b_isZero; // @[rawFloatFromRecFN.scala 60:39]
+  wire [1:0] addRawFN_io_b_out_sig_hi = {1'h0,_addRawFN_io_b_out_sig_T}; // @[Cat.scala 30:58]
   AddRawFN addRawFN_ ( // @[AddRecFN.scala 147:26]
     .io_subOp(addRawFN__io_subOp),
     .io_a_isNaN(addRawFN__io_a_isNaN),
@@ -809,13 +797,13 @@ module AddRecFN(
   assign addRawFN__io_a_isZero = addRawFN_io_a_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   assign addRawFN__io_a_sign = io_a[32]; // @[rawFloatFromRecFN.scala 58:25]
   assign addRawFN__io_a_sExp = {1'b0,$signed(addRawFN_io_a_exp)}; // @[rawFloatFromRecFN.scala 59:27]
-  assign addRawFN__io_a_sig = {addRawFN_io_a_out_sig_hi,addRawFN_io_a_out_sig_lo}; // @[Cat.scala 30:58]
+  assign addRawFN__io_a_sig = {addRawFN_io_a_out_sig_hi,io_a[22:0]}; // @[Cat.scala 30:58]
   assign addRawFN__io_b_isNaN = addRawFN_io_b_isSpecial & addRawFN_io_b_exp[6]; // @[rawFloatFromRecFN.scala 55:33]
   assign addRawFN__io_b_isInf = addRawFN_io_b_isSpecial & ~addRawFN_io_b_exp[6]; // @[rawFloatFromRecFN.scala 56:33]
   assign addRawFN__io_b_isZero = addRawFN_io_b_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
   assign addRawFN__io_b_sign = io_b[32]; // @[rawFloatFromRecFN.scala 58:25]
   assign addRawFN__io_b_sExp = {1'b0,$signed(addRawFN_io_b_exp)}; // @[rawFloatFromRecFN.scala 59:27]
-  assign addRawFN__io_b_sig = {addRawFN_io_b_out_sig_hi,addRawFN_io_b_out_sig_lo}; // @[Cat.scala 30:58]
+  assign addRawFN__io_b_sig = {addRawFN_io_b_out_sig_hi,io_b[22:0]}; // @[Cat.scala 30:58]
   assign addRawFN__io_roundingMode = io_roundingMode; // @[AddRecFN.scala 152:30]
   assign roundRawFNToRecFN_io_invalidExc = addRawFN__io_invalidExc; // @[AddRecFN.scala 158:39]
   assign roundRawFNToRecFN_io_in_isNaN = addRawFN__io_rawOut_isNaN; // @[AddRecFN.scala 160:39]
@@ -828,47 +816,47 @@ module AddRecFN(
 endmodule
 module AddSubPE(
   input         clock,
-  input  [31:0] io_in_0,
-  input  [31:0] io_in_1,
   input         io_op,
   input  [2:0]  io_rounding,
+  input  [32:0] io_in_0,
+  input  [32:0] io_in_1,
   output [32:0] io_out
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
   reg [31:0] _RAND_1;
-  reg [31:0] _RAND_2;
-  reg [31:0] _RAND_3;
+  reg [63:0] _RAND_2;
+  reg [63:0] _RAND_3;
   reg [63:0] _RAND_4;
 `endif // RANDOMIZE_REG_INIT
-  wire  addRecFN_io_subOp; // @[AddSubPE.scala 34:24]
-  wire [32:0] addRecFN_io_a; // @[AddSubPE.scala 34:24]
-  wire [32:0] addRecFN_io_b; // @[AddSubPE.scala 34:24]
-  wire [2:0] addRecFN_io_roundingMode; // @[AddSubPE.scala 34:24]
-  wire [32:0] addRecFN_io_out; // @[AddSubPE.scala 34:24]
-  reg  op; // @[AddSubPE.scala 21:19]
-  reg [2:0] rounding; // @[AddSubPE.scala 24:26]
-  reg [31:0] in_0; // @[AddSubPE.scala 30:22]
-  reg [31:0] in_1; // @[AddSubPE.scala 31:22]
-  reg [32:0] addRecFN_out; // @[AddSubPE.scala 40:30]
-  AddRecFN addRecFN ( // @[AddSubPE.scala 34:24]
+  wire  addRecFN_io_subOp; // @[AddSubPE.scala 33:24]
+  wire [32:0] addRecFN_io_a; // @[AddSubPE.scala 33:24]
+  wire [32:0] addRecFN_io_b; // @[AddSubPE.scala 33:24]
+  wire [2:0] addRecFN_io_roundingMode; // @[AddSubPE.scala 33:24]
+  wire [32:0] addRecFN_io_out; // @[AddSubPE.scala 33:24]
+  reg  op; // @[AddSubPE.scala 20:19]
+  reg [2:0] rounding; // @[AddSubPE.scala 23:26]
+  reg [32:0] in_0; // @[AddSubPE.scala 29:22]
+  reg [32:0] in_1; // @[AddSubPE.scala 30:22]
+  reg [32:0] addRecFN_out; // @[AddSubPE.scala 39:30]
+  AddRecFN addRecFN ( // @[AddSubPE.scala 33:24]
     .io_subOp(addRecFN_io_subOp),
     .io_a(addRecFN_io_a),
     .io_b(addRecFN_io_b),
     .io_roundingMode(addRecFN_io_roundingMode),
     .io_out(addRecFN_io_out)
   );
-  assign io_out = addRecFN_out; // @[AddSubPE.scala 42:10]
-  assign addRecFN_io_subOp = op; // @[AddSubPE.scala 35:21]
-  assign addRecFN_io_a = {{1'd0}, in_0}; // @[AddSubPE.scala 36:17]
-  assign addRecFN_io_b = {{1'd0}, in_1}; // @[AddSubPE.scala 37:17]
-  assign addRecFN_io_roundingMode = rounding; // @[AddSubPE.scala 38:30]
+  assign io_out = addRecFN_out; // @[AddSubPE.scala 41:10]
+  assign addRecFN_io_subOp = op; // @[AddSubPE.scala 34:21]
+  assign addRecFN_io_a = in_0; // @[AddSubPE.scala 35:17]
+  assign addRecFN_io_b = in_1; // @[AddSubPE.scala 36:17]
+  assign addRecFN_io_roundingMode = rounding; // @[AddSubPE.scala 37:30]
   always @(posedge clock) begin
-    op <= io_op; // @[AddSubPE.scala 21:19]
-    rounding <= io_rounding; // @[AddSubPE.scala 24:26]
-    in_0 <= io_in_0; // @[AddSubPE.scala 30:22]
-    in_1 <= io_in_1; // @[AddSubPE.scala 31:22]
-    addRecFN_out <= addRecFN_io_out; // @[AddSubPE.scala 40:30]
+    op <= io_op; // @[AddSubPE.scala 20:19]
+    rounding <= io_rounding; // @[AddSubPE.scala 23:26]
+    in_0 <= io_in_0; // @[AddSubPE.scala 29:22]
+    in_1 <= io_in_1; // @[AddSubPE.scala 30:22]
+    addRecFN_out <= addRecFN_io_out; // @[AddSubPE.scala 39:30]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -910,10 +898,10 @@ initial begin
   op = _RAND_0[0:0];
   _RAND_1 = {1{`RANDOM}};
   rounding = _RAND_1[2:0];
-  _RAND_2 = {1{`RANDOM}};
-  in_0 = _RAND_2[31:0];
-  _RAND_3 = {1{`RANDOM}};
-  in_1 = _RAND_3[31:0];
+  _RAND_2 = {2{`RANDOM}};
+  in_0 = _RAND_2[32:0];
+  _RAND_3 = {2{`RANDOM}};
+  in_1 = _RAND_3[32:0];
   _RAND_4 = {2{`RANDOM}};
   addRecFN_out = _RAND_4[32:0];
 `endif // RANDOMIZE_REG_INIT
@@ -949,8 +937,8 @@ module PE(
   input         io_addsub_1_op,
   input  [2:0]  io_rounding,
   input         io_tininess,
-  output [31:0] io_out_0,
-  output [31:0] io_out_1
+  output [32:0] io_out_0,
+  output [32:0] io_out_1
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -972,20 +960,20 @@ module PE(
   reg [31:0] _RAND_16;
   reg [31:0] _RAND_17;
   reg [31:0] _RAND_18;
-  reg [31:0] _RAND_19;
-  reg [31:0] _RAND_20;
-  reg [31:0] _RAND_21;
-  reg [31:0] _RAND_22;
-  reg [31:0] _RAND_23;
-  reg [31:0] _RAND_24;
-  reg [31:0] _RAND_25;
-  reg [31:0] _RAND_26;
-  reg [31:0] _RAND_27;
-  reg [31:0] _RAND_28;
-  reg [31:0] _RAND_29;
-  reg [31:0] _RAND_30;
-  reg [31:0] _RAND_31;
-  reg [31:0] _RAND_32;
+  reg [63:0] _RAND_19;
+  reg [63:0] _RAND_20;
+  reg [63:0] _RAND_21;
+  reg [63:0] _RAND_22;
+  reg [63:0] _RAND_23;
+  reg [63:0] _RAND_24;
+  reg [63:0] _RAND_25;
+  reg [63:0] _RAND_26;
+  reg [63:0] _RAND_27;
+  reg [63:0] _RAND_28;
+  reg [63:0] _RAND_29;
+  reg [63:0] _RAND_30;
+  reg [63:0] _RAND_31;
+  reg [63:0] _RAND_32;
 `endif // RANDOMIZE_REG_INIT
   wire  m_0_clock; // @[PE.scala 106:19]
   wire [31:0] m_0_io_in_0; // @[PE.scala 106:19]
@@ -1012,10 +1000,12 @@ module PE(
   wire [1:0] m_3_io_sel; // @[PE.scala 130:19]
   wire [31:0] m_3_io_out; // @[PE.scala 130:19]
   wire  multModule_0_clock; // @[PE.scala 141:28]
+  wire [2:0] multModule_0_io_rounding; // @[PE.scala 141:28]
   wire [31:0] multModule_0_io_in_0; // @[PE.scala 141:28]
   wire [31:0] multModule_0_io_in_1; // @[PE.scala 141:28]
   wire [32:0] multModule_0_io_out; // @[PE.scala 141:28]
   wire  multModule_1_clock; // @[PE.scala 148:28]
+  wire [2:0] multModule_1_io_rounding; // @[PE.scala 148:28]
   wire [31:0] multModule_1_io_in_0; // @[PE.scala 148:28]
   wire [31:0] multModule_1_io_in_1; // @[PE.scala 148:28]
   wire [32:0] multModule_1_io_out; // @[PE.scala 148:28]
@@ -1044,16 +1034,16 @@ module PE(
   wire [1:0] m_7_io_sel; // @[PE.scala 182:19]
   wire [31:0] m_7_io_out; // @[PE.scala 182:19]
   wire  addsubModule_0_clock; // @[PE.scala 193:30]
-  wire [31:0] addsubModule_0_io_in_0; // @[PE.scala 193:30]
-  wire [31:0] addsubModule_0_io_in_1; // @[PE.scala 193:30]
   wire  addsubModule_0_io_op; // @[PE.scala 193:30]
   wire [2:0] addsubModule_0_io_rounding; // @[PE.scala 193:30]
+  wire [32:0] addsubModule_0_io_in_0; // @[PE.scala 193:30]
+  wire [32:0] addsubModule_0_io_in_1; // @[PE.scala 193:30]
   wire [32:0] addsubModule_0_io_out; // @[PE.scala 193:30]
   wire  addsubModule_1_clock; // @[PE.scala 201:30]
-  wire [31:0] addsubModule_1_io_in_0; // @[PE.scala 201:30]
-  wire [31:0] addsubModule_1_io_in_1; // @[PE.scala 201:30]
   wire  addsubModule_1_io_op; // @[PE.scala 201:30]
   wire [2:0] addsubModule_1_io_rounding; // @[PE.scala 201:30]
+  wire [32:0] addsubModule_1_io_in_0; // @[PE.scala 201:30]
+  wire [32:0] addsubModule_1_io_in_1; // @[PE.scala 201:30]
   wire [32:0] addsubModule_1_io_out; // @[PE.scala 201:30]
   wire  m_8_clock; // @[PE.scala 212:19]
   wire [31:0] m_8_io_in_0; // @[PE.scala 212:19]
@@ -1086,20 +1076,20 @@ module PE(
   reg  addsub_0_op; // @[PE.scala 76:29]
   reg  addsub_1_op; // @[PE.scala 77:29]
   reg [2:0] rounding; // @[PE.scala 80:29]
-  reg [31:0] addsubModule_0_out; // @[PE.scala 87:36]
-  reg [31:0] addsubModule_1_out; // @[PE.scala 88:36]
-  reg [31:0] multModule_0_out; // @[PE.scala 89:36]
-  reg [31:0] multModule_1_out; // @[PE.scala 90:36]
-  reg [31:0] m_0_out; // @[PE.scala 92:24]
-  reg [31:0] m_1_out; // @[PE.scala 93:24]
-  reg [31:0] m_2_out; // @[PE.scala 94:24]
-  reg [31:0] m_3_out; // @[PE.scala 95:24]
-  reg [31:0] m_4_out; // @[PE.scala 96:24]
-  reg [31:0] m_5_out; // @[PE.scala 97:24]
-  reg [31:0] m_6_out; // @[PE.scala 98:24]
-  reg [31:0] m_7_out; // @[PE.scala 99:24]
-  reg [31:0] m_8_out; // @[PE.scala 100:24]
-  reg [31:0] m_9_out; // @[PE.scala 101:24]
+  reg [32:0] addsubModule_0_out; // @[PE.scala 87:36]
+  reg [32:0] addsubModule_1_out; // @[PE.scala 88:36]
+  reg [32:0] multModule_0_out; // @[PE.scala 89:36]
+  reg [32:0] multModule_1_out; // @[PE.scala 90:36]
+  reg [32:0] m_0_out; // @[PE.scala 92:24]
+  reg [32:0] m_1_out; // @[PE.scala 93:24]
+  reg [32:0] m_2_out; // @[PE.scala 94:24]
+  reg [32:0] m_3_out; // @[PE.scala 95:24]
+  reg [32:0] m_4_out; // @[PE.scala 96:24]
+  reg [32:0] m_5_out; // @[PE.scala 97:24]
+  reg [32:0] m_6_out; // @[PE.scala 98:24]
+  reg [32:0] m_7_out; // @[PE.scala 99:24]
+  reg [32:0] m_8_out; // @[PE.scala 100:24]
+  reg [32:0] m_9_out; // @[PE.scala 101:24]
   MuxPE m_0 ( // @[PE.scala 106:19]
     .clock(m_0_clock),
     .io_in_0(m_0_io_in_0),
@@ -1134,12 +1124,14 @@ module PE(
   );
   MultPE multModule_0 ( // @[PE.scala 141:28]
     .clock(multModule_0_clock),
+    .io_rounding(multModule_0_io_rounding),
     .io_in_0(multModule_0_io_in_0),
     .io_in_1(multModule_0_io_in_1),
     .io_out(multModule_0_io_out)
   );
   MultPE multModule_1 ( // @[PE.scala 148:28]
     .clock(multModule_1_clock),
+    .io_rounding(multModule_1_io_rounding),
     .io_in_0(multModule_1_io_in_0),
     .io_in_1(multModule_1_io_in_1),
     .io_out(multModule_1_io_out)
@@ -1178,18 +1170,18 @@ module PE(
   );
   AddSubPE addsubModule_0 ( // @[PE.scala 193:30]
     .clock(addsubModule_0_clock),
-    .io_in_0(addsubModule_0_io_in_0),
-    .io_in_1(addsubModule_0_io_in_1),
     .io_op(addsubModule_0_io_op),
     .io_rounding(addsubModule_0_io_rounding),
+    .io_in_0(addsubModule_0_io_in_0),
+    .io_in_1(addsubModule_0_io_in_1),
     .io_out(addsubModule_0_io_out)
   );
   AddSubPE addsubModule_1 ( // @[PE.scala 201:30]
     .clock(addsubModule_1_clock),
-    .io_in_0(addsubModule_1_io_in_0),
-    .io_in_1(addsubModule_1_io_in_1),
     .io_op(addsubModule_1_io_op),
     .io_rounding(addsubModule_1_io_rounding),
+    .io_in_0(addsubModule_1_io_in_0),
+    .io_in_1(addsubModule_1_io_in_1),
     .io_out(addsubModule_1_io_out)
   );
   MuxPE m_8 ( // @[PE.scala 212:19]
@@ -1212,68 +1204,70 @@ module PE(
   assign io_out_1 = m_9_out; // @[PE.scala 232:12]
   assign m_0_clock = clock;
   assign m_0_io_in_0 = Xi_0; // @[PE.scala 108:15]
-  assign m_0_io_in_1 = addsubModule_0_out; // @[PE.scala 109:15]
+  assign m_0_io_in_1 = addsubModule_0_out[31:0]; // @[PE.scala 109:15]
   assign m_0_io_in_2 = 32'h0;
   assign m_0_io_sel = m_0_sel; // @[PE.scala 107:14]
   assign m_1_clock = clock;
   assign m_1_io_in_0 = Yi_0; // @[PE.scala 116:15]
-  assign m_1_io_in_1 = addsubModule_0_out; // @[PE.scala 117:15]
+  assign m_1_io_in_1 = addsubModule_0_out[31:0]; // @[PE.scala 117:15]
   assign m_1_io_in_2 = 32'h0;
   assign m_1_io_sel = m_1_sel; // @[PE.scala 115:14]
   assign m_2_clock = clock;
   assign m_2_io_in_0 = Xi_1; // @[PE.scala 124:15]
-  assign m_2_io_in_1 = addsubModule_1_out; // @[PE.scala 125:15]
+  assign m_2_io_in_1 = addsubModule_1_out[31:0]; // @[PE.scala 125:15]
   assign m_2_io_in_2 = 32'h0;
   assign m_2_io_sel = m_2_sel; // @[PE.scala 123:14]
   assign m_3_clock = clock;
   assign m_3_io_in_0 = Yi_1; // @[PE.scala 132:15]
-  assign m_3_io_in_1 = addsubModule_1_out; // @[PE.scala 133:15]
+  assign m_3_io_in_1 = addsubModule_1_out[31:0]; // @[PE.scala 133:15]
   assign m_3_io_in_2 = 32'h0;
   assign m_3_io_sel = m_3_sel; // @[PE.scala 131:14]
   assign multModule_0_clock = clock;
-  assign multModule_0_io_in_0 = m_0_out; // @[PE.scala 144:24]
-  assign multModule_0_io_in_1 = m_1_out; // @[PE.scala 145:24]
+  assign multModule_0_io_rounding = rounding; // @[PE.scala 142:30]
+  assign multModule_0_io_in_0 = m_0_out[31:0]; // @[PE.scala 144:24]
+  assign multModule_0_io_in_1 = m_1_out[31:0]; // @[PE.scala 145:24]
   assign multModule_1_clock = clock;
-  assign multModule_1_io_in_0 = m_2_out; // @[PE.scala 151:24]
-  assign multModule_1_io_in_1 = m_3_out; // @[PE.scala 152:24]
+  assign multModule_1_io_rounding = rounding; // @[PE.scala 149:30]
+  assign multModule_1_io_in_0 = m_2_out[31:0]; // @[PE.scala 151:24]
+  assign multModule_1_io_in_1 = m_3_out[31:0]; // @[PE.scala 152:24]
   assign m_4_clock = clock;
   assign m_4_io_in_0 = Xi_0; // @[PE.scala 160:15]
-  assign m_4_io_in_1 = multModule_0_out; // @[PE.scala 161:15]
+  assign m_4_io_in_1 = multModule_0_out[31:0]; // @[PE.scala 161:15]
   assign m_4_io_in_2 = aggr_0; // @[PE.scala 162:15]
   assign m_4_io_sel = m_0_sel; // @[PE.scala 159:15]
   assign m_5_clock = clock;
   assign m_5_io_in_0 = Yi_0; // @[PE.scala 168:15]
-  assign m_5_io_in_1 = multModule_1_out; // @[PE.scala 169:15]
+  assign m_5_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 169:15]
   assign m_5_io_in_2 = aggr_1; // @[PE.scala 170:15]
   assign m_5_io_sel = m_5_sel; // @[PE.scala 167:15]
   assign m_6_clock = clock;
   assign m_6_io_in_0 = Xi_1; // @[PE.scala 176:15]
-  assign m_6_io_in_1 = multModule_1_out; // @[PE.scala 177:15]
+  assign m_6_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 177:15]
   assign m_6_io_in_2 = aggr_2; // @[PE.scala 178:15]
   assign m_6_io_sel = m_6_sel; // @[PE.scala 175:15]
   assign m_7_clock = clock;
   assign m_7_io_in_0 = Yi_1; // @[PE.scala 184:15]
-  assign m_7_io_in_1 = multModule_1_out; // @[PE.scala 185:15]
+  assign m_7_io_in_1 = 32'h0;
   assign m_7_io_in_2 = aggr_3; // @[PE.scala 186:15]
   assign m_7_io_sel = m_7_sel; // @[PE.scala 183:15]
   assign addsubModule_0_clock = clock;
-  assign addsubModule_0_io_in_0 = m_4_out; // @[PE.scala 195:26]
-  assign addsubModule_0_io_in_1 = m_5_out; // @[PE.scala 196:26]
   assign addsubModule_0_io_op = addsub_0_op; // @[PE.scala 194:24]
   assign addsubModule_0_io_rounding = rounding; // @[PE.scala 197:32]
+  assign addsubModule_0_io_in_0 = m_4_out; // @[PE.scala 195:26]
+  assign addsubModule_0_io_in_1 = m_5_out; // @[PE.scala 196:26]
   assign addsubModule_1_clock = clock;
-  assign addsubModule_1_io_in_0 = m_6_out; // @[PE.scala 203:26]
-  assign addsubModule_1_io_in_1 = m_7_out; // @[PE.scala 204:26]
   assign addsubModule_1_io_op = addsub_1_op; // @[PE.scala 202:24]
   assign addsubModule_1_io_rounding = rounding; // @[PE.scala 205:32]
+  assign addsubModule_1_io_in_0 = m_6_out; // @[PE.scala 203:26]
+  assign addsubModule_1_io_in_1 = m_7_out; // @[PE.scala 204:26]
   assign m_8_clock = clock;
-  assign m_8_io_in_0 = addsubModule_0_out; // @[PE.scala 214:15]
-  assign m_8_io_in_1 = multModule_0_out; // @[PE.scala 215:15]
+  assign m_8_io_in_0 = addsubModule_0_out[31:0]; // @[PE.scala 214:15]
+  assign m_8_io_in_1 = multModule_0_out[31:0]; // @[PE.scala 215:15]
   assign m_8_io_in_2 = 32'h0;
   assign m_8_io_sel = m_8_sel; // @[PE.scala 213:15]
   assign m_9_clock = clock;
-  assign m_9_io_in_0 = addsubModule_1_out; // @[PE.scala 222:15]
-  assign m_9_io_in_1 = multModule_1_out; // @[PE.scala 223:15]
+  assign m_9_io_in_0 = addsubModule_1_out[31:0]; // @[PE.scala 222:15]
+  assign m_9_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 223:15]
   assign m_9_io_in_2 = 32'h0;
   assign m_9_io_sel = m_7_sel; // @[PE.scala 221:15]
   always @(posedge clock) begin
@@ -1297,74 +1291,74 @@ module PE(
     addsub_1_op <= io_addsub_1_op; // @[PE.scala 77:29]
     rounding <= io_rounding; // @[PE.scala 80:29]
     if (reset) begin // @[PE.scala 87:36]
-      addsubModule_0_out <= 32'h0; // @[PE.scala 87:36]
+      addsubModule_0_out <= 33'h0; // @[PE.scala 87:36]
     end else begin
-      addsubModule_0_out <= addsubModule_0_io_out[31:0]; // @[PE.scala 199:23]
+      addsubModule_0_out <= addsubModule_0_io_out; // @[PE.scala 199:23]
     end
     if (reset) begin // @[PE.scala 88:36]
-      addsubModule_1_out <= 32'h0; // @[PE.scala 88:36]
+      addsubModule_1_out <= 33'h0; // @[PE.scala 88:36]
     end else begin
-      addsubModule_1_out <= addsubModule_1_io_out[31:0]; // @[PE.scala 207:23]
+      addsubModule_1_out <= addsubModule_1_io_out; // @[PE.scala 207:23]
     end
     if (reset) begin // @[PE.scala 89:36]
-      multModule_0_out <= 32'h0; // @[PE.scala 89:36]
+      multModule_0_out <= 33'h0; // @[PE.scala 89:36]
     end else begin
-      multModule_0_out <= multModule_0_io_out[31:0]; // @[PE.scala 146:21]
+      multModule_0_out <= multModule_0_io_out; // @[PE.scala 146:21]
     end
     if (reset) begin // @[PE.scala 90:36]
-      multModule_1_out <= 32'h0; // @[PE.scala 90:36]
+      multModule_1_out <= 33'h0; // @[PE.scala 90:36]
     end else begin
-      multModule_1_out <= multModule_1_io_out[31:0]; // @[PE.scala 153:21]
+      multModule_1_out <= multModule_1_io_out; // @[PE.scala 153:21]
     end
     if (reset) begin // @[PE.scala 92:24]
-      m_0_out <= 32'h0; // @[PE.scala 92:24]
+      m_0_out <= 33'h0; // @[PE.scala 92:24]
     end else begin
-      m_0_out <= m_0_io_out; // @[PE.scala 112:11]
+      m_0_out <= {{1'd0}, m_0_io_out}; // @[PE.scala 112:11]
     end
     if (reset) begin // @[PE.scala 93:24]
-      m_1_out <= 32'h0; // @[PE.scala 93:24]
+      m_1_out <= 33'h0; // @[PE.scala 93:24]
     end else begin
-      m_1_out <= m_1_io_out; // @[PE.scala 120:11]
+      m_1_out <= {{1'd0}, m_1_io_out}; // @[PE.scala 120:11]
     end
     if (reset) begin // @[PE.scala 94:24]
-      m_2_out <= 32'h0; // @[PE.scala 94:24]
+      m_2_out <= 33'h0; // @[PE.scala 94:24]
     end else begin
-      m_2_out <= m_2_io_out; // @[PE.scala 128:11]
+      m_2_out <= {{1'd0}, m_2_io_out}; // @[PE.scala 128:11]
     end
     if (reset) begin // @[PE.scala 95:24]
-      m_3_out <= 32'h0; // @[PE.scala 95:24]
+      m_3_out <= 33'h0; // @[PE.scala 95:24]
     end else begin
-      m_3_out <= m_3_io_out; // @[PE.scala 136:11]
+      m_3_out <= {{1'd0}, m_3_io_out}; // @[PE.scala 136:11]
     end
     if (reset) begin // @[PE.scala 96:24]
-      m_4_out <= 32'h0; // @[PE.scala 96:24]
+      m_4_out <= 33'h0; // @[PE.scala 96:24]
     end else begin
-      m_4_out <= m_4_io_out; // @[PE.scala 164:15]
+      m_4_out <= {{1'd0}, m_4_io_out}; // @[PE.scala 164:15]
     end
     if (reset) begin // @[PE.scala 97:24]
-      m_5_out <= 32'h0; // @[PE.scala 97:24]
+      m_5_out <= 33'h0; // @[PE.scala 97:24]
     end else begin
-      m_5_out <= m_5_io_out; // @[PE.scala 172:15]
+      m_5_out <= {{1'd0}, m_5_io_out}; // @[PE.scala 172:15]
     end
     if (reset) begin // @[PE.scala 98:24]
-      m_6_out <= 32'h0; // @[PE.scala 98:24]
+      m_6_out <= 33'h0; // @[PE.scala 98:24]
     end else begin
-      m_6_out <= m_6_io_out; // @[PE.scala 180:15]
+      m_6_out <= {{1'd0}, m_6_io_out}; // @[PE.scala 180:15]
     end
     if (reset) begin // @[PE.scala 99:24]
-      m_7_out <= 32'h0; // @[PE.scala 99:24]
+      m_7_out <= 33'h0; // @[PE.scala 99:24]
     end else begin
-      m_7_out <= m_7_io_out; // @[PE.scala 188:15]
+      m_7_out <= {{1'd0}, m_7_io_out}; // @[PE.scala 188:15]
     end
     if (reset) begin // @[PE.scala 100:24]
-      m_8_out <= 32'h0; // @[PE.scala 100:24]
+      m_8_out <= 33'h0; // @[PE.scala 100:24]
     end else begin
-      m_8_out <= m_8_io_out; // @[PE.scala 218:15]
+      m_8_out <= {{1'd0}, m_8_io_out}; // @[PE.scala 218:15]
     end
     if (reset) begin // @[PE.scala 101:24]
-      m_9_out <= 32'h0; // @[PE.scala 101:24]
+      m_9_out <= 33'h0; // @[PE.scala 101:24]
     end else begin
-      m_9_out <= m_9_io_out; // @[PE.scala 226:15]
+      m_9_out <= {{1'd0}, m_9_io_out}; // @[PE.scala 226:15]
     end
   end
 // Register and memory initialization
@@ -1441,34 +1435,34 @@ initial begin
   addsub_1_op = _RAND_17[0:0];
   _RAND_18 = {1{`RANDOM}};
   rounding = _RAND_18[2:0];
-  _RAND_19 = {1{`RANDOM}};
-  addsubModule_0_out = _RAND_19[31:0];
-  _RAND_20 = {1{`RANDOM}};
-  addsubModule_1_out = _RAND_20[31:0];
-  _RAND_21 = {1{`RANDOM}};
-  multModule_0_out = _RAND_21[31:0];
-  _RAND_22 = {1{`RANDOM}};
-  multModule_1_out = _RAND_22[31:0];
-  _RAND_23 = {1{`RANDOM}};
-  m_0_out = _RAND_23[31:0];
-  _RAND_24 = {1{`RANDOM}};
-  m_1_out = _RAND_24[31:0];
-  _RAND_25 = {1{`RANDOM}};
-  m_2_out = _RAND_25[31:0];
-  _RAND_26 = {1{`RANDOM}};
-  m_3_out = _RAND_26[31:0];
-  _RAND_27 = {1{`RANDOM}};
-  m_4_out = _RAND_27[31:0];
-  _RAND_28 = {1{`RANDOM}};
-  m_5_out = _RAND_28[31:0];
-  _RAND_29 = {1{`RANDOM}};
-  m_6_out = _RAND_29[31:0];
-  _RAND_30 = {1{`RANDOM}};
-  m_7_out = _RAND_30[31:0];
-  _RAND_31 = {1{`RANDOM}};
-  m_8_out = _RAND_31[31:0];
-  _RAND_32 = {1{`RANDOM}};
-  m_9_out = _RAND_32[31:0];
+  _RAND_19 = {2{`RANDOM}};
+  addsubModule_0_out = _RAND_19[32:0];
+  _RAND_20 = {2{`RANDOM}};
+  addsubModule_1_out = _RAND_20[32:0];
+  _RAND_21 = {2{`RANDOM}};
+  multModule_0_out = _RAND_21[32:0];
+  _RAND_22 = {2{`RANDOM}};
+  multModule_1_out = _RAND_22[32:0];
+  _RAND_23 = {2{`RANDOM}};
+  m_0_out = _RAND_23[32:0];
+  _RAND_24 = {2{`RANDOM}};
+  m_1_out = _RAND_24[32:0];
+  _RAND_25 = {2{`RANDOM}};
+  m_2_out = _RAND_25[32:0];
+  _RAND_26 = {2{`RANDOM}};
+  m_3_out = _RAND_26[32:0];
+  _RAND_27 = {2{`RANDOM}};
+  m_4_out = _RAND_27[32:0];
+  _RAND_28 = {2{`RANDOM}};
+  m_5_out = _RAND_28[32:0];
+  _RAND_29 = {2{`RANDOM}};
+  m_6_out = _RAND_29[32:0];
+  _RAND_30 = {2{`RANDOM}};
+  m_7_out = _RAND_30[32:0];
+  _RAND_31 = {2{`RANDOM}};
+  m_8_out = _RAND_31[32:0];
+  _RAND_32 = {2{`RANDOM}};
+  m_9_out = _RAND_32[32:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

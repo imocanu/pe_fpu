@@ -3,8 +3,7 @@ package modules
 import chisel3._
 import chisel3.util._
 import chisel3.iotesters._
-import org.scalatest.Matchers
-import scala.io.Source
+import org.scalatest.matchers.should.Matchers
 import utils.TestUtils
 
 // FOR test :

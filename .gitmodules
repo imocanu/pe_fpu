@@ -1,3 +1,6 @@
 [submodule "hardfloat"]
 	path = hardfloat
 	url = https://github.com/ucb-bar/berkeley-hardfloat
+[submodule "berkeley-hardfloat"]
+	path = berkeley-hardfloat
+	url = https://github.com/ucb-bar/berkeley-hardfloat

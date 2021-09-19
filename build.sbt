@@ -3,9 +3,9 @@ resolvers ++= Seq(
   Resolver.sonatypeRepo("releases")
 )
 
-lazy val hardfloat  = (project in file("hardfloat"))
+lazy val hardfloat  = (project in file("berkeley-hardfloat"))
   .settings(
-    scalaVersion  := "2.12.13",
+    scalaVersion  := "2.12.15",
     publishArtifact := false,
     libraryDependencies ++= Seq(
       "edu.berkeley.cs" %% "chisel3" % "3.+",
@@ -15,7 +15,7 @@ lazy val hardfloat  = (project in file("hardfloat"))
       "edu.berkeley.cs" %% "chisel3-macros" % "3.4.+",
       "edu.berkeley.cs" %% "firrtl" % "1.+",
       "edu.berkeley.cs" %% "firrtl-diagrammer" % "1.+",
-      "edu.berkeley.cs" %% "chisel-iotesters" % "1.+" % "test"
+      "edu.berkeley.cs" %% "chisel-iotesters" % "2.+" % "test"
     ),
     scalacOptions ++= Seq(
       "-Xsource:2.11",
@@ -28,12 +28,12 @@ lazy val hardfloat  = (project in file("hardfloat"))
       "-Xcheckinit"
     ),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full),
-    addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % "3.4.+" cross CrossVersion.full)
+    addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % "3.+" cross CrossVersion.full)
   )
 
 lazy val root = (project in file("."))
   .settings(
-    scalaVersion  := "2.12.13",
+    scalaVersion  := "2.12.15",
     version := "1.0.0",
     name := "PE_FPU",
     organization := "com.gig",
@@ -46,7 +46,7 @@ lazy val root = (project in file("."))
       "edu.berkeley.cs" %% "firrtl" % "1.+",
       "edu.berkeley.cs" %% "firrtl-diagrammer" % "1.+",
       //"org.scalatest" %% "scalatest" % "3.2.0",
-      "edu.berkeley.cs" %% "chisel-iotesters" % "1.+" % "test"
+      "edu.berkeley.cs" %% "chisel-iotesters" % "2.+" % "test"
     ),
     scalacOptions ++= Seq(
       "-Xsource:2.11",
@@ -59,6 +59,6 @@ lazy val root = (project in file("."))
       "-Xcheckinit"
     ),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full),
-    addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % "3.4.+" cross CrossVersion.full)
+    addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % "3.+" cross CrossVersion.full)
   )
   .dependsOn(hardfloat)
