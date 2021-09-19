@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/imocanu/Public/PycharmProjects/pe_fpu/src/main/scala/v2pack/MultPE _4_testing.scala:73:29: not found: value addRecFN_out[0m
-[0m[[0m[31merror[0m] [0m[0m    recFN_out := Utils.ieee(addRecFN_out)[0m
-[0m[[0m[31merror[0m] [0m[0m                            ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
