@@ -4,9 +4,8 @@ import chisel3.stage._
 import layered.stage._
 import chisel3._
 import chisel3.util._
-import v2pack._
+import modules._
 import utils._
-import scala.sys.process.{Process, ProcessLogger}
 
 class PE extends Module {
   val io = IO(new Bundle {
@@ -37,6 +36,7 @@ class PE extends Module {
 
     val rounding    = Input(UInt(3.W))
     val tininess    = Input(UInt(1.W))
+    val use_int     = Input(Bool())
 
     val out_0  = Output(Bits(Config.forOUT.W))  
     val out_1  = Output(Bits(Config.forOUT.W))
@@ -80,6 +80,8 @@ class PE extends Module {
   val rounding     = RegNext(io.rounding)
   // Tininess type
   val tininess     = RegNext(io.tininess)
+  // INTEGER flag
+  val use_int      = RegNext(io.use_int)
 
 //=======================================
 // Shared regs for INPUTS/OUTPUTS
@@ -141,6 +143,7 @@ class PE extends Module {
   val multModule_0 = Module(new MultPE())
   multModule_0.io.rounding   := rounding
   multModule_0.io.tininess   := tininess
+  multModule_0.io.use_int    := use_int
   multModule_0.io.in_0 := m_0_out
   multModule_0.io.in_1 := m_1_out
   multModule_0_out  := multModule_0.io.out
@@ -148,6 +151,7 @@ class PE extends Module {
   val multModule_1 = Module(new MultPE())
   multModule_1.io.rounding   := rounding
   multModule_1.io.tininess   := tininess
+  multModule_1.io.use_int    := use_int
   multModule_1.io.in_0 := m_2_out
   multModule_1.io.in_1 := m_3_out
   multModule_1_out  := multModule_1.io.out
@@ -191,19 +195,21 @@ class PE extends Module {
 // Layer 4  :  2 X ADD/SUB
 //=======================================
   val addsubModule_0 = Module(new AddSubPE())
-  addsubModule_0.io.op := addsub_0_op
-  addsubModule_0.io.in_0 := m_4_out
-  addsubModule_0.io.in_1 := m_5_out
+  addsubModule_0.io.op         := addsub_0_op
   addsubModule_0.io.rounding   := rounding	
   addsubModule_0.io.tininess   := tininess
+  addsubModule_0.io.use_int    := use_int
+  addsubModule_0.io.in_0       := m_4_out
+  addsubModule_0.io.in_1       := m_5_out
   addsubModule_0_out  := addsubModule_0.io.out
 
   val addsubModule_1 = Module(new AddSubPE())
-  addsubModule_1.io.op := addsub_1_op
-  addsubModule_1.io.in_0 := m_6_out
-  addsubModule_1.io.in_1 := m_7_out
+  addsubModule_1.io.op         := addsub_1_op
   addsubModule_1.io.rounding   := rounding	
   addsubModule_1.io.tininess   := tininess
+  addsubModule_1.io.use_int    := use_int
+  addsubModule_1.io.in_0       := m_6_out
+  addsubModule_1.io.in_1       := m_7_out
   addsubModule_1_out  := addsubModule_1.io.out
 
 //=======================================

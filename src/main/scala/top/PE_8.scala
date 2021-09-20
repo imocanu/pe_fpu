@@ -34,16 +34,52 @@ class PE_8 extends Module {
     val Xi_7        = Input(Bits(Config.forIN.W))
     val Yi_7        = Input(Bits(Config.forIN.W))
 
+    val Xi_8        = Input(Bits(Config.forIN.W))
+    val Yi_8        = Input(Bits(Config.forIN.W))
+
+    val Xi_9        = Input(Bits(Config.forIN.W))
+    val Yi_9        = Input(Bits(Config.forIN.W))
+
+    val Xi_10       = Input(Bits(Config.forIN.W))
+    val Yi_10       = Input(Bits(Config.forIN.W))
+
+    val Xi_11       = Input(Bits(Config.forIN.W))
+    val Yi_11       = Input(Bits(Config.forIN.W))
+
+    val Xi_12       = Input(Bits(Config.forIN.W))
+    val Yi_12       = Input(Bits(Config.forIN.W))
+
+    val Xi_13       = Input(Bits(Config.forIN.W))
+    val Yi_13       = Input(Bits(Config.forIN.W))
+
+    val Xi_14       = Input(Bits(Config.forIN.W))
+    val Yi_14       = Input(Bits(Config.forIN.W))
+
+    val Xi_15       = Input(Bits(Config.forIN.W))
+    val Yi_15       = Input(Bits(Config.forIN.W))
+
+    val m_0_sel    = Input(Bits(2.W))
+    val m_1_sel    = Input(Bits(2.W))
+    val m_2_sel    = Input(Bits(2.W))
+    val m_3_sel    = Input(Bits(2.W))
+    val m_4_sel    = Input(Bits(2.W))
+    val m_5_sel    = Input(Bits(2.W))
+    val m_6_sel    = Input(Bits(2.W))
+    val m_7_sel    = Input(Bits(2.W))
+    val m_8_sel    = Input(Bits(2.W))
+    val m_9_sel    = Input(Bits(2.W))
+
     val op_type    = Input(Bits(3.W))
 
     val addsub_0_op   = Input(Bool())
     val addsub_1_op   = Input(Bool())
 
     val use_int       = Input(Bool())
-    val round         = Input(UInt(3.W))
+    val tininess      = Input(UInt(1.W))
+    val rounding      = Input(UInt(3.W))
 
-    val addsub_0_out  = Output(Bits(Config.forIN.W))  
-    val addsub_1_out  = Output(Bits(Config.forIN.W))
+    val out_0  = Output(Bits(Config.forIN.W))  
+    val out_1  = Output(Bits(Config.forIN.W))
   })
 
 //====================================
@@ -73,48 +109,75 @@ class PE_8 extends Module {
   val Xi_7  = RegNext(io.Xi_7)
   val Yi_7  = RegNext(io.Yi_7)
 
+  val Xi_8  = RegNext(io.Xi_8)
+  val Yi_8  = RegNext(io.Yi_8)
+
+  val Xi_9  = RegNext(io.Xi_9)
+  val Yi_9  = RegNext(io.Yi_9)
+
+  val Xi_10  = RegNext(io.Xi_10)
+  val Yi_10  = RegNext(io.Yi_10)
+
+  val Xi_11  = RegNext(io.Xi_11)
+  val Yi_11  = RegNext(io.Yi_11)
+
+  val Xi_12  = RegNext(io.Xi_12)
+  val Yi_12  = RegNext(io.Yi_12)
+
+  val Xi_13  = RegNext(io.Xi_13)
+  val Yi_13  = RegNext(io.Yi_13)
+
+  val Xi_14  = RegNext(io.Xi_14)
+  val Yi_14  = RegNext(io.Yi_14)
+
+  val Xi_15  = RegNext(io.Xi_15)
+  val Yi_15  = RegNext(io.Yi_15)
 
 
-  // val Xi_0_fp  = RegInit(0.U(Config.forIN.W))
-  // val Yi_0_fp  = RegInit(0.U(Config.forIN.W))
-  
-  // val Xi_0_fp  = RegInit(0.U(Config.forIN.W))
-  // val Yi_0_fp  = RegInit(0.U(Config.forIN.W))
-
-  // val Xi_0_fp  = RegInit(0.U(Config.forIN.W))
-  // val Yi_0_fp  = RegInit(0.U(Config.forIN.W))
-
-  // val Xi_0_fp  = RegInit(0.U(Config.forIN.W))
-  // val Yi_0_fp  = RegInit(0.U(Config.forIN.W))
-
-  // val Xi_0_fp  = RegInit(0.U(Config.forIN.W))
-  // val Yi_0_fp  = RegInit(0.U(Config.forIN.W))
-
-  // val Xi_0_fp  = RegInit(0.U(Config.forIN.W))
-  // val Yi_0_fp  = RegInit(0.U(Config.forIN.W))
 
 //====================================
 // Registers for Selectors
 //====================================
-  // val m_0_sel  = RegNext(io.m_0_sel)
-  // val m_1_sel  = RegNext(io.m_1_sel)
-  // val m_2_sel  = RegNext(io.m_2_sel)
-  // val m_3_sel  = RegNext(io.m_3_sel)
-  // val m_4_sel  = RegNext(io.m_4_sel)
-  // val m_5_sel  = RegNext(io.m_5_sel)
-  // val m_6_sel  = RegNext(io.m_6_sel)
-  // val m_7_sel  = RegNext(io.m_7_sel)
-  // val m_8_sel  = RegNext(io.m_8_sel)
-  // val m_9_sel  = RegNext(io.m_9_sel)
+  val m_0_sel  = RegNext(io.m_0_sel)
+  val m_1_sel  = RegNext(io.m_1_sel)
+  val m_2_sel  = RegNext(io.m_2_sel)
+  val m_3_sel  = RegNext(io.m_3_sel)
+  val m_4_sel  = RegNext(io.m_4_sel)
+  val m_5_sel  = RegNext(io.m_5_sel)
+  val m_6_sel  = RegNext(io.m_6_sel)
+  val m_7_sel  = RegNext(io.m_7_sel)
+  val m_8_sel  = RegNext(io.m_8_sel)
+  val m_9_sel  = RegNext(io.m_9_sel)
 
   val addsub_0_op   = RegNext(io.addsub_0_op)
   val addsub_1_op   = RegNext(io.addsub_1_op)
 
-  val use_int  = RegNext(io.use_int)
-  val round    = RegNext(io.round)
+  // Rounding type
+  val rounding     = RegNext(io.rounding)
+  // Tininess type
+  val tininess     = RegNext(io.tininess)
+  // INTEGER flag
+  val use_int      = RegNext(io.use_int)
 
-  val addsub_0_out   = RegNext(io.addsub_0_out)
-  val addsub_1_out   = RegNext(io.addsub_1_out)
+  val addsub_0_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_0_out_1   = RegInit(0.U(Config.forIN.W))
+  val addsub_1_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_1_out_1   = RegInit(0.U(Config.forIN.W))
+  val addsub_2_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_2_out_1   = RegInit(0.U(Config.forIN.W))
+  val addsub_3_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_3_out_1   = RegInit(0.U(Config.forIN.W))
+  val addsub_4_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_4_out_1   = RegInit(0.U(Config.forIN.W))
+  val addsub_5_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_5_out_1   = RegInit(0.U(Config.forIN.W))
+  val addsub_6_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_6_out_1   = RegInit(0.U(Config.forIN.W))
+  val addsub_7_out_0   = RegInit(0.U(Config.forIN.W))
+  val addsub_7_out_1   = RegInit(0.U(Config.forIN.W))
+
+  val out_0   = RegNext(io.out_0)
+  val out_1   = RegNext(io.out_1)
 
 //=======================================
 // Shared regs for INPUTS
@@ -130,16 +193,35 @@ class PE_8 extends Module {
   val mux_8_out = RegInit(0.U(32.W))
   val mux_9_out = RegInit(0.U(32.W))
 
-  when(use_int){
+//=======================================
+// Init PEs
+//=======================================
+  val pe_0 = Module(new PE())
+  pe_0.io.Xi_0 := Xi_0
+  pe_0.io.Yi_0 := Yi_0
+  pe_0.io.Xi_1 := Xi_1
+  pe_0.io.Yi_1 := Yi_1
+  pe_0.io.m_0_sel    := m_0_sel
+  pe_0.io.m_1_sel    := m_1_sel
+  pe_0.io.m_2_sel    := m_2_sel
+  pe_0.io.m_3_sel    := m_3_sel
+  pe_0.io.m_4_sel    := m_4_sel
+  pe_0.io.m_5_sel    := m_5_sel
+  pe_0.m_6_sel    := m_6_sel
+  pe_0.io.m_7_sel    := m_7_sel
+  pe_0.io.m_8_sel    := m_8_sel
+  pe_0.io.m_9_sel    := m_9_sel
+  pe_0.io.addsub_0_op := addsub_0_op
+  pe_0.io.addsub_0_op := addsub_1_op
+  pe_0.io.rounding    := rounding
+  pe_0.io.tininess    := tininess
+  pe_0.io.use_int     := use_int
+  addsub_0_out_0 := pe_0.io.out_0
+  addsub_0_out_1 := pe_0.io.out_1
 
-    println("## INPUT INTEGER 32 ##")
-
-  } .otherwise {
-
-    //val recFN_from_fN_in0 = RegNext(recFNFromFN(Config.EXP, Config.SIG, fN_in0))
-    //val recFN_from_fN_in1 = RegNext(recFNFromFN(Config.EXP, Config.SIG, fN_in1))
-    println("## INPUT FP 32 ##")
-  }
+//=======================================
+// FSM
+//=======================================
 
   val idle :: init :: op_1 :: op_2 :: op_3 :: sum_init :: sum_start :: sum_stop :: Nil = Enum (8)
   val pe_step = RegInit ( idle )
@@ -157,22 +239,22 @@ class PE_8 extends Module {
     }
   }
 
-  io.addsub_0_out := 0.U
-  io.addsub_1_out := 0.U
+  //io.addsub_0_out := 0.U
+  //io.addsub_1_out := 0.U
 }
 
-// object PE_8 extends App {
-//   val verilogDir = "rtl"
-//   val verilogName = "PE_8"
-//   (new ChiselStage).execute(
-//     Array("--compiler", "verilog",
-//       "--target-dir", verilogDir,
-//       "--output-file", verilogName),
-//     Seq(ChiselGeneratorAnnotation(() => new PE_8))
-//   )
+object PE_8 extends App {
+  val verilogDir = "rtl"
+  val verilogName = "PE_8"
+  (new ChiselStage).execute(
+    Array("--compiler", "verilog",
+      "--target-dir", verilogDir,
+      "--output-file", verilogName),
+    Seq(ChiselGeneratorAnnotation(() => new PE_8))
+  )
 
-//   val targetDir = "diagram"
-//   (new ElkStage).execute(Array("--target-dir", targetDir),
-//     Seq(ChiselGeneratorAnnotation(() => new PE_8))
-//   )
-// }
+  val targetDir = "diagram"
+  (new ElkStage).execute(Array("--target-dir", targetDir),
+    Seq(ChiselGeneratorAnnotation(() => new PE_8))
+  )
+}

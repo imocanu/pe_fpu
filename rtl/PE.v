@@ -12,21 +12,21 @@ module MuxPE(
   reg [31:0] _RAND_2;
   reg [31:0] _RAND_3;
 `endif // RANDOMIZE_REG_INIT
-  reg [1:0] sel; // @[MuxPE.scala 22:21]
-  reg [31:0] in_0; // @[MuxPE.scala 23:21]
-  reg [31:0] in_1; // @[MuxPE.scala 24:21]
-  reg [31:0] in_2; // @[MuxPE.scala 25:21]
-  wire  _T = sel == 2'h0; // @[MuxPE.scala 28:14]
-  wire  _T_1 = sel == 2'h1; // @[MuxPE.scala 32:20]
-  wire  _T_2 = sel == 2'h2; // @[MuxPE.scala 36:20]
-  wire [31:0] _GEN_0 = _T_2 ? in_2 : 32'h0; // @[MuxPE.scala 37:3 38:12 42:12]
-  wire [31:0] _GEN_1 = _T_1 ? in_1 : _GEN_0; // @[MuxPE.scala 33:3 34:12]
-  assign io_out = _T ? in_0 : _GEN_1; // @[MuxPE.scala 29:3 30:12]
+  reg [1:0] sel; // @[MuxPE.scala 20:21]
+  reg [31:0] in_0; // @[MuxPE.scala 21:21]
+  reg [31:0] in_1; // @[MuxPE.scala 22:21]
+  reg [31:0] in_2; // @[MuxPE.scala 23:21]
+  wire  _T = sel == 2'h0; // @[MuxPE.scala 26:14]
+  wire  _T_1 = sel == 2'h1; // @[MuxPE.scala 30:20]
+  wire  _T_2 = sel == 2'h2; // @[MuxPE.scala 34:20]
+  wire [31:0] _GEN_0 = _T_2 ? in_2 : 32'h0; // @[MuxPE.scala 35:3 36:12 40:12]
+  wire [31:0] _GEN_1 = _T_1 ? in_1 : _GEN_0; // @[MuxPE.scala 31:3 32:12]
+  assign io_out = _T ? in_0 : _GEN_1; // @[MuxPE.scala 27:3 28:12]
   always @(posedge clock) begin
-    sel <= io_sel; // @[MuxPE.scala 22:21]
-    in_0 <= io_in_0; // @[MuxPE.scala 23:21]
-    in_1 <= io_in_1; // @[MuxPE.scala 24:21]
-    in_2 <= io_in_2; // @[MuxPE.scala 25:21]
+    sel <= io_sel; // @[MuxPE.scala 20:21]
+    in_0 <= io_in_0; // @[MuxPE.scala 21:21]
+    in_1 <= io_in_1; // @[MuxPE.scala 22:21]
+    in_2 <= io_in_2; // @[MuxPE.scala 23:21]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -463,40 +463,230 @@ module MulRecFN(
 endmodule
 module MultPE(
   input         clock,
+  input         reset,
+  input         io_use_int,
   input  [2:0]  io_rounding,
   input  [31:0] io_in_0,
   input  [31:0] io_in_1,
-  output [32:0] io_out
+  output [31:0] io_out
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
   reg [31:0] _RAND_1;
-  reg [31:0] _RAND_2;
-  reg [63:0] _RAND_3;
+  reg [63:0] _RAND_2;
+  reg [31:0] _RAND_3;
+  reg [31:0] _RAND_4;
+  reg [31:0] _RAND_5;
+  reg [31:0] _RAND_6;
+  reg [63:0] _RAND_7;
+  reg [63:0] _RAND_8;
 `endif // RANDOMIZE_REG_INIT
-  wire [32:0] mulRecFN_io_a; // @[MultPE.scala 28:24]
-  wire [32:0] mulRecFN_io_b; // @[MultPE.scala 28:24]
-  wire [2:0] mulRecFN_io_roundingMode; // @[MultPE.scala 28:24]
-  wire [32:0] mulRecFN_io_out; // @[MultPE.scala 28:24]
-  reg [2:0] rounding; // @[MultPE.scala 18:26]
-  reg [31:0] in_0; // @[MultPE.scala 24:22]
-  reg [31:0] in_1; // @[MultPE.scala 25:22]
-  reg [32:0] mulRecFN_out; // @[MultPE.scala 33:30]
-  MulRecFN mulRecFN ( // @[MultPE.scala 28:24]
+  wire [32:0] mulRecFN_io_a; // @[MultPE.scala 50:26]
+  wire [32:0] mulRecFN_io_b; // @[MultPE.scala 50:26]
+  wire [2:0] mulRecFN_io_roundingMode; // @[MultPE.scala 50:26]
+  wire [32:0] mulRecFN_io_out; // @[MultPE.scala 50:26]
+  reg [2:0] rounding; // @[MultPE.scala 21:26]
+  reg  use_int; // @[MultPE.scala 25:26]
+  reg [32:0] module_out; // @[MultPE.scala 27:27]
+  reg [31:0] sign_in_0; // @[MultPE.scala 31:29]
+  reg [31:0] sign_in_1; // @[MultPE.scala 32:29]
+  wire [63:0] _module_out_T_1 = $signed(sign_in_0) * $signed(sign_in_1); // @[MultPE.scala 35:49]
+  reg [31:0] fN_in_0; // @[MultPE.scala 42:27]
+  reg [31:0] fN_in_1; // @[MultPE.scala 43:27]
+  wire  recFN_from_fN_in_0_rawIn_sign = fN_in_0[31]; // @[rawFloatFromFN.scala 46:22]
+  wire [7:0] recFN_from_fN_in_0_rawIn_expIn = fN_in_0[30:23]; // @[rawFloatFromFN.scala 47:23]
+  wire [22:0] recFN_from_fN_in_0_rawIn_fractIn = fN_in_0[22:0]; // @[rawFloatFromFN.scala 48:25]
+  wire  recFN_from_fN_in_0_rawIn_isZeroExpIn = recFN_from_fN_in_0_rawIn_expIn == 8'h0; // @[rawFloatFromFN.scala 50:34]
+  wire  recFN_from_fN_in_0_rawIn_isZeroFractIn = recFN_from_fN_in_0_rawIn_fractIn == 23'h0; // @[rawFloatFromFN.scala 51:38]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_23 = recFN_from_fN_in_0_rawIn_fractIn[1] ? 5'h15 : 5'h16; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_24 = recFN_from_fN_in_0_rawIn_fractIn[2] ? 5'h14 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_23; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_25 = recFN_from_fN_in_0_rawIn_fractIn[3] ? 5'h13 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_24; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_26 = recFN_from_fN_in_0_rawIn_fractIn[4] ? 5'h12 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_25; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_27 = recFN_from_fN_in_0_rawIn_fractIn[5] ? 5'h11 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_26; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_28 = recFN_from_fN_in_0_rawIn_fractIn[6] ? 5'h10 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_27; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_29 = recFN_from_fN_in_0_rawIn_fractIn[7] ? 5'hf :
+    _recFN_from_fN_in_0_rawIn_normDist_T_28; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_30 = recFN_from_fN_in_0_rawIn_fractIn[8] ? 5'he :
+    _recFN_from_fN_in_0_rawIn_normDist_T_29; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_31 = recFN_from_fN_in_0_rawIn_fractIn[9] ? 5'hd :
+    _recFN_from_fN_in_0_rawIn_normDist_T_30; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_32 = recFN_from_fN_in_0_rawIn_fractIn[10] ? 5'hc :
+    _recFN_from_fN_in_0_rawIn_normDist_T_31; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_33 = recFN_from_fN_in_0_rawIn_fractIn[11] ? 5'hb :
+    _recFN_from_fN_in_0_rawIn_normDist_T_32; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_34 = recFN_from_fN_in_0_rawIn_fractIn[12] ? 5'ha :
+    _recFN_from_fN_in_0_rawIn_normDist_T_33; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_35 = recFN_from_fN_in_0_rawIn_fractIn[13] ? 5'h9 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_34; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_36 = recFN_from_fN_in_0_rawIn_fractIn[14] ? 5'h8 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_35; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_37 = recFN_from_fN_in_0_rawIn_fractIn[15] ? 5'h7 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_36; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_38 = recFN_from_fN_in_0_rawIn_fractIn[16] ? 5'h6 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_37; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_39 = recFN_from_fN_in_0_rawIn_fractIn[17] ? 5'h5 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_38; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_40 = recFN_from_fN_in_0_rawIn_fractIn[18] ? 5'h4 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_39; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_41 = recFN_from_fN_in_0_rawIn_fractIn[19] ? 5'h3 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_40; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_42 = recFN_from_fN_in_0_rawIn_fractIn[20] ? 5'h2 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_41; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_43 = recFN_from_fN_in_0_rawIn_fractIn[21] ? 5'h1 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_42; // @[Mux.scala 47:69]
+  wire [4:0] recFN_from_fN_in_0_rawIn_normDist = recFN_from_fN_in_0_rawIn_fractIn[22] ? 5'h0 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_43; // @[Mux.scala 47:69]
+  wire [53:0] _GEN_11 = {{31'd0}, recFN_from_fN_in_0_rawIn_fractIn}; // @[rawFloatFromFN.scala 54:36]
+  wire [53:0] _recFN_from_fN_in_0_rawIn_subnormFract_T = _GEN_11 << recFN_from_fN_in_0_rawIn_normDist; // @[rawFloatFromFN.scala 54:36]
+  wire [22:0] recFN_from_fN_in_0_rawIn_subnormFract = {_recFN_from_fN_in_0_rawIn_subnormFract_T[21:0], 1'h0}; // @[rawFloatFromFN.scala 54:64]
+  wire [8:0] _GEN_2 = {{4'd0}, recFN_from_fN_in_0_rawIn_normDist}; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T = _GEN_2 ^ 9'h1ff; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T_1 = recFN_from_fN_in_0_rawIn_isZeroExpIn ?
+    _recFN_from_fN_in_0_rawIn_adjustedExp_T : {{1'd0}, recFN_from_fN_in_0_rawIn_expIn}; // @[rawFloatFromFN.scala 56:16]
+  wire [1:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T_2 = recFN_from_fN_in_0_rawIn_isZeroExpIn ? 2'h2 : 2'h1; // @[rawFloatFromFN.scala 60:27]
+  wire [7:0] _GEN_3 = {{6'd0}, _recFN_from_fN_in_0_rawIn_adjustedExp_T_2}; // @[rawFloatFromFN.scala 60:22]
+  wire [7:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T_3 = 8'h80 | _GEN_3; // @[rawFloatFromFN.scala 60:22]
+  wire [8:0] _GEN_4 = {{1'd0}, _recFN_from_fN_in_0_rawIn_adjustedExp_T_3}; // @[rawFloatFromFN.scala 59:15]
+  wire [8:0] recFN_from_fN_in_0_rawIn_adjustedExp = _recFN_from_fN_in_0_rawIn_adjustedExp_T_1 + _GEN_4; // @[rawFloatFromFN.scala 59:15]
+  wire  recFN_from_fN_in_0_rawIn_isZero = recFN_from_fN_in_0_rawIn_isZeroExpIn & recFN_from_fN_in_0_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 62:34]
+  wire  recFN_from_fN_in_0_rawIn_isSpecial = recFN_from_fN_in_0_rawIn_adjustedExp[8:7] == 2'h3; // @[rawFloatFromFN.scala 63:62]
+  wire  recFN_from_fN_in_0_rawIn__isNaN = recFN_from_fN_in_0_rawIn_isSpecial & ~recFN_from_fN_in_0_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 66:33]
+  wire [9:0] recFN_from_fN_in_0_rawIn__sExp = {1'b0,$signed(recFN_from_fN_in_0_rawIn_adjustedExp)}; // @[rawFloatFromFN.scala 70:48]
+  wire  _recFN_from_fN_in_0_rawIn_out_sig_T = ~recFN_from_fN_in_0_rawIn_isZero; // @[rawFloatFromFN.scala 72:29]
+  wire [22:0] _recFN_from_fN_in_0_rawIn_out_sig_T_1 = recFN_from_fN_in_0_rawIn_isZeroExpIn ?
+    recFN_from_fN_in_0_rawIn_subnormFract : recFN_from_fN_in_0_rawIn_fractIn; // @[rawFloatFromFN.scala 72:42]
+  wire [24:0] recFN_from_fN_in_0_rawIn__sig = {1'h0,_recFN_from_fN_in_0_rawIn_out_sig_T,
+    _recFN_from_fN_in_0_rawIn_out_sig_T_1}; // @[Cat.scala 30:58]
+  wire [2:0] _recFN_from_fN_in_0_T_1 = recFN_from_fN_in_0_rawIn_isZero ? 3'h0 : recFN_from_fN_in_0_rawIn__sExp[8:6]; // @[recFNFromFN.scala 48:16]
+  wire [2:0] _GEN_5 = {{2'd0}, recFN_from_fN_in_0_rawIn__isNaN}; // @[recFNFromFN.scala 48:79]
+  wire [2:0] _recFN_from_fN_in_0_T_3 = _recFN_from_fN_in_0_T_1 | _GEN_5; // @[recFNFromFN.scala 48:79]
+  wire [28:0] recFN_from_fN_in_0_lo = {recFN_from_fN_in_0_rawIn__sExp[5:0],recFN_from_fN_in_0_rawIn__sig[22:0]}; // @[Cat.scala 30:58]
+  wire [3:0] recFN_from_fN_in_0_hi = {recFN_from_fN_in_0_rawIn_sign,_recFN_from_fN_in_0_T_3}; // @[Cat.scala 30:58]
+  reg [32:0] recFN_from_fN_in_0; // @[MultPE.scala 46:37]
+  wire  recFN_from_fN_in_1_rawIn_sign = fN_in_1[31]; // @[rawFloatFromFN.scala 46:22]
+  wire [7:0] recFN_from_fN_in_1_rawIn_expIn = fN_in_1[30:23]; // @[rawFloatFromFN.scala 47:23]
+  wire [22:0] recFN_from_fN_in_1_rawIn_fractIn = fN_in_1[22:0]; // @[rawFloatFromFN.scala 48:25]
+  wire  recFN_from_fN_in_1_rawIn_isZeroExpIn = recFN_from_fN_in_1_rawIn_expIn == 8'h0; // @[rawFloatFromFN.scala 50:34]
+  wire  recFN_from_fN_in_1_rawIn_isZeroFractIn = recFN_from_fN_in_1_rawIn_fractIn == 23'h0; // @[rawFloatFromFN.scala 51:38]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_23 = recFN_from_fN_in_1_rawIn_fractIn[1] ? 5'h15 : 5'h16; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_24 = recFN_from_fN_in_1_rawIn_fractIn[2] ? 5'h14 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_23; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_25 = recFN_from_fN_in_1_rawIn_fractIn[3] ? 5'h13 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_24; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_26 = recFN_from_fN_in_1_rawIn_fractIn[4] ? 5'h12 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_25; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_27 = recFN_from_fN_in_1_rawIn_fractIn[5] ? 5'h11 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_26; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_28 = recFN_from_fN_in_1_rawIn_fractIn[6] ? 5'h10 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_27; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_29 = recFN_from_fN_in_1_rawIn_fractIn[7] ? 5'hf :
+    _recFN_from_fN_in_1_rawIn_normDist_T_28; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_30 = recFN_from_fN_in_1_rawIn_fractIn[8] ? 5'he :
+    _recFN_from_fN_in_1_rawIn_normDist_T_29; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_31 = recFN_from_fN_in_1_rawIn_fractIn[9] ? 5'hd :
+    _recFN_from_fN_in_1_rawIn_normDist_T_30; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_32 = recFN_from_fN_in_1_rawIn_fractIn[10] ? 5'hc :
+    _recFN_from_fN_in_1_rawIn_normDist_T_31; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_33 = recFN_from_fN_in_1_rawIn_fractIn[11] ? 5'hb :
+    _recFN_from_fN_in_1_rawIn_normDist_T_32; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_34 = recFN_from_fN_in_1_rawIn_fractIn[12] ? 5'ha :
+    _recFN_from_fN_in_1_rawIn_normDist_T_33; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_35 = recFN_from_fN_in_1_rawIn_fractIn[13] ? 5'h9 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_34; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_36 = recFN_from_fN_in_1_rawIn_fractIn[14] ? 5'h8 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_35; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_37 = recFN_from_fN_in_1_rawIn_fractIn[15] ? 5'h7 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_36; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_38 = recFN_from_fN_in_1_rawIn_fractIn[16] ? 5'h6 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_37; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_39 = recFN_from_fN_in_1_rawIn_fractIn[17] ? 5'h5 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_38; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_40 = recFN_from_fN_in_1_rawIn_fractIn[18] ? 5'h4 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_39; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_41 = recFN_from_fN_in_1_rawIn_fractIn[19] ? 5'h3 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_40; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_42 = recFN_from_fN_in_1_rawIn_fractIn[20] ? 5'h2 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_41; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_43 = recFN_from_fN_in_1_rawIn_fractIn[21] ? 5'h1 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_42; // @[Mux.scala 47:69]
+  wire [4:0] recFN_from_fN_in_1_rawIn_normDist = recFN_from_fN_in_1_rawIn_fractIn[22] ? 5'h0 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_43; // @[Mux.scala 47:69]
+  wire [53:0] _GEN_12 = {{31'd0}, recFN_from_fN_in_1_rawIn_fractIn}; // @[rawFloatFromFN.scala 54:36]
+  wire [53:0] _recFN_from_fN_in_1_rawIn_subnormFract_T = _GEN_12 << recFN_from_fN_in_1_rawIn_normDist; // @[rawFloatFromFN.scala 54:36]
+  wire [22:0] recFN_from_fN_in_1_rawIn_subnormFract = {_recFN_from_fN_in_1_rawIn_subnormFract_T[21:0], 1'h0}; // @[rawFloatFromFN.scala 54:64]
+  wire [8:0] _GEN_6 = {{4'd0}, recFN_from_fN_in_1_rawIn_normDist}; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T = _GEN_6 ^ 9'h1ff; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T_1 = recFN_from_fN_in_1_rawIn_isZeroExpIn ?
+    _recFN_from_fN_in_1_rawIn_adjustedExp_T : {{1'd0}, recFN_from_fN_in_1_rawIn_expIn}; // @[rawFloatFromFN.scala 56:16]
+  wire [1:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T_2 = recFN_from_fN_in_1_rawIn_isZeroExpIn ? 2'h2 : 2'h1; // @[rawFloatFromFN.scala 60:27]
+  wire [7:0] _GEN_7 = {{6'd0}, _recFN_from_fN_in_1_rawIn_adjustedExp_T_2}; // @[rawFloatFromFN.scala 60:22]
+  wire [7:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T_3 = 8'h80 | _GEN_7; // @[rawFloatFromFN.scala 60:22]
+  wire [8:0] _GEN_8 = {{1'd0}, _recFN_from_fN_in_1_rawIn_adjustedExp_T_3}; // @[rawFloatFromFN.scala 59:15]
+  wire [8:0] recFN_from_fN_in_1_rawIn_adjustedExp = _recFN_from_fN_in_1_rawIn_adjustedExp_T_1 + _GEN_8; // @[rawFloatFromFN.scala 59:15]
+  wire  recFN_from_fN_in_1_rawIn_isZero = recFN_from_fN_in_1_rawIn_isZeroExpIn & recFN_from_fN_in_1_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 62:34]
+  wire  recFN_from_fN_in_1_rawIn_isSpecial = recFN_from_fN_in_1_rawIn_adjustedExp[8:7] == 2'h3; // @[rawFloatFromFN.scala 63:62]
+  wire  recFN_from_fN_in_1_rawIn__isNaN = recFN_from_fN_in_1_rawIn_isSpecial & ~recFN_from_fN_in_1_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 66:33]
+  wire [9:0] recFN_from_fN_in_1_rawIn__sExp = {1'b0,$signed(recFN_from_fN_in_1_rawIn_adjustedExp)}; // @[rawFloatFromFN.scala 70:48]
+  wire  _recFN_from_fN_in_1_rawIn_out_sig_T = ~recFN_from_fN_in_1_rawIn_isZero; // @[rawFloatFromFN.scala 72:29]
+  wire [22:0] _recFN_from_fN_in_1_rawIn_out_sig_T_1 = recFN_from_fN_in_1_rawIn_isZeroExpIn ?
+    recFN_from_fN_in_1_rawIn_subnormFract : recFN_from_fN_in_1_rawIn_fractIn; // @[rawFloatFromFN.scala 72:42]
+  wire [24:0] recFN_from_fN_in_1_rawIn__sig = {1'h0,_recFN_from_fN_in_1_rawIn_out_sig_T,
+    _recFN_from_fN_in_1_rawIn_out_sig_T_1}; // @[Cat.scala 30:58]
+  wire [2:0] _recFN_from_fN_in_1_T_1 = recFN_from_fN_in_1_rawIn_isZero ? 3'h0 : recFN_from_fN_in_1_rawIn__sExp[8:6]; // @[recFNFromFN.scala 48:16]
+  wire [2:0] _GEN_9 = {{2'd0}, recFN_from_fN_in_1_rawIn__isNaN}; // @[recFNFromFN.scala 48:79]
+  wire [2:0] _recFN_from_fN_in_1_T_3 = _recFN_from_fN_in_1_T_1 | _GEN_9; // @[recFNFromFN.scala 48:79]
+  wire [28:0] recFN_from_fN_in_1_lo = {recFN_from_fN_in_1_rawIn__sExp[5:0],recFN_from_fN_in_1_rawIn__sig[22:0]}; // @[Cat.scala 30:58]
+  wire [3:0] recFN_from_fN_in_1_hi = {recFN_from_fN_in_1_rawIn_sign,_recFN_from_fN_in_1_T_3}; // @[Cat.scala 30:58]
+  reg [32:0] recFN_from_fN_in_1; // @[MultPE.scala 47:37]
+  wire [8:0] io_out_rawIn_exp = module_out[31:23]; // @[rawFloatFromRecFN.scala 50:21]
+  wire  io_out_rawIn_isZero = io_out_rawIn_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
+  wire  io_out_rawIn_isSpecial = io_out_rawIn_exp[8:7] == 2'h3; // @[rawFloatFromRecFN.scala 52:54]
+  wire  io_out_rawIn__isNaN = io_out_rawIn_isSpecial & io_out_rawIn_exp[6]; // @[rawFloatFromRecFN.scala 55:33]
+  wire  io_out_rawIn__isInf = io_out_rawIn_isSpecial & ~io_out_rawIn_exp[6]; // @[rawFloatFromRecFN.scala 56:33]
+  wire  io_out_rawIn__sign = module_out[32]; // @[rawFloatFromRecFN.scala 58:25]
+  wire [9:0] io_out_rawIn__sExp = {1'b0,$signed(io_out_rawIn_exp)}; // @[rawFloatFromRecFN.scala 59:27]
+  wire  _io_out_rawIn_out_sig_T = ~io_out_rawIn_isZero; // @[rawFloatFromRecFN.scala 60:39]
+  wire [24:0] io_out_rawIn__sig = {1'h0,_io_out_rawIn_out_sig_T,module_out[22:0]}; // @[Cat.scala 30:58]
+  wire  io_out_isSubnormal = $signed(io_out_rawIn__sExp) < 10'sh82; // @[fNFromRecFN.scala 50:39]
+  wire [4:0] io_out_denormShiftDist = 5'h1 - io_out_rawIn__sExp[4:0]; // @[fNFromRecFN.scala 51:39]
+  wire [23:0] _io_out_denormFract_T_1 = io_out_rawIn__sig[24:1] >> io_out_denormShiftDist; // @[fNFromRecFN.scala 52:42]
+  wire [22:0] io_out_denormFract = _io_out_denormFract_T_1[22:0]; // @[fNFromRecFN.scala 52:60]
+  wire [7:0] _io_out_expOut_T_2 = io_out_rawIn__sExp[7:0] - 8'h81; // @[fNFromRecFN.scala 57:45]
+  wire [7:0] _io_out_expOut_T_3 = io_out_isSubnormal ? 8'h0 : _io_out_expOut_T_2; // @[fNFromRecFN.scala 55:16]
+  wire  _io_out_expOut_T_4 = io_out_rawIn__isNaN | io_out_rawIn__isInf; // @[fNFromRecFN.scala 59:44]
+  wire [7:0] _io_out_expOut_T_6 = _io_out_expOut_T_4 ? 8'hff : 8'h0; // @[Bitwise.scala 72:12]
+  wire [7:0] io_out_expOut = _io_out_expOut_T_3 | _io_out_expOut_T_6; // @[fNFromRecFN.scala 59:15]
+  wire [22:0] _io_out_fractOut_T_1 = io_out_rawIn__isInf ? 23'h0 : io_out_rawIn__sig[22:0]; // @[fNFromRecFN.scala 63:20]
+  wire [22:0] io_out_fractOut = io_out_isSubnormal ? io_out_denormFract : _io_out_fractOut_T_1; // @[fNFromRecFN.scala 61:16]
+  wire [31:0] _io_out_T = {io_out_rawIn__sign,io_out_expOut,io_out_fractOut}; // @[Cat.scala 30:58]
+  wire [63:0] _GEN_0 = use_int ? _module_out_T_1 : {{31'd0}, mulRecFN_io_out}; // @[MultPE.scala 29:16 35:16 56:16]
+  wire [32:0] _GEN_1 = use_int ? module_out : {{1'd0}, _io_out_T}; // @[MultPE.scala 29:16 37:12 58:12]
+  wire [63:0] _GEN_10 = reset ? 64'h0 : _GEN_0; // @[MultPE.scala 27:{27,27}]
+  MulRecFN mulRecFN ( // @[MultPE.scala 50:26]
     .io_a(mulRecFN_io_a),
     .io_b(mulRecFN_io_b),
     .io_roundingMode(mulRecFN_io_roundingMode),
     .io_out(mulRecFN_io_out)
   );
-  assign io_out = mulRecFN_out; // @[MultPE.scala 35:10]
-  assign mulRecFN_io_a = {{1'd0}, in_0}; // @[MultPE.scala 31:17]
-  assign mulRecFN_io_b = {{1'd0}, in_1}; // @[MultPE.scala 32:17]
-  assign mulRecFN_io_roundingMode = rounding; // @[MultPE.scala 29:30]
+  assign io_out = _GEN_1[31:0];
+  assign mulRecFN_io_a = recFN_from_fN_in_0; // @[MultPE.scala 53:19]
+  assign mulRecFN_io_b = recFN_from_fN_in_1; // @[MultPE.scala 54:19]
+  assign mulRecFN_io_roundingMode = rounding; // @[MultPE.scala 51:32]
   always @(posedge clock) begin
-    rounding <= io_rounding; // @[MultPE.scala 18:26]
-    in_0 <= io_in_0; // @[MultPE.scala 24:22]
-    in_1 <= io_in_1; // @[MultPE.scala 25:22]
-    mulRecFN_out <= mulRecFN_io_out; // @[MultPE.scala 33:30]
+    rounding <= io_rounding; // @[MultPE.scala 21:26]
+    use_int <= io_use_int; // @[MultPE.scala 25:26]
+    module_out <= _GEN_10[32:0]; // @[MultPE.scala 27:{27,27}]
+    sign_in_0 <= io_in_0; // @[MultPE.scala 31:44]
+    sign_in_1 <= io_in_1; // @[MultPE.scala 32:44]
+    fN_in_0 <= io_in_0; // @[MultPE.scala 42:27]
+    fN_in_1 <= io_in_1; // @[MultPE.scala 43:27]
+    recFN_from_fN_in_0 <= {recFN_from_fN_in_0_hi,recFN_from_fN_in_0_lo}; // @[Cat.scala 30:58]
+    recFN_from_fN_in_1 <= {recFN_from_fN_in_1_hi,recFN_from_fN_in_1_lo}; // @[Cat.scala 30:58]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -537,11 +727,21 @@ initial begin
   _RAND_0 = {1{`RANDOM}};
   rounding = _RAND_0[2:0];
   _RAND_1 = {1{`RANDOM}};
-  in_0 = _RAND_1[31:0];
-  _RAND_2 = {1{`RANDOM}};
-  in_1 = _RAND_2[31:0];
-  _RAND_3 = {2{`RANDOM}};
-  mulRecFN_out = _RAND_3[32:0];
+  use_int = _RAND_1[0:0];
+  _RAND_2 = {2{`RANDOM}};
+  module_out = _RAND_2[32:0];
+  _RAND_3 = {1{`RANDOM}};
+  sign_in_0 = _RAND_3[31:0];
+  _RAND_4 = {1{`RANDOM}};
+  sign_in_1 = _RAND_4[31:0];
+  _RAND_5 = {1{`RANDOM}};
+  fN_in_0 = _RAND_5[31:0];
+  _RAND_6 = {1{`RANDOM}};
+  fN_in_1 = _RAND_6[31:0];
+  _RAND_7 = {2{`RANDOM}};
+  recFN_from_fN_in_0 = _RAND_7[32:0];
+  _RAND_8 = {2{`RANDOM}};
+  recFN_from_fN_in_1 = _RAND_8[32:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -816,47 +1016,243 @@ module AddRecFN(
 endmodule
 module AddSubPE(
   input         clock,
+  input         reset,
+  input         io_use_int,
   input         io_op,
   input  [2:0]  io_rounding,
-  input  [32:0] io_in_0,
-  input  [32:0] io_in_1,
-  output [32:0] io_out
+  input  [31:0] io_in_0,
+  input  [31:0] io_in_1,
+  output [31:0] io_out
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
   reg [31:0] _RAND_1;
-  reg [63:0] _RAND_2;
+  reg [31:0] _RAND_2;
   reg [63:0] _RAND_3;
-  reg [63:0] _RAND_4;
+  reg [31:0] _RAND_4;
+  reg [31:0] _RAND_5;
+  reg [31:0] _RAND_6;
+  reg [31:0] _RAND_7;
+  reg [63:0] _RAND_8;
+  reg [63:0] _RAND_9;
 `endif // RANDOMIZE_REG_INIT
-  wire  addRecFN_io_subOp; // @[AddSubPE.scala 33:24]
-  wire [32:0] addRecFN_io_a; // @[AddSubPE.scala 33:24]
-  wire [32:0] addRecFN_io_b; // @[AddSubPE.scala 33:24]
-  wire [2:0] addRecFN_io_roundingMode; // @[AddSubPE.scala 33:24]
-  wire [32:0] addRecFN_io_out; // @[AddSubPE.scala 33:24]
-  reg  op; // @[AddSubPE.scala 20:19]
-  reg [2:0] rounding; // @[AddSubPE.scala 23:26]
-  reg [32:0] in_0; // @[AddSubPE.scala 29:22]
-  reg [32:0] in_1; // @[AddSubPE.scala 30:22]
-  reg [32:0] addRecFN_out; // @[AddSubPE.scala 39:30]
-  AddRecFN addRecFN ( // @[AddSubPE.scala 33:24]
+  wire  addRecFN_io_subOp; // @[AddSubPE.scala 57:26]
+  wire [32:0] addRecFN_io_a; // @[AddSubPE.scala 57:26]
+  wire [32:0] addRecFN_io_b; // @[AddSubPE.scala 57:26]
+  wire [2:0] addRecFN_io_roundingMode; // @[AddSubPE.scala 57:26]
+  wire [32:0] addRecFN_io_out; // @[AddSubPE.scala 57:26]
+  reg [2:0] rounding; // @[AddSubPE.scala 22:25]
+  reg  op; // @[AddSubPE.scala 26:25]
+  reg  use_int; // @[AddSubPE.scala 28:25]
+  reg [32:0] module_out; // @[AddSubPE.scala 30:27]
+  reg [31:0] sign_in_0; // @[AddSubPE.scala 34:29]
+  reg [31:0] sign_in_1; // @[AddSubPE.scala 35:29]
+  wire [31:0] _module_out_T_3 = $signed(sign_in_0) - $signed(sign_in_1); // @[AddSubPE.scala 39:51]
+  wire [31:0] _module_out_T_7 = $signed(sign_in_0) + $signed(sign_in_1); // @[AddSubPE.scala 41:51]
+  wire [31:0] _GEN_0 = op ? _module_out_T_3 : _module_out_T_7; // @[AddSubPE.scala 38:17 39:18 41:18]
+  reg [31:0] fN_in_0; // @[AddSubPE.scala 49:27]
+  reg [31:0] fN_in_1; // @[AddSubPE.scala 50:27]
+  wire  recFN_from_fN_in_0_rawIn_sign = fN_in_0[31]; // @[rawFloatFromFN.scala 46:22]
+  wire [7:0] recFN_from_fN_in_0_rawIn_expIn = fN_in_0[30:23]; // @[rawFloatFromFN.scala 47:23]
+  wire [22:0] recFN_from_fN_in_0_rawIn_fractIn = fN_in_0[22:0]; // @[rawFloatFromFN.scala 48:25]
+  wire  recFN_from_fN_in_0_rawIn_isZeroExpIn = recFN_from_fN_in_0_rawIn_expIn == 8'h0; // @[rawFloatFromFN.scala 50:34]
+  wire  recFN_from_fN_in_0_rawIn_isZeroFractIn = recFN_from_fN_in_0_rawIn_fractIn == 23'h0; // @[rawFloatFromFN.scala 51:38]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_23 = recFN_from_fN_in_0_rawIn_fractIn[1] ? 5'h15 : 5'h16; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_24 = recFN_from_fN_in_0_rawIn_fractIn[2] ? 5'h14 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_23; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_25 = recFN_from_fN_in_0_rawIn_fractIn[3] ? 5'h13 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_24; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_26 = recFN_from_fN_in_0_rawIn_fractIn[4] ? 5'h12 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_25; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_27 = recFN_from_fN_in_0_rawIn_fractIn[5] ? 5'h11 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_26; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_28 = recFN_from_fN_in_0_rawIn_fractIn[6] ? 5'h10 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_27; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_29 = recFN_from_fN_in_0_rawIn_fractIn[7] ? 5'hf :
+    _recFN_from_fN_in_0_rawIn_normDist_T_28; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_30 = recFN_from_fN_in_0_rawIn_fractIn[8] ? 5'he :
+    _recFN_from_fN_in_0_rawIn_normDist_T_29; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_31 = recFN_from_fN_in_0_rawIn_fractIn[9] ? 5'hd :
+    _recFN_from_fN_in_0_rawIn_normDist_T_30; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_32 = recFN_from_fN_in_0_rawIn_fractIn[10] ? 5'hc :
+    _recFN_from_fN_in_0_rawIn_normDist_T_31; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_33 = recFN_from_fN_in_0_rawIn_fractIn[11] ? 5'hb :
+    _recFN_from_fN_in_0_rawIn_normDist_T_32; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_34 = recFN_from_fN_in_0_rawIn_fractIn[12] ? 5'ha :
+    _recFN_from_fN_in_0_rawIn_normDist_T_33; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_35 = recFN_from_fN_in_0_rawIn_fractIn[13] ? 5'h9 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_34; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_36 = recFN_from_fN_in_0_rawIn_fractIn[14] ? 5'h8 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_35; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_37 = recFN_from_fN_in_0_rawIn_fractIn[15] ? 5'h7 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_36; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_38 = recFN_from_fN_in_0_rawIn_fractIn[16] ? 5'h6 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_37; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_39 = recFN_from_fN_in_0_rawIn_fractIn[17] ? 5'h5 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_38; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_40 = recFN_from_fN_in_0_rawIn_fractIn[18] ? 5'h4 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_39; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_41 = recFN_from_fN_in_0_rawIn_fractIn[19] ? 5'h3 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_40; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_42 = recFN_from_fN_in_0_rawIn_fractIn[20] ? 5'h2 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_41; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_0_rawIn_normDist_T_43 = recFN_from_fN_in_0_rawIn_fractIn[21] ? 5'h1 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_42; // @[Mux.scala 47:69]
+  wire [4:0] recFN_from_fN_in_0_rawIn_normDist = recFN_from_fN_in_0_rawIn_fractIn[22] ? 5'h0 :
+    _recFN_from_fN_in_0_rawIn_normDist_T_43; // @[Mux.scala 47:69]
+  wire [53:0] _GEN_11 = {{31'd0}, recFN_from_fN_in_0_rawIn_fractIn}; // @[rawFloatFromFN.scala 54:36]
+  wire [53:0] _recFN_from_fN_in_0_rawIn_subnormFract_T = _GEN_11 << recFN_from_fN_in_0_rawIn_normDist; // @[rawFloatFromFN.scala 54:36]
+  wire [22:0] recFN_from_fN_in_0_rawIn_subnormFract = {_recFN_from_fN_in_0_rawIn_subnormFract_T[21:0], 1'h0}; // @[rawFloatFromFN.scala 54:64]
+  wire [8:0] _GEN_3 = {{4'd0}, recFN_from_fN_in_0_rawIn_normDist}; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T = _GEN_3 ^ 9'h1ff; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T_1 = recFN_from_fN_in_0_rawIn_isZeroExpIn ?
+    _recFN_from_fN_in_0_rawIn_adjustedExp_T : {{1'd0}, recFN_from_fN_in_0_rawIn_expIn}; // @[rawFloatFromFN.scala 56:16]
+  wire [1:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T_2 = recFN_from_fN_in_0_rawIn_isZeroExpIn ? 2'h2 : 2'h1; // @[rawFloatFromFN.scala 60:27]
+  wire [7:0] _GEN_4 = {{6'd0}, _recFN_from_fN_in_0_rawIn_adjustedExp_T_2}; // @[rawFloatFromFN.scala 60:22]
+  wire [7:0] _recFN_from_fN_in_0_rawIn_adjustedExp_T_3 = 8'h80 | _GEN_4; // @[rawFloatFromFN.scala 60:22]
+  wire [8:0] _GEN_5 = {{1'd0}, _recFN_from_fN_in_0_rawIn_adjustedExp_T_3}; // @[rawFloatFromFN.scala 59:15]
+  wire [8:0] recFN_from_fN_in_0_rawIn_adjustedExp = _recFN_from_fN_in_0_rawIn_adjustedExp_T_1 + _GEN_5; // @[rawFloatFromFN.scala 59:15]
+  wire  recFN_from_fN_in_0_rawIn_isZero = recFN_from_fN_in_0_rawIn_isZeroExpIn & recFN_from_fN_in_0_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 62:34]
+  wire  recFN_from_fN_in_0_rawIn_isSpecial = recFN_from_fN_in_0_rawIn_adjustedExp[8:7] == 2'h3; // @[rawFloatFromFN.scala 63:62]
+  wire  recFN_from_fN_in_0_rawIn__isNaN = recFN_from_fN_in_0_rawIn_isSpecial & ~recFN_from_fN_in_0_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 66:33]
+  wire [9:0] recFN_from_fN_in_0_rawIn__sExp = {1'b0,$signed(recFN_from_fN_in_0_rawIn_adjustedExp)}; // @[rawFloatFromFN.scala 70:48]
+  wire  _recFN_from_fN_in_0_rawIn_out_sig_T = ~recFN_from_fN_in_0_rawIn_isZero; // @[rawFloatFromFN.scala 72:29]
+  wire [22:0] _recFN_from_fN_in_0_rawIn_out_sig_T_1 = recFN_from_fN_in_0_rawIn_isZeroExpIn ?
+    recFN_from_fN_in_0_rawIn_subnormFract : recFN_from_fN_in_0_rawIn_fractIn; // @[rawFloatFromFN.scala 72:42]
+  wire [24:0] recFN_from_fN_in_0_rawIn__sig = {1'h0,_recFN_from_fN_in_0_rawIn_out_sig_T,
+    _recFN_from_fN_in_0_rawIn_out_sig_T_1}; // @[Cat.scala 30:58]
+  wire [2:0] _recFN_from_fN_in_0_T_1 = recFN_from_fN_in_0_rawIn_isZero ? 3'h0 : recFN_from_fN_in_0_rawIn__sExp[8:6]; // @[recFNFromFN.scala 48:16]
+  wire [2:0] _GEN_6 = {{2'd0}, recFN_from_fN_in_0_rawIn__isNaN}; // @[recFNFromFN.scala 48:79]
+  wire [2:0] _recFN_from_fN_in_0_T_3 = _recFN_from_fN_in_0_T_1 | _GEN_6; // @[recFNFromFN.scala 48:79]
+  wire [28:0] recFN_from_fN_in_0_lo = {recFN_from_fN_in_0_rawIn__sExp[5:0],recFN_from_fN_in_0_rawIn__sig[22:0]}; // @[Cat.scala 30:58]
+  wire [3:0] recFN_from_fN_in_0_hi = {recFN_from_fN_in_0_rawIn_sign,_recFN_from_fN_in_0_T_3}; // @[Cat.scala 30:58]
+  reg [32:0] recFN_from_fN_in_0; // @[AddSubPE.scala 53:37]
+  wire  recFN_from_fN_in_1_rawIn_sign = fN_in_1[31]; // @[rawFloatFromFN.scala 46:22]
+  wire [7:0] recFN_from_fN_in_1_rawIn_expIn = fN_in_1[30:23]; // @[rawFloatFromFN.scala 47:23]
+  wire [22:0] recFN_from_fN_in_1_rawIn_fractIn = fN_in_1[22:0]; // @[rawFloatFromFN.scala 48:25]
+  wire  recFN_from_fN_in_1_rawIn_isZeroExpIn = recFN_from_fN_in_1_rawIn_expIn == 8'h0; // @[rawFloatFromFN.scala 50:34]
+  wire  recFN_from_fN_in_1_rawIn_isZeroFractIn = recFN_from_fN_in_1_rawIn_fractIn == 23'h0; // @[rawFloatFromFN.scala 51:38]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_23 = recFN_from_fN_in_1_rawIn_fractIn[1] ? 5'h15 : 5'h16; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_24 = recFN_from_fN_in_1_rawIn_fractIn[2] ? 5'h14 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_23; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_25 = recFN_from_fN_in_1_rawIn_fractIn[3] ? 5'h13 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_24; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_26 = recFN_from_fN_in_1_rawIn_fractIn[4] ? 5'h12 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_25; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_27 = recFN_from_fN_in_1_rawIn_fractIn[5] ? 5'h11 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_26; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_28 = recFN_from_fN_in_1_rawIn_fractIn[6] ? 5'h10 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_27; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_29 = recFN_from_fN_in_1_rawIn_fractIn[7] ? 5'hf :
+    _recFN_from_fN_in_1_rawIn_normDist_T_28; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_30 = recFN_from_fN_in_1_rawIn_fractIn[8] ? 5'he :
+    _recFN_from_fN_in_1_rawIn_normDist_T_29; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_31 = recFN_from_fN_in_1_rawIn_fractIn[9] ? 5'hd :
+    _recFN_from_fN_in_1_rawIn_normDist_T_30; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_32 = recFN_from_fN_in_1_rawIn_fractIn[10] ? 5'hc :
+    _recFN_from_fN_in_1_rawIn_normDist_T_31; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_33 = recFN_from_fN_in_1_rawIn_fractIn[11] ? 5'hb :
+    _recFN_from_fN_in_1_rawIn_normDist_T_32; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_34 = recFN_from_fN_in_1_rawIn_fractIn[12] ? 5'ha :
+    _recFN_from_fN_in_1_rawIn_normDist_T_33; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_35 = recFN_from_fN_in_1_rawIn_fractIn[13] ? 5'h9 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_34; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_36 = recFN_from_fN_in_1_rawIn_fractIn[14] ? 5'h8 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_35; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_37 = recFN_from_fN_in_1_rawIn_fractIn[15] ? 5'h7 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_36; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_38 = recFN_from_fN_in_1_rawIn_fractIn[16] ? 5'h6 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_37; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_39 = recFN_from_fN_in_1_rawIn_fractIn[17] ? 5'h5 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_38; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_40 = recFN_from_fN_in_1_rawIn_fractIn[18] ? 5'h4 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_39; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_41 = recFN_from_fN_in_1_rawIn_fractIn[19] ? 5'h3 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_40; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_42 = recFN_from_fN_in_1_rawIn_fractIn[20] ? 5'h2 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_41; // @[Mux.scala 47:69]
+  wire [4:0] _recFN_from_fN_in_1_rawIn_normDist_T_43 = recFN_from_fN_in_1_rawIn_fractIn[21] ? 5'h1 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_42; // @[Mux.scala 47:69]
+  wire [4:0] recFN_from_fN_in_1_rawIn_normDist = recFN_from_fN_in_1_rawIn_fractIn[22] ? 5'h0 :
+    _recFN_from_fN_in_1_rawIn_normDist_T_43; // @[Mux.scala 47:69]
+  wire [53:0] _GEN_12 = {{31'd0}, recFN_from_fN_in_1_rawIn_fractIn}; // @[rawFloatFromFN.scala 54:36]
+  wire [53:0] _recFN_from_fN_in_1_rawIn_subnormFract_T = _GEN_12 << recFN_from_fN_in_1_rawIn_normDist; // @[rawFloatFromFN.scala 54:36]
+  wire [22:0] recFN_from_fN_in_1_rawIn_subnormFract = {_recFN_from_fN_in_1_rawIn_subnormFract_T[21:0], 1'h0}; // @[rawFloatFromFN.scala 54:64]
+  wire [8:0] _GEN_7 = {{4'd0}, recFN_from_fN_in_1_rawIn_normDist}; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T = _GEN_7 ^ 9'h1ff; // @[rawFloatFromFN.scala 57:26]
+  wire [8:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T_1 = recFN_from_fN_in_1_rawIn_isZeroExpIn ?
+    _recFN_from_fN_in_1_rawIn_adjustedExp_T : {{1'd0}, recFN_from_fN_in_1_rawIn_expIn}; // @[rawFloatFromFN.scala 56:16]
+  wire [1:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T_2 = recFN_from_fN_in_1_rawIn_isZeroExpIn ? 2'h2 : 2'h1; // @[rawFloatFromFN.scala 60:27]
+  wire [7:0] _GEN_8 = {{6'd0}, _recFN_from_fN_in_1_rawIn_adjustedExp_T_2}; // @[rawFloatFromFN.scala 60:22]
+  wire [7:0] _recFN_from_fN_in_1_rawIn_adjustedExp_T_3 = 8'h80 | _GEN_8; // @[rawFloatFromFN.scala 60:22]
+  wire [8:0] _GEN_9 = {{1'd0}, _recFN_from_fN_in_1_rawIn_adjustedExp_T_3}; // @[rawFloatFromFN.scala 59:15]
+  wire [8:0] recFN_from_fN_in_1_rawIn_adjustedExp = _recFN_from_fN_in_1_rawIn_adjustedExp_T_1 + _GEN_9; // @[rawFloatFromFN.scala 59:15]
+  wire  recFN_from_fN_in_1_rawIn_isZero = recFN_from_fN_in_1_rawIn_isZeroExpIn & recFN_from_fN_in_1_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 62:34]
+  wire  recFN_from_fN_in_1_rawIn_isSpecial = recFN_from_fN_in_1_rawIn_adjustedExp[8:7] == 2'h3; // @[rawFloatFromFN.scala 63:62]
+  wire  recFN_from_fN_in_1_rawIn__isNaN = recFN_from_fN_in_1_rawIn_isSpecial & ~recFN_from_fN_in_1_rawIn_isZeroFractIn; // @[rawFloatFromFN.scala 66:33]
+  wire [9:0] recFN_from_fN_in_1_rawIn__sExp = {1'b0,$signed(recFN_from_fN_in_1_rawIn_adjustedExp)}; // @[rawFloatFromFN.scala 70:48]
+  wire  _recFN_from_fN_in_1_rawIn_out_sig_T = ~recFN_from_fN_in_1_rawIn_isZero; // @[rawFloatFromFN.scala 72:29]
+  wire [22:0] _recFN_from_fN_in_1_rawIn_out_sig_T_1 = recFN_from_fN_in_1_rawIn_isZeroExpIn ?
+    recFN_from_fN_in_1_rawIn_subnormFract : recFN_from_fN_in_1_rawIn_fractIn; // @[rawFloatFromFN.scala 72:42]
+  wire [24:0] recFN_from_fN_in_1_rawIn__sig = {1'h0,_recFN_from_fN_in_1_rawIn_out_sig_T,
+    _recFN_from_fN_in_1_rawIn_out_sig_T_1}; // @[Cat.scala 30:58]
+  wire [2:0] _recFN_from_fN_in_1_T_1 = recFN_from_fN_in_1_rawIn_isZero ? 3'h0 : recFN_from_fN_in_1_rawIn__sExp[8:6]; // @[recFNFromFN.scala 48:16]
+  wire [2:0] _GEN_10 = {{2'd0}, recFN_from_fN_in_1_rawIn__isNaN}; // @[recFNFromFN.scala 48:79]
+  wire [2:0] _recFN_from_fN_in_1_T_3 = _recFN_from_fN_in_1_T_1 | _GEN_10; // @[recFNFromFN.scala 48:79]
+  wire [28:0] recFN_from_fN_in_1_lo = {recFN_from_fN_in_1_rawIn__sExp[5:0],recFN_from_fN_in_1_rawIn__sig[22:0]}; // @[Cat.scala 30:58]
+  wire [3:0] recFN_from_fN_in_1_hi = {recFN_from_fN_in_1_rawIn_sign,_recFN_from_fN_in_1_T_3}; // @[Cat.scala 30:58]
+  reg [32:0] recFN_from_fN_in_1; // @[AddSubPE.scala 54:37]
+  wire [8:0] io_out_rawIn_exp = module_out[31:23]; // @[rawFloatFromRecFN.scala 50:21]
+  wire  io_out_rawIn_isZero = io_out_rawIn_exp[8:6] == 3'h0; // @[rawFloatFromRecFN.scala 51:54]
+  wire  io_out_rawIn_isSpecial = io_out_rawIn_exp[8:7] == 2'h3; // @[rawFloatFromRecFN.scala 52:54]
+  wire  io_out_rawIn__isNaN = io_out_rawIn_isSpecial & io_out_rawIn_exp[6]; // @[rawFloatFromRecFN.scala 55:33]
+  wire  io_out_rawIn__isInf = io_out_rawIn_isSpecial & ~io_out_rawIn_exp[6]; // @[rawFloatFromRecFN.scala 56:33]
+  wire  io_out_rawIn__sign = module_out[32]; // @[rawFloatFromRecFN.scala 58:25]
+  wire [9:0] io_out_rawIn__sExp = {1'b0,$signed(io_out_rawIn_exp)}; // @[rawFloatFromRecFN.scala 59:27]
+  wire  _io_out_rawIn_out_sig_T = ~io_out_rawIn_isZero; // @[rawFloatFromRecFN.scala 60:39]
+  wire [24:0] io_out_rawIn__sig = {1'h0,_io_out_rawIn_out_sig_T,module_out[22:0]}; // @[Cat.scala 30:58]
+  wire  io_out_isSubnormal = $signed(io_out_rawIn__sExp) < 10'sh82; // @[fNFromRecFN.scala 50:39]
+  wire [4:0] io_out_denormShiftDist = 5'h1 - io_out_rawIn__sExp[4:0]; // @[fNFromRecFN.scala 51:39]
+  wire [23:0] _io_out_denormFract_T_1 = io_out_rawIn__sig[24:1] >> io_out_denormShiftDist; // @[fNFromRecFN.scala 52:42]
+  wire [22:0] io_out_denormFract = _io_out_denormFract_T_1[22:0]; // @[fNFromRecFN.scala 52:60]
+  wire [7:0] _io_out_expOut_T_2 = io_out_rawIn__sExp[7:0] - 8'h81; // @[fNFromRecFN.scala 57:45]
+  wire [7:0] _io_out_expOut_T_3 = io_out_isSubnormal ? 8'h0 : _io_out_expOut_T_2; // @[fNFromRecFN.scala 55:16]
+  wire  _io_out_expOut_T_4 = io_out_rawIn__isNaN | io_out_rawIn__isInf; // @[fNFromRecFN.scala 59:44]
+  wire [7:0] _io_out_expOut_T_6 = _io_out_expOut_T_4 ? 8'hff : 8'h0; // @[Bitwise.scala 72:12]
+  wire [7:0] io_out_expOut = _io_out_expOut_T_3 | _io_out_expOut_T_6; // @[fNFromRecFN.scala 59:15]
+  wire [22:0] _io_out_fractOut_T_1 = io_out_rawIn__isInf ? 23'h0 : io_out_rawIn__sig[22:0]; // @[fNFromRecFN.scala 63:20]
+  wire [22:0] io_out_fractOut = io_out_isSubnormal ? io_out_denormFract : _io_out_fractOut_T_1; // @[fNFromRecFN.scala 61:16]
+  wire [31:0] _io_out_T = {io_out_rawIn__sign,io_out_expOut,io_out_fractOut}; // @[Cat.scala 30:58]
+  wire [32:0] _GEN_2 = use_int ? module_out : {{1'd0}, _io_out_T}; // @[AddSubPE.scala 32:16 44:12 66:12]
+  AddRecFN addRecFN ( // @[AddSubPE.scala 57:26]
     .io_subOp(addRecFN_io_subOp),
     .io_a(addRecFN_io_a),
     .io_b(addRecFN_io_b),
     .io_roundingMode(addRecFN_io_roundingMode),
     .io_out(addRecFN_io_out)
   );
-  assign io_out = addRecFN_out; // @[AddSubPE.scala 41:10]
-  assign addRecFN_io_subOp = op; // @[AddSubPE.scala 34:21]
-  assign addRecFN_io_a = in_0; // @[AddSubPE.scala 35:17]
-  assign addRecFN_io_b = in_1; // @[AddSubPE.scala 36:17]
-  assign addRecFN_io_roundingMode = rounding; // @[AddSubPE.scala 37:30]
+  assign io_out = _GEN_2[31:0];
+  assign addRecFN_io_subOp = op; // @[AddSubPE.scala 58:23]
+  assign addRecFN_io_a = recFN_from_fN_in_0; // @[AddSubPE.scala 61:19]
+  assign addRecFN_io_b = recFN_from_fN_in_1; // @[AddSubPE.scala 62:19]
+  assign addRecFN_io_roundingMode = rounding; // @[AddSubPE.scala 59:32]
   always @(posedge clock) begin
-    op <= io_op; // @[AddSubPE.scala 20:19]
-    rounding <= io_rounding; // @[AddSubPE.scala 23:26]
-    in_0 <= io_in_0; // @[AddSubPE.scala 29:22]
-    in_1 <= io_in_1; // @[AddSubPE.scala 30:22]
-    addRecFN_out <= addRecFN_io_out; // @[AddSubPE.scala 39:30]
+    rounding <= io_rounding; // @[AddSubPE.scala 22:25]
+    op <= io_op; // @[AddSubPE.scala 26:25]
+    use_int <= io_use_int; // @[AddSubPE.scala 28:25]
+    if (reset) begin // @[AddSubPE.scala 30:27]
+      module_out <= 33'h0; // @[AddSubPE.scala 30:27]
+    end else if (use_int) begin // @[AddSubPE.scala 32:16]
+      module_out <= {{1'd0}, _GEN_0};
+    end else begin
+      module_out <= addRecFN_io_out; // @[AddSubPE.scala 64:16]
+    end
+    sign_in_0 <= io_in_0; // @[AddSubPE.scala 34:44]
+    sign_in_1 <= io_in_1; // @[AddSubPE.scala 35:44]
+    fN_in_0 <= io_in_0; // @[AddSubPE.scala 49:27]
+    fN_in_1 <= io_in_1; // @[AddSubPE.scala 50:27]
+    recFN_from_fN_in_0 <= {recFN_from_fN_in_0_hi,recFN_from_fN_in_0_lo}; // @[Cat.scala 30:58]
+    recFN_from_fN_in_1 <= {recFN_from_fN_in_1_hi,recFN_from_fN_in_1_lo}; // @[Cat.scala 30:58]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -895,15 +1291,25 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  op = _RAND_0[0:0];
+  rounding = _RAND_0[2:0];
   _RAND_1 = {1{`RANDOM}};
-  rounding = _RAND_1[2:0];
-  _RAND_2 = {2{`RANDOM}};
-  in_0 = _RAND_2[32:0];
+  op = _RAND_1[0:0];
+  _RAND_2 = {1{`RANDOM}};
+  use_int = _RAND_2[0:0];
   _RAND_3 = {2{`RANDOM}};
-  in_1 = _RAND_3[32:0];
-  _RAND_4 = {2{`RANDOM}};
-  addRecFN_out = _RAND_4[32:0];
+  module_out = _RAND_3[32:0];
+  _RAND_4 = {1{`RANDOM}};
+  sign_in_0 = _RAND_4[31:0];
+  _RAND_5 = {1{`RANDOM}};
+  sign_in_1 = _RAND_5[31:0];
+  _RAND_6 = {1{`RANDOM}};
+  fN_in_0 = _RAND_6[31:0];
+  _RAND_7 = {1{`RANDOM}};
+  fN_in_1 = _RAND_7[31:0];
+  _RAND_8 = {2{`RANDOM}};
+  recFN_from_fN_in_0 = _RAND_8[32:0];
+  _RAND_9 = {2{`RANDOM}};
+  recFN_from_fN_in_1 = _RAND_9[32:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -937,6 +1343,7 @@ module PE(
   input         io_addsub_1_op,
   input  [2:0]  io_rounding,
   input         io_tininess,
+  input         io_use_int,
   output [32:0] io_out_0,
   output [32:0] io_out_1
 );
@@ -960,7 +1367,7 @@ module PE(
   reg [31:0] _RAND_16;
   reg [31:0] _RAND_17;
   reg [31:0] _RAND_18;
-  reg [63:0] _RAND_19;
+  reg [31:0] _RAND_19;
   reg [63:0] _RAND_20;
   reg [63:0] _RAND_21;
   reg [63:0] _RAND_22;
@@ -974,89 +1381,98 @@ module PE(
   reg [63:0] _RAND_30;
   reg [63:0] _RAND_31;
   reg [63:0] _RAND_32;
+  reg [63:0] _RAND_33;
 `endif // RANDOMIZE_REG_INIT
-  wire  m_0_clock; // @[PE.scala 106:19]
-  wire [31:0] m_0_io_in_0; // @[PE.scala 106:19]
-  wire [31:0] m_0_io_in_1; // @[PE.scala 106:19]
-  wire [31:0] m_0_io_in_2; // @[PE.scala 106:19]
-  wire [1:0] m_0_io_sel; // @[PE.scala 106:19]
-  wire [31:0] m_0_io_out; // @[PE.scala 106:19]
-  wire  m_1_clock; // @[PE.scala 114:19]
-  wire [31:0] m_1_io_in_0; // @[PE.scala 114:19]
-  wire [31:0] m_1_io_in_1; // @[PE.scala 114:19]
-  wire [31:0] m_1_io_in_2; // @[PE.scala 114:19]
-  wire [1:0] m_1_io_sel; // @[PE.scala 114:19]
-  wire [31:0] m_1_io_out; // @[PE.scala 114:19]
-  wire  m_2_clock; // @[PE.scala 122:19]
-  wire [31:0] m_2_io_in_0; // @[PE.scala 122:19]
-  wire [31:0] m_2_io_in_1; // @[PE.scala 122:19]
-  wire [31:0] m_2_io_in_2; // @[PE.scala 122:19]
-  wire [1:0] m_2_io_sel; // @[PE.scala 122:19]
-  wire [31:0] m_2_io_out; // @[PE.scala 122:19]
-  wire  m_3_clock; // @[PE.scala 130:19]
-  wire [31:0] m_3_io_in_0; // @[PE.scala 130:19]
-  wire [31:0] m_3_io_in_1; // @[PE.scala 130:19]
-  wire [31:0] m_3_io_in_2; // @[PE.scala 130:19]
-  wire [1:0] m_3_io_sel; // @[PE.scala 130:19]
-  wire [31:0] m_3_io_out; // @[PE.scala 130:19]
-  wire  multModule_0_clock; // @[PE.scala 141:28]
-  wire [2:0] multModule_0_io_rounding; // @[PE.scala 141:28]
-  wire [31:0] multModule_0_io_in_0; // @[PE.scala 141:28]
-  wire [31:0] multModule_0_io_in_1; // @[PE.scala 141:28]
-  wire [32:0] multModule_0_io_out; // @[PE.scala 141:28]
-  wire  multModule_1_clock; // @[PE.scala 148:28]
-  wire [2:0] multModule_1_io_rounding; // @[PE.scala 148:28]
-  wire [31:0] multModule_1_io_in_0; // @[PE.scala 148:28]
-  wire [31:0] multModule_1_io_in_1; // @[PE.scala 148:28]
-  wire [32:0] multModule_1_io_out; // @[PE.scala 148:28]
-  wire  m_4_clock; // @[PE.scala 158:19]
-  wire [31:0] m_4_io_in_0; // @[PE.scala 158:19]
-  wire [31:0] m_4_io_in_1; // @[PE.scala 158:19]
-  wire [31:0] m_4_io_in_2; // @[PE.scala 158:19]
-  wire [1:0] m_4_io_sel; // @[PE.scala 158:19]
-  wire [31:0] m_4_io_out; // @[PE.scala 158:19]
-  wire  m_5_clock; // @[PE.scala 166:19]
-  wire [31:0] m_5_io_in_0; // @[PE.scala 166:19]
-  wire [31:0] m_5_io_in_1; // @[PE.scala 166:19]
-  wire [31:0] m_5_io_in_2; // @[PE.scala 166:19]
-  wire [1:0] m_5_io_sel; // @[PE.scala 166:19]
-  wire [31:0] m_5_io_out; // @[PE.scala 166:19]
-  wire  m_6_clock; // @[PE.scala 174:19]
-  wire [31:0] m_6_io_in_0; // @[PE.scala 174:19]
-  wire [31:0] m_6_io_in_1; // @[PE.scala 174:19]
-  wire [31:0] m_6_io_in_2; // @[PE.scala 174:19]
-  wire [1:0] m_6_io_sel; // @[PE.scala 174:19]
-  wire [31:0] m_6_io_out; // @[PE.scala 174:19]
-  wire  m_7_clock; // @[PE.scala 182:19]
-  wire [31:0] m_7_io_in_0; // @[PE.scala 182:19]
-  wire [31:0] m_7_io_in_1; // @[PE.scala 182:19]
-  wire [31:0] m_7_io_in_2; // @[PE.scala 182:19]
-  wire [1:0] m_7_io_sel; // @[PE.scala 182:19]
-  wire [31:0] m_7_io_out; // @[PE.scala 182:19]
-  wire  addsubModule_0_clock; // @[PE.scala 193:30]
-  wire  addsubModule_0_io_op; // @[PE.scala 193:30]
-  wire [2:0] addsubModule_0_io_rounding; // @[PE.scala 193:30]
-  wire [32:0] addsubModule_0_io_in_0; // @[PE.scala 193:30]
-  wire [32:0] addsubModule_0_io_in_1; // @[PE.scala 193:30]
-  wire [32:0] addsubModule_0_io_out; // @[PE.scala 193:30]
-  wire  addsubModule_1_clock; // @[PE.scala 201:30]
-  wire  addsubModule_1_io_op; // @[PE.scala 201:30]
-  wire [2:0] addsubModule_1_io_rounding; // @[PE.scala 201:30]
-  wire [32:0] addsubModule_1_io_in_0; // @[PE.scala 201:30]
-  wire [32:0] addsubModule_1_io_in_1; // @[PE.scala 201:30]
-  wire [32:0] addsubModule_1_io_out; // @[PE.scala 201:30]
-  wire  m_8_clock; // @[PE.scala 212:19]
-  wire [31:0] m_8_io_in_0; // @[PE.scala 212:19]
-  wire [31:0] m_8_io_in_1; // @[PE.scala 212:19]
-  wire [31:0] m_8_io_in_2; // @[PE.scala 212:19]
-  wire [1:0] m_8_io_sel; // @[PE.scala 212:19]
-  wire [31:0] m_8_io_out; // @[PE.scala 212:19]
-  wire  m_9_clock; // @[PE.scala 220:19]
-  wire [31:0] m_9_io_in_0; // @[PE.scala 220:19]
-  wire [31:0] m_9_io_in_1; // @[PE.scala 220:19]
-  wire [31:0] m_9_io_in_2; // @[PE.scala 220:19]
-  wire [1:0] m_9_io_sel; // @[PE.scala 220:19]
-  wire [31:0] m_9_io_out; // @[PE.scala 220:19]
+  wire  m_0_clock; // @[PE.scala 108:19]
+  wire [31:0] m_0_io_in_0; // @[PE.scala 108:19]
+  wire [31:0] m_0_io_in_1; // @[PE.scala 108:19]
+  wire [31:0] m_0_io_in_2; // @[PE.scala 108:19]
+  wire [1:0] m_0_io_sel; // @[PE.scala 108:19]
+  wire [31:0] m_0_io_out; // @[PE.scala 108:19]
+  wire  m_1_clock; // @[PE.scala 116:19]
+  wire [31:0] m_1_io_in_0; // @[PE.scala 116:19]
+  wire [31:0] m_1_io_in_1; // @[PE.scala 116:19]
+  wire [31:0] m_1_io_in_2; // @[PE.scala 116:19]
+  wire [1:0] m_1_io_sel; // @[PE.scala 116:19]
+  wire [31:0] m_1_io_out; // @[PE.scala 116:19]
+  wire  m_2_clock; // @[PE.scala 124:19]
+  wire [31:0] m_2_io_in_0; // @[PE.scala 124:19]
+  wire [31:0] m_2_io_in_1; // @[PE.scala 124:19]
+  wire [31:0] m_2_io_in_2; // @[PE.scala 124:19]
+  wire [1:0] m_2_io_sel; // @[PE.scala 124:19]
+  wire [31:0] m_2_io_out; // @[PE.scala 124:19]
+  wire  m_3_clock; // @[PE.scala 132:19]
+  wire [31:0] m_3_io_in_0; // @[PE.scala 132:19]
+  wire [31:0] m_3_io_in_1; // @[PE.scala 132:19]
+  wire [31:0] m_3_io_in_2; // @[PE.scala 132:19]
+  wire [1:0] m_3_io_sel; // @[PE.scala 132:19]
+  wire [31:0] m_3_io_out; // @[PE.scala 132:19]
+  wire  multModule_0_clock; // @[PE.scala 143:28]
+  wire  multModule_0_reset; // @[PE.scala 143:28]
+  wire  multModule_0_io_use_int; // @[PE.scala 143:28]
+  wire [2:0] multModule_0_io_rounding; // @[PE.scala 143:28]
+  wire [31:0] multModule_0_io_in_0; // @[PE.scala 143:28]
+  wire [31:0] multModule_0_io_in_1; // @[PE.scala 143:28]
+  wire [31:0] multModule_0_io_out; // @[PE.scala 143:28]
+  wire  multModule_1_clock; // @[PE.scala 151:28]
+  wire  multModule_1_reset; // @[PE.scala 151:28]
+  wire  multModule_1_io_use_int; // @[PE.scala 151:28]
+  wire [2:0] multModule_1_io_rounding; // @[PE.scala 151:28]
+  wire [31:0] multModule_1_io_in_0; // @[PE.scala 151:28]
+  wire [31:0] multModule_1_io_in_1; // @[PE.scala 151:28]
+  wire [31:0] multModule_1_io_out; // @[PE.scala 151:28]
+  wire  m_4_clock; // @[PE.scala 162:19]
+  wire [31:0] m_4_io_in_0; // @[PE.scala 162:19]
+  wire [31:0] m_4_io_in_1; // @[PE.scala 162:19]
+  wire [31:0] m_4_io_in_2; // @[PE.scala 162:19]
+  wire [1:0] m_4_io_sel; // @[PE.scala 162:19]
+  wire [31:0] m_4_io_out; // @[PE.scala 162:19]
+  wire  m_5_clock; // @[PE.scala 170:19]
+  wire [31:0] m_5_io_in_0; // @[PE.scala 170:19]
+  wire [31:0] m_5_io_in_1; // @[PE.scala 170:19]
+  wire [31:0] m_5_io_in_2; // @[PE.scala 170:19]
+  wire [1:0] m_5_io_sel; // @[PE.scala 170:19]
+  wire [31:0] m_5_io_out; // @[PE.scala 170:19]
+  wire  m_6_clock; // @[PE.scala 178:19]
+  wire [31:0] m_6_io_in_0; // @[PE.scala 178:19]
+  wire [31:0] m_6_io_in_1; // @[PE.scala 178:19]
+  wire [31:0] m_6_io_in_2; // @[PE.scala 178:19]
+  wire [1:0] m_6_io_sel; // @[PE.scala 178:19]
+  wire [31:0] m_6_io_out; // @[PE.scala 178:19]
+  wire  m_7_clock; // @[PE.scala 186:19]
+  wire [31:0] m_7_io_in_0; // @[PE.scala 186:19]
+  wire [31:0] m_7_io_in_1; // @[PE.scala 186:19]
+  wire [31:0] m_7_io_in_2; // @[PE.scala 186:19]
+  wire [1:0] m_7_io_sel; // @[PE.scala 186:19]
+  wire [31:0] m_7_io_out; // @[PE.scala 186:19]
+  wire  addsubModule_0_clock; // @[PE.scala 197:30]
+  wire  addsubModule_0_reset; // @[PE.scala 197:30]
+  wire  addsubModule_0_io_use_int; // @[PE.scala 197:30]
+  wire  addsubModule_0_io_op; // @[PE.scala 197:30]
+  wire [2:0] addsubModule_0_io_rounding; // @[PE.scala 197:30]
+  wire [31:0] addsubModule_0_io_in_0; // @[PE.scala 197:30]
+  wire [31:0] addsubModule_0_io_in_1; // @[PE.scala 197:30]
+  wire [31:0] addsubModule_0_io_out; // @[PE.scala 197:30]
+  wire  addsubModule_1_clock; // @[PE.scala 206:30]
+  wire  addsubModule_1_reset; // @[PE.scala 206:30]
+  wire  addsubModule_1_io_use_int; // @[PE.scala 206:30]
+  wire  addsubModule_1_io_op; // @[PE.scala 206:30]
+  wire [2:0] addsubModule_1_io_rounding; // @[PE.scala 206:30]
+  wire [31:0] addsubModule_1_io_in_0; // @[PE.scala 206:30]
+  wire [31:0] addsubModule_1_io_in_1; // @[PE.scala 206:30]
+  wire [31:0] addsubModule_1_io_out; // @[PE.scala 206:30]
+  wire  m_8_clock; // @[PE.scala 218:19]
+  wire [31:0] m_8_io_in_0; // @[PE.scala 218:19]
+  wire [31:0] m_8_io_in_1; // @[PE.scala 218:19]
+  wire [31:0] m_8_io_in_2; // @[PE.scala 218:19]
+  wire [1:0] m_8_io_sel; // @[PE.scala 218:19]
+  wire [31:0] m_8_io_out; // @[PE.scala 218:19]
+  wire  m_9_clock; // @[PE.scala 226:19]
+  wire [31:0] m_9_io_in_0; // @[PE.scala 226:19]
+  wire [31:0] m_9_io_in_1; // @[PE.scala 226:19]
+  wire [31:0] m_9_io_in_2; // @[PE.scala 226:19]
+  wire [1:0] m_9_io_sel; // @[PE.scala 226:19]
+  wire [31:0] m_9_io_out; // @[PE.scala 226:19]
   reg [31:0] Xi_0; // @[PE.scala 47:22]
   reg [31:0] Yi_0; // @[PE.scala 48:22]
   reg [31:0] Xi_1; // @[PE.scala 50:22]
@@ -1076,21 +1492,22 @@ module PE(
   reg  addsub_0_op; // @[PE.scala 76:29]
   reg  addsub_1_op; // @[PE.scala 77:29]
   reg [2:0] rounding; // @[PE.scala 80:29]
-  reg [32:0] addsubModule_0_out; // @[PE.scala 87:36]
-  reg [32:0] addsubModule_1_out; // @[PE.scala 88:36]
-  reg [32:0] multModule_0_out; // @[PE.scala 89:36]
-  reg [32:0] multModule_1_out; // @[PE.scala 90:36]
-  reg [32:0] m_0_out; // @[PE.scala 92:24]
-  reg [32:0] m_1_out; // @[PE.scala 93:24]
-  reg [32:0] m_2_out; // @[PE.scala 94:24]
-  reg [32:0] m_3_out; // @[PE.scala 95:24]
-  reg [32:0] m_4_out; // @[PE.scala 96:24]
-  reg [32:0] m_5_out; // @[PE.scala 97:24]
-  reg [32:0] m_6_out; // @[PE.scala 98:24]
-  reg [32:0] m_7_out; // @[PE.scala 99:24]
-  reg [32:0] m_8_out; // @[PE.scala 100:24]
-  reg [32:0] m_9_out; // @[PE.scala 101:24]
-  MuxPE m_0 ( // @[PE.scala 106:19]
+  reg  use_int; // @[PE.scala 84:29]
+  reg [32:0] addsubModule_0_out; // @[PE.scala 89:36]
+  reg [32:0] addsubModule_1_out; // @[PE.scala 90:36]
+  reg [32:0] multModule_0_out; // @[PE.scala 91:36]
+  reg [32:0] multModule_1_out; // @[PE.scala 92:36]
+  reg [32:0] m_0_out; // @[PE.scala 94:24]
+  reg [32:0] m_1_out; // @[PE.scala 95:24]
+  reg [32:0] m_2_out; // @[PE.scala 96:24]
+  reg [32:0] m_3_out; // @[PE.scala 97:24]
+  reg [32:0] m_4_out; // @[PE.scala 98:24]
+  reg [32:0] m_5_out; // @[PE.scala 99:24]
+  reg [32:0] m_6_out; // @[PE.scala 100:24]
+  reg [32:0] m_7_out; // @[PE.scala 101:24]
+  reg [32:0] m_8_out; // @[PE.scala 102:24]
+  reg [32:0] m_9_out; // @[PE.scala 103:24]
+  MuxPE m_0 ( // @[PE.scala 108:19]
     .clock(m_0_clock),
     .io_in_0(m_0_io_in_0),
     .io_in_1(m_0_io_in_1),
@@ -1098,7 +1515,7 @@ module PE(
     .io_sel(m_0_io_sel),
     .io_out(m_0_io_out)
   );
-  MuxPE m_1 ( // @[PE.scala 114:19]
+  MuxPE m_1 ( // @[PE.scala 116:19]
     .clock(m_1_clock),
     .io_in_0(m_1_io_in_0),
     .io_in_1(m_1_io_in_1),
@@ -1106,7 +1523,7 @@ module PE(
     .io_sel(m_1_io_sel),
     .io_out(m_1_io_out)
   );
-  MuxPE m_2 ( // @[PE.scala 122:19]
+  MuxPE m_2 ( // @[PE.scala 124:19]
     .clock(m_2_clock),
     .io_in_0(m_2_io_in_0),
     .io_in_1(m_2_io_in_1),
@@ -1114,7 +1531,7 @@ module PE(
     .io_sel(m_2_io_sel),
     .io_out(m_2_io_out)
   );
-  MuxPE m_3 ( // @[PE.scala 130:19]
+  MuxPE m_3 ( // @[PE.scala 132:19]
     .clock(m_3_clock),
     .io_in_0(m_3_io_in_0),
     .io_in_1(m_3_io_in_1),
@@ -1122,21 +1539,25 @@ module PE(
     .io_sel(m_3_io_sel),
     .io_out(m_3_io_out)
   );
-  MultPE multModule_0 ( // @[PE.scala 141:28]
+  MultPE multModule_0 ( // @[PE.scala 143:28]
     .clock(multModule_0_clock),
+    .reset(multModule_0_reset),
+    .io_use_int(multModule_0_io_use_int),
     .io_rounding(multModule_0_io_rounding),
     .io_in_0(multModule_0_io_in_0),
     .io_in_1(multModule_0_io_in_1),
     .io_out(multModule_0_io_out)
   );
-  MultPE multModule_1 ( // @[PE.scala 148:28]
+  MultPE multModule_1 ( // @[PE.scala 151:28]
     .clock(multModule_1_clock),
+    .reset(multModule_1_reset),
+    .io_use_int(multModule_1_io_use_int),
     .io_rounding(multModule_1_io_rounding),
     .io_in_0(multModule_1_io_in_0),
     .io_in_1(multModule_1_io_in_1),
     .io_out(multModule_1_io_out)
   );
-  MuxPE m_4 ( // @[PE.scala 158:19]
+  MuxPE m_4 ( // @[PE.scala 162:19]
     .clock(m_4_clock),
     .io_in_0(m_4_io_in_0),
     .io_in_1(m_4_io_in_1),
@@ -1144,7 +1565,7 @@ module PE(
     .io_sel(m_4_io_sel),
     .io_out(m_4_io_out)
   );
-  MuxPE m_5 ( // @[PE.scala 166:19]
+  MuxPE m_5 ( // @[PE.scala 170:19]
     .clock(m_5_clock),
     .io_in_0(m_5_io_in_0),
     .io_in_1(m_5_io_in_1),
@@ -1152,7 +1573,7 @@ module PE(
     .io_sel(m_5_io_sel),
     .io_out(m_5_io_out)
   );
-  MuxPE m_6 ( // @[PE.scala 174:19]
+  MuxPE m_6 ( // @[PE.scala 178:19]
     .clock(m_6_clock),
     .io_in_0(m_6_io_in_0),
     .io_in_1(m_6_io_in_1),
@@ -1160,7 +1581,7 @@ module PE(
     .io_sel(m_6_io_sel),
     .io_out(m_6_io_out)
   );
-  MuxPE m_7 ( // @[PE.scala 182:19]
+  MuxPE m_7 ( // @[PE.scala 186:19]
     .clock(m_7_clock),
     .io_in_0(m_7_io_in_0),
     .io_in_1(m_7_io_in_1),
@@ -1168,23 +1589,27 @@ module PE(
     .io_sel(m_7_io_sel),
     .io_out(m_7_io_out)
   );
-  AddSubPE addsubModule_0 ( // @[PE.scala 193:30]
+  AddSubPE addsubModule_0 ( // @[PE.scala 197:30]
     .clock(addsubModule_0_clock),
+    .reset(addsubModule_0_reset),
+    .io_use_int(addsubModule_0_io_use_int),
     .io_op(addsubModule_0_io_op),
     .io_rounding(addsubModule_0_io_rounding),
     .io_in_0(addsubModule_0_io_in_0),
     .io_in_1(addsubModule_0_io_in_1),
     .io_out(addsubModule_0_io_out)
   );
-  AddSubPE addsubModule_1 ( // @[PE.scala 201:30]
+  AddSubPE addsubModule_1 ( // @[PE.scala 206:30]
     .clock(addsubModule_1_clock),
+    .reset(addsubModule_1_reset),
+    .io_use_int(addsubModule_1_io_use_int),
     .io_op(addsubModule_1_io_op),
     .io_rounding(addsubModule_1_io_rounding),
     .io_in_0(addsubModule_1_io_in_0),
     .io_in_1(addsubModule_1_io_in_1),
     .io_out(addsubModule_1_io_out)
   );
-  MuxPE m_8 ( // @[PE.scala 212:19]
+  MuxPE m_8 ( // @[PE.scala 218:19]
     .clock(m_8_clock),
     .io_in_0(m_8_io_in_0),
     .io_in_1(m_8_io_in_1),
@@ -1192,7 +1617,7 @@ module PE(
     .io_sel(m_8_io_sel),
     .io_out(m_8_io_out)
   );
-  MuxPE m_9 ( // @[PE.scala 220:19]
+  MuxPE m_9 ( // @[PE.scala 226:19]
     .clock(m_9_clock),
     .io_in_0(m_9_io_in_0),
     .io_in_1(m_9_io_in_1),
@@ -1200,76 +1625,84 @@ module PE(
     .io_sel(m_9_io_sel),
     .io_out(m_9_io_out)
   );
-  assign io_out_0 = m_8_out; // @[PE.scala 231:12]
-  assign io_out_1 = m_9_out; // @[PE.scala 232:12]
+  assign io_out_0 = m_8_out; // @[PE.scala 237:12]
+  assign io_out_1 = m_9_out; // @[PE.scala 238:12]
   assign m_0_clock = clock;
-  assign m_0_io_in_0 = Xi_0; // @[PE.scala 108:15]
-  assign m_0_io_in_1 = addsubModule_0_out[31:0]; // @[PE.scala 109:15]
+  assign m_0_io_in_0 = Xi_0; // @[PE.scala 110:15]
+  assign m_0_io_in_1 = addsubModule_0_out[31:0]; // @[PE.scala 111:15]
   assign m_0_io_in_2 = 32'h0;
-  assign m_0_io_sel = m_0_sel; // @[PE.scala 107:14]
+  assign m_0_io_sel = m_0_sel; // @[PE.scala 109:14]
   assign m_1_clock = clock;
-  assign m_1_io_in_0 = Yi_0; // @[PE.scala 116:15]
-  assign m_1_io_in_1 = addsubModule_0_out[31:0]; // @[PE.scala 117:15]
+  assign m_1_io_in_0 = Yi_0; // @[PE.scala 118:15]
+  assign m_1_io_in_1 = addsubModule_0_out[31:0]; // @[PE.scala 119:15]
   assign m_1_io_in_2 = 32'h0;
-  assign m_1_io_sel = m_1_sel; // @[PE.scala 115:14]
+  assign m_1_io_sel = m_1_sel; // @[PE.scala 117:14]
   assign m_2_clock = clock;
-  assign m_2_io_in_0 = Xi_1; // @[PE.scala 124:15]
-  assign m_2_io_in_1 = addsubModule_1_out[31:0]; // @[PE.scala 125:15]
+  assign m_2_io_in_0 = Xi_1; // @[PE.scala 126:15]
+  assign m_2_io_in_1 = addsubModule_1_out[31:0]; // @[PE.scala 127:15]
   assign m_2_io_in_2 = 32'h0;
-  assign m_2_io_sel = m_2_sel; // @[PE.scala 123:14]
+  assign m_2_io_sel = m_2_sel; // @[PE.scala 125:14]
   assign m_3_clock = clock;
-  assign m_3_io_in_0 = Yi_1; // @[PE.scala 132:15]
-  assign m_3_io_in_1 = addsubModule_1_out[31:0]; // @[PE.scala 133:15]
+  assign m_3_io_in_0 = Yi_1; // @[PE.scala 134:15]
+  assign m_3_io_in_1 = addsubModule_1_out[31:0]; // @[PE.scala 135:15]
   assign m_3_io_in_2 = 32'h0;
-  assign m_3_io_sel = m_3_sel; // @[PE.scala 131:14]
+  assign m_3_io_sel = m_3_sel; // @[PE.scala 133:14]
   assign multModule_0_clock = clock;
-  assign multModule_0_io_rounding = rounding; // @[PE.scala 142:30]
-  assign multModule_0_io_in_0 = m_0_out[31:0]; // @[PE.scala 144:24]
-  assign multModule_0_io_in_1 = m_1_out[31:0]; // @[PE.scala 145:24]
+  assign multModule_0_reset = reset;
+  assign multModule_0_io_use_int = use_int; // @[PE.scala 146:30]
+  assign multModule_0_io_rounding = rounding; // @[PE.scala 144:30]
+  assign multModule_0_io_in_0 = m_0_out[31:0]; // @[PE.scala 147:24]
+  assign multModule_0_io_in_1 = m_1_out[31:0]; // @[PE.scala 148:24]
   assign multModule_1_clock = clock;
-  assign multModule_1_io_rounding = rounding; // @[PE.scala 149:30]
-  assign multModule_1_io_in_0 = m_2_out[31:0]; // @[PE.scala 151:24]
-  assign multModule_1_io_in_1 = m_3_out[31:0]; // @[PE.scala 152:24]
+  assign multModule_1_reset = reset;
+  assign multModule_1_io_use_int = use_int; // @[PE.scala 154:30]
+  assign multModule_1_io_rounding = rounding; // @[PE.scala 152:30]
+  assign multModule_1_io_in_0 = m_2_out[31:0]; // @[PE.scala 155:24]
+  assign multModule_1_io_in_1 = m_3_out[31:0]; // @[PE.scala 156:24]
   assign m_4_clock = clock;
-  assign m_4_io_in_0 = Xi_0; // @[PE.scala 160:15]
-  assign m_4_io_in_1 = multModule_0_out[31:0]; // @[PE.scala 161:15]
-  assign m_4_io_in_2 = aggr_0; // @[PE.scala 162:15]
-  assign m_4_io_sel = m_0_sel; // @[PE.scala 159:15]
+  assign m_4_io_in_0 = Xi_0; // @[PE.scala 164:15]
+  assign m_4_io_in_1 = multModule_0_out[31:0]; // @[PE.scala 165:15]
+  assign m_4_io_in_2 = aggr_0; // @[PE.scala 166:15]
+  assign m_4_io_sel = m_0_sel; // @[PE.scala 163:15]
   assign m_5_clock = clock;
-  assign m_5_io_in_0 = Yi_0; // @[PE.scala 168:15]
-  assign m_5_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 169:15]
-  assign m_5_io_in_2 = aggr_1; // @[PE.scala 170:15]
-  assign m_5_io_sel = m_5_sel; // @[PE.scala 167:15]
+  assign m_5_io_in_0 = Yi_0; // @[PE.scala 172:15]
+  assign m_5_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 173:15]
+  assign m_5_io_in_2 = aggr_1; // @[PE.scala 174:15]
+  assign m_5_io_sel = m_5_sel; // @[PE.scala 171:15]
   assign m_6_clock = clock;
-  assign m_6_io_in_0 = Xi_1; // @[PE.scala 176:15]
-  assign m_6_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 177:15]
-  assign m_6_io_in_2 = aggr_2; // @[PE.scala 178:15]
-  assign m_6_io_sel = m_6_sel; // @[PE.scala 175:15]
+  assign m_6_io_in_0 = Xi_1; // @[PE.scala 180:15]
+  assign m_6_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 181:15]
+  assign m_6_io_in_2 = aggr_2; // @[PE.scala 182:15]
+  assign m_6_io_sel = m_6_sel; // @[PE.scala 179:15]
   assign m_7_clock = clock;
-  assign m_7_io_in_0 = Yi_1; // @[PE.scala 184:15]
+  assign m_7_io_in_0 = Yi_1; // @[PE.scala 188:15]
   assign m_7_io_in_1 = 32'h0;
-  assign m_7_io_in_2 = aggr_3; // @[PE.scala 186:15]
-  assign m_7_io_sel = m_7_sel; // @[PE.scala 183:15]
+  assign m_7_io_in_2 = aggr_3; // @[PE.scala 190:15]
+  assign m_7_io_sel = m_7_sel; // @[PE.scala 187:15]
   assign addsubModule_0_clock = clock;
-  assign addsubModule_0_io_op = addsub_0_op; // @[PE.scala 194:24]
-  assign addsubModule_0_io_rounding = rounding; // @[PE.scala 197:32]
-  assign addsubModule_0_io_in_0 = m_4_out; // @[PE.scala 195:26]
-  assign addsubModule_0_io_in_1 = m_5_out; // @[PE.scala 196:26]
+  assign addsubModule_0_reset = reset;
+  assign addsubModule_0_io_use_int = use_int; // @[PE.scala 201:32]
+  assign addsubModule_0_io_op = addsub_0_op; // @[PE.scala 198:32]
+  assign addsubModule_0_io_rounding = rounding; // @[PE.scala 199:32]
+  assign addsubModule_0_io_in_0 = m_4_out[31:0]; // @[PE.scala 202:32]
+  assign addsubModule_0_io_in_1 = m_5_out[31:0]; // @[PE.scala 203:32]
   assign addsubModule_1_clock = clock;
-  assign addsubModule_1_io_op = addsub_1_op; // @[PE.scala 202:24]
-  assign addsubModule_1_io_rounding = rounding; // @[PE.scala 205:32]
-  assign addsubModule_1_io_in_0 = m_6_out; // @[PE.scala 203:26]
-  assign addsubModule_1_io_in_1 = m_7_out; // @[PE.scala 204:26]
+  assign addsubModule_1_reset = reset;
+  assign addsubModule_1_io_use_int = use_int; // @[PE.scala 210:32]
+  assign addsubModule_1_io_op = addsub_1_op; // @[PE.scala 207:32]
+  assign addsubModule_1_io_rounding = rounding; // @[PE.scala 208:32]
+  assign addsubModule_1_io_in_0 = m_6_out[31:0]; // @[PE.scala 211:32]
+  assign addsubModule_1_io_in_1 = m_7_out[31:0]; // @[PE.scala 212:32]
   assign m_8_clock = clock;
-  assign m_8_io_in_0 = addsubModule_0_out[31:0]; // @[PE.scala 214:15]
-  assign m_8_io_in_1 = multModule_0_out[31:0]; // @[PE.scala 215:15]
+  assign m_8_io_in_0 = addsubModule_0_out[31:0]; // @[PE.scala 220:15]
+  assign m_8_io_in_1 = multModule_0_out[31:0]; // @[PE.scala 221:15]
   assign m_8_io_in_2 = 32'h0;
-  assign m_8_io_sel = m_8_sel; // @[PE.scala 213:15]
+  assign m_8_io_sel = m_8_sel; // @[PE.scala 219:15]
   assign m_9_clock = clock;
-  assign m_9_io_in_0 = addsubModule_1_out[31:0]; // @[PE.scala 222:15]
-  assign m_9_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 223:15]
+  assign m_9_io_in_0 = addsubModule_1_out[31:0]; // @[PE.scala 228:15]
+  assign m_9_io_in_1 = multModule_1_out[31:0]; // @[PE.scala 229:15]
   assign m_9_io_in_2 = 32'h0;
-  assign m_9_io_sel = m_7_sel; // @[PE.scala 221:15]
+  assign m_9_io_sel = m_7_sel; // @[PE.scala 227:15]
   always @(posedge clock) begin
     Xi_0 <= io_Xi_0; // @[PE.scala 47:22]
     Yi_0 <= io_Yi_0; // @[PE.scala 48:22]
@@ -1290,75 +1723,76 @@ module PE(
     addsub_0_op <= io_addsub_0_op; // @[PE.scala 76:29]
     addsub_1_op <= io_addsub_1_op; // @[PE.scala 77:29]
     rounding <= io_rounding; // @[PE.scala 80:29]
-    if (reset) begin // @[PE.scala 87:36]
-      addsubModule_0_out <= 33'h0; // @[PE.scala 87:36]
-    end else begin
-      addsubModule_0_out <= addsubModule_0_io_out; // @[PE.scala 199:23]
-    end
-    if (reset) begin // @[PE.scala 88:36]
-      addsubModule_1_out <= 33'h0; // @[PE.scala 88:36]
-    end else begin
-      addsubModule_1_out <= addsubModule_1_io_out; // @[PE.scala 207:23]
-    end
+    use_int <= io_use_int; // @[PE.scala 84:29]
     if (reset) begin // @[PE.scala 89:36]
-      multModule_0_out <= 33'h0; // @[PE.scala 89:36]
+      addsubModule_0_out <= 33'h0; // @[PE.scala 89:36]
     end else begin
-      multModule_0_out <= multModule_0_io_out; // @[PE.scala 146:21]
+      addsubModule_0_out <= {{1'd0}, addsubModule_0_io_out}; // @[PE.scala 204:23]
     end
     if (reset) begin // @[PE.scala 90:36]
-      multModule_1_out <= 33'h0; // @[PE.scala 90:36]
+      addsubModule_1_out <= 33'h0; // @[PE.scala 90:36]
     end else begin
-      multModule_1_out <= multModule_1_io_out; // @[PE.scala 153:21]
+      addsubModule_1_out <= {{1'd0}, addsubModule_1_io_out}; // @[PE.scala 213:23]
     end
-    if (reset) begin // @[PE.scala 92:24]
-      m_0_out <= 33'h0; // @[PE.scala 92:24]
+    if (reset) begin // @[PE.scala 91:36]
+      multModule_0_out <= 33'h0; // @[PE.scala 91:36]
     end else begin
-      m_0_out <= {{1'd0}, m_0_io_out}; // @[PE.scala 112:11]
+      multModule_0_out <= {{1'd0}, multModule_0_io_out}; // @[PE.scala 149:21]
     end
-    if (reset) begin // @[PE.scala 93:24]
-      m_1_out <= 33'h0; // @[PE.scala 93:24]
+    if (reset) begin // @[PE.scala 92:36]
+      multModule_1_out <= 33'h0; // @[PE.scala 92:36]
     end else begin
-      m_1_out <= {{1'd0}, m_1_io_out}; // @[PE.scala 120:11]
+      multModule_1_out <= {{1'd0}, multModule_1_io_out}; // @[PE.scala 157:21]
     end
     if (reset) begin // @[PE.scala 94:24]
-      m_2_out <= 33'h0; // @[PE.scala 94:24]
+      m_0_out <= 33'h0; // @[PE.scala 94:24]
     end else begin
-      m_2_out <= {{1'd0}, m_2_io_out}; // @[PE.scala 128:11]
+      m_0_out <= {{1'd0}, m_0_io_out}; // @[PE.scala 114:11]
     end
     if (reset) begin // @[PE.scala 95:24]
-      m_3_out <= 33'h0; // @[PE.scala 95:24]
+      m_1_out <= 33'h0; // @[PE.scala 95:24]
     end else begin
-      m_3_out <= {{1'd0}, m_3_io_out}; // @[PE.scala 136:11]
+      m_1_out <= {{1'd0}, m_1_io_out}; // @[PE.scala 122:11]
     end
     if (reset) begin // @[PE.scala 96:24]
-      m_4_out <= 33'h0; // @[PE.scala 96:24]
+      m_2_out <= 33'h0; // @[PE.scala 96:24]
     end else begin
-      m_4_out <= {{1'd0}, m_4_io_out}; // @[PE.scala 164:15]
+      m_2_out <= {{1'd0}, m_2_io_out}; // @[PE.scala 130:11]
     end
     if (reset) begin // @[PE.scala 97:24]
-      m_5_out <= 33'h0; // @[PE.scala 97:24]
+      m_3_out <= 33'h0; // @[PE.scala 97:24]
     end else begin
-      m_5_out <= {{1'd0}, m_5_io_out}; // @[PE.scala 172:15]
+      m_3_out <= {{1'd0}, m_3_io_out}; // @[PE.scala 138:11]
     end
     if (reset) begin // @[PE.scala 98:24]
-      m_6_out <= 33'h0; // @[PE.scala 98:24]
+      m_4_out <= 33'h0; // @[PE.scala 98:24]
     end else begin
-      m_6_out <= {{1'd0}, m_6_io_out}; // @[PE.scala 180:15]
+      m_4_out <= {{1'd0}, m_4_io_out}; // @[PE.scala 168:15]
     end
     if (reset) begin // @[PE.scala 99:24]
-      m_7_out <= 33'h0; // @[PE.scala 99:24]
+      m_5_out <= 33'h0; // @[PE.scala 99:24]
     end else begin
-      m_7_out <= {{1'd0}, m_7_io_out}; // @[PE.scala 188:15]
+      m_5_out <= {{1'd0}, m_5_io_out}; // @[PE.scala 176:15]
     end
     if (reset) begin // @[PE.scala 100:24]
-      m_8_out <= 33'h0; // @[PE.scala 100:24]
+      m_6_out <= 33'h0; // @[PE.scala 100:24]
     end else begin
-      m_8_out <= {{1'd0}, m_8_io_out}; // @[PE.scala 218:15]
+      m_6_out <= {{1'd0}, m_6_io_out}; // @[PE.scala 184:15]
     end
     if (reset) begin // @[PE.scala 101:24]
-      m_9_out <= 33'h0; // @[PE.scala 101:24]
+      m_7_out <= 33'h0; // @[PE.scala 101:24]
     end else begin
-      m_9_out <= {{1'd0}, m_9_io_out}; // @[PE.scala 226:15]
+      m_7_out <= {{1'd0}, m_7_io_out}; // @[PE.scala 192:15]
+    end
+    if (reset) begin // @[PE.scala 102:24]
+      m_8_out <= 33'h0; // @[PE.scala 102:24]
+    end else begin
+      m_8_out <= {{1'd0}, m_8_io_out}; // @[PE.scala 224:15]
+    end
+    if (reset) begin // @[PE.scala 103:24]
+      m_9_out <= 33'h0; // @[PE.scala 103:24]
+    end else begin
+      m_9_out <= {{1'd0}, m_9_io_out}; // @[PE.scala 232:15]
     end
   end
 // Register and memory initialization
@@ -1435,34 +1869,36 @@ initial begin
   addsub_1_op = _RAND_17[0:0];
   _RAND_18 = {1{`RANDOM}};
   rounding = _RAND_18[2:0];
-  _RAND_19 = {2{`RANDOM}};
-  addsubModule_0_out = _RAND_19[32:0];
+  _RAND_19 = {1{`RANDOM}};
+  use_int = _RAND_19[0:0];
   _RAND_20 = {2{`RANDOM}};
-  addsubModule_1_out = _RAND_20[32:0];
+  addsubModule_0_out = _RAND_20[32:0];
   _RAND_21 = {2{`RANDOM}};
-  multModule_0_out = _RAND_21[32:0];
+  addsubModule_1_out = _RAND_21[32:0];
   _RAND_22 = {2{`RANDOM}};
-  multModule_1_out = _RAND_22[32:0];
+  multModule_0_out = _RAND_22[32:0];
   _RAND_23 = {2{`RANDOM}};
-  m_0_out = _RAND_23[32:0];
+  multModule_1_out = _RAND_23[32:0];
   _RAND_24 = {2{`RANDOM}};
-  m_1_out = _RAND_24[32:0];
+  m_0_out = _RAND_24[32:0];
   _RAND_25 = {2{`RANDOM}};
-  m_2_out = _RAND_25[32:0];
+  m_1_out = _RAND_25[32:0];
   _RAND_26 = {2{`RANDOM}};
-  m_3_out = _RAND_26[32:0];
+  m_2_out = _RAND_26[32:0];
   _RAND_27 = {2{`RANDOM}};
-  m_4_out = _RAND_27[32:0];
+  m_3_out = _RAND_27[32:0];
   _RAND_28 = {2{`RANDOM}};
-  m_5_out = _RAND_28[32:0];
+  m_4_out = _RAND_28[32:0];
   _RAND_29 = {2{`RANDOM}};
-  m_6_out = _RAND_29[32:0];
+  m_5_out = _RAND_29[32:0];
   _RAND_30 = {2{`RANDOM}};
-  m_7_out = _RAND_30[32:0];
+  m_6_out = _RAND_30[32:0];
   _RAND_31 = {2{`RANDOM}};
-  m_8_out = _RAND_31[32:0];
+  m_7_out = _RAND_31[32:0];
   _RAND_32 = {2{`RANDOM}};
-  m_9_out = _RAND_32[32:0];
+  m_8_out = _RAND_32[32:0];
+  _RAND_33 = {2{`RANDOM}};
+  m_9_out = _RAND_33[32:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

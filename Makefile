@@ -47,14 +47,23 @@ clean:
 	rm -rf project/target target test_run_dir generated diagram
 	rm -rf rtl/*.json rtl/*.fir project/project python/__pycache__
 
-testL2:
-	sbt "testOnly v2pack.L2_test"
-
-testPE:
-	sbt "testOnly top.PE_v2pack_test"
+testAddSubValidate:
+	sbt "testOnly validate.AddSubValidate"
 
 testAddSubPE:
-	sbt "testOnly v2pack.AddSubPE_test"
+	sbt "testOnly modules.AddSubPE_test"
+
+testMultPE:
+	sbt "testOnly modules.MultPE_test"
+
+testMuxPE:
+	sbt "testOnly modules.MuxPE_test"
+
+testPE:
+	sbt "testOnly top.PE_test"
+
+testFP32ADDSUB:
+	sbt "testOnly validate.FP32_addsub_test"
 
 show-config:
 	$(VERILATOR) -V
