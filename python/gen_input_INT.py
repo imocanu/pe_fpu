@@ -82,10 +82,10 @@ for in1, in2 in zip(random_INT_1_bin, random_INT_2_bin):
 write2file(int32_genInput_1, random_INT_1_bin)
 # INPUT_2_INT
 write2file(int32_genInput_2, random_INT_2_bin)
-# INPUT_3_INT
-write2file(int32_genInput_3, random_INT_1_bin)
-# INPUT_4_INT
-write2file(int32_genInput_4, random_INT_2_bin)
+# # INPUT_3_INT
+# write2file(int32_genInput_3, random_INT_1_bin)
+# # INPUT_4_INT
+# write2file(int32_genInput_4, random_INT_2_bin)
 # ADD_INT
 write2file(int32_ADD_result, random_INT_ADD)
 # SUB_INT

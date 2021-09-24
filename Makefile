@@ -62,6 +62,9 @@ testMuxPE:
 testPE:
 	sbt "testOnly top.PE_test"
 
+testPE8:
+	sbt "testOnly top.PE_8_test"
+
 testFP32ADDSUB:
 	sbt "testOnly validate.FP32_addsub_test"
 
