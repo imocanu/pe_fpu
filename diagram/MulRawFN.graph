@@ -1,0 +1,270 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node MulRawFN {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "MulRawFN"
+    
+    port io_a_isNaN {
+        ^port.side: WEST
+        label "io_a_isNaN"
+    }
+    port io_a_isInf {
+        ^port.side: WEST
+        label "io_a_isInf"
+    }
+    port io_a_isZero {
+        ^port.side: WEST
+        label "io_a_isZero"
+    }
+    port io_a_sign {
+        ^port.side: WEST
+        label "io_a_sign"
+    }
+    port io_a_sExp {
+        ^port.side: WEST
+        label "io_a_sExp"
+    }
+    port io_a_sig {
+        ^port.side: WEST
+        label "io_a_sig"
+    }
+    port io_b_isNaN {
+        ^port.side: WEST
+        label "io_b_isNaN"
+    }
+    port io_b_isInf {
+        ^port.side: WEST
+        label "io_b_isInf"
+    }
+    port io_b_isZero {
+        ^port.side: WEST
+        label "io_b_isZero"
+    }
+    port io_b_sign {
+        ^port.side: WEST
+        label "io_b_sign"
+    }
+    port io_b_sExp {
+        ^port.side: WEST
+        label "io_b_sExp"
+    }
+    port io_b_sig {
+        ^port.side: WEST
+        label "io_b_sig"
+    }
+    port io_invalidExc {
+        ^port.side: EAST
+        label "io_invalidExc"
+    }
+    port io_rawOut_isNaN {
+        ^port.side: EAST
+        label "io_rawOut_isNaN"
+    }
+    port io_rawOut_isInf {
+        ^port.side: EAST
+        label "io_rawOut_isInf"
+    }
+    port io_rawOut_isZero {
+        ^port.side: EAST
+        label "io_rawOut_isZero"
+    }
+    port io_rawOut_sign {
+        ^port.side: EAST
+        label "io_rawOut_sign"
+    }
+    port io_rawOut_sExp {
+        ^port.side: EAST
+        label "io_rawOut_sExp"
+    }
+    port io_rawOut_sig {
+        ^port.side: EAST
+        label "io_rawOut_sig"
+    }
+    node submodule_mulFullRaw_MulFullRawFN {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "mulFullRaw"
+            
+        port io_a_isNaN {
+            ^port.side: WEST
+            label "io_a_isNaN"
+        }    
+        port io_a_isInf {
+            ^port.side: WEST
+            label "io_a_isInf"
+        }    
+        port io_a_isZero {
+            ^port.side: WEST
+            label "io_a_isZero"
+        }    
+        port io_a_sign {
+            ^port.side: WEST
+            label "io_a_sign"
+        }    
+        port io_a_sExp {
+            ^port.side: WEST
+            label "io_a_sExp"
+        }    
+        port io_a_sig {
+            ^port.side: WEST
+            label "io_a_sig"
+        }    
+        port io_b_isNaN {
+            ^port.side: WEST
+            label "io_b_isNaN"
+        }    
+        port io_b_isInf {
+            ^port.side: WEST
+            label "io_b_isInf"
+        }    
+        port io_b_isZero {
+            ^port.side: WEST
+            label "io_b_isZero"
+        }    
+        port io_b_sign {
+            ^port.side: WEST
+            label "io_b_sign"
+        }    
+        port io_b_sExp {
+            ^port.side: WEST
+            label "io_b_sExp"
+        }    
+        port io_b_sig {
+            ^port.side: WEST
+            label "io_b_sig"
+        }    
+        port io_invalidExc {
+            ^port.side: EAST
+            label "io_invalidExc"
+        }    
+        port io_rawOut_isNaN {
+            ^port.side: EAST
+            label "io_rawOut_isNaN"
+        }    
+        port io_rawOut_isInf {
+            ^port.side: EAST
+            label "io_rawOut_isInf"
+        }    
+        port io_rawOut_isZero {
+            ^port.side: EAST
+            label "io_rawOut_isZero"
+        }    
+        port io_rawOut_sign {
+            ^port.side: EAST
+            label "io_rawOut_sign"
+        }    
+        port io_rawOut_sExp {
+            ^port.side: EAST
+            label "io_rawOut_sExp"
+        }    
+        port io_rawOut_sig {
+            ^port.side: EAST
+            label "io_rawOut_sig"
+        }
+    
+    
+    }
+
+    node shr_773 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "shr"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "22"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_774 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "21"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node orr_775 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "orr"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cat_776 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "cat"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    edge e1466 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isInf -> MulRawFN.io_rawOut_isInf
+    edge e1467 : MulRawFN.io_a_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isZero
+    edge e1468 : MulRawFN.io_b_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sExp
+    edge e1469 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sExp -> MulRawFN.io_rawOut_sExp
+    edge e1470 : MulRawFN.io_a_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isInf
+    edge e1471 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isNaN -> MulRawFN.io_rawOut_isNaN
+    edge e1472 : MulRawFN.io_a_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_isNaN
+    edge e1473 : orr_775.out -> cat_776.in2
+    edge e1474 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> bits_774.in1
+    edge e1475 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_invalidExc -> MulRawFN.io_invalidExc
+    edge e1476 : MulRawFN.io_a_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sig
+    edge e1477 : MulRawFN.io_a_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sign
+    edge e1478 : cat_776.out -> MulRawFN.io_rawOut_sig
+    edge e1479 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sig -> shr_773.in1
+    edge e1480 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_isZero -> MulRawFN.io_rawOut_isZero
+    edge e1481 : MulRawFN.io_b_sign -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sign
+    edge e1482 : shr_773.out -> cat_776.in1
+    edge e1483 : MulRawFN.io_b_sig -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_sig
+    edge e1484 : MulRawFN.io_b_isZero -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isZero
+    edge e1485 : MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_rawOut_sign -> MulRawFN.io_rawOut_sign
+    edge e1486 : MulRawFN.io_a_sExp -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_a_sExp
+    edge e1487 : MulRawFN.io_b_isInf -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isInf
+    edge e1488 : bits_774.out -> orr_775.in1
+    edge e1489 : MulRawFN.io_b_isNaN -> MulRawFN.submodule_mulFullRaw_MulFullRawFN.io_b_isNaN
+    
+}
+

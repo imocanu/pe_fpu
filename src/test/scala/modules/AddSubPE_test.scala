@@ -231,20 +231,15 @@ class AddSubPE_test_manual(dut: AddSubPE) extends PeekPokeTester(dut) {
     var test_out  = ""
 
     poke(dut.io.rounding, "b100".U)
-    step(10)
     poke(dut.io.use_int, true.B)
-    step(10)
     poke(dut.io.tininess, "b1".U(1.W))
-    step(10)
     poke(dut.io.op, false.B)
-    step(10)
 
 
     test_in_0 = "b"+"11111111111111111100001000001110" // -15858  -5773 = -21631
     test_in_1 = "b"+"11111111111111111110100101110011"   
     test_out  = "b"+"11111111111111111010101110000001" // 
     poke(dut.io.in_0, test_in_0.U(32.W))
-    step(10) 
     poke(dut.io.in_1, test_in_1.U(32.W))
     step(10)
     expect(dut.io.out, test_out.U(32.W))
@@ -328,17 +323,17 @@ class AddSubPE_test extends ChiselFlatSpec with Matchers {
     val targetDir = "diagram/" + vcdName
 
 
-  //   "run AddSubPE_test_manual" should "pass" in {
-  //   chisel3.iotesters.Driver.execute(Array(
-  //     "--fint-write-vcd",
-  //     "--backend-name", "firrtl",
-  //     "--target-dir", targetDir+"_SIMPLE",
-  //     "--top-name" , vcdName,
-  //     "--output-file", vcdName),
-  //     () => new AddSubPE ) { c =>
-  //     new AddSubPE_test_manual (c)
-  //   } should be (true)
-  // }
+    "run AddSubPE_test_manual" should "pass" in {
+    chisel3.iotesters.Driver.execute(Array(
+      "--fint-write-vcd",
+      "--backend-name", "firrtl",
+      "--target-dir", targetDir+"_MANUAL",
+      "--top-name" , vcdName,
+      "--output-file", vcdName),
+      () => new AddSubPE ) { c =>
+      new AddSubPE_test_manual (c)
+    } should be (true)
+  }
 
       "run test_random_ADD_INT" should "pass" in {
     chisel3.iotesters.Driver.execute(Array(

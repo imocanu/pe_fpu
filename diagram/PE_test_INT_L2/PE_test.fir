@@ -19,19 +19,22 @@ circuit PE :
     reg in_3 : UInt, clock with :
       reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
     in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
     else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
       else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
         else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
 
   module MuxPE_1 :
     input clock : Clock
@@ -53,19 +56,22 @@ circuit PE :
     reg in_3 : UInt, clock with :
       reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
     in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
     else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
       else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
         else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
 
   module MuxPE_2 :
     input clock : Clock
@@ -87,19 +93,22 @@ circuit PE :
     reg in_3 : UInt, clock with :
       reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
     in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
     else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
       else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
         else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
 
   module MuxPE_3 :
     input clock : Clock
@@ -121,19 +130,244 @@ circuit PE :
     reg in_3 : UInt, clock with :
       reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
     in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
     else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
       else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
         else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
+
+  module MuxPE_4 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
+
+    reg sel : UInt, clock with :
+      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
+    sel <= io.sel @[MuxPE.scala 20:21]
+    reg in_0 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
+    in_0 <= io.in_0 @[MuxPE.scala 21:21]
+    reg in_1 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
+    in_1 <= io.in_1 @[MuxPE.scala 22:21]
+    reg in_2 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
+    in_2 <= io.in_2 @[MuxPE.scala 23:21]
+    reg in_3 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
+    in_3 <= io.in_3 @[MuxPE.scala 24:21]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
+    else :
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
+      else :
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
+        else :
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
+
+  module MuxPE_5 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
+
+    reg sel : UInt, clock with :
+      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
+    sel <= io.sel @[MuxPE.scala 20:21]
+    reg in_0 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
+    in_0 <= io.in_0 @[MuxPE.scala 21:21]
+    reg in_1 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
+    in_1 <= io.in_1 @[MuxPE.scala 22:21]
+    reg in_2 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
+    in_2 <= io.in_2 @[MuxPE.scala 23:21]
+    reg in_3 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
+    in_3 <= io.in_3 @[MuxPE.scala 24:21]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
+    else :
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
+      else :
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
+        else :
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
+
+  module MuxPE_6 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
+
+    reg sel : UInt, clock with :
+      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
+    sel <= io.sel @[MuxPE.scala 20:21]
+    reg in_0 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
+    in_0 <= io.in_0 @[MuxPE.scala 21:21]
+    reg in_1 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
+    in_1 <= io.in_1 @[MuxPE.scala 22:21]
+    reg in_2 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
+    in_2 <= io.in_2 @[MuxPE.scala 23:21]
+    reg in_3 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
+    in_3 <= io.in_3 @[MuxPE.scala 24:21]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
+    else :
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
+      else :
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
+        else :
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
+
+  module MuxPE_7 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
+
+    reg sel : UInt, clock with :
+      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
+    sel <= io.sel @[MuxPE.scala 20:21]
+    reg in_0 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
+    in_0 <= io.in_0 @[MuxPE.scala 21:21]
+    reg in_1 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
+    in_1 <= io.in_1 @[MuxPE.scala 22:21]
+    reg in_2 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
+    in_2 <= io.in_2 @[MuxPE.scala 23:21]
+    reg in_3 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
+    in_3 <= io.in_3 @[MuxPE.scala 24:21]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
+    else :
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
+      else :
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
+        else :
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
+
+  module MuxPE_8 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
+
+    reg sel : UInt, clock with :
+      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
+    sel <= io.sel @[MuxPE.scala 20:21]
+    reg in_0 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
+    in_0 <= io.in_0 @[MuxPE.scala 21:21]
+    reg in_1 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
+    in_1 <= io.in_1 @[MuxPE.scala 22:21]
+    reg in_2 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
+    in_2 <= io.in_2 @[MuxPE.scala 23:21]
+    reg in_3 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
+    in_3 <= io.in_3 @[MuxPE.scala 24:21]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
+    else :
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
+      else :
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
+        else :
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
+
+  module MuxPE_9 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
+
+    reg sel : UInt, clock with :
+      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
+    sel <= io.sel @[MuxPE.scala 20:21]
+    reg in_0 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
+    in_0 <= io.in_0 @[MuxPE.scala 21:21]
+    reg in_1 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
+    in_1 <= io.in_1 @[MuxPE.scala 22:21]
+    reg in_2 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
+    in_2 <= io.in_2 @[MuxPE.scala 23:21]
+    reg in_3 : UInt, clock with :
+      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
+    in_3 <= io.in_3 @[MuxPE.scala 24:21]
+    reg out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[MuxPE.scala 25:21]
+    node _T = eq(io.sel, UInt<2>("h0")) @[MuxPE.scala 27:17]
+    when _T : @[MuxPE.scala 28:3]
+      out <= in_0 @[MuxPE.scala 29:9]
+    else :
+      node _T_1 = eq(io.sel, UInt<2>("h1")) @[MuxPE.scala 31:23]
+      when _T_1 : @[MuxPE.scala 32:3]
+        out <= in_1 @[MuxPE.scala 33:9]
+      else :
+        node _T_2 = eq(io.sel, UInt<2>("h2")) @[MuxPE.scala 35:23]
+        when _T_2 : @[MuxPE.scala 36:3]
+          out <= in_2 @[MuxPE.scala 37:9]
+        else :
+          out <= in_3 @[MuxPE.scala 41:9]
+    io.out <= out @[MuxPE.scala 44:10]
 
   module MulFullRawFN :
     output io : { flip a : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<25>}, flip b : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<25>}, invalidExc : UInt<1>, rawOut : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<48>}}
@@ -1494,142 +1728,6 @@ circuit PE :
       node io_out_hi = cat(io_out_rawIn.sign, io_out_expOut) @[Cat.scala 30:58]
       node _io_out_T = cat(io_out_hi, io_out_fractOut) @[Cat.scala 30:58]
       io.out <= _io_out_T @[MultPE.scala 58:12]
-
-  module MuxPE_4 :
-    input clock : Clock
-    input reset : Reset
-    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
-
-    reg sel : UInt, clock with :
-      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
-    sel <= io.sel @[MuxPE.scala 20:21]
-    reg in_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
-    in_0 <= io.in_0 @[MuxPE.scala 21:21]
-    reg in_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
-    in_1 <= io.in_1 @[MuxPE.scala 22:21]
-    reg in_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
-    in_2 <= io.in_2 @[MuxPE.scala 23:21]
-    reg in_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
-    in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
-    else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
-      else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
-        else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
-
-  module MuxPE_5 :
-    input clock : Clock
-    input reset : Reset
-    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
-
-    reg sel : UInt, clock with :
-      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
-    sel <= io.sel @[MuxPE.scala 20:21]
-    reg in_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
-    in_0 <= io.in_0 @[MuxPE.scala 21:21]
-    reg in_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
-    in_1 <= io.in_1 @[MuxPE.scala 22:21]
-    reg in_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
-    in_2 <= io.in_2 @[MuxPE.scala 23:21]
-    reg in_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
-    in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
-    else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
-      else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
-        else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
-
-  module MuxPE_6 :
-    input clock : Clock
-    input reset : Reset
-    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
-
-    reg sel : UInt, clock with :
-      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
-    sel <= io.sel @[MuxPE.scala 20:21]
-    reg in_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
-    in_0 <= io.in_0 @[MuxPE.scala 21:21]
-    reg in_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
-    in_1 <= io.in_1 @[MuxPE.scala 22:21]
-    reg in_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
-    in_2 <= io.in_2 @[MuxPE.scala 23:21]
-    reg in_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
-    in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
-    else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
-      else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
-        else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
-
-  module MuxPE_7 :
-    input clock : Clock
-    input reset : Reset
-    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
-
-    reg sel : UInt, clock with :
-      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
-    sel <= io.sel @[MuxPE.scala 20:21]
-    reg in_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
-    in_0 <= io.in_0 @[MuxPE.scala 21:21]
-    reg in_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
-    in_1 <= io.in_1 @[MuxPE.scala 22:21]
-    reg in_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
-    in_2 <= io.in_2 @[MuxPE.scala 23:21]
-    reg in_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
-    in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
-    else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
-      else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
-        else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
 
   module AddRawFN :
     output io : { flip subOp : UInt<1>, flip a : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<25>}, flip b : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<25>}, flip roundingMode : UInt<3>, invalidExc : UInt<1>, rawOut : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<27>}}
@@ -3461,74 +3559,6 @@ circuit PE :
       node _io_out_T = cat(io_out_hi, io_out_fractOut) @[Cat.scala 30:58]
       io.out <= _io_out_T @[AddSubPE.scala 66:12]
 
-  module MuxPE_8 :
-    input clock : Clock
-    input reset : Reset
-    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
-
-    reg sel : UInt, clock with :
-      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
-    sel <= io.sel @[MuxPE.scala 20:21]
-    reg in_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
-    in_0 <= io.in_0 @[MuxPE.scala 21:21]
-    reg in_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
-    in_1 <= io.in_1 @[MuxPE.scala 22:21]
-    reg in_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
-    in_2 <= io.in_2 @[MuxPE.scala 23:21]
-    reg in_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
-    in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
-    else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
-      else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
-        else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
-
-  module MuxPE_9 :
-    input clock : Clock
-    input reset : Reset
-    output io : { flip in_0 : UInt<32>, flip in_1 : UInt<32>, flip in_2 : UInt<32>, flip in_3 : UInt<32>, flip sel : UInt<2>, out : UInt<32>}
-
-    reg sel : UInt, clock with :
-      reset => (UInt<1>("h0"), sel) @[MuxPE.scala 20:21]
-    sel <= io.sel @[MuxPE.scala 20:21]
-    reg in_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_0) @[MuxPE.scala 21:21]
-    in_0 <= io.in_0 @[MuxPE.scala 21:21]
-    reg in_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_1) @[MuxPE.scala 22:21]
-    in_1 <= io.in_1 @[MuxPE.scala 22:21]
-    reg in_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_2) @[MuxPE.scala 23:21]
-    in_2 <= io.in_2 @[MuxPE.scala 23:21]
-    reg in_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), in_3) @[MuxPE.scala 24:21]
-    in_3 <= io.in_3 @[MuxPE.scala 24:21]
-    node _T = eq(sel, UInt<2>("h0")) @[MuxPE.scala 26:14]
-    when _T : @[MuxPE.scala 27:3]
-      io.out <= in_0 @[MuxPE.scala 28:12]
-    else :
-      node _T_1 = eq(sel, UInt<2>("h1")) @[MuxPE.scala 30:20]
-      when _T_1 : @[MuxPE.scala 31:3]
-        io.out <= in_1 @[MuxPE.scala 32:12]
-      else :
-        node _T_2 = eq(sel, UInt<2>("h2")) @[MuxPE.scala 34:20]
-        when _T_2 : @[MuxPE.scala 35:3]
-          io.out <= in_2 @[MuxPE.scala 36:12]
-        else :
-          io.out <= in_3 @[MuxPE.scala 40:12]
-
   module PE :
     input clock : Clock
     input reset : UInt<1>
@@ -3634,131 +3664,131 @@ circuit PE :
     inst m_0 of MuxPE @[PE.scala 108:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 109:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 110:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 111:15]
-    m_0.io.in_2 is invalid @[PE.scala 112:15]
-    m_0.io.in_3 is invalid @[PE.scala 113:15]
-    m_0_out <= m_0.io.out @[PE.scala 114:11]
-    inst m_1 of MuxPE_1 @[PE.scala 116:19]
+    inst m_1 of MuxPE_1 @[PE.scala 109:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    m_1.io.sel <= m_1_sel @[PE.scala 117:14]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 118:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 119:15]
-    m_1.io.in_2 is invalid @[PE.scala 120:15]
-    m_1.io.in_3 is invalid @[PE.scala 121:15]
-    m_1_out <= m_1.io.out @[PE.scala 122:11]
-    inst m_2 of MuxPE_2 @[PE.scala 124:19]
+    inst m_2 of MuxPE_2 @[PE.scala 110:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    m_2.io.sel <= m_2_sel @[PE.scala 125:14]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 126:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 127:15]
-    m_2.io.in_2 is invalid @[PE.scala 128:15]
-    m_2.io.in_3 is invalid @[PE.scala 129:15]
-    m_2_out <= m_2.io.out @[PE.scala 130:11]
-    inst m_3 of MuxPE_3 @[PE.scala 132:19]
+    inst m_3 of MuxPE_3 @[PE.scala 111:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    m_3.io.sel <= m_3_sel @[PE.scala 133:14]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 134:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 135:15]
-    m_3.io.in_2 is invalid @[PE.scala 136:15]
-    m_3.io.in_3 is invalid @[PE.scala 137:15]
-    m_3_out <= m_3.io.out @[PE.scala 138:11]
-    inst multModule_0 of MultPE @[PE.scala 143:28]
-    multModule_0.clock <= clock
-    multModule_0.reset <= reset
-    multModule_0.io.rounding <= rounding @[PE.scala 144:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 145:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 146:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 147:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 148:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 149:21]
-    inst multModule_1 of MultPE_1 @[PE.scala 151:28]
-    multModule_1.clock <= clock
-    multModule_1.reset <= reset
-    multModule_1.io.rounding <= rounding @[PE.scala 152:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 153:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 154:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 155:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 156:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 157:21]
-    inst m_4 of MuxPE_4 @[PE.scala 162:19]
+    inst m_4 of MuxPE_4 @[PE.scala 112:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    m_4.io.sel <= m_0_sel @[PE.scala 163:15]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 164:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 165:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 166:15]
-    m_4.io.in_3 is invalid @[PE.scala 167:15]
-    m_4_out <= m_4.io.out @[PE.scala 168:15]
-    inst m_5 of MuxPE_5 @[PE.scala 170:19]
+    inst m_5 of MuxPE_5 @[PE.scala 113:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    m_5.io.sel <= m_5_sel @[PE.scala 171:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 172:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 173:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 174:15]
-    m_5.io.in_3 is invalid @[PE.scala 175:15]
-    m_5_out <= m_5.io.out @[PE.scala 176:15]
-    inst m_6 of MuxPE_6 @[PE.scala 178:19]
+    inst m_6 of MuxPE_6 @[PE.scala 114:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    m_6.io.sel <= m_6_sel @[PE.scala 179:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 180:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 181:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 182:15]
-    m_6.io.in_3 is invalid @[PE.scala 183:15]
-    m_6_out <= m_6.io.out @[PE.scala 184:15]
-    inst m_7 of MuxPE_7 @[PE.scala 186:19]
+    inst m_7 of MuxPE_7 @[PE.scala 115:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    m_7.io.sel <= m_7_sel @[PE.scala 187:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 188:15]
-    m_7.io.in_1 is invalid @[PE.scala 189:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 190:15]
-    m_7.io.in_3 is invalid @[PE.scala 191:15]
-    m_7_out <= m_7.io.out @[PE.scala 192:15]
-    inst addsubModule_0 of AddSubPE @[PE.scala 197:30]
-    addsubModule_0.clock <= clock
-    addsubModule_0.reset <= reset
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 198:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 199:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 200:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 201:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 202:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 203:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 204:23]
-    inst addsubModule_1 of AddSubPE_1 @[PE.scala 206:30]
-    addsubModule_1.clock <= clock
-    addsubModule_1.reset <= reset
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 207:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 208:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 209:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 210:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 211:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 212:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 213:23]
-    inst m_8 of MuxPE_8 @[PE.scala 218:19]
+    inst m_8 of MuxPE_8 @[PE.scala 116:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    m_8.io.sel <= m_8_sel @[PE.scala 219:15]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 220:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 221:15]
-    m_8.io.in_2 is invalid @[PE.scala 222:15]
-    m_8.io.in_3 is invalid @[PE.scala 223:15]
-    m_8_out <= m_8.io.out @[PE.scala 224:15]
-    inst m_9 of MuxPE_9 @[PE.scala 226:19]
+    inst m_9 of MuxPE_9 @[PE.scala 117:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    m_9.io.sel <= m_7_sel @[PE.scala 227:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 228:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 229:15]
-    m_9.io.in_2 is invalid @[PE.scala 230:15]
-    m_9.io.in_3 is invalid @[PE.scala 231:15]
-    m_9_out <= m_9.io.out @[PE.scala 232:15]
-    io.out_0 <= m_8_out @[PE.scala 237:12]
-    io.out_1 <= m_9_out @[PE.scala 238:12]
+    inst multModule_0 of MultPE @[PE.scala 119:28]
+    multModule_0.clock <= clock
+    multModule_0.reset <= reset
+    inst multModule_1 of MultPE_1 @[PE.scala 120:28]
+    multModule_1.clock <= clock
+    multModule_1.reset <= reset
+    inst addsubModule_0 of AddSubPE @[PE.scala 122:30]
+    addsubModule_0.clock <= clock
+    addsubModule_0.reset <= reset
+    inst addsubModule_1 of AddSubPE_1 @[PE.scala 123:30]
+    addsubModule_1.clock <= clock
+    addsubModule_1.reset <= reset
+    m_0.io.sel <= m_0_sel @[PE.scala 130:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 131:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 132:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 133:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 134:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 135:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 136:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 137:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 138:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 139:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 142:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 143:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 144:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 145:15]
+    m_0_out <= m_0.io.out @[PE.scala 146:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 148:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 149:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 150:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 151:15]
+    m_1_out <= m_1.io.out @[PE.scala 152:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 154:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 155:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 156:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 157:15]
+    m_2_out <= m_2.io.out @[PE.scala 158:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 160:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 161:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 162:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 163:15]
+    m_3_out <= m_3.io.out @[PE.scala 164:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 170:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 171:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 172:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 173:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 174:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 175:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 178:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 179:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 180:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 181:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 182:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 183:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 189:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 190:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 191:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_4_out <= m_4.io.out @[PE.scala 193:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 195:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 197:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_5_out <= m_5.io.out @[PE.scala 199:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 201:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 202:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 203:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_6_out <= m_6.io.out @[PE.scala 205:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 207:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 208:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 209:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 210:15]
+    m_7_out <= m_7.io.out @[PE.scala 211:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 217:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 218:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 219:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 220:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 221:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 222:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 223:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 226:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 227:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 228:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 229:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 230:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 231:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 232:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 237:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 238:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 240:15]
+    m_8_out <= m_8.io.out @[PE.scala 241:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 243:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 244:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 245:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 246:15]
+    m_9_out <= m_9.io.out @[PE.scala 247:15]
+    io.out_0 <= m_8_out @[PE.scala 252:12]
+    io.out_1 <= m_9_out @[PE.scala 253:12]
 

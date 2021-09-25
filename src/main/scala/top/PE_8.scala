@@ -165,8 +165,8 @@ class PE_8 extends Module {
   val op_type   = RegNext(io.op_type)
 
   // AddSub operation : false "+" & true "-"
-  val addsub_0_op   = RegInit(0.U(2.W))
-  val addsub_1_op   = RegNext(0.U(2.W))
+  val addsub_0_op   = RegInit("b00".U(2.W))
+  val addsub_1_op   = RegNext("b00".U(2.W))
 
   // Rounding type
   val rounding     = RegNext(io.rounding)
@@ -178,25 +178,25 @@ class PE_8 extends Module {
 //====================================
 // Registers for OUTPUTS
 //====================================
-  val addsub_0_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_0_out_1   = RegInit(0.U(Config.forOUT.W))
-  val addsub_1_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_1_out_1   = RegInit(0.U(Config.forOUT.W))
-  val addsub_2_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_2_out_1   = RegInit(0.U(Config.forOUT.W))
-  val addsub_3_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_3_out_1   = RegInit(0.U(Config.forOUT.W))
-  val addsub_4_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_4_out_1   = RegInit(0.U(Config.forOUT.W))
-  val addsub_5_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_5_out_1   = RegInit(0.U(Config.forOUT.W))
-  val addsub_6_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_6_out_1   = RegInit(0.U(Config.forOUT.W))
-  val addsub_7_out_0   = RegInit(0.U(Config.forOUT.W))
-  val addsub_7_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_0_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_0_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_1_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_1_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_2_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_2_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_3_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_3_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_4_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_4_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_5_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_5_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_6_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_6_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_7_out_0   = RegInit(0.U(Config.forOUT.W))
+  val pe_7_out_1   = RegInit(0.U(Config.forOUT.W))
 
-  val out_0   = RegNext(io.out_0)
-  val out_1   = RegNext(io.out_1)
+  val out_0   = RegInit(0.U(Config.forOUT.W))
+  val out_1   = RegInit(0.U(Config.forOUT.W))
 
 //=======================================
 // Shared regs for INPUTS
@@ -219,8 +219,8 @@ class PE_8 extends Module {
   val dbg_xxx = RegInit(0.U(4.W))
 
 
-  addsub_0_op := "b00".U(2.W)
-  addsub_1_op := "b00".U(2.W) 
+  // addsub_0_op := "b00".U(2.W)
+  // addsub_1_op := "b00".U(2.W) 
 
   // io.out_0 := addsub_0_out_0
   // io.out_1 := addsub_0_out_1
@@ -238,10 +238,11 @@ class PE_8 extends Module {
   // m_8_sel := "b01".U(2.W)
   // m_9_sel := "b01".U(2.W)
 
-  // rounding := "b111".U(3.W)
-  // tininess := "b1".U(1.W)
-  // use_int  := true.B
-  // op_type  := "b00".U(2.W)
+  rounding := "b111".U(3.W)
+  tininess := "b1".U(1.W)
+  use_int  := true.B
+  op_type  := "b00".U(2.W)
+
 
 //=======================================
 // Init PEs
@@ -270,8 +271,8 @@ class PE_8 extends Module {
   pe_0.io.rounding    := rounding
   pe_0.io.tininess    := tininess
   pe_0.io.use_int     := use_int
-  addsub_0_out_0 := pe_0.io.out_0
-  addsub_0_out_1 := pe_0.io.out_1
+  pe_0_out_0 := pe_0.io.out_0
+  pe_0_out_1 := pe_0.io.out_1
 
 
   // val pe_1 = Module(new PE())
@@ -298,8 +299,8 @@ class PE_8 extends Module {
   // pe_1.io.rounding    := rounding
   // pe_1.io.tininess    := tininess
   // pe_1.io.use_int     := use_int
-  // addsub_1_out_0 := pe_1.io.out_0
-  // addsub_1_out_1 := pe_1.io.out_1
+  //val addsub_1_out_0 = RegNext(pe_1.io.out_0)
+  //val addsub_1_out_1 = RegNext(pe_1.io.out_1)
 
 
   // val pe_2 = Module(new PE())
@@ -467,15 +468,17 @@ class PE_8 extends Module {
   // addsub_7_out_0 := pe_7.io.out_0
   // addsub_7_out_1 := pe_7.io.out_1
 
+ 
+
 //=======================================
 // COUNTERS
 //=======================================
-  val L2_ADD_cycles = 10
+  val L2_ADD_cycles = 9
   val L2_ADD_counter = Counter(L2_ADD_cycles)
-  val L2_MULT_cycles = 10
+  val L2_MULT_cycles = 9
   val L2_MULT_counter = Counter(L2_MULT_cycles)
-  val STARTUP_cycles = 5
-  val STARTUP_counter = Counter(STARTUP_cycles)   
+  val STARTUP_cycles = 1
+  val STARTUP_counter = Counter(STARTUP_cycles)  
 
 //=======================================
 // FSM
@@ -483,143 +486,145 @@ class PE_8 extends Module {
   val startup :: idle :: init_L2 :: mult_L2_s2 :: op_1 :: op_2 :: op_3 :: sum_init :: sum_start :: sum_stop :: Nil = Enum (10)
   val pe_step = RegInit ( startup )
 
-  io.out_0 := 0.U
-  io.out_1 := 0.U
+  io.out_0 := out_0
+  io.out_1 := out_1
 
-  // switch ( pe_step ) 
-  // {
-  //   is ( startup ) {
-  //       dbg_fsm := 7.U(4.W)
-  //       // STARTUP_counter.inc()
-  //       // when (STARTUP_counter.value === (STARTUP_cycles - 1).U) {
-  //       //   //pe_step := idle
-  //       //   STARTUP_counter.reset
-  //       // }
 
-  //       rounding := "b111".U(3.W)
-  //       tininess := "b1".U(1.W)
-  //       use_int  := true.B
-  //       op_type  := "b00".U(2.W)
+  switch ( pe_step ) 
+  {
+    is ( startup ) {
+        dbg_fsm := 7.U(4.W)
+        
+        // when (STARTUP_counter.value === (STARTUP_cycles - 1).U) {
+          
+          // rounding := "b000".U(3.W)
+          // tininess := "b0".U(1.W)
+          // use_int  := true.B
+          //op_type  := "b00".U(2.W)
 
-  //       addsub_0_op := "b00".U(2.W)
-  //       addsub_1_op := "b00".U(2.W) 
+          addsub_0_op := "b00".U(2.W)
+          addsub_1_op := "b00".U(2.W) 
 
-  //       m_0_sel := "b01".U(2.W)
-  //       m_1_sel := "b01".U(2.W)
-  //       m_2_sel := "b01".U(2.W)
-  //       m_3_sel := "b01".U(2.W)
-  //       m_4_sel := "b00".U(2.W)
-  //       m_5_sel := "b01".U(2.W)
-  //       m_6_sel := "b01".U(2.W)
-  //       m_7_sel := "b01".U(2.W)
+          m_0_sel := "b00".U(2.W)
+          m_1_sel := "b00".U(2.W)
+          m_2_sel := "b00".U(2.W)
+          m_3_sel := "b00".U(2.W)
+          m_4_sel := "b00".U(2.W)
+          m_5_sel := "b00".U(2.W)
+          m_6_sel := "b00".U(2.W)
+          m_7_sel := "b00".U(2.W)
+          m_8_sel := "b00".U(2.W)
+          m_9_sel := "b00".U(2.W)
 
-  //       // output for multiplication result
-  //       m_8_sel := "b01".U(2.W)
-  //       m_9_sel := "b01".U(2.W)
-  //       pe_step := idle
-  //   }
-  // }
+//          STARTUP_counter.reset
+          pe_step := idle
+        // }
 
-  // switch ( pe_step ) 
-  // {
-  //   is ( startup ) {
-  //       dbg_fsm := 7.U(4.W)
-  //       STARTUP_counter.inc()
-  //       when (STARTUP_counter.value === (STARTUP_cycles - 1).U) {
-  //         pe_step := idle
-  //         STARTUP_counter.reset
-  //       }
-  //   }
-  //   is ( idle ) {
+        //STARTUP_counter.inc()
+    }
+    is ( idle ) {
 
-  //       dbg_fsm := 1.U(4.W) 
+        dbg_fsm := 1.U(4.W) 
 
-  //       switch ( op_type ) 
-  //       {
-  //         is ( "b00".U(2.W) )  // Euclidean distance - L2
-  //         {
-  //           dbg_xxx := 1.U(4.W)
+        switch ( op_type ) 
+        {
+          is ( "b00".U(2.W) )  // Euclidean distance - L2
+          {
+            dbg_xxx := 1.U(4.W)
 
-  //           rounding := "b111".U(3.W)
-  //           tininess := "b1".U(1.W)
-  //           use_int  := true.B
-  //           op_type  := "b00".U(2.W)
+            // rounding := "b111".U(3.W)
+            // tininess := "b1".U(1.W)
+            // use_int  := true.B
 
-  //           addsub_0_op := 0.U(32.W)
-  //           addsub_1_op := 0.U(32.W) 
+            addsub_0_op := 0.U(2.W)
+            addsub_1_op := 0.U(2.W) 
 
-  //           m_0_sel := "b01".U(2.W)
-  //           m_1_sel := "b01".U(2.W)
-  //           m_2_sel := "b01".U(2.W)
-  //           m_3_sel := "b01".U(2.W)
-  //           m_4_sel := "b00".U(2.W)
-  //           m_5_sel := "b01".U(2.W)
-  //           m_6_sel := "b01".U(2.W)
-  //           m_7_sel := "b01".U(2.W)
+            m_0_sel := "b01".U(2.W)
+            m_1_sel := "b01".U(2.W)
+            m_2_sel := "b01".U(2.W)
+            m_3_sel := "b01".U(2.W)
+            m_4_sel := "b00".U(2.W)
+            m_5_sel := "b00".U(2.W)
+            m_6_sel := "b00".U(2.W)
+            m_7_sel := "b00".U(2.W)
 
-  //           // output for multiplication result
-  //           m_8_sel := "b01".U(2.W)
-  //           m_9_sel := "b01".U(2.W)
+            // output for multiplication result
+            m_8_sel := "b01".U(2.W)
+            m_9_sel := "b01".U(2.W)
 
-  //           // L2_MULT_counter.inc()
-  //           // when (L2_ADD_counter.value === (L2_MULT_cycles - 1).U) {
-  //           //   pe_step := init_L2
-  //           //   L2_MULT_counter.reset
-  //           // }
-  //           // io.out_0 := addsub_0_out_0
-  //           // io.out_1 := addsub_0_out_1
+            // L2_MULT_counter.inc()
+            // when (L2_ADD_counter.value === (L2_MULT_cycles - 1).U) {
+            //   pe_step := init_L2
+            //   L2_MULT_counter.reset
+            // }
+            // io.out_0 := addsub_0_out_0
+            // io.out_1 := addsub_0_out_1
             
-  //           pe_step := init_L2
-  //         }
-  //         is ( "b01".U(2.W) ) // Manhattan distance  - L1
-  //         {
-  //           dbg_xxx := 2.U(4.W)
-  //           pe_step := init_L2
-  //         }
-  //         is ( "b10".U(2.W) ) // dot product 
-  //         {
-  //           dbg_xxx := 3.U(4.W)
-  //           pe_step := init_L2
-  //         }
-  //         is ( "b11".U(2.W) ) // weighted vector pooling 
-  //         {
-  //           dbg_xxx := 4.U(4.W)
-  //           pe_step := init_L2
-  //         }
-  //       }
-  //   }
-  //   is ( init_L2 ) {
-  //     dbg_fsm := 3.U(4.W)
+            pe_step := init_L2
+          }
+          is ( "b01".U(2.W) ) // Manhattan distance  - L1
+          {
+            dbg_xxx := 2.U(4.W)
+            pe_step := init_L2
+          }
+          is ( "b10".U(2.W) ) // dot product 
+          {
+            dbg_xxx := 3.U(4.W)
+            pe_step := init_L2
+          }
+          is ( "b11".U(2.W) ) // weighted vector pooling 
+          {
+            dbg_xxx := 4.U(4.W)
+            pe_step := init_L2
+          }
+        }
+    }
+    is ( init_L2 ) {
+      dbg_fsm := 3.U(4.W)
 
-  //     L2_ADD_counter.inc()
-  //     when (L2_ADD_counter.value === (L2_ADD_cycles - 1).U) {
-  //       pe_step := mult_L2_s2
-  //       L2_ADD_counter.reset
-  //     }
-  //     // when( op_type =/= "b00".U(2.W)){
-  //     //   pe_step := idle
-  //     // }
+      L2_ADD_counter.inc()
+      when (L2_ADD_counter.value === (L2_ADD_cycles - 1).U) {
+        pe_step := mult_L2_s2
+        L2_ADD_counter.reset
+      }
+      // when( op_type =/= "b00".U(2.W)){
+      //   pe_step := idle
+      // }
 
-  //   }
-  //   is ( mult_L2_s2 ) {
-  //     dbg_fsm := 4.U(4.W)  
+    }
+    is ( mult_L2_s2 ) {
+      dbg_fsm := 4.U(4.W)  
 
-  //     L2_MULT_counter.inc()
-  //     when (L2_MULT_counter.value === (L2_MULT_cycles - 1).U) {
-  //       pe_step := idle
-  //       L2_MULT_counter.reset()
-  //     }
+      L2_MULT_counter.inc()
+      when (L2_MULT_counter.value === (L2_MULT_cycles - 1).U) {
+        L2_MULT_counter.reset()
+        pe_step := idle
+      }
 
-  //   }
-  //   is ( sum_stop ) {
-  //     dbg_fsm := 5.U(4.W)
-  //     // when (L2_MULT_counter.value === (L2_MULT_cycles - 1).U) {
-  //     //   pe_step := sum_start
-  //     //   L2_MULT_counter.reset()
-  //     // }
-  //     //pe_step := sum_start
-  //   }
-  // }
+      io.out_0 := pe_0_out_0
+      io.out_1 := pe_0_out_1
+    }
+  }
+
+
+
+
+  // pe_step := idle
+  // dbg_fsm := 9.U(4.W)
+
+
+// //=======================================
+// // Layer 4  :  2 X ADD/SUB
+// //=======================================
+//   val addsubModule_0 = Module(new AddSubPE())
+//   addsubModule_0.io.op         := addsub_0_op
+//   addsubModule_0.io.rounding   := rounding	
+//   addsubModule_0.io.tininess   := tininess
+//   addsubModule_0.io.use_int    := use_int
+//   addsubModule_0.io.in_0       := Xi_0_in_0
+//   addsubModule_0.io.in_1       := Yi_0_in_0
+//   io.out_0  := addsubModule_0.io.out
+
 }
 
 object PE_8 extends App {

@@ -20,8 +20,6 @@ class PE_8_test_INT_L2(dut: PE) extends PeekPokeTester(dut) {
     println(" ----->  [Run test] : ") 
 
     poke(dut.io.use_int, true.B)
-    poke(dut.io.use_int, false.B)
-    poke(dut.io.use_int, true.B)
     poke(dut.io.rounding, "b111".U)
     poke(dut.io.tininess, "b1".U(1.W))
     
@@ -64,9 +62,15 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
     println(" ----->  [Run test] : ") 
 
     //step(10)
+    poke(dut.io.use_int, true.B)
+
     reset()
+    //step(10)
 
-
+    poke(dut.io.use_int, false.B)
+    poke(dut.io.rounding, "b000".U(3.W))
+    poke(dut.io.tininess, "b0".U(1.W))
+    poke(dut.io.op_type, "b11".U(2.W))
     poke(dut.io.use_int, true.B)
     poke(dut.io.rounding, "b111".U(3.W))
     poke(dut.io.tininess, "b1".U(1.W))
@@ -113,31 +117,7 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
     poke(dut.io.Xi_7_in_1, inputTest.U(32.W))
     poke(dut.io.Yi_7_in_1, inputTest.U(32.W))  
     
-    // poke(dut.io.m_0_sel, 0.U(2.W))
-    // poke(dut.io.m_1_sel, 0.U(2.W))
-    // poke(dut.io.m_2_sel, 0.U(2.W))
-    // poke(dut.io.m_3_sel, 0.U(2.W))
-    // poke(dut.io.m_4_sel, 0.U(2.W))
-    // poke(dut.io.m_5_sel, 0.U(2.W))
-    // poke(dut.io.m_6_sel, 0.U(2.W))
-    // poke(dut.io.m_7_sel, 0.U(2.W))
-    // poke(dut.io.m_8_sel, 0.U(2.W))
-    // poke(dut.io.m_9_sel, 0.U(2.W))
-
-    // poke(dut.io.addsub_0_op, false.B)
-    // poke(dut.io.addsub_1_op, false.B)
-
-    // step(20)
-    // poke(dut.io.op_type, 0.U(2.W))
-    // step(20)
-    // poke(dut.io.op_type, 1.U(2.W))
-    // step(20)
-    // poke(dut.io.op_type, 0.U(2.W))
-    // step(20)
-    // poke(dut.io.op_type, 1.U(2.W))
-    // step(20)
-    // poke(dut.io.op_type, 0.U(2.W))
-    step(50)
+    step(30)
     //reset()
 
     inputTest = "b"+"00000000000000000000000000001101" // 13
@@ -182,7 +162,51 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
     poke(dut.io.Xi_7_in_1, inputTest.U(32.W))
     poke(dut.io.Yi_7_in_1, inputTest.U(32.W)) 
 
-    step(50) 
+    step(20) 
+
+    inputTest = "b"+"00000000000000000111111111111111" // 32767
+
+    poke(dut.io.Xi_0_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_0_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_0_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_0_in_1, inputTest.U(32.W))
+
+    poke(dut.io.Xi_1_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_1_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_1_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_1_in_1, inputTest.U(32.W))
+
+    poke(dut.io.Xi_2_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_2_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_2_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_2_in_1, inputTest.U(32.W))
+
+    poke(dut.io.Xi_3_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_3_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_3_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_3_in_1, inputTest.U(32.W))
+
+    poke(dut.io.Xi_4_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_4_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_4_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_4_in_1, inputTest.U(32.W))
+
+    poke(dut.io.Xi_5_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_5_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_5_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_5_in_1, inputTest.U(32.W))
+
+    poke(dut.io.Xi_6_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_6_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_6_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_6_in_1, inputTest.U(32.W))
+
+    poke(dut.io.Xi_7_in_0, inputTest.U(32.W))
+    poke(dut.io.Yi_7_in_0, inputTest.U(32.W))
+    poke(dut.io.Xi_7_in_1, inputTest.U(32.W))
+    poke(dut.io.Yi_7_in_1, inputTest.U(32.W)) 
+
+    step(20) 
 
 }
 

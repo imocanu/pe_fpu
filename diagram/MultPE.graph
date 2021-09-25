@@ -1,0 +1,215 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node MultPE {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "MultPE"
+    
+    port clock {
+        ^port.side: WEST
+        label "clock"
+    }
+    port reset {
+        ^port.side: WEST
+        label "reset"
+    }
+    port io_in_0 {
+        ^port.side: WEST
+        label "io_in_0"
+    }
+    port io_in_1 {
+        ^port.side: WEST
+        label "io_in_1"
+    }
+    port io_out {
+        ^port.side: EAST
+        label "io_out"
+    }
+    node module_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "module_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node sign_in_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "sign_in_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node sign_in_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "sign_in_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mul_123 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mul"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node asUInt_124 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "asUInt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_125 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_76 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit126 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node bits_127 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "32"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node asSInt_128 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "asSInt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node asSInt_129 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "asSInt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    edge e430 : bits_127.out -> MultPE.module_out.in
+    edge e431 : MultPE.sign_in_1.out -> mul_123.in2
+    edge e432 : mux_76.out -> bits_127.in1
+    edge e433 : asSInt_129.out -> MultPE.sign_in_1.in
+    edge e434 : bits_125.out -> MultPE.io_out
+    edge e435 : MultPE.sign_in_0.out -> mul_123.in1
+    edge e436 : asUInt_124.out -> mux_76.in2
+    edge e437 : asSInt_128.out -> MultPE.sign_in_0.in
+    edge e438 : MultPE.io_in_0 -> asSInt_128.in1
+    edge e439 : MultPE.module_out.out -> bits_125.in1
+    edge e440 : MultPE.reset -> mux_76.select
+    edge e441 : mul_123.out -> asUInt_124.in1
+    edge e442 : MultPE.io_in_1 -> asSInt_129.in1
+    edge e443 : MultPE.lit126 -> mux_76.in1
+    
+}
+

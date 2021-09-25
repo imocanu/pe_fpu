@@ -19,75 +19,45 @@ class PE_test_INT_L2(dut: PE) extends PeekPokeTester(dut) {
     println(" ----->  TEST with [ PE -> L2 -> INT ]")
     println(" ----->  [Run test] : ") 
 
-    reset()
+    //reset()
 
-    poke(dut.io.use_int, true.B)
-    poke(dut.io.use_int, false.B)
-    poke(dut.io.use_int, true.B)
-    poke(dut.io.rounding, "b111".U)
-    poke(dut.io.tininess, "b1".U(1.W))
-    
     poke(dut.io.Xi_0, test_int.U(32.W))
     poke(dut.io.Yi_0, test_int.U(32.W))
-
     poke(dut.io.Xi_1, test_int.U(32.W))
     poke(dut.io.Yi_1, test_int.U(32.W))
-
     poke(dut.io.aggr_0, test_int.U(32.W))
     poke(dut.io.aggr_1, test_int.U(32.W))
     poke(dut.io.aggr_2, test_int.U(32.W))
     poke(dut.io.aggr_3, test_int.U(32.W))
 
-    poke(dut.io.m_0_sel, 0.U(2.W))
-    poke(dut.io.m_1_sel, 0.U(2.W))
-    poke(dut.io.m_2_sel, 0.U(2.W))
-    poke(dut.io.m_3_sel, 0.U(2.W))
-    poke(dut.io.m_4_sel, 0.U(2.W))
-    poke(dut.io.m_5_sel, 0.U(2.W))
-    poke(dut.io.m_6_sel, 0.U(2.W))
-    poke(dut.io.m_7_sel, 0.U(2.W))
-    poke(dut.io.m_8_sel, 0.U(2.W))
-    poke(dut.io.m_9_sel, 0.U(2.W))
-
+    poke(dut.io.use_int, true.B)
+    poke(dut.io.rounding, "b000".U(3.W))
+    poke(dut.io.tininess, "b0".U(1.W))
     poke(dut.io.addsub_0_op, false.B)
     poke(dut.io.addsub_1_op, false.B)
 
-    step(10)
+    poke(dut.io.m_0_sel, "b01".U(2.W))
+    poke(dut.io.m_1_sel, "b01".U(2.W))
+    poke(dut.io.m_2_sel, "b01".U(2.W))
+    poke(dut.io.m_3_sel, "b01".U(2.W))
+    poke(dut.io.m_4_sel, "b00".U(2.W))
+    poke(dut.io.m_5_sel, "b00".U(2.W))
+    poke(dut.io.m_6_sel, "b00".U(2.W))
+    poke(dut.io.m_7_sel, "b00".U(2.W))
+    poke(dut.io.m_8_sel, "b01".U(2.W))
+    poke(dut.io.m_9_sel, "b01".U(2.W))
 
-    test_int = "b"+"00000000000000000000000000001101" // 13
+    step(50)
 
-    poke(dut.io.use_int, true.B)
-    poke(dut.io.use_int, false.B)
-    poke(dut.io.use_int, true.B)
-    poke(dut.io.rounding, "b111".U)
-    poke(dut.io.tininess, "b1".U(1.W))
-    
+    test_int   = "b"+"00000000000000000000000000000001"  // 1
+
     poke(dut.io.Xi_0, test_int.U(32.W))
     poke(dut.io.Yi_0, test_int.U(32.W))
-
     poke(dut.io.Xi_1, test_int.U(32.W))
     poke(dut.io.Yi_1, test_int.U(32.W))
 
-    poke(dut.io.aggr_0, test_int.U(32.W))
-    poke(dut.io.aggr_1, test_int.U(32.W))
-    poke(dut.io.aggr_2, test_int.U(32.W))
-    poke(dut.io.aggr_3, test_int.U(32.W))
+    step(50)
 
-    poke(dut.io.m_0_sel, 0.U(2.W))
-    poke(dut.io.m_1_sel, 0.U(2.W))
-    poke(dut.io.m_2_sel, 0.U(2.W))
-    poke(dut.io.m_3_sel, 0.U(2.W))
-    poke(dut.io.m_4_sel, 0.U(2.W))
-    poke(dut.io.m_5_sel, 0.U(2.W))
-    poke(dut.io.m_6_sel, 0.U(2.W))
-    poke(dut.io.m_7_sel, 0.U(2.W))
-    poke(dut.io.m_8_sel, 0.U(2.W))
-    poke(dut.io.m_9_sel, 0.U(2.W))
-
-    poke(dut.io.addsub_0_op, false.B)
-    poke(dut.io.addsub_1_op, false.B)
-
-    step(10)
 }
 
 

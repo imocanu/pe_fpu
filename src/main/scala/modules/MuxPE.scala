@@ -9,11 +9,11 @@ import layered.stage._
 
 class MuxPE extends Module {
   val io = IO(new Bundle {
-    val in_0       = Input(Bits(Config.forIN.W))
-    val in_1       = Input(Bits(Config.forIN.W))
-    val in_2       = Input(Bits(Config.forIN.W))
-    val in_3       = Input(Bits(Config.forIN.W))
-    val sel        = Input(Bits(2.W))
+    val in_0       = Input(UInt(Config.forIN.W))
+    val in_1       = Input(UInt(Config.forIN.W))
+    val in_2       = Input(UInt(Config.forIN.W))
+    val in_3       = Input(UInt(Config.forIN.W))
+    val sel        = Input(UInt(2.W))
     val out        = Output(Bits(Config.forIN.W))
   })
 
@@ -22,23 +22,26 @@ class MuxPE extends Module {
   var in_1 = RegNext(io.in_1)
   var in_2 = RegNext(io.in_2)
   var in_3 = RegNext(io.in_3)
+  var out  = RegInit(0.U(Config.forIN.W))
 
-  when ( sel === "b00".U(2.W) ) 
+  when ( io.sel === "b00".U(2.W) ) 
   {
-    io.out := in_0
+    out := in_0
   } 
-  . elsewhen ( sel === "b01".U(2.W) ) 
+  . elsewhen ( io.sel === "b01".U(2.W) ) 
   {
-    io.out := in_1
+    out := in_1
   } 
-  . elsewhen ( sel === "b10".U(2.W) ) 
+  . elsewhen ( io.sel === "b10".U(2.W) ) 
   {
-    io.out := in_2
+    out := in_2
   } 
   . otherwise 
   {
-    io.out := in_3
+    out := in_3
   }
+  
+  io.out := out
 }
 
 object MuxPE extends App {

@@ -1,0 +1,239 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node AddSubPE {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "AddSubPE"
+    
+    port clock {
+        ^port.side: WEST
+        label "clock"
+    }
+    port reset {
+        ^port.side: WEST
+        label "reset"
+    }
+    port io_in_0 {
+        ^port.side: WEST
+        label "io_in_0"
+    }
+    port io_in_1 {
+        ^port.side: WEST
+        label "io_in_1"
+    }
+    port io_out {
+        ^port.side: EAST
+        label "io_out"
+    }
+    node module_out {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "module_out"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node sign_in_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "sign_in_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node sign_in_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "sign_in_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node add_110 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "add"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node tail_111 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "tail"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node asSInt_112 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "asSInt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node asUInt_113 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "asUInt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node pad_114 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "pad"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "33"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_115 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_72 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit116 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "0"
+    }
+    node asSInt_117 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "asSInt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node asSInt_118 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "asSInt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    edge e399 : asUInt_113.out -> pad_114.in1
+    edge e400 : asSInt_117.out -> AddSubPE.sign_in_0.in
+    edge e401 : AddSubPE.io_in_0 -> asSInt_117.in1
+    edge e402 : asSInt_112.out -> asUInt_113.in1
+    edge e403 : AddSubPE.io_in_1 -> asSInt_118.in1
+    edge e404 : AddSubPE.module_out.out -> bits_115.in1
+    edge e405 : pad_114.out -> mux_72.in2
+    edge e406 : AddSubPE.sign_in_1.out -> add_110.in2
+    edge e407 : asSInt_118.out -> AddSubPE.sign_in_1.in
+    edge e408 : AddSubPE.reset -> mux_72.select
+    edge e409 : mux_72.out -> AddSubPE.module_out.in
+    edge e410 : AddSubPE.lit116 -> mux_72.in1
+    edge e411 : AddSubPE.sign_in_0.out -> add_110.in1
+    edge e412 : tail_111.out -> asSInt_112.in1
+    edge e413 : add_110.out -> tail_111.in1
+    edge e414 : bits_115.out -> AddSubPE.io_out
+    
+}
+

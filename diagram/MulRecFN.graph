@@ -1,0 +1,832 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node MulRecFN {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "MulRecFN"
+    
+    port io_a {
+        ^port.side: WEST
+        label "io_a"
+    }
+    port io_b {
+        ^port.side: WEST
+        label "io_b"
+    }
+    port io_roundingMode {
+        ^port.side: WEST
+        label "io_roundingMode"
+    }
+    port io_out {
+        ^port.side: EAST
+        label "io_out"
+    }
+    node submodule_mulRawFN0_MulRawFN {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "mulRawFN_"
+            
+        port io_a_isNaN {
+            ^port.side: WEST
+            label "io_a_isNaN"
+        }    
+        port io_a_isInf {
+            ^port.side: WEST
+            label "io_a_isInf"
+        }    
+        port io_a_isZero {
+            ^port.side: WEST
+            label "io_a_isZero"
+        }    
+        port io_a_sign {
+            ^port.side: WEST
+            label "io_a_sign"
+        }    
+        port io_a_sExp {
+            ^port.side: WEST
+            label "io_a_sExp"
+        }    
+        port io_a_sig {
+            ^port.side: WEST
+            label "io_a_sig"
+        }    
+        port io_b_isNaN {
+            ^port.side: WEST
+            label "io_b_isNaN"
+        }    
+        port io_b_isInf {
+            ^port.side: WEST
+            label "io_b_isInf"
+        }    
+        port io_b_isZero {
+            ^port.side: WEST
+            label "io_b_isZero"
+        }    
+        port io_b_sign {
+            ^port.side: WEST
+            label "io_b_sign"
+        }    
+        port io_b_sExp {
+            ^port.side: WEST
+            label "io_b_sExp"
+        }    
+        port io_b_sig {
+            ^port.side: WEST
+            label "io_b_sig"
+        }    
+        port io_invalidExc {
+            ^port.side: EAST
+            label "io_invalidExc"
+        }    
+        port io_rawOut_isNaN {
+            ^port.side: EAST
+            label "io_rawOut_isNaN"
+        }    
+        port io_rawOut_isInf {
+            ^port.side: EAST
+            label "io_rawOut_isInf"
+        }    
+        port io_rawOut_isZero {
+            ^port.side: EAST
+            label "io_rawOut_isZero"
+        }    
+        port io_rawOut_sign {
+            ^port.side: EAST
+            label "io_rawOut_sign"
+        }    
+        port io_rawOut_sExp {
+            ^port.side: EAST
+            label "io_rawOut_sExp"
+        }    
+        port io_rawOut_sig {
+            ^port.side: EAST
+            label "io_rawOut_sig"
+        }
+    
+    
+    }
+
+    node submodule_roundRawFNToRecFN_RoundRawFNToRecFN {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "roundRawFNToRecFN"
+            
+        port io_invalidExc {
+            ^port.side: WEST
+            label "io_invalidExc"
+        }    
+        port io_in_isNaN {
+            ^port.side: WEST
+            label "io_in_isNaN"
+        }    
+        port io_in_isInf {
+            ^port.side: WEST
+            label "io_in_isInf"
+        }    
+        port io_in_isZero {
+            ^port.side: WEST
+            label "io_in_isZero"
+        }    
+        port io_in_sign {
+            ^port.side: WEST
+            label "io_in_sign"
+        }    
+        port io_in_sExp {
+            ^port.side: WEST
+            label "io_in_sExp"
+        }    
+        port io_in_sig {
+            ^port.side: WEST
+            label "io_in_sig"
+        }    
+        port io_roundingMode {
+            ^port.side: WEST
+            label "io_roundingMode"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node bits_506 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "23"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_507 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "8"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "6"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node eq_508 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "eq"
+        port in2 {
+            ^port.side: "WEST"
+            label "0"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_509 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "8"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "7"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node eq_510 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "eq"
+        port in2 {
+            ^port.side: "WEST"
+            label "3"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_511 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "6"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "6"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node not_512 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "not"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node not_513 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "not"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_514 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "22"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cat_515 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "cat"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_516 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "31"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "23"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_517 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "8"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "6"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node eq_518 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "eq"
+        port in2 {
+            ^port.side: "WEST"
+            label "0"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_519 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "8"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "7"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node eq_520 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "eq"
+        port in2 {
+            ^port.side: "WEST"
+            label "3"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_521 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "6"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "6"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node not_522 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "not"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node not_523 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "not"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_524 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "22"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cat_525 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "cat"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "0"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node and_526 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "and"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node and_527 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "and"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node eq_528 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "eq"
+        port in2 {
+            ^port.side: "WEST"
+            label "0"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_529 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "32"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "32"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cvt_530 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "cvt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cat_531 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "cat"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node and_532 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "and"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node and_533 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "and"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node eq_534 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "eq"
+        port in2 {
+            ^port.side: "WEST"
+            label "0"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node bits_535 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "bits"
+        port in1 {
+            ^port.side: "WEST"
+            ^port.index:3
+        }
+        port in2 {
+            ^port.side: "WEST"
+            ^port.index:2
+            label "32"
+        }
+        port in3 {
+            ^port.side: "WEST"
+            ^port.index:1
+            label "32"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cvt_536 {
+        layout [ size: 20, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "cvt"
+        port in1 {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node cat_537 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "cat"
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    edge e1017 : bits_506.out -> bits_509.in1
+    edge e1018 : MulRecFN.io_b -> bits_524.in1
+    edge e1019 : bits_514.out -> cat_531.in2
+    edge e1020 : bits_511.out -> not_512.in1
+    edge e1021 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sExp -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sExp
+    edge e1022 : eq_534.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isZero
+    edge e1023 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isNaN -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isNaN
+    edge e1024 : bits_529.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sign
+    edge e1025 : bits_506.out -> bits_511.in1
+    edge e1026 : eq_510.out -> and_527.in1
+    edge e1027 : cat_531.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sig
+    edge e1028 : bits_516.out -> bits_519.in1
+    edge e1029 : and_532.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isNaN
+    edge e1030 : bits_507.out -> eq_508.in1
+    edge e1031 : bits_521.out -> not_522.in1
+    edge e1032 : and_533.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_isInf
+    edge e1033 : MulRecFN.io_a -> bits_506.in1
+    edge e1034 : bits_535.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sign
+    edge e1035 : bits_516.out -> bits_521.in1
+    edge e1036 : eq_520.out -> and_533.in1
+    edge e1037 : bits_509.out -> eq_510.in1
+    edge e1038 : eq_528.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isZero
+    edge e1039 : eq_508.out -> not_513.in1
+    edge e1040 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_invalidExc -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_invalidExc
+    edge e1041 : MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_out -> MulRecFN.io_out
+    edge e1042 : MulRecFN.io_a -> bits_529.in1
+    edge e1043 : bits_517.out -> eq_518.in1
+    edge e1044 : and_527.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isInf
+    edge e1045 : bits_516.out -> cvt_536.in1
+    edge e1046 : cat_515.out -> cat_531.in1
+    edge e1047 : bits_519.out -> eq_520.in1
+    edge e1048 : cvt_530.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_sExp
+    edge e1049 : bits_511.out -> and_526.in2
+    edge e1050 : MulRecFN.io_b -> bits_516.in1
+    edge e1051 : bits_524.out -> cat_537.in2
+    edge e1052 : eq_518.out -> not_523.in1
+    edge e1053 : cat_537.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sig
+    edge e1054 : MulRecFN.io_b -> bits_535.in1
+    edge e1055 : and_526.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_a_isNaN
+    edge e1056 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isZero -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isZero
+    edge e1057 : bits_506.out -> bits_507.in1
+    edge e1058 : bits_507.out -> eq_528.in1
+    edge e1059 : bits_521.out -> and_532.in2
+    edge e1060 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sign -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sign
+    edge e1061 : cvt_536.out -> MulRecFN.submodule_mulRawFN0_MulRawFN.io_b_sExp
+    edge e1062 : not_513.out -> cat_515.in2
+    edge e1063 : bits_517.out -> eq_534.in1
+    edge e1064 : bits_516.out -> bits_517.in1
+    edge e1065 : not_512.out -> and_527.in2
+    edge e1066 : MulRecFN.io_roundingMode -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_roundingMode
+    edge e1067 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_sig -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sig
+    edge e1068 : MulRecFN.io_a -> bits_514.in1
+    edge e1069 : eq_510.out -> and_526.in1
+    edge e1070 : not_523.out -> cat_525.in2
+    edge e1071 : not_522.out -> and_533.in2
+    edge e1072 : MulRecFN.submodule_mulRawFN0_MulRawFN.io_rawOut_isInf -> MulRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isInf
+    edge e1073 : cat_525.out -> cat_537.in1
+    edge e1074 : bits_506.out -> cvt_530.in1
+    edge e1075 : eq_520.out -> and_532.in1
+    
+}
+
