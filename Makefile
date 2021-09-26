@@ -65,6 +65,9 @@ testPE:
 testPE8:
 	sbt "testOnly top.PE_8_test"
 
+testPE8ADDERS:
+	sbt "testOnly top.PE_8_ADDERS_test"
+
 testFP32ADDSUB:
 	sbt "testOnly validate.FP32_addsub_test"
 

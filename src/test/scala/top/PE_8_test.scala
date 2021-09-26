@@ -58,24 +58,14 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
 
     var inputTest = test_int
 
-    println(" ----->  TEST with [ PE -> INT ]")
+    println(" ----->  TEST for [ PE_8 -> INT ]")
     println(" ----->  [Run test] : ") 
 
-    //step(10)
-    poke(dut.io.use_int, true.B)
 
-    reset()
-    //step(10)
-
-    poke(dut.io.use_int, false.B)
-    poke(dut.io.rounding, "b000".U(3.W))
-    poke(dut.io.tininess, "b0".U(1.W))
-    poke(dut.io.op_type, "b11".U(2.W))
     poke(dut.io.use_int, true.B)
     poke(dut.io.rounding, "b111".U(3.W))
     poke(dut.io.tininess, "b1".U(1.W))
-    poke(dut.io.op_type, "b00".U(2.W))
-    //step(20)
+    poke(dut.io.op_type, "b01".U(2.W))
     
     poke(dut.io.Xi_0_in_0, inputTest.U(32.W))
     poke(dut.io.Yi_0_in_0, inputTest.U(32.W))
@@ -117,9 +107,7 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
     poke(dut.io.Xi_7_in_1, inputTest.U(32.W))
     poke(dut.io.Yi_7_in_1, inputTest.U(32.W))  
     
-    step(30)
-    //reset()
-
+    step(100)
     inputTest = "b"+"00000000000000000000000000001101" // 13
 
     poke(dut.io.Xi_0_in_0, inputTest.U(32.W))
@@ -162,51 +150,53 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
     poke(dut.io.Xi_7_in_1, inputTest.U(32.W))
     poke(dut.io.Yi_7_in_1, inputTest.U(32.W)) 
 
-    step(20) 
+    step(300) 
 
-    inputTest = "b"+"00000000000000000111111111111111" // 32767
+    // inputTest = "b"+"00000000000000000111111111111111" // 32767
 
-    poke(dut.io.Xi_0_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_0_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_0_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_0_in_1, inputTest.U(32.W))
+    // poke(dut.io.Xi_0_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_0_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_0_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_0_in_1, inputTest.U(32.W))
 
-    poke(dut.io.Xi_1_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_1_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_1_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_1_in_1, inputTest.U(32.W))
+    // poke(dut.io.Xi_1_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_1_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_1_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_1_in_1, inputTest.U(32.W))
 
-    poke(dut.io.Xi_2_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_2_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_2_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_2_in_1, inputTest.U(32.W))
+    // poke(dut.io.Xi_2_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_2_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_2_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_2_in_1, inputTest.U(32.W))
 
-    poke(dut.io.Xi_3_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_3_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_3_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_3_in_1, inputTest.U(32.W))
+    // poke(dut.io.Xi_3_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_3_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_3_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_3_in_1, inputTest.U(32.W))
 
-    poke(dut.io.Xi_4_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_4_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_4_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_4_in_1, inputTest.U(32.W))
+    // poke(dut.io.Xi_4_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_4_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_4_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_4_in_1, inputTest.U(32.W))
 
-    poke(dut.io.Xi_5_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_5_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_5_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_5_in_1, inputTest.U(32.W))
+    // poke(dut.io.Xi_5_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_5_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_5_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_5_in_1, inputTest.U(32.W))
 
-    poke(dut.io.Xi_6_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_6_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_6_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_6_in_1, inputTest.U(32.W))
+    // poke(dut.io.Xi_6_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_6_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_6_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_6_in_1, inputTest.U(32.W))
 
-    poke(dut.io.Xi_7_in_0, inputTest.U(32.W))
-    poke(dut.io.Yi_7_in_0, inputTest.U(32.W))
-    poke(dut.io.Xi_7_in_1, inputTest.U(32.W))
-    poke(dut.io.Yi_7_in_1, inputTest.U(32.W)) 
+    // poke(dut.io.Xi_7_in_0, inputTest.U(32.W))
+    // poke(dut.io.Yi_7_in_0, inputTest.U(32.W))
+    // poke(dut.io.Xi_7_in_1, inputTest.U(32.W))
+    // poke(dut.io.Yi_7_in_1, inputTest.U(32.W)) 
 
-    step(20) 
+    // step(20) //reset()
+
+    
 
 }
 

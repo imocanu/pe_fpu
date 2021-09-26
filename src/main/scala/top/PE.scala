@@ -15,10 +15,10 @@ class PE extends Module {
     val Xi_1       = Input(Bits(Config.forIN.W))
     val Yi_1       = Input(Bits(Config.forIN.W))
 
-    val aggr_0     = Input(Bits(Config.forIN.W))
-    val aggr_1     = Input(Bits(Config.forIN.W))
-    val aggr_2     = Input(Bits(Config.forIN.W))
-    val aggr_3     = Input(Bits(Config.forIN.W))
+    val aggr_0     = Input(UInt(Config.forIN.W))
+    val aggr_1     = Input(UInt(Config.forIN.W))
+    val aggr_2     = Input(UInt(Config.forIN.W))
+    val aggr_3     = Input(UInt(Config.forIN.W))
 
     val m_0_sel    = Input(Bits(2.W))
     val m_1_sel    = Input(Bits(2.W))

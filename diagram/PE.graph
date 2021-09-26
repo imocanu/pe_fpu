@@ -32,22 +32,6 @@ node PE {
         ^port.side: WEST
         label "io_Yi_1"
     }
-    port io_m_0_sel {
-        ^port.side: WEST
-        label "io_m_0_sel"
-    }
-    port io_m_1_sel {
-        ^port.side: WEST
-        label "io_m_1_sel"
-    }
-    port io_m_2_sel {
-        ^port.side: WEST
-        label "io_m_2_sel"
-    }
-    port io_m_3_sel {
-        ^port.side: WEST
-        label "io_m_3_sel"
-    }
     port io_m_5_sel {
         ^port.side: WEST
         label "io_m_5_sel"
@@ -60,13 +44,13 @@ node PE {
         ^port.side: WEST
         label "io_m_7_sel"
     }
-    port io_m_8_sel {
+    port io_rounding {
         ^port.side: WEST
-        label "io_m_8_sel"
+        label "io_rounding"
     }
-    port io_m_9_sel {
+    port io_use_int {
         ^port.side: WEST
-        label "io_m_9_sel"
+        label "io_use_int"
     }
     port io_out_0 {
         ^port.side: EAST
@@ -430,6 +414,14 @@ node PE {
             ^port.side: WEST
             label "reset"
         }    
+        port io_use_int {
+            ^port.side: WEST
+            label "io_use_int"
+        }    
+        port io_rounding {
+            ^port.side: WEST
+            label "io_rounding"
+        }    
         port io_in_0 {
             ^port.side: WEST
             label "io_in_0"
@@ -459,6 +451,14 @@ node PE {
         port reset {
             ^port.side: WEST
             label "reset"
+        }    
+        port io_use_int {
+            ^port.side: WEST
+            label "io_use_int"
+        }    
+        port io_rounding {
+            ^port.side: WEST
+            label "io_rounding"
         }    
         port io_in_0 {
             ^port.side: WEST
@@ -490,6 +490,14 @@ node PE {
             ^port.side: WEST
             label "reset"
         }    
+        port io_use_int {
+            ^port.side: WEST
+            label "io_use_int"
+        }    
+        port io_rounding {
+            ^port.side: WEST
+            label "io_rounding"
+        }    
         port io_in_0 {
             ^port.side: WEST
             label "io_in_0"
@@ -519,6 +527,14 @@ node PE {
         port reset {
             ^port.side: WEST
             label "reset"
+        }    
+        port io_use_int {
+            ^port.side: WEST
+            label "io_use_int"
+        }    
+        port io_rounding {
+            ^port.side: WEST
+            label "io_rounding"
         }    
         port io_in_0 {
             ^port.side: WEST
@@ -588,58 +604,6 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node m_0_sel {
-        layout [ size: 30, 40 ]
-        portConstraints: FIXED_SIDE
-        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
-        label "m_0_sel"
-        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
-        port in {
-            ^port.side: "WEST"
-        }
-        port out {
-            ^port.side: "EAST"
-        }
-    }
-    node m_1_sel {
-        layout [ size: 30, 40 ]
-        portConstraints: FIXED_SIDE
-        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
-        label "m_1_sel"
-        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
-        port in {
-            ^port.side: "WEST"
-        }
-        port out {
-            ^port.side: "EAST"
-        }
-    }
-    node m_2_sel {
-        layout [ size: 30, 40 ]
-        portConstraints: FIXED_SIDE
-        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
-        label "m_2_sel"
-        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
-        port in {
-            ^port.side: "WEST"
-        }
-        port out {
-            ^port.side: "EAST"
-        }
-    }
-    node m_3_sel {
-        layout [ size: 30, 40 ]
-        portConstraints: FIXED_SIDE
-        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
-        label "m_3_sel"
-        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
-        port in {
-            ^port.side: "WEST"
-        }
-        port out {
-            ^port.side: "EAST"
-        }
-    }
     node m_5_sel {
         layout [ size: 30, 40 ]
         portConstraints: FIXED_SIDE
@@ -679,11 +643,11 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node m_8_sel {
+    node rounding {
         layout [ size: 30, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
-        label "m_8_sel"
+        label "rounding"
         label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
         port in {
             ^port.side: "WEST"
@@ -692,11 +656,11 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node m_9_sel {
+    node use_int {
         layout [ size: 30, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
-        label "m_9_sel"
+        label "use_int"
         label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
         port in {
             ^port.side: "WEST"
@@ -887,7 +851,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_58 {
+    node mux_130 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -909,12 +873,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit61 {
+    node lit311 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_62 {
+    node pad_312 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -931,7 +895,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_59 {
+    node mux_131 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -953,12 +917,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit63 {
+    node lit313 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_64 {
+    node pad_314 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -975,7 +939,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_60 {
+    node mux_132 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -997,12 +961,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit65 {
+    node lit315 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_66 {
+    node pad_316 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1019,7 +983,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_61 {
+    node mux_133 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1041,12 +1005,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit67 {
+    node lit317 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_68 {
+    node pad_318 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1063,7 +1027,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_62 {
+    node mux_134 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1085,12 +1049,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit69 {
+    node lit319 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_70 {
+    node pad_320 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1107,7 +1071,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_63 {
+    node mux_135 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1129,12 +1093,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit71 {
+    node lit321 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_72 {
+    node pad_322 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1151,7 +1115,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_64 {
+    node mux_136 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1173,12 +1137,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit73 {
+    node lit323 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_74 {
+    node pad_324 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1195,7 +1159,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_65 {
+    node mux_137 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1217,12 +1181,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit75 {
+    node lit325 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_76 {
+    node pad_326 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1239,7 +1203,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_66 {
+    node mux_138 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1261,12 +1225,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit77 {
+    node lit327 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_78 {
+    node pad_328 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1283,7 +1247,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_67 {
+    node mux_139 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1305,12 +1269,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit79 {
+    node lit329 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_80 {
+    node pad_330 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1327,7 +1291,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_68 {
+    node mux_140 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1349,12 +1313,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit81 {
+    node lit331 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_82 {
+    node pad_332 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1371,7 +1335,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_69 {
+    node mux_141 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1393,12 +1357,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit83 {
+    node lit333 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_84 {
+    node pad_334 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1415,7 +1379,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_70 {
+    node mux_142 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1437,12 +1401,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit85 {
+    node lit335 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_86 {
+    node pad_336 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1459,7 +1423,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node mux_71 {
+    node mux_143 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -1481,12 +1445,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit87 {
+    node lit337 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node pad_88 {
+    node pad_338 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1503,7 +1467,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_89 {
+    node bits_339 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1527,7 +1491,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_90 {
+    node lit340 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "1"
+    }
+    node bits_341 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1551,7 +1520,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_91 {
+    node lit342 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "1"
+    }
+    node bits_343 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1575,7 +1549,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_92 {
+    node lit344 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "1"
+    }
+    node bits_345 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1599,7 +1578,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_93 {
+    node lit346 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "1"
+    }
+    node bits_347 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1623,12 +1607,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit94 {
+    node lit348 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node bits_95 {
+    node bits_349 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1652,7 +1636,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_96 {
+    node bits_350 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1676,12 +1660,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node lit97 {
+    node lit351 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node bits_98 {
+    node bits_352 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1705,7 +1689,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_99 {
+    node bits_353 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1729,7 +1713,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_100 {
+    node lit354 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "1"
+    }
+    node bits_355 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1753,7 +1742,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_101 {
+    node bits_356 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1777,7 +1766,12 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_102 {
+    node lit357 {
+        nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
+        nodeSize.constraints: "NODE_LABELS"
+        label "1"
+    }
+    node bits_358 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1801,7 +1795,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_103 {
+    node bits_359 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1825,7 +1819,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_104 {
+    node bits_360 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1849,7 +1843,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_105 {
+    node bits_361 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1873,7 +1867,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_106 {
+    node bits_362 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1897,7 +1891,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_107 {
+    node bits_363 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1921,7 +1915,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_108 {
+    node bits_364 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1945,7 +1939,7 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    node bits_109 {
+    node bits_365 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -1969,176 +1963,180 @@ node PE {
             ^port.side: "EAST"
         }
     }
-    edge e229 : bits_102.out -> PE.submodule_multModule00_MultPE.io_in_0
-    edge e230 : PE.submodule_m07_MuxPE.io_out -> pad_84.in1
-    edge e231 : PE.m_6_out.out -> bits_108.in1
-    edge e232 : mux_59.out -> PE.addsubModule_1_out.in
-    edge e233 : PE.reset -> PE.submodule_m00_MuxPE.reset
-    edge e234 : PE.reset -> PE.submodule_addsubModule01_AddSubPE.reset
-    edge e235 : PE.multModule_1_out.out -> bits_96.in1
-    edge e236 : PE.io_m_7_sel -> PE.m_7_sel.in
-    edge e237 : PE.reset -> PE.submodule_m07_MuxPE.reset
-    edge e238 : pad_68.out -> mux_61.in2
-    edge e239 : PE.m_9_out.out -> PE.io_out_1
-    edge e240 : PE.clock -> PE.submodule_addsubModule00_AddSubPE.clock
-    edge e241 : PE.m_6_sel.out -> PE.submodule_m06_MuxPE.io_sel
-    edge e242 : PE.lit61 -> mux_58.in1
-    edge e243 : PE.submodule_addsubModule00_AddSubPE.io_out -> pad_62.in1
-    edge e244 : mux_61.out -> PE.multModule_1_out.in
-    edge e245 : PE.lit65 -> mux_60.in1
-    edge e246 : pad_76.out -> mux_65.in2
-    edge e247 : PE.submodule_m09_MuxPE.io_out -> pad_88.in1
-    edge e248 : PE.clock -> PE.submodule_m04_MuxPE.clock
-    edge e249 : PE.submodule_multModule00_MultPE.io_out -> pad_66.in1
-    edge e250 : PE.clock -> PE.submodule_multModule01_MultPE.clock
-    edge e251 : PE.clock -> PE.submodule_m03_MuxPE.clock
-    edge e252 : bits_98.out -> PE.submodule_m08_MuxPE.io_in_0
-    edge e253 : PE.lit73 -> mux_64.in1
-    edge e254 : mux_70.out -> PE.m_8_out.in
-    edge e255 : PE.reset -> mux_70.select
-    edge e256 : pad_84.out -> mux_69.in2
-    edge e257 : PE.m_1_sel.out -> PE.submodule_m01_MuxPE.io_sel
-    edge e258 : PE.lit97 -> PE.submodule_m07_MuxPE.io_in_1
-    edge e259 : PE.io_m_2_sel -> PE.m_2_sel.in
-    edge e260 : PE.m_5_sel.out -> PE.submodule_m05_MuxPE.io_sel
-    edge e261 : mux_62.out -> PE.m_0_out.in
-    edge e262 : mux_58.out -> PE.addsubModule_0_out.in
-    edge e263 : PE.Xi_1.out -> PE.submodule_m02_MuxPE.io_in_0
-    edge e264 : PE.io_Xi_1 -> PE.Xi_1.in
-    edge e265 : bits_90.out -> PE.submodule_m01_MuxPE.io_in_1
-    edge e266 : bits_107.out -> PE.submodule_addsubModule00_AddSubPE.io_in_1
-    edge e267 : PE.io_m_6_sel -> PE.m_6_sel.in
-    edge e268 : PE.lit81 -> mux_68.in1
-    edge e269 : pad_88.out -> mux_71.in2
-    edge e270 : PE.multModule_1_out.out -> bits_101.in1
-    edge e271 : PE.submodule_m01_MuxPE.io_out -> pad_72.in1
-    edge e272 : PE.multModule_0_out.out -> bits_93.in1
-    edge e273 : PE.submodule_m03_MuxPE.io_out -> pad_76.in1
-    edge e274 : PE.reset -> mux_61.select
-    edge e275 : PE.m_3_out.out -> bits_105.in1
-    edge e276 : PE.reset -> PE.submodule_m06_MuxPE.reset
-    edge e277 : PE.clock -> PE.submodule_multModule00_MultPE.clock
-    edge e278 : PE.Yi_0.out -> PE.submodule_m05_MuxPE.io_in_0
-    edge e279 : mux_60.out -> PE.multModule_0_out.in
-    edge e280 : mux_66.out -> PE.m_4_out.in
-    edge e281 : PE.lit85 -> mux_70.in1
-    edge e282 : bits_93.out -> PE.submodule_m04_MuxPE.io_in_1
-    edge e283 : bits_109.out -> PE.submodule_addsubModule01_AddSubPE.io_in_1
-    edge e284 : PE.reset -> mux_65.select
-    edge e285 : PE.lit63 -> mux_59.in1
-    edge e286 : bits_105.out -> PE.submodule_multModule01_MultPE.io_in_1
-    edge e287 : PE.m_7_out.out -> bits_109.in1
-    edge e288 : PE.io_Yi_0 -> PE.Yi_0.in
-    edge e289 : PE.m_0_sel.out -> PE.submodule_m00_MuxPE.io_sel
-    edge e290 : PE.reset -> PE.submodule_m05_MuxPE.reset
-    edge e291 : PE.m_0_out.out -> bits_102.in1
-    edge e292 : pad_70.out -> mux_62.in2
-    edge e293 : PE.reset -> PE.submodule_addsubModule00_AddSubPE.reset
-    edge e294 : PE.clock -> PE.submodule_m02_MuxPE.clock
-    edge e295 : pad_78.out -> mux_66.in2
-    edge e296 : PE.m_4_out.out -> bits_106.in1
-    edge e297 : PE.lit67 -> mux_61.in1
-    edge e298 : PE.reset -> PE.submodule_m04_MuxPE.reset
-    edge e299 : PE.submodule_m06_MuxPE.io_out -> pad_82.in1
-    edge e300 : bits_106.out -> PE.submodule_addsubModule00_AddSubPE.io_in_0
-    edge e301 : PE.reset -> PE.submodule_multModule01_MultPE.reset
-    edge e302 : PE.clock -> PE.submodule_m09_MuxPE.clock
-    edge e303 : PE.lit94 -> PE.submodule_m04_MuxPE.io_sel
-    edge e304 : PE.reset -> mux_69.select
-    edge e305 : PE.m_8_out.out -> PE.io_out_0
-    edge e306 : PE.m_9_sel.out -> PE.submodule_m09_MuxPE.io_sel
-    edge e307 : PE.reset -> mux_60.select
-    edge e308 : mux_65.out -> PE.m_3_out.in
-    edge e309 : PE.clock -> PE.submodule_m08_MuxPE.clock
-    edge e310 : PE.lit75 -> mux_65.in1
-    edge e311 : PE.clock -> PE.submodule_m01_MuxPE.clock
-    edge e312 : pad_72.out -> mux_63.in2
-    edge e313 : PE.submodule_m08_MuxPE.io_out -> pad_86.in1
-    edge e314 : PE.Yi_1.out -> PE.submodule_m07_MuxPE.io_in_0
-    edge e315 : PE.lit69 -> mux_62.in1
-    edge e316 : PE.reset -> mux_64.select
-    edge e317 : mux_69.out -> PE.m_7_out.in
-    edge e318 : PE.io_m_1_sel -> PE.m_1_sel.in
-    edge e319 : PE.clock -> PE.submodule_m00_MuxPE.clock
-    edge e320 : bits_96.out -> PE.submodule_m06_MuxPE.io_in_1
-    edge e321 : PE.addsubModule_0_out.out -> bits_90.in1
-    edge e322 : pad_80.out -> mux_67.in2
-    edge e323 : PE.lit83 -> mux_69.in1
-    edge e324 : PE.lit87 -> mux_71.in1
-    edge e325 : PE.lit77 -> mux_66.in1
-    edge e326 : PE.reset -> mux_68.select
-    edge e327 : bits_89.out -> PE.submodule_m00_MuxPE.io_in_1
-    edge e328 : PE.Yi_0.out -> PE.submodule_m01_MuxPE.io_in_0
-    edge e329 : bits_101.out -> PE.submodule_m09_MuxPE.io_in_1
-    edge e330 : PE.io_m_5_sel -> PE.m_5_sel.in
-    edge e331 : PE.io_m_9_sel -> PE.m_9_sel.in
-    edge e332 : PE.submodule_addsubModule01_AddSubPE.io_out -> pad_64.in1
-    edge e333 : bits_92.out -> PE.submodule_m03_MuxPE.io_in_1
-    edge e334 : pad_62.out -> mux_58.in2
-    edge e335 : PE.addsubModule_0_out.out -> bits_98.in1
-    edge e336 : PE.m_8_sel.out -> PE.submodule_m08_MuxPE.io_sel
-    edge e337 : bits_103.out -> PE.submodule_multModule00_MultPE.io_in_1
-    edge e338 : mux_64.out -> PE.m_2_out.in
-    edge e339 : PE.m_1_out.out -> bits_103.in1
-    edge e340 : bits_108.out -> PE.submodule_addsubModule01_AddSubPE.io_in_0
-    edge e341 : PE.Xi_0.out -> PE.submodule_m04_MuxPE.io_in_0
-    edge e342 : PE.reset -> PE.submodule_m03_MuxPE.reset
-    edge e343 : PE.reset -> PE.submodule_m02_MuxPE.reset
-    edge e344 : bits_104.out -> PE.submodule_multModule01_MultPE.io_in_0
-    edge e345 : pad_66.out -> mux_60.in2
-    edge e346 : PE.io_Xi_0 -> PE.Xi_0.in
-    edge e347 : PE.reset -> mux_59.select
-    edge e348 : PE.reset -> mux_63.select
-    edge e349 : PE.submodule_multModule01_MultPE.io_out -> pad_68.in1
-    edge e350 : PE.m_5_out.out -> bits_107.in1
-    edge e351 : PE.clock -> PE.submodule_addsubModule01_AddSubPE.clock
-    edge e352 : PE.reset -> PE.submodule_m09_MuxPE.reset
-    edge e353 : PE.io_m_0_sel -> PE.m_0_sel.in
-    edge e354 : PE.clock -> PE.submodule_m07_MuxPE.clock
-    edge e355 : mux_68.out -> PE.m_6_out.in
-    edge e356 : PE.reset -> PE.submodule_multModule00_MultPE.reset
-    edge e357 : PE.addsubModule_0_out.out -> bits_89.in1
-    edge e358 : PE.clock -> PE.submodule_m06_MuxPE.clock
-    edge e359 : pad_74.out -> mux_64.in2
-    edge e360 : PE.submodule_m00_MuxPE.io_out -> pad_70.in1
-    edge e361 : PE.reset -> mux_67.select
-    edge e362 : PE.reset -> mux_71.select
-    edge e363 : PE.m_3_sel.out -> PE.submodule_m03_MuxPE.io_sel
-    edge e364 : PE.Yi_1.out -> PE.submodule_m03_MuxPE.io_in_0
-    edge e365 : bits_91.out -> PE.submodule_m02_MuxPE.io_in_1
-    edge e366 : PE.lit71 -> mux_63.in1
-    edge e367 : PE.io_Yi_1 -> PE.Yi_1.in
-    edge e368 : PE.io_m_8_sel -> PE.m_8_sel.in
-    edge e369 : PE.addsubModule_1_out.out -> bits_91.in1
-    edge e370 : PE.submodule_m02_MuxPE.io_out -> pad_74.in1
-    edge e371 : pad_82.out -> mux_68.in2
-    edge e372 : PE.m_7_sel.out -> PE.submodule_m07_MuxPE.io_sel
-    edge e373 : PE.clock -> PE.submodule_m05_MuxPE.clock
-    edge e374 : mux_63.out -> PE.m_1_out.in
-    edge e375 : PE.reset -> mux_58.select
-    edge e376 : mux_67.out -> PE.m_5_out.in
-    edge e377 : PE.Xi_1.out -> PE.submodule_m06_MuxPE.io_in_0
-    edge e378 : PE.addsubModule_1_out.out -> bits_100.in1
-    edge e379 : PE.reset -> mux_62.select
-    edge e380 : PE.submodule_m04_MuxPE.io_out -> pad_78.in1
-    edge e381 : bits_95.out -> PE.submodule_m05_MuxPE.io_in_1
-    edge e382 : PE.multModule_1_out.out -> bits_95.in1
-    edge e383 : PE.lit79 -> mux_67.in1
-    edge e384 : pad_86.out -> mux_70.in2
-    edge e385 : PE.m_2_sel.out -> PE.submodule_m02_MuxPE.io_sel
-    edge e386 : PE.reset -> PE.submodule_m08_MuxPE.reset
-    edge e387 : PE.submodule_m05_MuxPE.io_out -> pad_80.in1
-    edge e388 : bits_99.out -> PE.submodule_m08_MuxPE.io_in_1
-    edge e389 : PE.reset -> PE.submodule_m01_MuxPE.reset
-    edge e390 : PE.m_2_out.out -> bits_104.in1
-    edge e391 : PE.multModule_0_out.out -> bits_99.in1
-    edge e392 : mux_71.out -> PE.m_9_out.in
-    edge e393 : bits_100.out -> PE.submodule_m09_MuxPE.io_in_0
-    edge e394 : PE.addsubModule_1_out.out -> bits_92.in1
-    edge e395 : PE.Xi_0.out -> PE.submodule_m00_MuxPE.io_in_0
-    edge e396 : pad_64.out -> mux_59.in2
-    edge e397 : PE.io_m_3_sel -> PE.m_3_sel.in
-    edge e398 : PE.reset -> mux_66.select
+    edge e890 : PE.rounding.out -> PE.submodule_addsubModule01_AddSubPE.io_rounding
+    edge e891 : bits_358.out -> PE.submodule_multModule00_MultPE.io_in_0
+    edge e892 : mux_131.out -> PE.addsubModule_1_out.in
+    edge e893 : PE.reset -> PE.submodule_m00_MuxPE.reset
+    edge e894 : PE.submodule_addsubModule00_AddSubPE.io_out -> pad_312.in1
+    edge e895 : pad_326.out -> mux_137.in2
+    edge e896 : PE.use_int.out -> PE.submodule_addsubModule01_AddSubPE.io_use_int
+    edge e897 : PE.lit315 -> mux_132.in1
+    edge e898 : PE.reset -> PE.submodule_addsubModule01_AddSubPE.reset
+    edge e899 : PE.lit329 -> mux_139.in1
+    edge e900 : pad_336.out -> mux_142.in2
+    edge e901 : PE.io_m_7_sel -> PE.m_7_sel.in
+    edge e902 : PE.reset -> PE.submodule_m07_MuxPE.reset
+    edge e903 : PE.m_9_out.out -> PE.io_out_1
+    edge e904 : PE.clock -> PE.submodule_addsubModule00_AddSubPE.clock
+    edge e905 : PE.m_6_sel.out -> PE.submodule_m06_MuxPE.io_sel
+    edge e906 : PE.multModule_0_out.out -> bits_353.in1
+    edge e907 : mux_133.out -> PE.multModule_1_out.in
+    edge e908 : PE.submodule_multModule00_MultPE.io_out -> pad_316.in1
+    edge e909 : PE.reset -> mux_141.select
+    edge e910 : PE.clock -> PE.submodule_m04_MuxPE.clock
+    edge e911 : PE.lit323 -> mux_136.in1
+    edge e912 : PE.clock -> PE.submodule_multModule01_MultPE.clock
+    edge e913 : PE.lit333 -> mux_141.in1
+    edge e914 : PE.clock -> PE.submodule_m03_MuxPE.clock
+    edge e915 : bits_352.out -> PE.submodule_m08_MuxPE.io_in_0
+    edge e916 : mux_142.out -> PE.m_8_out.in
+    edge e917 : PE.lit342 -> PE.submodule_m01_MuxPE.io_sel
+    edge e918 : PE.lit351 -> PE.submodule_m07_MuxPE.io_in_1
+    edge e919 : pad_338.out -> mux_143.in2
+    edge e920 : PE.addsubModule_0_out.out -> bits_339.in1
+    edge e921 : PE.m_5_sel.out -> PE.submodule_m05_MuxPE.io_sel
+    edge e922 : mux_134.out -> PE.m_0_out.in
+    edge e923 : mux_130.out -> PE.addsubModule_0_out.in
+    edge e924 : PE.addsubModule_0_out.out -> bits_341.in1
+    edge e925 : PE.reset -> mux_132.select
+    edge e926 : PE.io_Xi_1 -> PE.Xi_1.in
+    edge e927 : bits_341.out -> PE.submodule_m01_MuxPE.io_in_1
+    edge e928 : PE.Xi_1.out -> PE.submodule_m02_MuxPE.io_in_0
+    edge e929 : bits_363.out -> PE.submodule_addsubModule00_AddSubPE.io_in_1
+    edge e930 : PE.m_5_out.out -> bits_363.in1
+    edge e931 : PE.submodule_m01_MuxPE.io_out -> pad_322.in1
+    edge e932 : PE.io_m_6_sel -> PE.m_6_sel.in
+    edge e933 : pad_312.out -> mux_130.in2
+    edge e934 : PE.lit335 -> mux_142.in1
+    edge e935 : PE.io_use_int -> PE.use_int.in
+    edge e936 : pad_320.out -> mux_134.in2
+    edge e937 : PE.reset -> PE.submodule_m06_MuxPE.reset
+    edge e938 : PE.addsubModule_1_out.out -> bits_345.in1
+    edge e939 : PE.reset -> mux_140.select
+    edge e940 : PE.clock -> PE.submodule_multModule00_MultPE.clock
+    edge e941 : PE.Yi_0.out -> PE.submodule_m05_MuxPE.io_in_0
+    edge e942 : mux_132.out -> PE.multModule_0_out.in
+    edge e943 : PE.use_int.out -> PE.submodule_multModule00_MultPE.io_use_int
+    edge e944 : mux_138.out -> PE.m_4_out.in
+    edge e945 : PE.multModule_1_out.out -> bits_350.in1
+    edge e946 : PE.reset -> mux_136.select
+    edge e947 : bits_347.out -> PE.submodule_m04_MuxPE.io_in_1
+    edge e948 : PE.submodule_m03_MuxPE.io_out -> pad_326.in1
+    edge e949 : bits_365.out -> PE.submodule_addsubModule01_AddSubPE.io_in_1
+    edge e950 : PE.multModule_1_out.out -> bits_349.in1
+    edge e951 : pad_328.out -> mux_138.in2
+    edge e952 : PE.lit317 -> mux_133.in1
+    edge e953 : bits_361.out -> PE.submodule_multModule01_MultPE.io_in_1
+    edge e954 : PE.io_Yi_0 -> PE.Yi_0.in
+    edge e955 : PE.lit340 -> PE.submodule_m00_MuxPE.io_sel
+    edge e956 : PE.reset -> PE.submodule_m05_MuxPE.reset
+    edge e957 : PE.reset -> PE.submodule_addsubModule00_AddSubPE.reset
+    edge e958 : PE.clock -> PE.submodule_m02_MuxPE.clock
+    edge e959 : PE.rounding.out -> PE.submodule_multModule01_MultPE.io_rounding
+    edge e960 : pad_332.out -> mux_140.in2
+    edge e961 : PE.submodule_m06_MuxPE.io_out -> pad_332.in1
+    edge e962 : PE.m_0_out.out -> bits_358.in1
+    edge e963 : PE.reset -> PE.submodule_m04_MuxPE.reset
+    edge e964 : bits_362.out -> PE.submodule_addsubModule00_AddSubPE.io_in_0
+    edge e965 : PE.reset -> PE.submodule_multModule01_MultPE.reset
+    edge e966 : PE.lit325 -> mux_137.in1
+    edge e967 : PE.clock -> PE.submodule_m09_MuxPE.clock
+    edge e968 : PE.lit348 -> PE.submodule_m04_MuxPE.io_sel
+    edge e969 : PE.m_8_out.out -> PE.io_out_0
+    edge e970 : PE.reset -> mux_131.select
+    edge e971 : PE.submodule_addsubModule01_AddSubPE.io_out -> pad_314.in1
+    edge e972 : PE.m_2_out.out -> bits_360.in1
+    edge e973 : PE.lit357 -> PE.submodule_m09_MuxPE.io_sel
+    edge e974 : mux_137.out -> PE.m_3_out.in
+    edge e975 : PE.clock -> PE.submodule_m08_MuxPE.clock
+    edge e976 : PE.addsubModule_1_out.out -> bits_355.in1
+    edge e977 : PE.clock -> PE.submodule_m01_MuxPE.clock
+    edge e978 : PE.submodule_m08_MuxPE.io_out -> pad_336.in1
+    edge e979 : PE.reset -> mux_135.select
+    edge e980 : PE.m_1_out.out -> bits_359.in1
+    edge e981 : PE.m_6_out.out -> bits_364.in1
+    edge e982 : PE.lit337 -> mux_143.in1
+    edge e983 : PE.Yi_1.out -> PE.submodule_m07_MuxPE.io_in_0
+    edge e984 : mux_141.out -> PE.m_7_out.in
+    edge e985 : PE.submodule_multModule01_MultPE.io_out -> pad_318.in1
+    edge e986 : PE.reset -> mux_139.select
+    edge e987 : PE.reset -> mux_143.select
+    edge e988 : PE.clock -> PE.submodule_m00_MuxPE.clock
+    edge e989 : bits_350.out -> PE.submodule_m06_MuxPE.io_in_1
+    edge e990 : pad_314.out -> mux_131.in2
+    edge e991 : PE.m_3_out.out -> bits_361.in1
+    edge e992 : PE.submodule_m00_MuxPE.io_out -> pad_320.in1
+    edge e993 : pad_322.out -> mux_135.in2
+    edge e994 : bits_339.out -> PE.submodule_m00_MuxPE.io_in_1
+    edge e995 : PE.Yi_0.out -> PE.submodule_m01_MuxPE.io_in_0
+    edge e996 : bits_356.out -> PE.submodule_m09_MuxPE.io_in_1
+    edge e997 : PE.lit311 -> mux_130.in1
+    edge e998 : PE.reset -> mux_130.select
+    edge e999 : PE.io_m_5_sel -> PE.m_5_sel.in
+    edge e1000 : PE.lit319 -> mux_134.in1
+    edge e1001 : bits_345.out -> PE.submodule_m03_MuxPE.io_in_1
+    edge e1002 : PE.rounding.out -> PE.submodule_multModule00_MultPE.io_rounding
+    edge e1003 : PE.lit354 -> PE.submodule_m08_MuxPE.io_sel
+    edge e1004 : bits_359.out -> PE.submodule_multModule00_MultPE.io_in_1
+    edge e1005 : PE.m_7_out.out -> bits_365.in1
+    edge e1006 : mux_136.out -> PE.m_2_out.in
+    edge e1007 : bits_364.out -> PE.submodule_addsubModule01_AddSubPE.io_in_0
+    edge e1008 : PE.submodule_m02_MuxPE.io_out -> pad_324.in1
+    edge e1009 : PE.Xi_0.out -> PE.submodule_m04_MuxPE.io_in_0
+    edge e1010 : PE.reset -> PE.submodule_m03_MuxPE.reset
+    edge e1011 : pad_330.out -> mux_139.in2
+    edge e1012 : PE.rounding.out -> PE.submodule_addsubModule00_AddSubPE.io_rounding
+    edge e1013 : PE.reset -> mux_134.select
+    edge e1014 : PE.reset -> PE.submodule_m02_MuxPE.reset
+    edge e1015 : bits_360.out -> PE.submodule_multModule01_MultPE.io_in_0
+    edge e1016 : PE.io_Xi_0 -> PE.Xi_0.in
+    edge e1017 : PE.addsubModule_0_out.out -> bits_352.in1
+    edge e1018 : pad_324.out -> mux_136.in2
+    edge e1019 : PE.submodule_m04_MuxPE.io_out -> pad_328.in1
+    edge e1020 : PE.clock -> PE.submodule_addsubModule01_AddSubPE.clock
+    edge e1021 : PE.reset -> PE.submodule_m09_MuxPE.reset
+    edge e1022 : PE.reset -> mux_142.select
+    edge e1023 : PE.clock -> PE.submodule_m07_MuxPE.clock
+    edge e1024 : mux_140.out -> PE.m_6_out.in
+    edge e1025 : PE.reset -> mux_138.select
+    edge e1026 : PE.lit327 -> mux_138.in1
+    edge e1027 : pad_334.out -> mux_141.in2
+    edge e1028 : PE.reset -> PE.submodule_multModule00_MultPE.reset
+    edge e1029 : PE.submodule_m05_MuxPE.io_out -> pad_330.in1
+    edge e1030 : PE.lit331 -> mux_140.in1
+    edge e1031 : PE.multModule_1_out.out -> bits_356.in1
+    edge e1032 : PE.clock -> PE.submodule_m06_MuxPE.clock
+    edge e1033 : PE.io_rounding -> PE.rounding.in
+    edge e1034 : PE.lit346 -> PE.submodule_m03_MuxPE.io_sel
+    edge e1035 : pad_316.out -> mux_132.in2
+    edge e1036 : PE.addsubModule_1_out.out -> bits_343.in1
+    edge e1037 : PE.Yi_1.out -> PE.submodule_m03_MuxPE.io_in_0
+    edge e1038 : bits_343.out -> PE.submodule_m02_MuxPE.io_in_1
+    edge e1039 : PE.reset -> mux_133.select
+    edge e1040 : PE.io_Yi_1 -> PE.Yi_1.in
+    edge e1041 : PE.m_7_sel.out -> PE.submodule_m07_MuxPE.io_sel
+    edge e1042 : PE.clock -> PE.submodule_m05_MuxPE.clock
+    edge e1043 : mux_135.out -> PE.m_1_out.in
+    edge e1044 : PE.submodule_m07_MuxPE.io_out -> pad_334.in1
+    edge e1045 : mux_139.out -> PE.m_5_out.in
+    edge e1046 : PE.reset -> mux_137.select
+    edge e1047 : PE.lit313 -> mux_131.in1
+    edge e1048 : PE.Xi_1.out -> PE.submodule_m06_MuxPE.io_in_0
+    edge e1049 : PE.use_int.out -> PE.submodule_multModule01_MultPE.io_use_int
+    edge e1050 : PE.multModule_0_out.out -> bits_347.in1
+    edge e1051 : PE.m_4_out.out -> bits_362.in1
+    edge e1052 : bits_349.out -> PE.submodule_m05_MuxPE.io_in_1
+    edge e1053 : PE.submodule_m09_MuxPE.io_out -> pad_338.in1
+    edge e1054 : PE.lit344 -> PE.submodule_m02_MuxPE.io_sel
+    edge e1055 : pad_318.out -> mux_133.in2
+    edge e1056 : PE.reset -> PE.submodule_m08_MuxPE.reset
+    edge e1057 : bits_353.out -> PE.submodule_m08_MuxPE.io_in_1
+    edge e1058 : PE.reset -> PE.submodule_m01_MuxPE.reset
+    edge e1059 : PE.lit321 -> mux_135.in1
+    edge e1060 : mux_143.out -> PE.m_9_out.in
+    edge e1061 : PE.use_int.out -> PE.submodule_addsubModule00_AddSubPE.io_use_int
+    edge e1062 : bits_355.out -> PE.submodule_m09_MuxPE.io_in_0
+    edge e1063 : PE.Xi_0.out -> PE.submodule_m00_MuxPE.io_in_0
     
 }
 

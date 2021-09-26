@@ -674,21 +674,21 @@ circuit AddSubPE :
 
     inst addRecFN of AddRecFN @[AddSubPE.scala 57:26]
     reg rounding : UInt<3>, clock with :
-      reset => (UInt<1>("h0"), rounding) @[AddSubPE.scala 22:25]
+      reset => (UInt<1>("h0"), rounding) @[AddSubPE.scala 22:27]
     reg tininess : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), tininess) @[AddSubPE.scala 24:25]
+      reset => (UInt<1>("h0"), tininess) @[AddSubPE.scala 24:27]
     reg op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), op) @[AddSubPE.scala 26:25]
+      reset => (UInt<1>("h0"), op) @[AddSubPE.scala 26:27]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[AddSubPE.scala 28:25]
+      reset => (UInt<1>("h0"), use_int) @[AddSubPE.scala 28:27]
     reg module_out : UInt<33>, clock with :
       reset => (UInt<1>("h0"), module_out) @[AddSubPE.scala 30:27]
-    node _sign_in_0_T = asSInt(io_in_0) @[AddSubPE.scala 34:44]
+    node _sign_in_0_T = asSInt(io_in_0) @[AddSubPE.scala 34:43]
     reg sign_in_0 : SInt<32>, clock with :
-      reset => (UInt<1>("h0"), sign_in_0) @[AddSubPE.scala 34:29]
-    node _sign_in_1_T = asSInt(io_in_1) @[AddSubPE.scala 35:44]
+      reset => (UInt<1>("h0"), sign_in_0) @[AddSubPE.scala 34:28]
+    node _sign_in_1_T = asSInt(io_in_1) @[AddSubPE.scala 35:43]
     reg sign_in_1 : SInt<32>, clock with :
-      reset => (UInt<1>("h0"), sign_in_1) @[AddSubPE.scala 35:29]
+      reset => (UInt<1>("h0"), sign_in_1) @[AddSubPE.scala 35:28]
     node _module_out_T = sub(sign_in_0, sign_in_1) @[AddSubPE.scala 39:32]
     node _module_out_T_1 = tail(_module_out_T, 1) @[AddSubPE.scala 39:32]
     node _module_out_T_2 = asSInt(_module_out_T_1) @[AddSubPE.scala 39:32]
@@ -923,13 +923,13 @@ circuit AddSubPE :
     node recFN_from_fN_in_1_rawIn__isInf = _recFN_from_fN_in_1_rawIn_out_isInf_T @[rawFloatFromFN.scala 65:23 67:20]
     node io_out_rawIn__isZero = io_out_rawIn_isZero @[rawFloatFromRecFN.scala 54:23 57:20]
     io_out <= bits(_GEN_2, 31, 0)
-    rounding <= io_rounding @[AddSubPE.scala 22:25]
-    tininess <= io_tininess @[AddSubPE.scala 24:25]
-    op <= io_op @[AddSubPE.scala 26:25]
-    use_int <= io_use_int @[AddSubPE.scala 28:25]
+    rounding <= io_rounding @[AddSubPE.scala 22:27]
+    tininess <= io_tininess @[AddSubPE.scala 24:27]
+    op <= io_op @[AddSubPE.scala 26:27]
+    use_int <= io_use_int @[AddSubPE.scala 28:27]
     module_out <= mux(reset, UInt<33>("h0"), _GEN_1) @[AddSubPE.scala 30:{27,27}]
-    sign_in_0 <= _sign_in_0_T @[AddSubPE.scala 34:29]
-    sign_in_1 <= _sign_in_1_T @[AddSubPE.scala 35:29]
+    sign_in_0 <= _sign_in_0_T @[AddSubPE.scala 34:28]
+    sign_in_1 <= _sign_in_1_T @[AddSubPE.scala 35:28]
     fN_in_0 <= io_in_0 @[AddSubPE.scala 49:27]
     fN_in_1 <= io_in_1 @[AddSubPE.scala 50:27]
     recFN_from_fN_in_0 <= _recFN_from_fN_in_0_T_6 @[AddSubPE.scala 53:37]

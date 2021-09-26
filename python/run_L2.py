@@ -36,13 +36,13 @@ for pe in all_pe:
 for i in range(len(random_in_1_bin)):
     for pe in all_pe:
         # ~~~~~~~~~~~~~~~~~~~~~
-        pe.Xi = random_in_1_bin[i]   
-        pe.Yi = random_in_2_bin[i]   
+        pe.Xi = "00000000000000000000000000111011" #random_in_1_bin[i]   
+        pe.Yi = "00000000000000000000000000111011" #random_in_2_bin[i]   
         pe.a1 = constant_ZERO
         pe.B1 = constant_ZERO
         # ~~~~~~~~~~~~~~~~~~~~~
-        pe.Xj = random_in_1_bin[i]
-        pe.Yj = random_in_2_bin[i]
+        pe.Xj = "00000000000000000000000000111011" #random_in_1_bin[i]
+        pe.Yj = "00000000000000000000000000111011" #random_in_2_bin[i]
         pe.a2 = constant_ZERO
         pe.B2 = constant_ZERO
         # ~~~~~~~~~~~~~~~~~~~~~
