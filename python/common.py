@@ -10,8 +10,8 @@ from bitstring import BitArray
 
 random.seed(123)
 ##### DEFAULT PARAMS ####
-totalNR = 4
-FLOAT_range =   10
+totalNR = 50
+FLOAT_range =   999999
 # SCALA - INT    -2,147,483,648 to 2,147,483,647   2147483648
 # SCALA - LONG   -9,223,372,036,854,775,808 to     9223372036854775807
 # SCALA - FLOAT  -1.40129846432481707e-45 to 3.40282346638528860e+38
@@ -21,8 +21,8 @@ min_INT16 = -32768
 max_INT32 = 2147483647
 min_INT32 = -2147483648
 
-max_INT_range =  max_INT16 / 1000
-min_INT_range =  min_INT16 / 1000
+max_INT_range =  max_INT16
+min_INT_range =  min_INT16
 
 DEBUG = False
 addConstants = False
@@ -41,6 +41,7 @@ fpu32_MUL_result = rootDir+"fpu32_MUL_result.txt"
 
 PE_test_1_result = rootDir+"PE_test_1_result.txt"
 
+# -----------------------------------------------
 int32_genInput_1 = rootDir+"int32_generated_1.txt"
 int32_genInput_2 = rootDir+"int32_generated_2.txt"
 int32_genInput_3 = rootDir+"int32_generated_3.txt"
@@ -48,6 +49,14 @@ int32_genInput_4 = rootDir+"int32_generated_4.txt"
 int32_ADD_result = rootDir+"int32_ADD_result.txt"
 int32_SUB_result = rootDir+"int32_SUB_result.txt"
 int32_MUL_result = rootDir+"int32_MUL_result.txt"
+
+int32_L2_result  = rootDir+"int32_L2_result.txt"
+int32_L1_result  = rootDir+"int32_L1_result.txt"
+int32_DOT_result = rootDir+"int32_DOT_result.txt"
+int32_WGT_result = rootDir+"int32_WGT_result.txt"
+# -----------------------------------------------
+
+
 
 pe_out_test0_FP32_result = rootDir+"pe_out_test0_FP32_result.txt"
 pe_out_test0_INT_result = rootDir+"pe_out_test0_INT_result.txt"

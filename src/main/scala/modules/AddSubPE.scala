@@ -13,13 +13,13 @@ class AddSubPE extends Module {
     val op       = Input(Bool())
     val rounding = Input(UInt(3.W))
     val tininess = Input(UInt(1.W))
-    val in_0     = Input(UInt(Config.forIN.W))
-    val in_1     = Input(UInt(Config.forIN.W))
-    val out      = Output(UInt(Config.forIN.W))
+    val in_0     = Input(Bits(Config.forIN.W))
+    val in_1     = Input(Bits(Config.forIN.W))
+    val out      = Output(Bits(Config.forIN.W))
   })
 
   // Rounding type
-  val rounding   = RegNext(io.rounding)
+  val rounding  = RegNext(io.rounding)
   // Tininess type
   val tininess   = RegNext(io.tininess)
   // OPERATOR 
@@ -31,8 +31,8 @@ class AddSubPE extends Module {
 
   when(use_int){
 
-    val sign_in_0 = RegNext(io.in_0.asSInt())
-    val sign_in_1 = RegNext(io.in_1.asSInt())
+    val sign_in_0  = RegNext(io.in_0.asSInt())
+    val sign_in_1  = RegNext(io.in_1.asSInt())
 
     // Operation : false "+" or true "-"
     when ( op ) {

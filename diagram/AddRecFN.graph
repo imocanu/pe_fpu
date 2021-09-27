@@ -8,6 +8,10 @@ node AddRecFN {
     nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
     label "AddRecFN"
     
+    port io_subOp {
+        ^port.side: WEST
+        label "io_subOp"
+    }
     port io_a {
         ^port.side: WEST
         label "io_a"
@@ -30,6 +34,10 @@ node AddRecFN {
         nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
         label "addRawFN_"
             
+        port io_subOp {
+            ^port.side: WEST
+            label "io_subOp"
+        }    
         port io_a_isNaN {
             ^port.side: WEST
             label "io_a_isNaN"
@@ -160,7 +168,7 @@ node AddRecFN {
     
     }
 
-    node bits_366 {
+    node bits_210 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -184,7 +192,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_367 {
+    node bits_211 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -208,7 +216,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_368 {
+    node eq_212 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -226,7 +234,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_369 {
+    node bits_213 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -250,7 +258,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_370 {
+    node eq_214 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -268,7 +276,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_371 {
+    node bits_215 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -292,7 +300,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_372 {
+    node not_216 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -304,7 +312,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_373 {
+    node not_217 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -316,7 +324,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_374 {
+    node bits_218 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -340,7 +348,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_375 {
+    node cat_219 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -358,7 +366,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_376 {
+    node bits_220 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -382,7 +390,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_377 {
+    node bits_221 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -406,7 +414,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_378 {
+    node eq_222 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -424,7 +432,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_379 {
+    node bits_223 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -448,7 +456,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_380 {
+    node eq_224 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -466,7 +474,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_381 {
+    node bits_225 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -490,7 +498,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_382 {
+    node not_226 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -502,7 +510,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node not_383 {
+    node not_227 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -514,7 +522,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_384 {
+    node bits_228 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -538,7 +546,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_385 {
+    node cat_229 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -556,7 +564,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_386 {
+    node and_230 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -574,7 +582,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_387 {
+    node and_231 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -592,7 +600,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_388 {
+    node eq_232 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -610,7 +618,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_389 {
+    node bits_233 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -634,7 +642,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node cvt_390 {
+    node cvt_234 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -646,7 +654,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_391 {
+    node cat_235 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -664,7 +672,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_392 {
+    node and_236 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -682,7 +690,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node and_393 {
+    node and_237 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -700,7 +708,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node eq_394 {
+    node eq_238 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -718,7 +726,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node bits_395 {
+    node bits_239 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_LEFT V_TOP OUTSIDE"
@@ -742,7 +750,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node cvt_396 {
+    node cvt_240 {
         layout [ size: 20, 40 ]
         portConstraints: FIXED_SIDE
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -754,7 +762,7 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    node cat_397 {
+    node cat_241 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -772,66 +780,67 @@ node AddRecFN {
             ^port.side: "EAST"
         }
     }
-    edge e1064 : and_393.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_isInf
-    edge e1065 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_sign -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sign
-    edge e1066 : eq_368.out -> not_373.in1
-    edge e1067 : AddRecFN.io_a -> bits_389.in1
-    edge e1068 : AddRecFN.submodule_addRawFN0_AddRawFN.io_invalidExc -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_invalidExc
-    edge e1069 : bits_376.out -> cvt_396.in1
-    edge e1070 : bits_377.out -> eq_378.in1
-    edge e1071 : eq_394.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_isZero
-    edge e1072 : cat_375.out -> cat_391.in1
-    edge e1073 : AddRecFN.io_b -> bits_376.in1
-    edge e1074 : bits_371.out -> and_386.in2
-    edge e1075 : bits_379.out -> eq_380.in1
-    edge e1076 : bits_389.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_sign
-    edge e1077 : and_392.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_isNaN
-    edge e1078 : eq_378.out -> not_383.in1
-    edge e1079 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_sExp -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sExp
-    edge e1080 : cat_391.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_sig
-    edge e1081 : AddRecFN.io_b -> bits_395.in1
-    edge e1082 : bits_366.out -> bits_367.in1
-    edge e1083 : bits_367.out -> eq_388.in1
-    edge e1084 : eq_388.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_isZero
-    edge e1085 : AddRecFN.io_roundingMode -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_roundingMode
-    edge e1086 : and_386.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_isNaN
-    edge e1087 : and_387.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_isInf
-    edge e1088 : bits_384.out -> cat_397.in2
-    edge e1089 : bits_395.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_sign
-    edge e1090 : bits_377.out -> eq_394.in1
-    edge e1091 : not_373.out -> cat_375.in2
-    edge e1092 : bits_376.out -> bits_377.in1
-    edge e1093 : not_372.out -> and_387.in2
-    edge e1094 : bits_381.out -> and_392.in2
-    edge e1095 : cat_397.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_sig
-    edge e1096 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_isInf -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isInf
-    edge e1097 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_isNaN -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isNaN
-    edge e1098 : AddRecFN.io_a -> bits_374.in1
-    edge e1099 : eq_370.out -> and_386.in1
-    edge e1100 : bits_366.out -> cvt_390.in1
-    edge e1101 : cat_385.out -> cat_397.in1
-    edge e1102 : cvt_390.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_sExp
-    edge e1103 : not_383.out -> cat_385.in2
-    edge e1104 : not_382.out -> and_393.in2
-    edge e1105 : eq_380.out -> and_392.in1
-    edge e1106 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_sig -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sig
-    edge e1107 : bits_374.out -> cat_391.in2
-    edge e1108 : bits_366.out -> bits_369.in1
-    edge e1109 : AddRecFN.io_b -> bits_384.in1
-    edge e1110 : bits_371.out -> not_372.in1
-    edge e1111 : cvt_396.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_sExp
-    edge e1112 : bits_366.out -> bits_371.in1
-    edge e1113 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_isZero -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isZero
-    edge e1114 : eq_370.out -> and_387.in1
-    edge e1115 : AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_out -> AddRecFN.io_out
-    edge e1116 : AddRecFN.io_roundingMode -> AddRecFN.submodule_addRawFN0_AddRawFN.io_roundingMode
-    edge e1117 : bits_376.out -> bits_379.in1
-    edge e1118 : bits_381.out -> not_382.in1
-    edge e1119 : bits_367.out -> eq_368.in1
-    edge e1120 : bits_369.out -> eq_370.in1
-    edge e1121 : AddRecFN.io_a -> bits_366.in1
-    edge e1122 : bits_376.out -> bits_381.in1
-    edge e1123 : eq_380.out -> and_393.in1
+    edge e385 : bits_210.out -> bits_211.in1
+    edge e386 : bits_211.out -> eq_232.in1
+    edge e387 : bits_215.out -> not_216.in1
+    edge e388 : and_237.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_isInf
+    edge e389 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_sign -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sign
+    edge e390 : AddRecFN.io_b -> bits_228.in1
+    edge e391 : bits_218.out -> cat_235.in2
+    edge e392 : bits_210.out -> bits_215.in1
+    edge e393 : AddRecFN.submodule_addRawFN0_AddRawFN.io_invalidExc -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_invalidExc
+    edge e394 : bits_215.out -> and_230.in2
+    edge e395 : eq_238.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_isZero
+    edge e396 : bits_228.out -> cat_241.in2
+    edge e397 : bits_233.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_sign
+    edge e398 : and_236.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_isNaN
+    edge e399 : bits_225.out -> not_226.in1
+    edge e400 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_sExp -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sExp
+    edge e401 : cat_235.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_sig
+    edge e402 : bits_220.out -> bits_221.in1
+    edge e403 : not_216.out -> and_231.in2
+    edge e404 : eq_224.out -> and_237.in1
+    edge e405 : bits_220.out -> bits_225.in1
+    edge e406 : bits_213.out -> eq_214.in1
+    edge e407 : eq_232.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_isZero
+    edge e408 : AddRecFN.io_roundingMode -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_roundingMode
+    edge e409 : eq_212.out -> not_217.in1
+    edge e410 : and_230.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_isNaN
+    edge e411 : cat_219.out -> cat_235.in1
+    edge e412 : and_231.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_isInf
+    edge e413 : bits_239.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_sign
+    edge e414 : eq_214.out -> and_230.in1
+    edge e415 : bits_210.out -> bits_213.in1
+    edge e416 : bits_223.out -> eq_224.in1
+    edge e417 : eq_222.out -> not_227.in1
+    edge e418 : cat_241.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_sig
+    edge e419 : AddRecFN.io_b -> bits_239.in1
+    edge e420 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_isInf -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isInf
+    edge e421 : cat_229.out -> cat_241.in1
+    edge e422 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_isNaN -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isNaN
+    edge e423 : cvt_234.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_a_sExp
+    edge e424 : bits_225.out -> and_236.in2
+    edge e425 : eq_214.out -> and_231.in1
+    edge e426 : bits_211.out -> eq_212.in1
+    edge e427 : bits_220.out -> bits_223.in1
+    edge e428 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_sig -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_sig
+    edge e429 : bits_210.out -> cvt_234.in1
+    edge e430 : bits_221.out -> eq_238.in1
+    edge e431 : not_217.out -> cat_219.in2
+    edge e432 : AddRecFN.io_a -> bits_210.in1
+    edge e433 : cvt_240.out -> AddRecFN.submodule_addRawFN0_AddRawFN.io_b_sExp
+    edge e434 : AddRecFN.submodule_addRawFN0_AddRawFN.io_rawOut_isZero -> AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_in_isZero
+    edge e435 : bits_221.out -> eq_222.in1
+    edge e436 : AddRecFN.io_a -> bits_218.in1
+    edge e437 : bits_220.out -> cvt_240.in1
+    edge e438 : AddRecFN.io_a -> bits_233.in1
+    edge e439 : not_226.out -> and_237.in2
+    edge e440 : AddRecFN.submodule_roundRawFNToRecFN_RoundRawFNToRecFN.io_out -> AddRecFN.io_out
+    edge e441 : not_227.out -> cat_229.in2
+    edge e442 : AddRecFN.io_roundingMode -> AddRecFN.submodule_addRawFN0_AddRawFN.io_roundingMode
+    edge e443 : AddRecFN.io_b -> bits_220.in1
+    edge e444 : AddRecFN.io_subOp -> AddRecFN.submodule_addRawFN0_AddRawFN.io_subOp
+    edge e445 : eq_224.out -> and_236.in1
     
 }
 

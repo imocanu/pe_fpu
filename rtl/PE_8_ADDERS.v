@@ -1032,8 +1032,8 @@ module AddSubPE(
   wire [32:0] addRecFN_io_b; // @[AddSubPE.scala 57:26]
   wire [2:0] addRecFN_io_roundingMode; // @[AddSubPE.scala 57:26]
   wire [32:0] addRecFN_io_out; // @[AddSubPE.scala 57:26]
-  reg [2:0] rounding; // @[AddSubPE.scala 22:25]
-  reg  use_int; // @[AddSubPE.scala 28:25]
+  reg [2:0] rounding; // @[AddSubPE.scala 22:26]
+  reg  use_int; // @[AddSubPE.scala 28:27]
   reg [32:0] module_out; // @[AddSubPE.scala 30:27]
   reg [31:0] sign_in_0; // @[AddSubPE.scala 34:29]
   reg [31:0] sign_in_1; // @[AddSubPE.scala 35:29]
@@ -1223,8 +1223,8 @@ module AddSubPE(
   assign addRecFN_io_b = recFN_from_fN_in_1; // @[AddSubPE.scala 62:19]
   assign addRecFN_io_roundingMode = rounding; // @[AddSubPE.scala 59:32]
   always @(posedge clock) begin
-    rounding <= io_rounding; // @[AddSubPE.scala 22:25]
-    use_int <= io_use_int; // @[AddSubPE.scala 28:25]
+    rounding <= io_rounding; // @[AddSubPE.scala 22:26]
+    use_int <= io_use_int; // @[AddSubPE.scala 28:27]
     if (reset) begin // @[AddSubPE.scala 30:27]
       module_out <= 33'h0; // @[AddSubPE.scala 30:27]
     end else if (use_int) begin // @[AddSubPE.scala 32:16]
@@ -2467,8 +2467,8 @@ module PE_8_ADDERS(
     .io_in_1(addsubpe_7_io_in_1),
     .io_out(addsubpe_7_io_out)
   );
-  assign io_out_0 = out_0[31:0]; // @[PE_8_ADDERS.scala 692:12]
-  assign io_out_1 = out_1[31:0]; // @[PE_8_ADDERS.scala 693:12]
+  assign io_out_0 = out_0[31:0]; // @[PE_8_ADDERS.scala 691:12]
+  assign io_out_1 = out_1[31:0]; // @[PE_8_ADDERS.scala 692:12]
   assign pe_0_clock = clock;
   assign pe_0_reset = reset;
   assign pe_0_io_Xi_0 = Xi_0_in_0; // @[PE_8_ADDERS.scala 211:16]

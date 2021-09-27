@@ -151,22 +151,22 @@ class PE_8 extends Module {
 //====================================
 // Registers for Selectors
 //====================================
-  val m_0_sel  = RegInit(1.U(2.W))
-  val m_1_sel  = RegInit(1.U(2.W))
-  val m_2_sel  = RegInit(1.U(2.W))
-  val m_3_sel  = RegInit(1.U(2.W))
+  val m_0_sel  = RegInit(0.U(2.W))
+  val m_1_sel  = RegInit(0.U(2.W))
+  val m_2_sel  = RegInit(0.U(2.W))
+  val m_3_sel  = RegInit(0.U(2.W))
   val m_4_sel  = RegInit(0.U(2.W))
-  val m_5_sel  = RegInit(1.U(2.W))
-  val m_6_sel  = RegInit(1.U(2.W))
-  val m_7_sel  = RegInit(1.U(2.W))
-  val m_8_sel  = RegInit(1.U(2.W))
-  val m_9_sel  = RegInit(1.U(2.W))
+  val m_5_sel  = RegInit(0.U(2.W))
+  val m_6_sel  = RegInit(0.U(2.W))
+  val m_7_sel  = RegInit(0.U(2.W))
+  val m_8_sel  = RegInit(0.U(2.W))
+  val m_9_sel  = RegInit(0.U(2.W))
 
   val op_type   = RegNext(io.op_type)
 
   // AddSub operation : false "+" & true "-"
-  val addsub_0_op   = RegInit("b00".U(2.W))
-  val addsub_1_op   = RegNext("b00".U(2.W))
+  val addsub_0_op   = RegInit("b11".U(2.W))
+  val addsub_1_op   = RegInit("b11".U(2.W))
 
   // Rounding type
   val rounding     = RegNext(io.rounding)
@@ -178,25 +178,25 @@ class PE_8 extends Module {
 //====================================
 // Registers for OUTPUTS
 //====================================
-  val pe_0_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_0_out_1   = RegInit(0.U(Config.forOUT.W))
-  val pe_1_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_1_out_1   = RegInit(0.U(Config.forOUT.W))
-  val pe_2_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_2_out_1   = RegInit(0.U(Config.forOUT.W))
-  val pe_3_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_3_out_1   = RegInit(0.U(Config.forOUT.W))
-  val pe_4_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_4_out_1   = RegInit(0.U(Config.forOUT.W))
-  val pe_5_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_5_out_1   = RegInit(0.U(Config.forOUT.W))
-  val pe_6_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_6_out_1   = RegInit(0.U(Config.forOUT.W))
-  val pe_7_out_0   = RegInit(0.U(Config.forOUT.W))
-  val pe_7_out_1   = RegInit(0.U(Config.forOUT.W))
+  val pe_0_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_0_out_1   = RegInit(0.U(Config.forIN.W))
+  val pe_1_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_1_out_1   = RegInit(0.U(Config.forIN.W))
+  val pe_2_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_2_out_1   = RegInit(0.U(Config.forIN.W))
+  val pe_3_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_3_out_1   = RegInit(0.U(Config.forIN.W))
+  val pe_4_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_4_out_1   = RegInit(0.U(Config.forIN.W))
+  val pe_5_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_5_out_1   = RegInit(0.U(Config.forIN.W))
+  val pe_6_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_6_out_1   = RegInit(0.U(Config.forIN.W))
+  val pe_7_out_0   = RegInit(0.U(Config.forIN.W))
+  val pe_7_out_1   = RegInit(0.U(Config.forIN.W))
 
-  val out          = RegInit(0.U(Config.forOUT.W))
-  val addsum_out   = RegInit(0.U(Config.forOUT.W))
+  val out          = RegInit(0.U(Config.forIN.W))
+  val addsum_out   = RegInit(0.U(Config.forIN.W))
 
 //=======================================
 // Shared regs for INPUTS
@@ -437,32 +437,32 @@ class PE_8 extends Module {
 //=======================================
 // SUM Connections
 //=======================================
-// root
-aggr_0_in_0 := pe_0_out_0
-aggr_0_in_1 := pe_1_out_0
-aggr_0_in_2 := pe_0_out_1
-aggr_0_in_3 := pe_1_out_1
+  // // root
+  // aggr_0_in_0 := pe_0_out_0
+  // aggr_0_in_1 := pe_1_out_1
+  // aggr_0_in_2 := pe_0_out_1
+  // aggr_0_in_3 := pe_1_out_0
 
-// nodes
-aggr_1_in_0 := pe_2_out_0
-aggr_1_in_1 := pe_2_out_1
-aggr_1_in_2 := pe_3_out_0
-aggr_1_in_3 := pe_3_out_1
+  // // nodes
+  // aggr_1_in_0 := pe_2_out_0
+  // aggr_1_in_1 := pe_2_out_1
+  // aggr_1_in_2 := pe_3_out_0
+  // aggr_1_in_3 := pe_3_out_1
 
-aggr_2_in_0 := pe_4_out_0
-aggr_2_in_1 := pe_4_out_1
-aggr_2_in_2 := pe_5_out_0
-aggr_2_in_3 := pe_5_out_1
+  // aggr_2_in_0 := pe_4_out_0
+  // aggr_2_in_1 := pe_4_out_1
+  // aggr_2_in_2 := pe_5_out_0
+  // aggr_2_in_3 := pe_5_out_1
 
-aggr_3_in_0 := pe_6_out_0
-aggr_3_in_1 := pe_6_out_1
-aggr_3_in_2 := pe_7_out_0
-aggr_3_in_3 := pe_7_out_1
+  // aggr_3_in_0 := pe_6_out_0
+  // aggr_3_in_1 := pe_6_out_1
+  // aggr_3_in_2 := pe_7_out_0
+  // aggr_3_in_3 := pe_7_out_1
 
 
-//=======================================
+// =======================================
 // AddSum Module
-//=======================================
+// =======================================
   val addsubModule_0 = Module(new AddSubPE())
   addsubModule_0.io.op         := false.B
   addsubModule_0.io.rounding   := rounding	
@@ -480,6 +480,9 @@ aggr_3_in_3 := pe_7_out_1
 
   val L1_cycles = 10
   val L1_counter = Counter(L1_cycles)
+
+  val t_cycles = 5
+  val t_counter = Counter(t_cycles)
 
   val SUM_4_2_cycles = 50
   val SUM_4_2_counter = Counter(SUM_4_2_cycles)    
@@ -508,8 +511,8 @@ aggr_3_in_3 := pe_7_out_1
             // DEBUG - L2
             dbg_xxx := 1.U(4.W)
 
-            addsub_0_op := 0.U(2.W)
-            addsub_1_op := 0.U(2.W) 
+            addsub_0_op := "b11".U(2.W)
+            addsub_1_op := "b11".U(2.W) 
 
             m_0_sel := "b01".U(2.W)
             m_1_sel := "b01".U(2.W)
@@ -530,24 +533,6 @@ aggr_3_in_3 := pe_7_out_1
           {
             // DEBUG - L1
             dbg_xxx := 2.U(4.W)
-
-            addsub_0_op := 0.U(2.W)
-            addsub_1_op := 0.U(2.W) 
-
-            // m_0_sel := "b01".U(2.W)
-            // m_1_sel := "b01".U(2.W)
-            // m_2_sel := "b01".U(2.W)
-            // m_3_sel := "b01".U(2.W)
-            m_4_sel := "b00".U(2.W)
-            m_5_sel := "b00".U(2.W)
-            m_6_sel := "b00".U(2.W)
-            m_7_sel := "b00".U(2.W)
-
-            // output for addition result
-            m_8_sel := "b00".U(2.W)
-            m_9_sel := "b00".U(2.W)
-            
-            pe_step := init_L1
           }
           is ( "b10".U(2.W) ) // dot product 
           {
@@ -571,35 +556,79 @@ aggr_3_in_3 := pe_7_out_1
       }
 
     }
-    is ( init_L1 ) {
-      dbg_fsm := 3.U(4.W)
-
-      L1_counter.inc()
-      when (L1_counter.value === (L1_cycles - 1).U) {
-
-        pe_step := sum_init
-        L1_counter.reset
-      }
-
-    }
     is ( sum_init ) {
       dbg_fsm := 5.U(4.W)
 
-      m_4_sel := "b10".U(2.W)
-      m_5_sel := "b10".U(2.W)
-      m_6_sel := "b10".U(2.W)
-      m_7_sel := "b10".U(2.W)
+      L2_counter.inc()
+      when (L2_counter.value === (L2_cycles - 1).U) {
+        pe_step := op_1
+        L2_counter.reset
+      }
 
-      m_8_sel := "b00".U(2.W)
-      m_9_sel := "b00".U(2.W)  
+    }
+    is ( op_1 ) {
+      dbg_fsm := 8.U(4.W)
 
-      pe_step := sum_start
+      L2_counter.inc()
+      when (L2_counter.value === (L2_cycles - 1).U) {
+
+          // root
+          aggr_0_in_0 := pe_0_out_0
+          aggr_0_in_1 := pe_1_out_0
+          aggr_0_in_2 := pe_0_out_1
+          aggr_0_in_3 := pe_1_out_1
+
+            // nodes
+            aggr_1_in_0 := pe_2_out_0
+            aggr_1_in_1 := pe_2_out_1
+            aggr_1_in_2 := pe_3_out_0
+            aggr_1_in_3 := pe_3_out_1
+
+            aggr_2_in_0 := pe_4_out_0
+            aggr_2_in_1 := pe_4_out_1
+            aggr_2_in_2 := pe_5_out_0
+            aggr_2_in_3 := pe_5_out_1
+
+            aggr_3_in_0 := pe_6_out_0
+            aggr_3_in_1 := pe_6_out_1
+            aggr_3_in_2 := pe_7_out_0
+            aggr_3_in_3 := pe_7_out_1
+
+
+        m_4_sel := "b10".U(2.W)
+        m_5_sel := "b10".U(2.W)
+        m_6_sel := "b10".U(2.W)
+        m_7_sel := "b10".U(2.W)
+
+        //m_8_sel := "b00".U(2.W)
+        //m_9_sel := "b00".U(2.W) 
+
+        addsub_0_op := 0.U(2.W)
+        addsub_1_op := 0.U(2.W)  
+        pe_step := op_2
+
+        L2_counter.reset
+      }
+    }
+    is ( op_2 ) {
+      dbg_fsm := 2.U(4.W)
+
+      t_counter.inc()
+      when (t_counter.value === (t_cycles - 1).U) {
+        m_8_sel := "b00".U(2.W)
+        m_9_sel := "b00".U(2.W) 
+
+          pe_step := sum_start
+        t_counter.reset
+      }
     }
     is ( sum_start ) {
       dbg_fsm := 6.U(4.W)  
 
       SUM_4_2_counter.inc()
       when (SUM_4_2_counter.value === (SUM_4_2_cycles - 1).U) {
+
+
 
         addsum_in_0 := pe_0_out_0
         addsum_in_1 := pe_0_out_1
@@ -610,7 +639,29 @@ aggr_3_in_3 := pe_7_out_1
     }
     is ( sum_stop ) {
       dbg_fsm := 7.U(4.W)
-      pe_step := idle
+
+        // root
+      aggr_0_in_0 := pe_0_out_0
+      aggr_0_in_1 := pe_1_out_0
+      aggr_0_in_2 := pe_0_out_1
+      aggr_0_in_3 := pe_1_out_1
+
+        // nodes
+        aggr_1_in_0 := pe_2_out_0
+        aggr_1_in_1 := pe_2_out_1
+        aggr_1_in_2 := pe_3_out_0
+        aggr_1_in_3 := pe_3_out_1
+
+        aggr_2_in_0 := pe_4_out_0
+        aggr_2_in_1 := pe_4_out_1
+        aggr_2_in_2 := pe_5_out_0
+        aggr_2_in_3 := pe_5_out_1
+
+        aggr_3_in_0 := pe_6_out_0
+        aggr_3_in_1 := pe_6_out_1
+        aggr_3_in_2 := pe_7_out_0
+        aggr_3_in_3 := pe_7_out_1
+      //pe_step := idle
     }
   }
 
@@ -633,3 +684,244 @@ object PE_8 extends App {
     Seq(ChiselGeneratorAnnotation(() => new PE_8))
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// //=======================================
+// // COUNTERS
+// //=======================================
+//   val L2_cycles  = 15
+//   val L2_counter = Counter(L2_cycles)
+
+//   val L1_cycles  = 10
+//   val L1_counter = Counter(L1_cycles)
+
+//   val DOT_cycles = 10
+//   val DOT_counter = Counter(DOT_cycles)
+
+//   val WGT_cycles  = 15
+//   val WGT_counter = Counter(WGT_cycles)
+
+//   val SUM_4_2_cycles  = 80
+//   val SUM_4_2_counter = Counter(SUM_4_2_cycles)    
+
+// //=======================================
+// // FSM
+// //=======================================
+//   val startup :: idle :: init_L2 :: init_L2_s1 :: init_L2_s2 :: init_L1 :: init_DOT :: init_WGT :: sum_init :: sum_start :: sum_stop :: Nil = Enum (11)
+//   val pe_step = RegInit ( startup )
+
+//   switch ( pe_step ) 
+//   {
+//     is ( startup ) {
+//         dbg_fsm := 9.U(4.W)        
+//         pe_step := idle
+//     }
+//     is ( idle ) {
+
+//         dbg_fsm := 1.U(4.W) 
+
+//         switch ( op_type ) 
+//         {
+//           // Euclidean distance - L2
+//           is ( "b00".U(2.W) )  
+//           {
+//             // DEBUG - L2
+//             dbg_opt := 1.U(4.W)
+//             // AddSub operation : false "+" & true "-"
+//             // addsub_0_op := "b11".U(2.W)
+//             // addsub_1_op := "b11".U(2.W) 
+
+//             // m_0_sel := "b01".U(2.W)
+//             // m_1_sel := "b01".U(2.W)
+//             // m_2_sel := "b01".U(2.W)
+//             // m_3_sel := "b01".U(2.W)
+//             // m_4_sel := "b00".U(2.W)
+//             // m_5_sel := "b00".U(2.W)
+//             // m_6_sel := "b00".U(2.W)
+//             // m_7_sel := "b00".U(2.W)
+
+//             // // output from Mult
+//             // m_8_sel := "b01".U(2.W)
+//             // m_9_sel := "b01".U(2.W)
+            
+//             pe_step := init_L2_s1
+//           }
+//           // Manhattan distance  - L1
+//           is ( "b01".U(2.W) ) 
+//           {
+//             // DEBUG - L1
+//             dbg_opt := 2.U(4.W)
+
+//             addsub_0_op := "b11".U(2.W)
+//             addsub_1_op := "b11".U(2.W) 
+
+//             // m_0_sel := "b01".U(2.W)
+//             // m_1_sel := "b01".U(2.W)
+//             // m_2_sel := "b01".U(2.W)
+//             // m_3_sel := "b01".U(2.W)
+//             m_4_sel := "b00".U(2.W)
+//             m_5_sel := "b00".U(2.W)
+//             m_6_sel := "b00".U(2.W)
+//             m_7_sel := "b00".U(2.W)
+
+//             // output from AddSum
+//             m_8_sel := "b00".U(2.W)
+//             m_9_sel := "b00".U(2.W)
+            
+//             pe_step := init_L1
+//           }
+//           // DOT product 
+//           is ( "b10".U(2.W) ) 
+//           {
+//             // DEBUG - DOT
+//             dbg_opt := 3.U(4.W)
+
+//             m_0_sel := "b00".U(2.W)
+//             m_1_sel := "b00".U(2.W)
+//             m_2_sel := "b00".U(2.W)
+//             m_3_sel := "b00".U(2.W)
+//             m_4_sel := "b11".U(2.W)
+//             m_5_sel := "b11".U(2.W)
+//             m_6_sel := "b11".U(2.W)
+//             m_7_sel := "b11".U(2.W)
+
+//             // output for Mult
+//             m_8_sel := "b01".U(2.W)
+//             m_9_sel := "b01".U(2.W)
+
+//             pe_step := init_DOT
+//           }
+//           // Weighted vector pooling 
+//           is ( "b11".U(2.W) ) 
+//           {
+//             // DEBUG - WGT
+//             dbg_opt := 4.U(4.W)
+
+//             m_0_sel := "b00".U(2.W)
+//             m_1_sel := "b00".U(2.W)
+//             m_2_sel := "b00".U(2.W)
+//             m_3_sel := "b00".U(2.W)
+//             m_4_sel := "b01".U(2.W)
+//             m_5_sel := "b01".U(2.W)
+//             m_6_sel := "b11".U(2.W)
+//             m_7_sel := "b11".U(2.W)
+
+//             // output from AddSum
+//             m_8_sel := "b00".U(2.W)
+//             m_9_sel := "b00".U(2.W)
+
+//             pe_step := init_WGT
+//           }
+//         }
+//     }
+//     is ( init_L2_s1 ) {
+//       dbg_fsm := 3.U(4.W)
+
+//       addsub_0_op := "b11".U(2.W)
+//       addsub_1_op := "b11".U(2.W) 
+
+//       m_0_sel := "b01".U(2.W)
+//       m_1_sel := "b01".U(2.W)
+//       m_2_sel := "b01".U(2.W)
+//       m_3_sel := "b01".U(2.W)
+//       m_4_sel := "b00".U(2.W)
+//       m_5_sel := "b00".U(2.W)
+//       m_6_sel := "b00".U(2.W)
+//       m_7_sel := "b00".U(2.W)
+
+//       // output from Mult
+//       m_8_sel := "b01".U(2.W)
+//       m_9_sel := "b01".U(2.W)
+      
+//       pe_step := init_L2
+
+//     }
+//     is ( init_L2 ) {
+//       dbg_fsm := 3.U(4.W)
+
+//       L2_counter.inc()
+//       when (L2_counter.value === (L2_cycles - 1).U) {
+//         pe_step := init_L2_s2
+//         L2_counter.reset
+//       }
+
+//     }
+//     is ( init_L2_s2 ) {
+//       dbg_fsm := 3.U(4.W)
+//       addsub_0_op := "b00".U(2.W)
+//       addsub_1_op := "b00".U(2.W)
+
+//       pe_step := sum_init
+
+//     }
+//     is ( init_L1 ) {
+//       dbg_fsm := 3.U(4.W)
+
+//       L1_counter.inc()
+//       when (L1_counter.value === (L1_cycles - 1).U) {
+//         pe_step := sum_init
+//         L1_counter.reset
+//       }
+
+//     }
+//     is ( init_DOT ) {
+//       dbg_fsm := 3.U(4.W)
+
+//       DOT_counter.inc()
+//       when (DOT_counter.value === (DOT_cycles - 1).U) {
+//         pe_step := sum_init
+//         DOT_counter.reset
+//       }
+
+//     }
+//     is ( init_WGT ) {
+//       dbg_fsm := 3.U(4.W)
+
+//       WGT_counter.inc()
+//       when (WGT_counter.value === (WGT_cycles - 1).U) {
+//         pe_step := sum_init
+//         WGT_counter.reset
+//       }
+
+//     }
+//     is ( sum_init ) {
+//       dbg_fsm := 5.U(4.W)
+
+//       m_4_sel := "b10".U(2.W)
+//       m_5_sel := "b10".U(2.W)
+//       m_6_sel := "b10".U(2.W)
+//       m_7_sel := "b10".U(2.W)
+
+//       m_8_sel := "b00".U(2.W)
+//       m_9_sel := "b00".U(2.W)  
+
+//       pe_step := sum_start
+//     }
+//     is ( sum_start ) {
+//       dbg_fsm := 6.U(4.W)
+
+//       SUM_4_2_counter.inc()
+//       when (SUM_4_2_counter.value === (SUM_4_2_cycles - 1).U) {
+
+//         addsum_in_0 := pe_0_out_0
+//         addsum_in_1 := pe_0_out_1
+
+//         SUM_4_2_counter.reset()
+//         pe_step := sum_stop
+//       }
+//     }
+//     is ( sum_stop ) {
+//       dbg_fsm := 7.U(4.W)
+//       pe_step := idle
+//     }
+//   }

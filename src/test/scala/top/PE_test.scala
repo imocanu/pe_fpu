@@ -67,6 +67,19 @@ class PE_test_manual(dut: PE) extends PeekPokeTester(dut) {
     var test_int   = "b"+"00000000000000000000000000111011"  // 59
     var test_zero  = "b"+"00000000000000000000000000000000"  // 0
 
+    var test_int_0   = "b"+"00000000000000000000000000111011"  //  59
+    var test_int_1   = "b"+"11111111111111111111111111110011"  // -13
+    // ( 59 - (-13) )^2    = 5184
+    var test_int_2   = "b"+"11111111111111111111111111000101"  // -59
+    var test_int_3   = "b"+"11111111111111111111111111110011"  // -13
+    // ( (-59) - (-13) )^2 = 2116
+    // 5184 + 2116 = 7300 * 8 = 58400
+
+    var inputTest_0 = test_int_0
+    var inputTest_1 = test_int_1
+    var inputTest_2 = test_int_2
+    var inputTest_3 = test_int_3
+
     println(" ----->  TEST with [ PE -> INT ]")
     println(" ----->  [Run test] : ") 
 
@@ -77,11 +90,11 @@ class PE_test_manual(dut: PE) extends PeekPokeTester(dut) {
     poke(dut.io.rounding, "b111".U)
     poke(dut.io.tininess, "b1".U(1.W))
     
-    poke(dut.io.Xi_0, test_int.U(32.W))
-    poke(dut.io.Yi_0, test_int.U(32.W))
+    poke(dut.io.Xi_0, inputTest_0.U(32.W))
+    poke(dut.io.Yi_0, inputTest_1.U(32.W))
 
-    poke(dut.io.Xi_1, test_int.U(32.W))
-    poke(dut.io.Yi_1, test_int.U(32.W))
+    poke(dut.io.Xi_1, inputTest_2.U(32.W))
+    poke(dut.io.Yi_1, inputTest_3.U(32.W))
 
     poke(dut.io.aggr_0, test_int.U(32.W))
     poke(dut.io.aggr_1, test_int.U(32.W))
@@ -103,6 +116,9 @@ class PE_test_manual(dut: PE) extends PeekPokeTester(dut) {
     poke(dut.io.addsub_1_op, false.B)
 
     step(50)
+
+    expect(dut.io.out_0, 0.U(32.W))
+    expect(dut.io.out_1, 0.U(32.W))
 
 
     println(" ----->  TEST with [ PE -> FP ]")
@@ -140,10 +156,6 @@ class PE_test_manual(dut: PE) extends PeekPokeTester(dut) {
     poke(dut.io.addsub_1_op, false.B)
 
     step(50)
-
-
-    // val out_0  = Output(Bits(Config.forOUT.W))  
-    // val out_1  = Output(Bits(Config.forOUT.W))
 
 }
 

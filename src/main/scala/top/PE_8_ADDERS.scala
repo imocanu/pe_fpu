@@ -202,7 +202,7 @@ class PE_8_ADDERS extends Module {
 // DEBUGS
 //====================================
   val dbg_fsm = RegInit(0.U(4.W))
-  val dbg_xxx = RegInit(0.U(4.W))
+  val dbg_opt = RegInit(0.U(4.W))
 
 //=======================================
 // Init PEs
@@ -617,7 +617,7 @@ class PE_8_ADDERS extends Module {
         {
           is ( "b00".U(2.W) )  // Euclidean distance - L2
           {
-            dbg_xxx := 1.U(4.W)
+            dbg_opt := 1.U(4.W)
 
             addsub_0_op := 0.U(2.W)
             addsub_1_op := 0.U(2.W) 
@@ -639,17 +639,17 @@ class PE_8_ADDERS extends Module {
           }
           is ( "b01".U(2.W) ) // Manhattan distance  - L1
           {
-            dbg_xxx := 2.U(4.W)
+            dbg_opt := 2.U(4.W)
             pe_step := init_L2
           }
           is ( "b10".U(2.W) ) // dot product 
           {
-            dbg_xxx := 3.U(4.W)
+            dbg_opt := 3.U(4.W)
             pe_step := init_L2
           }
           is ( "b11".U(2.W) ) // weighted vector pooling 
           {
-            dbg_xxx := 4.U(4.W)
+            dbg_opt := 4.U(4.W)
             pe_step := init_L2
           }
         }

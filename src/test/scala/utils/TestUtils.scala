@@ -35,6 +35,7 @@ object TestUtils {
     val SUB_RESULT = rootDir+"fpu32_SUB_result.txt"
     val MUL_RESULT = rootDir+"fpu32_MUL_result.txt"
 
+    // FOR INTEGER GENERATED INPUTS
     val INT_INPUT_1 = rootDir+"int32_generated_1.txt"
     val INT_INPUT_2 = rootDir+"int32_generated_2.txt"
     val INT_INPUT_3 = rootDir+"int32_generated_3.txt"
@@ -42,6 +43,10 @@ object TestUtils {
     val INT_ADD_RESULT = rootDir+"int32_ADD_result.txt"
     val INT_SUB_RESULT = rootDir+"int32_SUB_result.txt"
     val INT_MUL_RESULT = rootDir+"int32_MUL_result.txt"
+    val INT_L2_RESULT  = rootDir+"int32_L2_result.txt"
+    val INT_L1_RESULT  = rootDir+"int32_L1_result.txt"
+    val INT_DOT_RESULT = rootDir+"int32_DOT_result.txt"
+    val INT_WGT_RESULT = rootDir+"int32_WGT_result.txt"
 
     // PE use cases
     val PE_FP32_TEST_0_RESULT  = rootDir+"pe_out_test0_FP32_result.txt"

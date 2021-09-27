@@ -12,9 +12,9 @@ class MultPE extends Module {
     val use_int  = Input(Bool())
     val rounding = Input(UInt(3.W))
     val tininess = Input(UInt(1.W))
-    val in_0     = Input(UInt(Config.forIN.W))
-    val in_1     = Input(UInt(Config.forIN.W))
-    val out      = Output(UInt(Config.forIN.W))
+    val in_0     = Input(Bits(Config.forIN.W))
+    val in_1     = Input(Bits(Config.forIN.W))
+    val out      = Output(Bits(Config.forIN.W))
   })
 
   // Rounding type

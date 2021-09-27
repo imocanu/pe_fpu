@@ -1,19 +1,11 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(modules.AddSubPE_test, org.scalatest.tools.Framework$$anon$1@10d3dc6d, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mAddSubPE_test:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun AddSubPE_test_manual[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top.PE_8_test, org.scalatest.tools.Framework$$anon$1@534052a3, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mPE_8_test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_8_test_manual[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun test_random_ADD_INT[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun test_random_SUB_INT[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun test_random_ADD_FP32[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mrun test_random_SUB_FP32[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 8 seconds, 859 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 5[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 27 seconds, 680 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 5, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modules.AddSubPE_test[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top.PE_8_test[0m

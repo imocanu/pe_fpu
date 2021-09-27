@@ -247,9 +247,9 @@ class AddSubPE_test_manual(dut: AddSubPE) extends PeekPokeTester(dut) {
 
     step(10)
 
-    test_in_0 = "b"+"00000000000000000000000000111011"  // 59
-    test_in_1 = "b"+"00000000000000000000000000111011"  // 59 
-    test_out  = "b"+"00000000000000000000000001110110"  // 118
+    test_in_0 = "b"+"11111111111111111111111111000101"  // -59
+    test_in_1 = "b"+"11111111111111111111111111000101"  // -59 
+    test_out  = "b"+"11111111111111111111111110001010"  // -118
     poke(dut.io.in_0, test_in_0.U(32.W)) 
     poke(dut.io.in_1, test_in_1.U(32.W))
     step(10)

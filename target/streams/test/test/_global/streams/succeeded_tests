@@ -1,7 +1,5 @@
 #Successful Tests
-#Sun Sep 26 12:17:17 EEST 2021
-modules.AddSubPE_test=1632647837235
-top.PE_8_ADDERS_test=1632580870952
-top.PE_8_test=1632647786803
-top.PE_test=1632513142254
-modules.MuxPE_test=1632501823884
+#Mon Sep 27 18:25:13 EEST 2021
+modules.AddSubPE_test=1632730665615
+top.PE_8_test=1632756313643
+modules.MultPE_test=1632730628250
