@@ -54,10 +54,10 @@ class PE extends Module {
 // INPUTS for Aggregation
 //====================================
   val aggr_0  = RegNext(io.aggr_0)
-  val aggr_1  = RegNext(io.aggr_0)
+  val aggr_1  = RegNext(io.aggr_1)
 
-  val aggr_2  = RegNext(io.aggr_0)
-  val aggr_3  = RegNext(io.aggr_0)
+  val aggr_2  = RegNext(io.aggr_2)
+  val aggr_3  = RegNext(io.aggr_3)
 
 //====================================
 // SELECTORS

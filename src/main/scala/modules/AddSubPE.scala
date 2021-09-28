@@ -61,9 +61,8 @@ class AddSubPE extends Module {
     addRecFN.io.a := recFN_from_fN_in_0
     addRecFN.io.b := recFN_from_fN_in_1
 
-    module_out := addRecFN.io.out
-
-    io.out := Utils.ieee(module_out)
+    //module_out := addRecFN.io.out
+    io.out := Utils.ieee(addRecFN.io.out)
     println("## FP 32 ##")
 
   }

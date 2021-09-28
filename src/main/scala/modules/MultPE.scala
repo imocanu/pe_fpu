@@ -53,9 +53,8 @@ class MultPE extends Module {
     mulRecFN.io.a := recFN_from_fN_in_0
     mulRecFN.io.b := recFN_from_fN_in_1
 
-    module_out := mulRecFN.io.out
-
-    io.out := Utils.ieee(module_out)
+    //module_out := mulRecFN.io.out
+    io.out := Utils.ieee(mulRecFN.io.out)
     println("## FP 32 ##")
 
   }

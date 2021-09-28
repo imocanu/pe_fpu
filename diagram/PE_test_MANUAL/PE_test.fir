@@ -3581,13 +3581,13 @@ circuit PE :
     aggr_0 <= io.aggr_0 @[PE.scala 56:24]
     reg aggr_1 : UInt, clock with :
       reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_0 @[PE.scala 57:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
     reg aggr_2 : UInt, clock with :
       reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_0 @[PE.scala 59:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
     reg aggr_3 : UInt, clock with :
       reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_0 @[PE.scala 60:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
     reg m_0_sel : UInt, clock with :
       reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
     m_0_sel <= io.m_0_sel @[PE.scala 65:25]
