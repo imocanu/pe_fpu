@@ -3558,7 +3558,7 @@ circuit PE_8 :
   module PE :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -3567,226 +3567,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_1 @[PE.scala 109:19]
+    inst m_1 of MuxPE_1 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_2 @[PE.scala 110:19]
+    inst m_2 of MuxPE_2 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_3 @[PE.scala 111:19]
+    inst m_3 of MuxPE_3 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_4 @[PE.scala 112:19]
+    inst m_4 of MuxPE_4 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_5 @[PE.scala 113:19]
+    inst m_5 of MuxPE_5 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_6 @[PE.scala 114:19]
+    inst m_6 of MuxPE_6 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_7 @[PE.scala 115:19]
+    inst m_7 of MuxPE_7 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_8 @[PE.scala 116:19]
+    inst m_8 of MuxPE_8 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_9 @[PE.scala 117:19]
+    inst m_9 of MuxPE_9 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE @[PE.scala 119:28]
+    inst multModule_0 of MultPE @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_1 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_1 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_1 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_1 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module MuxPE_10 :
     input clock : Clock
@@ -7347,7 +7347,7 @@ circuit PE_8 :
   module PE_1 :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -7356,226 +7356,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE_10 @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE_10 @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_11 @[PE.scala 109:19]
+    inst m_1 of MuxPE_11 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_12 @[PE.scala 110:19]
+    inst m_2 of MuxPE_12 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_13 @[PE.scala 111:19]
+    inst m_3 of MuxPE_13 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_14 @[PE.scala 112:19]
+    inst m_4 of MuxPE_14 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_15 @[PE.scala 113:19]
+    inst m_5 of MuxPE_15 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_16 @[PE.scala 114:19]
+    inst m_6 of MuxPE_16 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_17 @[PE.scala 115:19]
+    inst m_7 of MuxPE_17 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_18 @[PE.scala 116:19]
+    inst m_8 of MuxPE_18 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_19 @[PE.scala 117:19]
+    inst m_9 of MuxPE_19 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE_2 @[PE.scala 119:28]
+    inst multModule_0 of MultPE_2 @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_3 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_3 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE_2 @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE_2 @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_3 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_3 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module MuxPE_20 :
     input clock : Clock
@@ -11136,7 +11136,7 @@ circuit PE_8 :
   module PE_2 :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -11145,226 +11145,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE_20 @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE_20 @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_21 @[PE.scala 109:19]
+    inst m_1 of MuxPE_21 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_22 @[PE.scala 110:19]
+    inst m_2 of MuxPE_22 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_23 @[PE.scala 111:19]
+    inst m_3 of MuxPE_23 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_24 @[PE.scala 112:19]
+    inst m_4 of MuxPE_24 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_25 @[PE.scala 113:19]
+    inst m_5 of MuxPE_25 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_26 @[PE.scala 114:19]
+    inst m_6 of MuxPE_26 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_27 @[PE.scala 115:19]
+    inst m_7 of MuxPE_27 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_28 @[PE.scala 116:19]
+    inst m_8 of MuxPE_28 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_29 @[PE.scala 117:19]
+    inst m_9 of MuxPE_29 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE_4 @[PE.scala 119:28]
+    inst multModule_0 of MultPE_4 @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_5 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_5 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE_4 @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE_4 @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_5 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_5 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module MuxPE_30 :
     input clock : Clock
@@ -14925,7 +14925,7 @@ circuit PE_8 :
   module PE_3 :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -14934,226 +14934,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE_30 @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE_30 @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_31 @[PE.scala 109:19]
+    inst m_1 of MuxPE_31 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_32 @[PE.scala 110:19]
+    inst m_2 of MuxPE_32 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_33 @[PE.scala 111:19]
+    inst m_3 of MuxPE_33 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_34 @[PE.scala 112:19]
+    inst m_4 of MuxPE_34 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_35 @[PE.scala 113:19]
+    inst m_5 of MuxPE_35 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_36 @[PE.scala 114:19]
+    inst m_6 of MuxPE_36 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_37 @[PE.scala 115:19]
+    inst m_7 of MuxPE_37 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_38 @[PE.scala 116:19]
+    inst m_8 of MuxPE_38 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_39 @[PE.scala 117:19]
+    inst m_9 of MuxPE_39 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE_6 @[PE.scala 119:28]
+    inst multModule_0 of MultPE_6 @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_7 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_7 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE_6 @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE_6 @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_7 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_7 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module MuxPE_40 :
     input clock : Clock
@@ -18714,7 +18714,7 @@ circuit PE_8 :
   module PE_4 :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -18723,226 +18723,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE_40 @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE_40 @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_41 @[PE.scala 109:19]
+    inst m_1 of MuxPE_41 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_42 @[PE.scala 110:19]
+    inst m_2 of MuxPE_42 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_43 @[PE.scala 111:19]
+    inst m_3 of MuxPE_43 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_44 @[PE.scala 112:19]
+    inst m_4 of MuxPE_44 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_45 @[PE.scala 113:19]
+    inst m_5 of MuxPE_45 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_46 @[PE.scala 114:19]
+    inst m_6 of MuxPE_46 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_47 @[PE.scala 115:19]
+    inst m_7 of MuxPE_47 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_48 @[PE.scala 116:19]
+    inst m_8 of MuxPE_48 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_49 @[PE.scala 117:19]
+    inst m_9 of MuxPE_49 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE_8 @[PE.scala 119:28]
+    inst multModule_0 of MultPE_8 @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_9 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_9 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE_8 @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE_8 @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_9 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_9 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module MuxPE_50 :
     input clock : Clock
@@ -22503,7 +22503,7 @@ circuit PE_8 :
   module PE_5 :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -22512,226 +22512,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE_50 @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE_50 @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_51 @[PE.scala 109:19]
+    inst m_1 of MuxPE_51 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_52 @[PE.scala 110:19]
+    inst m_2 of MuxPE_52 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_53 @[PE.scala 111:19]
+    inst m_3 of MuxPE_53 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_54 @[PE.scala 112:19]
+    inst m_4 of MuxPE_54 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_55 @[PE.scala 113:19]
+    inst m_5 of MuxPE_55 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_56 @[PE.scala 114:19]
+    inst m_6 of MuxPE_56 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_57 @[PE.scala 115:19]
+    inst m_7 of MuxPE_57 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_58 @[PE.scala 116:19]
+    inst m_8 of MuxPE_58 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_59 @[PE.scala 117:19]
+    inst m_9 of MuxPE_59 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE_10 @[PE.scala 119:28]
+    inst multModule_0 of MultPE_10 @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_11 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_11 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE_10 @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE_10 @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_11 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_11 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module MuxPE_60 :
     input clock : Clock
@@ -26292,7 +26292,7 @@ circuit PE_8 :
   module PE_6 :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -26301,226 +26301,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE_60 @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE_60 @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_61 @[PE.scala 109:19]
+    inst m_1 of MuxPE_61 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_62 @[PE.scala 110:19]
+    inst m_2 of MuxPE_62 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_63 @[PE.scala 111:19]
+    inst m_3 of MuxPE_63 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_64 @[PE.scala 112:19]
+    inst m_4 of MuxPE_64 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_65 @[PE.scala 113:19]
+    inst m_5 of MuxPE_65 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_66 @[PE.scala 114:19]
+    inst m_6 of MuxPE_66 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_67 @[PE.scala 115:19]
+    inst m_7 of MuxPE_67 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_68 @[PE.scala 116:19]
+    inst m_8 of MuxPE_68 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_69 @[PE.scala 117:19]
+    inst m_9 of MuxPE_69 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE_12 @[PE.scala 119:28]
+    inst multModule_0 of MultPE_12 @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_13 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_13 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE_12 @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE_12 @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_13 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_13 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module MuxPE_70 :
     input clock : Clock
@@ -30081,7 +30081,7 @@ circuit PE_8 :
   module PE_7 :
     input clock : Clock
     input reset : Reset
-    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<33>, out_1 : UInt<33>}
+    output io : { flip Xi_0 : UInt<32>, flip Yi_0 : UInt<32>, flip Xi_1 : UInt<32>, flip Yi_1 : UInt<32>, flip aggr_0 : UInt<32>, flip aggr_1 : UInt<32>, flip aggr_2 : UInt<32>, flip aggr_3 : UInt<32>, flip m_0_sel : UInt<2>, flip m_1_sel : UInt<2>, flip m_2_sel : UInt<2>, flip m_3_sel : UInt<2>, flip m_4_sel : UInt<2>, flip m_5_sel : UInt<2>, flip m_6_sel : UInt<2>, flip m_7_sel : UInt<2>, flip m_8_sel : UInt<2>, flip m_9_sel : UInt<2>, flip addsub_0_op : UInt<1>, flip addsub_1_op : UInt<1>, flip rounding : UInt<3>, flip tininess : UInt<1>, flip use_int : UInt<1>, out_0 : UInt<32>, out_1 : UInt<32>}
 
     reg Xi_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0) @[PE.scala 47:22]
@@ -30090,226 +30090,226 @@ circuit PE_8 :
       reset => (UInt<1>("h0"), Yi_0) @[PE.scala 48:22]
     Yi_0 <= io.Yi_0 @[PE.scala 48:22]
     reg Xi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 50:22]
-    Xi_1 <= io.Xi_1 @[PE.scala 50:22]
+      reset => (UInt<1>("h0"), Xi_1) @[PE.scala 49:22]
+    Xi_1 <= io.Xi_1 @[PE.scala 49:22]
     reg Yi_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 51:22]
-    Yi_1 <= io.Yi_1 @[PE.scala 51:22]
+      reset => (UInt<1>("h0"), Yi_1) @[PE.scala 50:22]
+    Yi_1 <= io.Yi_1 @[PE.scala 50:22]
     reg aggr_0 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 56:24]
-    aggr_0 <= io.aggr_0 @[PE.scala 56:24]
+      reset => (UInt<1>("h0"), aggr_0) @[PE.scala 55:24]
+    aggr_0 <= io.aggr_0 @[PE.scala 55:24]
     reg aggr_1 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 57:24]
-    aggr_1 <= io.aggr_1 @[PE.scala 57:24]
+      reset => (UInt<1>("h0"), aggr_1) @[PE.scala 56:24]
+    aggr_1 <= io.aggr_1 @[PE.scala 56:24]
     reg aggr_2 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 59:24]
-    aggr_2 <= io.aggr_2 @[PE.scala 59:24]
+      reset => (UInt<1>("h0"), aggr_2) @[PE.scala 57:24]
+    aggr_2 <= io.aggr_2 @[PE.scala 57:24]
     reg aggr_3 : UInt, clock with :
-      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 60:24]
-    aggr_3 <= io.aggr_3 @[PE.scala 60:24]
+      reset => (UInt<1>("h0"), aggr_3) @[PE.scala 58:24]
+    aggr_3 <= io.aggr_3 @[PE.scala 58:24]
     reg m_0_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 65:25]
-    m_0_sel <= io.m_0_sel @[PE.scala 65:25]
+      reset => (UInt<1>("h0"), m_0_sel) @[PE.scala 63:25]
+    m_0_sel <= io.m_0_sel @[PE.scala 63:25]
     reg m_1_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 66:25]
-    m_1_sel <= io.m_1_sel @[PE.scala 66:25]
+      reset => (UInt<1>("h0"), m_1_sel) @[PE.scala 64:25]
+    m_1_sel <= io.m_1_sel @[PE.scala 64:25]
     reg m_2_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 67:25]
-    m_2_sel <= io.m_2_sel @[PE.scala 67:25]
+      reset => (UInt<1>("h0"), m_2_sel) @[PE.scala 65:25]
+    m_2_sel <= io.m_2_sel @[PE.scala 65:25]
     reg m_3_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 68:25]
-    m_3_sel <= io.m_3_sel @[PE.scala 68:25]
+      reset => (UInt<1>("h0"), m_3_sel) @[PE.scala 66:25]
+    m_3_sel <= io.m_3_sel @[PE.scala 66:25]
     reg m_4_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 69:25]
-    m_4_sel <= io.m_4_sel @[PE.scala 69:25]
+      reset => (UInt<1>("h0"), m_4_sel) @[PE.scala 67:25]
+    m_4_sel <= io.m_4_sel @[PE.scala 67:25]
     reg m_5_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 70:25]
-    m_5_sel <= io.m_5_sel @[PE.scala 70:25]
+      reset => (UInt<1>("h0"), m_5_sel) @[PE.scala 68:25]
+    m_5_sel <= io.m_5_sel @[PE.scala 68:25]
     reg m_6_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 71:25]
-    m_6_sel <= io.m_6_sel @[PE.scala 71:25]
+      reset => (UInt<1>("h0"), m_6_sel) @[PE.scala 69:25]
+    m_6_sel <= io.m_6_sel @[PE.scala 69:25]
     reg m_7_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 72:25]
-    m_7_sel <= io.m_7_sel @[PE.scala 72:25]
+      reset => (UInt<1>("h0"), m_7_sel) @[PE.scala 70:25]
+    m_7_sel <= io.m_7_sel @[PE.scala 70:25]
     reg m_8_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 73:25]
-    m_8_sel <= io.m_8_sel @[PE.scala 73:25]
+      reset => (UInt<1>("h0"), m_8_sel) @[PE.scala 71:25]
+    m_8_sel <= io.m_8_sel @[PE.scala 71:25]
     reg m_9_sel : UInt, clock with :
-      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 74:25]
-    m_9_sel <= io.m_9_sel @[PE.scala 74:25]
+      reset => (UInt<1>("h0"), m_9_sel) @[PE.scala 72:25]
+    m_9_sel <= io.m_9_sel @[PE.scala 72:25]
     reg addsub_0_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 76:29]
-    addsub_0_op <= io.addsub_0_op @[PE.scala 76:29]
+      reset => (UInt<1>("h0"), addsub_0_op) @[PE.scala 74:29]
+    addsub_0_op <= io.addsub_0_op @[PE.scala 74:29]
     reg addsub_1_op : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 77:29]
-    addsub_1_op <= io.addsub_1_op @[PE.scala 77:29]
+      reset => (UInt<1>("h0"), addsub_1_op) @[PE.scala 75:29]
+    addsub_1_op <= io.addsub_1_op @[PE.scala 75:29]
     reg rounding : UInt, clock with :
-      reset => (UInt<1>("h0"), rounding) @[PE.scala 80:29]
-    rounding <= io.rounding @[PE.scala 80:29]
+      reset => (UInt<1>("h0"), rounding) @[PE.scala 78:29]
+    rounding <= io.rounding @[PE.scala 78:29]
     reg tininess : UInt, clock with :
-      reset => (UInt<1>("h0"), tininess) @[PE.scala 82:29]
-    tininess <= io.tininess @[PE.scala 82:29]
+      reset => (UInt<1>("h0"), tininess) @[PE.scala 80:29]
+    tininess <= io.tininess @[PE.scala 80:29]
     reg use_int : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), use_int) @[PE.scala 84:29]
-    use_int <= io.use_int @[PE.scala 84:29]
+      reset => (UInt<1>("h0"), use_int) @[PE.scala 82:29]
+    use_int <= io.use_int @[PE.scala 82:29]
     reg addsubModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 87:36]
     reg addsubModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 88:36]
     reg multModule_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 91:36]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 89:36]
     reg multModule_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 92:36]
-    reg m_0_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 94:24]
-    reg m_1_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 95:24]
-    reg m_2_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 96:24]
-    reg m_3_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 97:24]
-    reg m_4_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 98:24]
-    reg m_5_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 99:24]
-    reg m_6_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 100:24]
-    reg m_7_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 101:24]
-    reg m_8_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 102:24]
-    reg m_9_out : UInt<33>, clock with :
-      reset => (reset, UInt<33>("h0")) @[PE.scala 103:24]
-    inst m_0 of MuxPE_70 @[PE.scala 108:19]
+      reset => (reset, UInt<33>("h0")) @[PE.scala 90:36]
+    reg m_0_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 92:24]
+    reg m_1_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 93:24]
+    reg m_2_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 94:24]
+    reg m_3_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 95:24]
+    reg m_4_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 96:24]
+    reg m_5_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 97:24]
+    reg m_6_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 98:24]
+    reg m_7_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 99:24]
+    reg m_8_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 100:24]
+    reg m_9_out : UInt<32>, clock with :
+      reset => (reset, UInt<32>("h0")) @[PE.scala 101:24]
+    inst m_0 of MuxPE_70 @[PE.scala 106:19]
     m_0.clock <= clock
     m_0.reset <= reset
-    inst m_1 of MuxPE_71 @[PE.scala 109:19]
+    inst m_1 of MuxPE_71 @[PE.scala 107:19]
     m_1.clock <= clock
     m_1.reset <= reset
-    inst m_2 of MuxPE_72 @[PE.scala 110:19]
+    inst m_2 of MuxPE_72 @[PE.scala 108:19]
     m_2.clock <= clock
     m_2.reset <= reset
-    inst m_3 of MuxPE_73 @[PE.scala 111:19]
+    inst m_3 of MuxPE_73 @[PE.scala 109:19]
     m_3.clock <= clock
     m_3.reset <= reset
-    inst m_4 of MuxPE_74 @[PE.scala 112:19]
+    inst m_4 of MuxPE_74 @[PE.scala 110:19]
     m_4.clock <= clock
     m_4.reset <= reset
-    inst m_5 of MuxPE_75 @[PE.scala 113:19]
+    inst m_5 of MuxPE_75 @[PE.scala 111:19]
     m_5.clock <= clock
     m_5.reset <= reset
-    inst m_6 of MuxPE_76 @[PE.scala 114:19]
+    inst m_6 of MuxPE_76 @[PE.scala 112:19]
     m_6.clock <= clock
     m_6.reset <= reset
-    inst m_7 of MuxPE_77 @[PE.scala 115:19]
+    inst m_7 of MuxPE_77 @[PE.scala 113:19]
     m_7.clock <= clock
     m_7.reset <= reset
-    inst m_8 of MuxPE_78 @[PE.scala 116:19]
+    inst m_8 of MuxPE_78 @[PE.scala 114:19]
     m_8.clock <= clock
     m_8.reset <= reset
-    inst m_9 of MuxPE_79 @[PE.scala 117:19]
+    inst m_9 of MuxPE_79 @[PE.scala 115:19]
     m_9.clock <= clock
     m_9.reset <= reset
-    inst multModule_0 of MultPE_14 @[PE.scala 119:28]
+    inst multModule_0 of MultPE_14 @[PE.scala 117:28]
     multModule_0.clock <= clock
     multModule_0.reset <= reset
-    inst multModule_1 of MultPE_15 @[PE.scala 120:28]
+    inst multModule_1 of MultPE_15 @[PE.scala 118:28]
     multModule_1.clock <= clock
     multModule_1.reset <= reset
-    inst addsubModule_0 of AddSubPE_14 @[PE.scala 122:30]
+    inst addsubModule_0 of AddSubPE_14 @[PE.scala 120:30]
     addsubModule_0.clock <= clock
     addsubModule_0.reset <= reset
-    inst addsubModule_1 of AddSubPE_15 @[PE.scala 123:30]
+    inst addsubModule_1 of AddSubPE_15 @[PE.scala 121:30]
     addsubModule_1.clock <= clock
     addsubModule_1.reset <= reset
-    m_0.io.sel <= m_0_sel @[PE.scala 128:14]
-    m_1.io.sel <= m_1_sel @[PE.scala 129:14]
-    m_2.io.sel <= m_2_sel @[PE.scala 130:14]
-    m_3.io.sel <= m_3_sel @[PE.scala 131:14]
-    m_4.io.sel <= m_4_sel @[PE.scala 132:14]
-    m_5.io.sel <= m_5_sel @[PE.scala 133:14]
-    m_6.io.sel <= m_6_sel @[PE.scala 134:14]
-    m_7.io.sel <= m_7_sel @[PE.scala 135:14]
-    m_8.io.sel <= m_8_sel @[PE.scala 136:14]
-    m_9.io.sel <= m_9_sel @[PE.scala 137:14]
-    m_0.io.in_0 <= Xi_0 @[PE.scala 140:15]
-    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 141:15]
-    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 142:15]
-    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 143:15]
-    m_0_out <= m_0.io.out @[PE.scala 144:11]
-    m_1.io.in_0 <= Yi_0 @[PE.scala 146:15]
-    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 147:15]
-    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 148:15]
-    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 149:15]
-    m_1_out <= m_1.io.out @[PE.scala 150:11]
-    m_2.io.in_0 <= Xi_1 @[PE.scala 152:15]
-    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 153:15]
-    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 154:15]
-    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 155:15]
-    m_2_out <= m_2.io.out @[PE.scala 156:11]
-    m_3.io.in_0 <= Yi_1 @[PE.scala 158:15]
-    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 159:15]
-    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 160:15]
-    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 161:15]
-    m_3_out <= m_3.io.out @[PE.scala 162:11]
-    multModule_0.io.rounding <= rounding @[PE.scala 167:30]
-    multModule_0.io.tininess <= tininess @[PE.scala 168:30]
-    multModule_0.io.use_int <= use_int @[PE.scala 169:30]
-    multModule_0.io.in_0 <= m_0_out @[PE.scala 170:24]
-    multModule_0.io.in_1 <= m_1_out @[PE.scala 171:24]
-    multModule_0_out <= multModule_0.io.out @[PE.scala 172:21]
-    multModule_1.io.rounding <= rounding @[PE.scala 175:30]
-    multModule_1.io.tininess <= tininess @[PE.scala 176:30]
-    multModule_1.io.use_int <= use_int @[PE.scala 177:30]
-    multModule_1.io.in_0 <= m_2_out @[PE.scala 178:24]
-    multModule_1.io.in_1 <= m_3_out @[PE.scala 179:24]
-    multModule_1_out <= multModule_1.io.out @[PE.scala 180:21]
-    m_4.io.in_0 <= Xi_0 @[PE.scala 185:15]
-    m_4.io.in_1 <= multModule_0_out @[PE.scala 186:15]
-    m_4.io.in_2 <= aggr_0 @[PE.scala 187:15]
-    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 188:15]
-    m_4_out <= m_4.io.out @[PE.scala 189:15]
-    m_5.io.in_0 <= Yi_0 @[PE.scala 191:15]
-    m_5.io.in_1 <= multModule_1_out @[PE.scala 192:15]
-    m_5.io.in_2 <= aggr_1 @[PE.scala 193:15]
-    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 194:15]
-    m_5_out <= m_5.io.out @[PE.scala 195:15]
-    m_6.io.in_0 <= Xi_1 @[PE.scala 197:15]
-    m_6.io.in_1 <= multModule_1_out @[PE.scala 198:15]
-    m_6.io.in_2 <= aggr_2 @[PE.scala 199:15]
-    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 200:15]
-    m_6_out <= m_6.io.out @[PE.scala 201:15]
-    m_7.io.in_0 <= Yi_1 @[PE.scala 203:15]
-    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 204:15]
-    m_7.io.in_2 <= aggr_3 @[PE.scala 205:15]
-    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 206:15]
-    m_7_out <= m_7.io.out @[PE.scala 207:15]
-    addsubModule_0.io.op <= addsub_0_op @[PE.scala 212:32]
-    addsubModule_0.io.rounding <= rounding @[PE.scala 213:32]
-    addsubModule_0.io.tininess <= tininess @[PE.scala 214:32]
-    addsubModule_0.io.use_int <= use_int @[PE.scala 215:32]
-    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 216:32]
-    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 217:32]
-    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 218:23]
-    addsubModule_1.io.op <= addsub_1_op @[PE.scala 221:32]
-    addsubModule_1.io.rounding <= rounding @[PE.scala 222:32]
-    addsubModule_1.io.tininess <= tininess @[PE.scala 223:32]
-    addsubModule_1.io.use_int <= use_int @[PE.scala 224:32]
-    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 225:32]
-    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 226:32]
-    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 227:23]
-    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 232:15]
-    m_8.io.in_1 <= multModule_0_out @[PE.scala 233:15]
-    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 234:15]
-    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 235:15]
-    m_8_out <= m_8.io.out @[PE.scala 236:15]
-    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 238:15]
-    m_9.io.in_1 <= multModule_1_out @[PE.scala 239:15]
-    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 240:15]
-    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 241:15]
-    m_9_out <= m_9.io.out @[PE.scala 242:15]
-    io.out_0 <= m_8_out @[PE.scala 247:12]
-    io.out_1 <= m_9_out @[PE.scala 248:12]
+    m_0.io.sel <= m_0_sel @[PE.scala 126:14]
+    m_1.io.sel <= m_1_sel @[PE.scala 127:14]
+    m_2.io.sel <= m_2_sel @[PE.scala 128:14]
+    m_3.io.sel <= m_3_sel @[PE.scala 129:14]
+    m_4.io.sel <= m_4_sel @[PE.scala 130:14]
+    m_5.io.sel <= m_5_sel @[PE.scala 131:14]
+    m_6.io.sel <= m_6_sel @[PE.scala 132:14]
+    m_7.io.sel <= m_7_sel @[PE.scala 133:14]
+    m_8.io.sel <= m_8_sel @[PE.scala 134:14]
+    m_9.io.sel <= m_9_sel @[PE.scala 135:14]
+    m_0.io.in_0 <= Xi_0 @[PE.scala 138:15]
+    m_0.io.in_1 <= addsubModule_0_out @[PE.scala 139:15]
+    m_0.io.in_2 <= UInt<32>("h0") @[PE.scala 140:15]
+    m_0.io.in_3 <= UInt<32>("h0") @[PE.scala 141:15]
+    m_0_out <= m_0.io.out @[PE.scala 142:11]
+    m_1.io.in_0 <= Yi_0 @[PE.scala 144:15]
+    m_1.io.in_1 <= addsubModule_0_out @[PE.scala 145:15]
+    m_1.io.in_2 <= UInt<32>("h0") @[PE.scala 146:15]
+    m_1.io.in_3 <= UInt<32>("h0") @[PE.scala 147:15]
+    m_1_out <= m_1.io.out @[PE.scala 148:11]
+    m_2.io.in_0 <= Xi_1 @[PE.scala 150:15]
+    m_2.io.in_1 <= addsubModule_1_out @[PE.scala 151:15]
+    m_2.io.in_2 <= UInt<32>("h0") @[PE.scala 152:15]
+    m_2.io.in_3 <= UInt<32>("h0") @[PE.scala 153:15]
+    m_2_out <= m_2.io.out @[PE.scala 154:11]
+    m_3.io.in_0 <= Yi_1 @[PE.scala 156:15]
+    m_3.io.in_1 <= addsubModule_1_out @[PE.scala 157:15]
+    m_3.io.in_2 <= UInt<32>("h0") @[PE.scala 158:15]
+    m_3.io.in_3 <= UInt<32>("h0") @[PE.scala 159:15]
+    m_3_out <= m_3.io.out @[PE.scala 160:11]
+    multModule_0.io.rounding <= rounding @[PE.scala 165:30]
+    multModule_0.io.tininess <= tininess @[PE.scala 166:30]
+    multModule_0.io.use_int <= use_int @[PE.scala 167:30]
+    multModule_0.io.in_0 <= m_0_out @[PE.scala 168:24]
+    multModule_0.io.in_1 <= m_1_out @[PE.scala 169:24]
+    multModule_0_out <= multModule_0.io.out @[PE.scala 170:21]
+    multModule_1.io.rounding <= rounding @[PE.scala 173:30]
+    multModule_1.io.tininess <= tininess @[PE.scala 174:30]
+    multModule_1.io.use_int <= use_int @[PE.scala 175:30]
+    multModule_1.io.in_0 <= m_2_out @[PE.scala 176:24]
+    multModule_1.io.in_1 <= m_3_out @[PE.scala 177:24]
+    multModule_1_out <= multModule_1.io.out @[PE.scala 178:21]
+    m_4.io.in_0 <= Xi_0 @[PE.scala 183:15]
+    m_4.io.in_1 <= multModule_0_out @[PE.scala 184:15]
+    m_4.io.in_2 <= aggr_0 @[PE.scala 185:15]
+    m_4.io.in_3 <= UInt<32>("h0") @[PE.scala 186:15]
+    m_4_out <= m_4.io.out @[PE.scala 187:15]
+    m_5.io.in_0 <= Yi_0 @[PE.scala 189:15]
+    m_5.io.in_1 <= multModule_1_out @[PE.scala 190:15]
+    m_5.io.in_2 <= aggr_1 @[PE.scala 191:15]
+    m_5.io.in_3 <= UInt<32>("h0") @[PE.scala 192:15]
+    m_5_out <= m_5.io.out @[PE.scala 193:15]
+    m_6.io.in_0 <= Xi_1 @[PE.scala 195:15]
+    m_6.io.in_1 <= multModule_1_out @[PE.scala 196:15]
+    m_6.io.in_2 <= aggr_2 @[PE.scala 197:15]
+    m_6.io.in_3 <= UInt<32>("h0") @[PE.scala 198:15]
+    m_6_out <= m_6.io.out @[PE.scala 199:15]
+    m_7.io.in_0 <= Yi_1 @[PE.scala 201:15]
+    m_7.io.in_1 <= UInt<32>("h0") @[PE.scala 202:15]
+    m_7.io.in_2 <= aggr_3 @[PE.scala 203:15]
+    m_7.io.in_3 <= UInt<32>("h0") @[PE.scala 204:15]
+    m_7_out <= m_7.io.out @[PE.scala 205:15]
+    addsubModule_0.io.op <= addsub_0_op @[PE.scala 210:32]
+    addsubModule_0.io.rounding <= rounding @[PE.scala 211:32]
+    addsubModule_0.io.tininess <= tininess @[PE.scala 212:32]
+    addsubModule_0.io.use_int <= use_int @[PE.scala 213:32]
+    addsubModule_0.io.in_0 <= m_4_out @[PE.scala 214:32]
+    addsubModule_0.io.in_1 <= m_5_out @[PE.scala 215:32]
+    addsubModule_0_out <= addsubModule_0.io.out @[PE.scala 216:23]
+    addsubModule_1.io.op <= addsub_1_op @[PE.scala 219:32]
+    addsubModule_1.io.rounding <= rounding @[PE.scala 220:32]
+    addsubModule_1.io.tininess <= tininess @[PE.scala 221:32]
+    addsubModule_1.io.use_int <= use_int @[PE.scala 222:32]
+    addsubModule_1.io.in_0 <= m_6_out @[PE.scala 223:32]
+    addsubModule_1.io.in_1 <= m_7_out @[PE.scala 224:32]
+    addsubModule_1_out <= addsubModule_1.io.out @[PE.scala 225:23]
+    m_8.io.in_0 <= addsubModule_0_out @[PE.scala 230:15]
+    m_8.io.in_1 <= multModule_0_out @[PE.scala 231:15]
+    m_8.io.in_2 <= UInt<32>("h0") @[PE.scala 232:15]
+    m_8.io.in_3 <= UInt<32>("h0") @[PE.scala 233:15]
+    m_8_out <= m_8.io.out @[PE.scala 234:15]
+    m_9.io.in_0 <= addsubModule_1_out @[PE.scala 236:15]
+    m_9.io.in_1 <= multModule_1_out @[PE.scala 237:15]
+    m_9.io.in_2 <= UInt<32>("h0") @[PE.scala 238:15]
+    m_9.io.in_3 <= UInt<32>("h0") @[PE.scala 239:15]
+    m_9_out <= m_9.io.out @[PE.scala 240:15]
+    io.out_0 <= m_8_out @[PE.scala 245:12]
+    io.out_1 <= m_9_out @[PE.scala 246:12]
 
   module AddRawFN_16 :
     output io : { flip subOp : UInt<1>, flip a : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<25>}, flip b : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<25>}, flip roundingMode : UInt<3>, invalidExc : UInt<1>, rawOut : { isNaN : UInt<1>, isInf : UInt<1>, isZero : UInt<1>, sign : UInt<1>, sExp : SInt<10>, sig : UInt<27>}}

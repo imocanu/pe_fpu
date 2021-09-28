@@ -505,19 +505,19 @@ class PE_8 extends Module {
             addsub_0_op := 1.U(2.W)
             addsub_1_op := 1.U(2.W) 
 
-            m_0_sel := "b01".U(2.W)
-            m_1_sel := "b01".U(2.W)
-            m_2_sel := "b01".U(2.W)
-            m_3_sel := "b01".U(2.W)
+            m_0_sel := 1.U(2.W)
+            m_1_sel := 1.U(2.W)
+            m_2_sel := 1.U(2.W)
+            m_3_sel := 1.U(2.W)
 
-            m_4_sel := "b00".U(2.W)
-            m_5_sel := "b00".U(2.W)
-            m_6_sel := "b00".U(2.W)
-            m_7_sel := "b00".U(2.W)
+            m_4_sel := 0.U(2.W)
+            m_5_sel := 0.U(2.W)
+            m_6_sel := 0.U(2.W)
+            m_7_sel := 0.U(2.W)
 
             // output from Mult
-            m_8_sel := "b01".U(2.W)
-            m_9_sel := "b01".U(2.W)
+            m_8_sel := 1.U(2.W)
+            m_9_sel := 1.U(2.W)
             
             pe_step := start_L2
           }

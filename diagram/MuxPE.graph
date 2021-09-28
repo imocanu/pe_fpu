@@ -16,6 +16,10 @@ node MuxPE {
         ^port.side: WEST
         label "reset"
     }
+    port io_sel {
+        ^port.side: WEST
+        label "io_sel"
+    }
     port io_in_0 {
         ^port.side: WEST
         label "io_in_0"
@@ -24,9 +28,9 @@ node MuxPE {
         ^port.side: WEST
         label "io_in_1"
     }
-    port io_sel {
+    port io_in_2 {
         ^port.side: WEST
-        label "io_sel"
+        label "io_in_2"
     }
     port io_out {
         ^port.side: EAST
@@ -58,6 +62,19 @@ node MuxPE {
             ^port.side: "EAST"
         }
     }
+    node in_2 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "in_2"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
     node out {
         layout [ size: 30, 40 ]
         portConstraints: FIXED_SIDE
@@ -71,7 +88,7 @@ node MuxPE {
             ^port.side: "EAST"
         }
     }
-    node eq_398 {
+    node eq_469 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -89,7 +106,7 @@ node MuxPE {
             ^port.side: "EAST"
         }
     }
-    node eq_399 {
+    node eq_470 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -107,7 +124,25 @@ node MuxPE {
             ^port.side: "EAST"
         }
     }
-    node mux_144 {
+    node eq_471 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "eq"
+        port in2 {
+            ^port.side: "WEST"
+            label "2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node mux_321 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -129,12 +164,12 @@ node MuxPE {
             ^port.side: "EAST"
         }
     }
-    node lit400 {
+    node lit472 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    node mux_145 {
+    node mux_322 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -156,7 +191,7 @@ node MuxPE {
             ^port.side: "EAST"
         }
     }
-    node mux_146 {
+    node mux_323 {
         layout [ size: 32, 56 ]
         portConstraints: FIXED_ORDER
         nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
@@ -178,26 +213,53 @@ node MuxPE {
             ^port.side: "EAST"
         }
     }
-    node lit401 {
+    node mux_324 {
+        layout [ size: 32, 56 ]
+        portConstraints: FIXED_ORDER
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        portLabels.placement: "INSIDE"
+        label "mux"
+        port select {
+            ^port.side: "WEST"
+            label "sel"
+        }
+        port in2 {
+            ^port.side: "WEST"
+            label "in2"
+        }
+        port in1 {
+            ^port.side: "WEST"
+            label "in1"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node lit473 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
         label "0"
     }
-    edge e1124 : mux_146.out -> MuxPE.out.in
-    edge e1125 : eq_398.out -> mux_145.select
-    edge e1126 : MuxPE.in_0.out -> mux_145.in1
-    edge e1127 : MuxPE.lit401 -> mux_146.in1
-    edge e1128 : eq_399.out -> mux_144.select
-    edge e1129 : MuxPE.io_sel -> eq_398.in1
-    edge e1130 : MuxPE.lit400 -> mux_144.in2
-    edge e1131 : MuxPE.io_in_1 -> MuxPE.in_1.in
-    edge e1132 : MuxPE.out.out -> MuxPE.io_out
-    edge e1133 : MuxPE.io_sel -> eq_399.in1
-    edge e1134 : mux_144.out -> mux_145.in2
-    edge e1135 : MuxPE.reset -> mux_146.select
-    edge e1136 : MuxPE.in_1.out -> mux_144.in1
-    edge e1137 : mux_145.out -> mux_146.in2
-    edge e1138 : MuxPE.io_in_0 -> MuxPE.in_0.in
+    edge e1698 : mux_324.out -> MuxPE.out.in
+    edge e1699 : eq_470.out -> mux_322.select
+    edge e1700 : mux_322.out -> mux_323.in2
+    edge e1701 : MuxPE.in_1.out -> mux_322.in1
+    edge e1702 : MuxPE.io_in_1 -> MuxPE.in_1.in
+    edge e1703 : eq_471.out -> mux_321.select
+    edge e1704 : mux_323.out -> mux_324.in2
+    edge e1705 : MuxPE.in_0.out -> mux_323.in1
+    edge e1706 : MuxPE.out.out -> MuxPE.io_out
+    edge e1707 : MuxPE.io_sel -> eq_470.in1
+    edge e1708 : MuxPE.reset -> mux_324.select
+    edge e1709 : MuxPE.lit472 -> mux_321.in2
+    edge e1710 : MuxPE.io_sel -> eq_469.in1
+    edge e1711 : MuxPE.io_sel -> eq_471.in1
+    edge e1712 : MuxPE.lit473 -> mux_324.in1
+    edge e1713 : mux_321.out -> mux_322.in2
+    edge e1714 : MuxPE.io_in_0 -> MuxPE.in_0.in
+    edge e1715 : MuxPE.in_2.out -> mux_321.in1
+    edge e1716 : eq_469.out -> mux_323.select
+    edge e1717 : MuxPE.io_in_2 -> MuxPE.in_2.in
     
 }
 

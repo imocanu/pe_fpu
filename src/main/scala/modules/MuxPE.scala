@@ -9,11 +9,11 @@ import layered.stage._
 
 class MuxPE extends Module {
   val io = IO(new Bundle {
+    val sel        = Input(UInt(2.W))
     val in_0       = Input(Bits(Config.forIN.W))
     val in_1       = Input(Bits(Config.forIN.W))
     val in_2       = Input(Bits(Config.forIN.W))
     val in_3       = Input(Bits(Config.forIN.W))
-    val sel        = Input(UInt(2.W))
     val out        = Output(Bits(Config.forIN.W))
   })
 
