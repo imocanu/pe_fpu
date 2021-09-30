@@ -462,8 +462,8 @@ class PE_8 extends Module {
 //=======================================
 // COUNTERS
 //=======================================
-  val STARTUP_cycles    = 2
-  val STARTUP_counter   = Counter(STARTUP_cycles)
+  // val STARTUP_cycles    = 2
+  // val STARTUP_counter   = Counter(STARTUP_cycles)
 
   val L1_cycles    = 10
   val L1_counter   = Counter(L1_cycles)
@@ -481,7 +481,7 @@ class PE_8 extends Module {
   val AGGR_counter = Counter(AGGR_cycles)    
 
 //=======================================
-// FSM: Startup->Idle->L1/L1/DOT/WGT->aggr
+// FSM:Startup->Idle->L1/L1/DOT/WGT->aggr
 //=======================================
   val startup :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: stop_aggr :: Nil = Enum (8)
   val pe_step = RegInit ( startup )
@@ -490,13 +490,7 @@ class PE_8 extends Module {
   {
     is ( startup ) {
       dbg_fsm := 9.U(4.W)        
-
-      STARTUP_counter.inc()
-      when (STARTUP_counter.value === (STARTUP_cycles - 1).U) {
-        pe_step := idle
-        STARTUP_counter.reset
-      }
-
+      pe_step := idle
     }
     is ( idle ) {
 

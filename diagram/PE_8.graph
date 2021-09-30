@@ -2746,7 +2746,7 @@ node PE_8 {
     node lit20 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
-        label "2"
+        label "0"
     }
     node mux_15 {
         layout [ size: 32, 56 ]
@@ -2773,7 +2773,7 @@ node PE_8 {
     node lit21 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
-        label "2"
+        label "0"
     }
     node mux_16 {
         layout [ size: 32, 56 ]
@@ -2800,7 +2800,7 @@ node PE_8 {
     node lit22 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
-        label "2"
+        label "0"
     }
     node mux_17 {
         layout [ size: 32, 56 ]
@@ -2827,7 +2827,7 @@ node PE_8 {
     node lit23 {
         nodeLabels.placement: "H_CENTER V_CENTER INSIDE"
         nodeSize.constraints: "NODE_LABELS"
-        label "2"
+        label "0"
     }
     node mux_18 {
         layout [ size: 32, 56 ]

@@ -2,5 +2,14 @@
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
 [0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 35 products, 9 sources, 10 libraries[0m
 [0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/test/scala/modules/MultPE_test.scala, ${BASE}/src/test/scala/top/PE_8_test.scala, ${BASE}/src/test/scala/modules/MuxPE_test.scala, ${BASE}/src/test/scala/top/PE_8_ADDERS_test.scala, ${BASE}/src/test/scala/utils/TestUtils.scala, ${BASE}/src/test/scala/modules/AddSubPE_test.scala, ${BASE}/src/test/scala/validate/FP32_addsub_test.scala, ${BASE}/src/test/scala/top/PE_test.scala, ${BASE}/src/test/scala/validate/AddSubValidate.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set(NamesChange(top.PE_8,ModifiedNames(changes = UsedName(STARTUP_counter,[Default]), UsedName(STARTUP_cycles,[Default])))))[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe top.PE_8 has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(STARTUP_counter,[Default]), UsedName(STARTUP_cycles,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) top.PE_8: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mNow invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) top.PE_8.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of top.PE_8_test_manual. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of top.PE_8_test. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo changes[0m

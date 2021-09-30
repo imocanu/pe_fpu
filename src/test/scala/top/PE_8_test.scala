@@ -98,8 +98,8 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
     
     var test_op_type = "b00".U(2.W)
 
-    val test_INT32 = 1
-    val test_FP32  = 0
+    val test_INT32 = 0
+    val test_FP32  = 1
 
     var inputTest_0 = test_int_0
     var inputTest_1 = test_int_1
