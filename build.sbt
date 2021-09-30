@@ -34,9 +34,9 @@ lazy val hardfloat  = (project in file("berkeley-hardfloat"))
 lazy val root = (project in file("."))
   .settings(
     scalaVersion  := "2.12.15",
-    version := "2.0.0",
+    version := "3.0.0",
     name := "PE_IP",
-    organization := "com.gig",
+    organization := "gig",
     libraryDependencies ++= Seq(
       "edu.berkeley.cs" %% "chisel3" % "3.+",
       "edu.berkeley.cs" %% "dsptools" % "1.4.+",

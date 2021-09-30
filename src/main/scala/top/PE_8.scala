@@ -462,6 +462,9 @@ class PE_8 extends Module {
 //=======================================
 // COUNTERS
 //=======================================
+  val STARTUP_cycles    = 2
+  val STARTUP_counter   = Counter(STARTUP_cycles)
+
   val L1_cycles    = 10
   val L1_counter   = Counter(L1_cycles)
 
@@ -486,8 +489,14 @@ class PE_8 extends Module {
   switch ( pe_step ) 
   {
     is ( startup ) {
-        dbg_fsm := 9.U(4.W)        
+      dbg_fsm := 9.U(4.W)        
+
+      STARTUP_counter.inc()
+      when (STARTUP_counter.value === (STARTUP_cycles - 1).U) {
         pe_step := idle
+        STARTUP_counter.reset
+      }
+
     }
     is ( idle ) {
 
@@ -552,10 +561,10 @@ class PE_8 extends Module {
             addsub_0_op := 0.U(2.W)
             addsub_1_op := 0.U(2.W) 
 
-            m_0_sel := 2.U(2.W)
-            m_1_sel := 2.U(2.W)
-            m_2_sel := 2.U(2.W)
-            m_3_sel := 2.U(2.W)
+            m_0_sel := 0.U(2.W)
+            m_1_sel := 0.U(2.W)
+            m_2_sel := 0.U(2.W)
+            m_3_sel := 0.U(2.W)
 
             m_4_sel := 0.U(2.W)
             m_5_sel := 0.U(2.W)
