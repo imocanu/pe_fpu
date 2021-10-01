@@ -27,6 +27,8 @@ object TestUtils {
     var round_odd_UINT         = "b000".asUInt(3.W)
 
     val rootDir = "python/gen/"
+
+    // FOR FP GENERATED INPUTS
     val INPUT_1 = rootDir+"fpu32_generated_1.txt"
     val INPUT_2 = rootDir+"fpu32_generated_2.txt"
     val INPUT_3 = rootDir+"fpu32_generated_3.txt"
@@ -34,8 +36,12 @@ object TestUtils {
     val ADD_RESULT = rootDir+"fpu32_ADD_result.txt"
     val SUB_RESULT = rootDir+"fpu32_SUB_result.txt"
     val MUL_RESULT = rootDir+"fpu32_MUL_result.txt"
+    val FP_L2_RESULT  = rootDir+"fpu32_L2_result.txt"
+    val FP_L1_RESULT  = rootDir+"fpu32_L1_result.txt"
+    val FP_DOT_RESULT = rootDir+"fpu32_DOT_result.txt"
+    val FP_WGT_RESULT = rootDir+"fpu32_WGT_result.txt"
 
-    // FOR INTEGER GENERATED INPUTS
+    // FOR INT GENERATED INPUTS
     val INT_INPUT_1 = rootDir+"int32_generated_1.txt"
     val INT_INPUT_2 = rootDir+"int32_generated_2.txt"
     val INT_INPUT_3 = rootDir+"int32_generated_3.txt"

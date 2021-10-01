@@ -462,7 +462,7 @@ class PE_8 extends Module {
 //=======================================
 // COUNTERS
 //=======================================
-  // val STARTUP_cycles    = 2
+  // val STARTUP_cycles    = 10
   // val STARTUP_counter   = Counter(STARTUP_cycles)
 
   val L1_cycles    = 10
@@ -474,23 +474,28 @@ class PE_8 extends Module {
   val DOT_cycles   = 10
   val DOT_counter  = Counter(DOT_cycles)
 
-  val WGT_cycles   = 10
+  val WGT_cycles   = 15
   val WGT_counter  = Counter(WGT_cycles)
 
   val AGGR_cycles  = 37
-  val AGGR_counter = Counter(AGGR_cycles)    
+  val AGGR_counter = Counter(AGGR_cycles) 
+
+  val ADD_cycles   = 4
+  val ADD_counter  = Counter(ADD_cycles)    
 
 //=======================================
-// FSM:Startup->Idle->L1/L1/DOT/WGT->aggr
+// FSM:Startup->Idle->L2/L1/DOT/WGT->aggr
 //=======================================
-  val startup :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: stop_aggr :: Nil = Enum (8)
+  val startup :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: final_add :: stop_aggr :: Nil = Enum (9)
   val pe_step = RegInit ( startup )
 
   switch ( pe_step ) 
   {
     is ( startup ) {
+      
       dbg_fsm := 9.U(4.W)        
       pe_step := idle
+
     }
     is ( idle ) {
 
@@ -577,6 +582,10 @@ class PE_8 extends Module {
             // DEBUG - WGT
             dbg_opt := 4.U(4.W)
 
+            // AddSub operation : false "+" OR true "-"
+            addsub_0_op := 0.U(2.W)
+            addsub_1_op := 0.U(2.W)
+
             m_0_sel := 0.U(2.W)
             m_1_sel := 0.U(2.W)
             m_2_sel := 0.U(2.W)
@@ -649,10 +658,10 @@ class PE_8 extends Module {
         m_8_sel := "b00".U(2.W)
         m_9_sel := "b00".U(2.W) 
 
-        pe_step := stop_aggr
+        pe_step := final_add
 
     }
-    is ( stop_aggr ) {
+    is ( final_add ) {
       dbg_fsm := 8.U(4.W)
 
       AGGR_counter.inc()
@@ -668,8 +677,18 @@ class PE_8 extends Module {
         m_8_sel := 2.U(2.W)
         m_9_sel := 2.U(2.W)
 
-        pe_step := idle
+        pe_step := stop_aggr
         AGGR_counter.reset
+      }
+    }
+    is ( stop_aggr ) {
+      dbg_fsm := 11.U(4.W)
+
+      ADD_counter.inc()
+      when (ADD_counter.value === (ADD_cycles - 1).U) {
+        
+        pe_step := idle
+        ADD_counter.reset
       }
     }
   }
@@ -690,244 +709,3 @@ object PE_8 extends App {
     Seq(ChiselGeneratorAnnotation(() => new PE_8))
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// //=======================================
-// // COUNTERS
-// //=======================================
-//   val L2_cycles  = 15
-//   val L2_counter = Counter(L2_cycles)
-
-//   val L1_cycles  = 10
-//   val L1_counter = Counter(L1_cycles)
-
-//   val DOT_cycles = 10
-//   val DOT_counter = Counter(DOT_cycles)
-
-//   val WGT_cycles  = 15
-//   val WGT_counter = Counter(WGT_cycles)
-
-//   val SUM_4_2_cycles  = 80
-//   val SUM_4_2_counter = Counter(SUM_4_2_cycles)    
-
-// //=======================================
-// // FSM
-// //=======================================
-//   val startup :: idle :: init_L2 :: init_L2_s1 :: init_L2_s2 :: init_L1 :: init_DOT :: init_WGT :: sum_init :: sum_start :: sum_stop :: Nil = Enum (11)
-//   val pe_step = RegInit ( startup )
-
-//   switch ( pe_step ) 
-//   {
-//     is ( startup ) {
-//         dbg_fsm := 9.U(4.W)        
-//         pe_step := idle
-//     }
-//     is ( idle ) {
-
-//         dbg_fsm := 1.U(4.W) 
-
-//         switch ( op_type ) 
-//         {
-//           // Euclidean distance - L2
-//           is ( "b00".U(2.W) )  
-//           {
-//             // DEBUG - L2
-//             dbg_opt := 1.U(4.W)
-//             // AddSub operation : false "+" & true "-"
-//             // addsub_0_op := "b11".U(2.W)
-//             // addsub_1_op := "b11".U(2.W) 
-
-//             // m_0_sel := "b01".U(2.W)
-//             // m_1_sel := "b01".U(2.W)
-//             // m_2_sel := "b01".U(2.W)
-//             // m_3_sel := "b01".U(2.W)
-//             // m_4_sel := "b00".U(2.W)
-//             // m_5_sel := "b00".U(2.W)
-//             // m_6_sel := "b00".U(2.W)
-//             // m_7_sel := "b00".U(2.W)
-
-//             // // output from Mult
-//             // m_8_sel := "b01".U(2.W)
-//             // m_9_sel := "b01".U(2.W)
-            
-//             pe_step := init_L2_s1
-//           }
-//           // Manhattan distance  - L1
-//           is ( "b01".U(2.W) ) 
-//           {
-//             // DEBUG - L1
-//             dbg_opt := 2.U(4.W)
-
-//             addsub_0_op := "b11".U(2.W)
-//             addsub_1_op := "b11".U(2.W) 
-
-//             // m_0_sel := "b01".U(2.W)
-//             // m_1_sel := "b01".U(2.W)
-//             // m_2_sel := "b01".U(2.W)
-//             // m_3_sel := "b01".U(2.W)
-//             m_4_sel := "b00".U(2.W)
-//             m_5_sel := "b00".U(2.W)
-//             m_6_sel := "b00".U(2.W)
-//             m_7_sel := "b00".U(2.W)
-
-//             // output from AddSum
-//             m_8_sel := "b00".U(2.W)
-//             m_9_sel := "b00".U(2.W)
-            
-//             pe_step := init_L1
-//           }
-//           // DOT product 
-//           is ( "b10".U(2.W) ) 
-//           {
-//             // DEBUG - DOT
-//             dbg_opt := 3.U(4.W)
-
-//             m_0_sel := "b00".U(2.W)
-//             m_1_sel := "b00".U(2.W)
-//             m_2_sel := "b00".U(2.W)
-//             m_3_sel := "b00".U(2.W)
-//             m_4_sel := "b11".U(2.W)
-//             m_5_sel := "b11".U(2.W)
-//             m_6_sel := "b11".U(2.W)
-//             m_7_sel := "b11".U(2.W)
-
-//             // output for Mult
-//             m_8_sel := "b01".U(2.W)
-//             m_9_sel := "b01".U(2.W)
-
-//             pe_step := init_DOT
-//           }
-//           // Weighted vector pooling 
-//           is ( "b11".U(2.W) ) 
-//           {
-//             // DEBUG - WGT
-//             dbg_opt := 4.U(4.W)
-
-//             m_0_sel := "b00".U(2.W)
-//             m_1_sel := "b00".U(2.W)
-//             m_2_sel := "b00".U(2.W)
-//             m_3_sel := "b00".U(2.W)
-//             m_4_sel := "b01".U(2.W)
-//             m_5_sel := "b01".U(2.W)
-//             m_6_sel := "b11".U(2.W)
-//             m_7_sel := "b11".U(2.W)
-
-//             // output from AddSum
-//             m_8_sel := "b00".U(2.W)
-//             m_9_sel := "b00".U(2.W)
-
-//             pe_step := init_WGT
-//           }
-//         }
-//     }
-//     is ( init_L2_s1 ) {
-//       dbg_fsm := 3.U(4.W)
-
-//       addsub_0_op := "b11".U(2.W)
-//       addsub_1_op := "b11".U(2.W) 
-
-//       m_0_sel := "b01".U(2.W)
-//       m_1_sel := "b01".U(2.W)
-//       m_2_sel := "b01".U(2.W)
-//       m_3_sel := "b01".U(2.W)
-//       m_4_sel := "b00".U(2.W)
-//       m_5_sel := "b00".U(2.W)
-//       m_6_sel := "b00".U(2.W)
-//       m_7_sel := "b00".U(2.W)
-
-//       // output from Mult
-//       m_8_sel := "b01".U(2.W)
-//       m_9_sel := "b01".U(2.W)
-      
-//       pe_step := init_L2
-
-//     }
-//     is ( init_L2 ) {
-//       dbg_fsm := 3.U(4.W)
-
-//       L2_counter.inc()
-//       when (L2_counter.value === (L2_cycles - 1).U) {
-//         pe_step := init_L2_s2
-//         L2_counter.reset
-//       }
-
-//     }
-//     is ( init_L2_s2 ) {
-//       dbg_fsm := 3.U(4.W)
-//       addsub_0_op := "b00".U(2.W)
-//       addsub_1_op := "b00".U(2.W)
-
-//       pe_step := sum_init
-
-//     }
-//     is ( init_L1 ) {
-//       dbg_fsm := 3.U(4.W)
-
-//       L1_counter.inc()
-//       when (L1_counter.value === (L1_cycles - 1).U) {
-//         pe_step := sum_init
-//         L1_counter.reset
-//       }
-
-//     }
-//     is ( init_DOT ) {
-//       dbg_fsm := 3.U(4.W)
-
-//       DOT_counter.inc()
-//       when (DOT_counter.value === (DOT_cycles - 1).U) {
-//         pe_step := sum_init
-//         DOT_counter.reset
-//       }
-
-//     }
-//     is ( init_WGT ) {
-//       dbg_fsm := 3.U(4.W)
-
-//       WGT_counter.inc()
-//       when (WGT_counter.value === (WGT_cycles - 1).U) {
-//         pe_step := sum_init
-//         WGT_counter.reset
-//       }
-
-//     }
-//     is ( sum_init ) {
-//       dbg_fsm := 5.U(4.W)
-
-//       m_4_sel := "b10".U(2.W)
-//       m_5_sel := "b10".U(2.W)
-//       m_6_sel := "b10".U(2.W)
-//       m_7_sel := "b10".U(2.W)
-
-//       m_8_sel := "b00".U(2.W)
-//       m_9_sel := "b00".U(2.W)  
-
-//       pe_step := sum_start
-//     }
-//     is ( sum_start ) {
-//       dbg_fsm := 6.U(4.W)
-
-//       SUM_4_2_counter.inc()
-//       when (SUM_4_2_counter.value === (SUM_4_2_cycles - 1).U) {
-
-//         addsum_in_0 := pe_0_out_0
-//         addsum_in_1 := pe_0_out_1
-
-//         SUM_4_2_counter.reset()
-//         pe_step := sum_stop
-//       }
-//     }
-//     is ( sum_stop ) {
-//       dbg_fsm := 7.U(4.W)
-//       pe_step := idle
-//     }
-//   }

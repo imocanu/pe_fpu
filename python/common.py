@@ -10,8 +10,8 @@ from bitstring import BitArray
 
 random.seed(123)
 ##### DEFAULT PARAMS ####
-totalNR = 50
-FLOAT_range =   999999
+totalNR = 5
+FLOAT_range =   5
 # SCALA - INT    -2,147,483,648 to 2,147,483,647   2147483648
 # SCALA - LONG   -9,223,372,036,854,775,808 to     9223372036854775807
 # SCALA - FLOAT  -1.40129846432481707e-45 to 3.40282346638528860e+38
@@ -21,8 +21,8 @@ min_INT16 = -32768
 max_INT32 = 2147483647
 min_INT32 = -2147483648
 
-max_INT_range =  max_INT16
-min_INT_range =  min_INT16
+max_INT_range =  max_INT16 / 1000
+min_INT_range =  min_INT16 / 1000
 
 DEBUG = False
 addConstants = False
@@ -31,6 +31,8 @@ constant_ZERO = "00000000000000000000000000000000"
 
 rootDir = os.path.dirname(__file__)
 rootDir = rootDir+"/gen/"
+
+# -----------------------------------------------
 fpu32_genInput_1 = rootDir+"fpu32_generated_1.txt"
 fpu32_genInput_2 = rootDir+"fpu32_generated_2.txt"
 fpu32_genInput_3 = rootDir+"fpu32_generated_3.txt"
@@ -39,7 +41,12 @@ fpu32_ADD_result = rootDir+"fpu32_ADD_result.txt"
 fpu32_SUB_result = rootDir+"fpu32_SUB_result.txt"
 fpu32_MUL_result = rootDir+"fpu32_MUL_result.txt"
 
-PE_test_1_result = rootDir+"PE_test_1_result.txt"
+fpu32_L2_result  = rootDir+"fpu32_L2_result.txt"
+fpu32_L1_result  = rootDir+"fpu32_L1_result.txt"
+fpu32_DOT_result = rootDir+"fpu32_DOT_result.txt"
+fpu32_WGT_result = rootDir+"fpu32_WGT_result.txt"
+# -----------------------------------------------
+
 
 # -----------------------------------------------
 int32_genInput_1 = rootDir+"int32_generated_1.txt"
@@ -56,7 +63,7 @@ int32_DOT_result = rootDir+"int32_DOT_result.txt"
 int32_WGT_result = rootDir+"int32_WGT_result.txt"
 # -----------------------------------------------
 
-
+PE_test_1_result = rootDir+"PE_test_1_result.txt"
 
 pe_out_test0_FP32_result = rootDir+"pe_out_test0_FP32_result.txt"
 pe_out_test0_INT_result = rootDir+"pe_out_test0_INT_result.txt"
@@ -67,12 +74,8 @@ pe_out_test3_INT_result  = rootDir+"pe_out_test3_INT_result.txt"
 pe_out_test4_FP32_result = rootDir+"pe_out_test4_FP32_result.txt"
 pe_out_test4_INT_result  = rootDir+"pe_out_test4_INT_result.txt"
 
-
-
 pe_out_L2_FP32_result = rootDir+"pe_out_L2_FP32_result.txt"
 pe_out_L2_INT_result  = rootDir+"pe_out_L2_INT_result.txt"
-
-
 
 pe_out_test5_DOT_FP32_result  = rootDir+"pe_out_test5_DOT_FP32_result.txt"
 pe_out_test5_DOT_INT_result  = rootDir+"pe_out_test5_DOT_INT_result.txt"

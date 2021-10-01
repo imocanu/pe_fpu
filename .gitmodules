@@ -4,3 +4,6 @@
 [submodule "berkeley-hardfloat"]
 	path = berkeley-hardfloat
 	url = https://github.com/ucb-bar/berkeley-hardfloat
+[submodule "ieee754_simulation"]
+	path = ieee754_simulation
+	url = https://github.com/robclewley/ieee754_simulation.git
