@@ -1,1 +1,1 @@
-["modules.AddSubPE","modules.MultPE","modules.MuxPE","top.PE","top.PE_8","top.PE_8_ADDERS","validate.AddSubPE_validate","validate.FP32_addsub"]
+["modules.AddSubPE","modules.MultPE","modules.MuxPE","top.PE","top.PE_8","top.PE_8IP","top.PE_8_ADDERS","top.PE_CTRL","top_combo.PE_CTRL_8IP","validate.AddSubPE_validate","validate.FP32_addsub"]

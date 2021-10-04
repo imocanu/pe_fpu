@@ -65,11 +65,15 @@ testPE:
 testPE8:
 	sbt "testOnly top.PE_8_test"
 
-testPE8ADDERS:
-	sbt "testOnly top.PE_8_ADDERS_test"
+testPE_CTRL:
+	sbt "testOnly top.PE_CTRL_test"
 
-testFP32ADDSUB:
-	sbt "testOnly validate.FP32_addsub_test"
+testPE_8IP:
+	sbt "testOnly top.PE_8IP_test"
+
+testPE_CTRL_8IP:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test"
+	
 
 show-config:
 	$(VERILATOR) -V
@@ -102,7 +106,11 @@ verilatorTest:
 
 
 
+testPE8ADDERS:
+	sbt "testOnly top.PE_8_ADDERS_test"
 
+testFP32ADDSUB:
+	sbt "testOnly validate.FP32_addsub_test"
 
 testAddSub:
 	rm -rf diagram
