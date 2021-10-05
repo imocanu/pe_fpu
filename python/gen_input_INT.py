@@ -113,7 +113,7 @@ for in1, in2, in3, in4 in zip(random_INT_1_bin, random_INT_2_bin, random_INT_3_b
 
 # DOT
 for in1, in2, in3, in4 in zip(random_INT_1_bin, random_INT_2_bin, random_INT_3_bin, random_INT_4_bin):
-    # (X*Y) + (X*Y)
+    # (X*Y) - (X*Y)
     ba1 = BitArray(bin=in1).int
     ba2 = BitArray(bin=in2).int
     multOP_0 = np.multiply(ba1 , ba2, dtype=np.int32)
@@ -122,7 +122,7 @@ for in1, in2, in3, in4 in zip(random_INT_1_bin, random_INT_2_bin, random_INT_3_b
     ba4 = BitArray(bin=in4).int
     multOP_1 = np.multiply(ba3 , ba4, dtype=np.int32)
 
-    sum_pe  = np.subtract(multOP_0 , multOP_1, dtype=np.int32)
+    sum_pe  = np.sum([multOP_0 , multOP_1], dtype=np.int32)
     final = np.multiply(sum_pe , 8, dtype=np.int32)
     result_INT_DOT.append(np.binary_repr(final, width=32))
 

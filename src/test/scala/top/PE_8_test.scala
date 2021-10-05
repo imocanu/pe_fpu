@@ -553,7 +553,7 @@ class PE_8_test_manual(dut: PE_8) extends PeekPokeTester(dut) {
     // L2 => (+22)^2 + (-16)^2 = 484 + 256 = 740 * 8 = 5920
 
     
-    var test_op_type = "b00".U(2.W)
+    var test_op_type = 1.U(2.W)
 
     val test_INT32 = 1
     val test_FP32  = 0

@@ -67,10 +67,8 @@ class PE_8IP extends Module {
     val tininess      = Input(UInt(1.W))
     val rounding      = Input(UInt(3.W))
 
-    val aggr0  = Output(Bits(Config.forIN.W))
-    val aggr1  = Output(Bits(Config.forIN.W))
-    val aggr2  = Output(Bits(Config.forIN.W))
-    val aggr3  = Output(Bits(Config.forIN.W))
+    val dbg_aggr0  = Output(Bits(Config.forIN.W))
+    val dbg_aggr1  = Output(Bits(Config.forIN.W))
 
     val out  = Output(Bits(Config.forIN.W))  
   })
@@ -195,15 +193,14 @@ class PE_8IP extends Module {
   val pe_7_out_0   = RegInit(0.U(Config.forIN.W))
   val pe_7_out_1   = RegInit(0.U(Config.forIN.W))
 
-  val addsum_out   = RegInit(0.U(Config.forIN.W))
-  val out          = RegInit(0.U(Config.forIN.W))
+  // val addsum_out   = RegInit(0.U(Config.forIN.W))
+  // val out          = RegInit(0.U(Config.forIN.W))
 
 //=======================================
 // Shared regs for INPUTS
 //=======================================
   val addsum_in_0 = RegInit(0.U(Config.forIN.W))
   val addsum_in_1 = RegInit(0.U(Config.forIN.W))
-
 
 //=======================================
 // Init PEs
@@ -438,10 +435,8 @@ class PE_8IP extends Module {
   aggr_0_in_2 := pe_0_out_1
   aggr_0_in_3 := pe_1_out_0
 
-  io.aggr0 := pe_0_out_0
-  io.aggr1 := pe_0_out_1
-  io.aggr2 := pe_1_out_0
-  io.aggr3 := pe_1_out_1
+  io.dbg_aggr0 := pe_0_out_0
+  io.dbg_aggr1 := pe_0_out_1
 
   // nodes
   aggr_1_in_0 := pe_2_out_0
@@ -472,8 +467,8 @@ class PE_8IP extends Module {
   addsubModule_0.io.in_1       := addsum_in_1
 
   addsum_in_0 := pe_0_out_0
-  addsum_in_1 := pe_0_out_1  
-
+  addsum_in_1 := pe_0_out_1
+  
   io.out  := addsubModule_0.io.out
 
 }

@@ -52,13 +52,12 @@ class PE_CTRL extends Module {
   val addsub_1_op   = RegInit("b11".U(2.W))
 
   // INTEGER flag
-  val use_int      = RegNext(io.use_int)
+  val use_int      = RegNext(io.use_int)   // NOT USED
 
 //====================================
 // DEBUG
 //====================================
   val dbg_fsm = RegInit(0.U(4.W))
-  val dbg_opt = RegInit(0.U(4.W))
 
   io.m_0_sel := m_0_sel
   io.m_1_sel := m_1_sel
@@ -79,9 +78,6 @@ class PE_CTRL extends Module {
 //=======================================
 // COUNTERS
 //=======================================
-  // val STARTUP_cycles    = 10
-  // val STARTUP_counter   = Counter(STARTUP_cycles)
-
   val L1_cycles    = 10
   val L1_counter   = Counter(L1_cycles)
 
@@ -104,7 +100,7 @@ class PE_CTRL extends Module {
 // FSM:Startup->Idle->L2/L1/DOT/WGT->aggr
 //=======================================
   val startup :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: final_add :: stop_aggr :: Nil = Enum (9)
-  val pe_step = RegInit ( idle )
+  val pe_step = RegInit ( startup )
 
   switch ( pe_step ) 
   {
@@ -121,12 +117,11 @@ class PE_CTRL extends Module {
         switch ( op_type ) 
         {
           // Euclidean distance - L2
-          is ( "b00".U(2.W) )
+          is ( 0.U(2.W) )
           {
-            // DEBUG - L2
-            dbg_opt := 1.U(4.W)
-
-            // AddSub operation : false "+" OR true "-"
+            // AddSub operation : 
+            // false/0 "+" 
+            // true/1  "-"
             addsub_0_op := 1.U(2.W)
             addsub_1_op := 1.U(2.W) 
 
@@ -147,12 +142,11 @@ class PE_CTRL extends Module {
             pe_step := start_L2
           }
           // Manhattan distance  - L1
-          is ( "b01".U(2.W) ) 
+          is ( 1.U(2.W) ) 
           {
-            // DEBUG - L1
-            dbg_opt := 2.U(4.W)
-
-            // AddSub operation : false "+" OR true "-"
+            // AddSub operation : 
+            // false/0 "+" 
+            // true/1  "-"
             addsub_0_op := 1.U(2.W)
             addsub_1_op := 1.U(2.W) 
 
@@ -168,14 +162,13 @@ class PE_CTRL extends Module {
             pe_step := start_L1
           }
           // DOT product 
-          is ( "b10".U(2.W) ) 
+          is ( 2.U(2.W) ) 
           {
-            // DEBUG - DOT
-            dbg_opt := 3.U(4.W)
-
-            // AddSub operation : false "+" OR true "-"
-            addsub_0_op := 0.U(2.W)
-            addsub_1_op := 0.U(2.W) 
+            // AddSub operation : 
+            // false/0 "+" 
+            // true/1  "-"
+            addsub_0_op := 1.U(2.W)
+            addsub_1_op := 1.U(2.W) 
 
             m_0_sel := 0.U(2.W)
             m_1_sel := 0.U(2.W)
@@ -194,12 +187,11 @@ class PE_CTRL extends Module {
             pe_step := start_DOT
           }
           // Weighted vector pooling 
-          is ( "b11".U(2.W) ) 
+          is ( 3.U(2.W) ) 
           {
-            // DEBUG - WGT
-            dbg_opt := 4.U(4.W)
-
-            // AddSub operation : false "+" OR true "-"
+            // AddSub operation : 
+            // false/0 "+" 
+            // true/1  "-"
             addsub_0_op := 0.U(2.W)
             addsub_1_op := 0.U(2.W)
 
@@ -215,7 +207,7 @@ class PE_CTRL extends Module {
 
             // output from AddSub
             m_8_sel := 0.U(2.W)
-            m_9_sel := 0.U(2.W)
+            m_9_sel := 3.U(2.W)
 
             pe_step := start_WGT
           }
@@ -267,13 +259,13 @@ class PE_CTRL extends Module {
         addsub_0_op := 0.U(2.W)
         addsub_1_op := 0.U(2.W)
 
-        m_4_sel := "b10".U(2.W)
-        m_5_sel := "b10".U(2.W)
-        m_6_sel := "b10".U(2.W)
-        m_7_sel := "b10".U(2.W)
+        m_4_sel := 2.U(2.W)
+        m_5_sel := 2.U(2.W)
+        m_6_sel := 2.U(2.W)
+        m_7_sel := 2.U(2.W)
 
-        m_8_sel := "b00".U(2.W)
-        m_9_sel := "b00".U(2.W) 
+        m_8_sel := 0.U(2.W)
+        m_9_sel := 0.U(2.W) 
 
         pe_step := final_add
 
@@ -284,9 +276,10 @@ class PE_CTRL extends Module {
       AGGR_counter.inc()
       when (AGGR_counter.value === (AGGR_cycles - 1).U) {
         
-        //addsum_in_0 := pe_0_out_0
-        //addsum_in_1 := pe_0_out_1  
-
+        m_0_sel := 3.U(2.W)
+        m_1_sel := 3.U(2.W)
+        m_2_sel := 3.U(2.W)
+        m_3_sel := 3.U(2.W)
         m_4_sel := 3.U(2.W)
         m_5_sel := 3.U(2.W)
         m_6_sel := 3.U(2.W)
@@ -299,11 +292,10 @@ class PE_CTRL extends Module {
       }
     }
     is ( stop_aggr ) {
-      dbg_fsm := 11.U(4.W)
+      dbg_fsm := 10.U(4.W)
 
       ADD_counter.inc()
       when (ADD_counter.value === (ADD_cycles - 1).U) {
-        
         pe_step := idle
         ADD_counter.reset
       }

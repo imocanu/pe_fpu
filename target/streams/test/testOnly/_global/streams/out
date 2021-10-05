@@ -1,8 +1,8 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top_combo.PE_CTRL_8IP_test, org.scalatest.tools.Framework$$anon$1@a296f80, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top_combo.PE_CTRL_8IP_test, org.scalatest.tools.Framework$$anon$1@3885851b, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mPE_CTRL_8IP_test:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_manual[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 20 seconds, 26 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 20 seconds, 879 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0[0m[0m

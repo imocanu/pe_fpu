@@ -24,15 +24,15 @@ class MuxPE extends Module {
   var in_3 = RegNext(io.in_3)
   var out  = RegInit(0.U(Config.forIN.W))
 
-  when ( io.sel === "b00".U(2.W) ) 
+  when ( io.sel === 0.U(2.W) ) 
   {
     out := in_0
   } 
-  . elsewhen ( io.sel === "b01".U(2.W) ) 
+  . elsewhen ( io.sel === 1.U(2.W) ) 
   {
     out := in_1
   } 
-  . elsewhen ( io.sel === "b10".U(2.W) ) 
+  . elsewhen ( io.sel === 2.U(2.W) ) 
   {
     out := in_2
   } 

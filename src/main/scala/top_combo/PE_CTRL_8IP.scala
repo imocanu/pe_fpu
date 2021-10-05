@@ -105,22 +105,22 @@ class PE_CTRL_8IP extends Module {
 //====================================
 // Registers for Selectors
 //====================================
-  val m_0_sel  = RegInit(0.U(2.W))
-  val m_1_sel  = RegInit(0.U(2.W))
-  val m_2_sel  = RegInit(0.U(2.W))
-  val m_3_sel  = RegInit(0.U(2.W))
-  val m_4_sel  = RegInit(0.U(2.W))
-  val m_5_sel  = RegInit(0.U(2.W))
-  val m_6_sel  = RegInit(0.U(2.W))
-  val m_7_sel  = RegInit(0.U(2.W))
-  val m_8_sel  = RegInit(0.U(2.W))
-  val m_9_sel  = RegInit(0.U(2.W))
+  // val m_0_sel  = RegInit(0.U(2.W))
+  // val m_1_sel  = RegInit(0.U(2.W))
+  // val m_2_sel  = RegInit(0.U(2.W))
+  // val m_3_sel  = RegInit(0.U(2.W))
+  // val m_4_sel  = RegInit(0.U(2.W))
+  // val m_5_sel  = RegInit(0.U(2.W))
+  // val m_6_sel  = RegInit(0.U(2.W))
+  // val m_7_sel  = RegInit(0.U(2.W))
+  // val m_8_sel  = RegInit(0.U(2.W))
+  // val m_9_sel  = RegInit(0.U(2.W))
 
-  val op_type   = RegNext(io.op_type)
+  val op_type   = WireDefault(io.op_type)
 
   // AddSub operation : false "+" OR true "-"
-  // val addsub_0_op   = RegInit("b11".U(2.W))
-  // val addsub_1_op   = RegInit("b11".U(2.W))
+  // val addsub_0_op   = RegInit(0.U(2.W))
+  // val addsub_1_op   = RegInit(0.U(2.W))
 
   // ROUNDING type
   val rounding     = RegNext(io.rounding)
@@ -132,25 +132,26 @@ class PE_CTRL_8IP extends Module {
 //====================================
 // DEBUG
 //====================================
-val dbg_fsm = RegInit(0.U(4.W))
-val dbg_opt = RegInit(0.U(4.W))
+  val dbg_fsm   = RegInit(0.U(4.W))
+  val dbg_aggr0 = RegInit(0.U(Config.forIN.W))
+  val dbg_aggr1 = RegInit(0.U(Config.forIN.W))
 
 //=======================================
 // CONTROLLER
 //=======================================
   val ctrlPE = Module(new PE_CTRL())
   ctrlPE.io.op_type := op_type
-  ctrlPE.io.use_int := use_int
-  m_0_sel := ctrlPE.io.m_0_sel
-  m_1_sel := ctrlPE.io.m_1_sel
-  m_2_sel := ctrlPE.io.m_2_sel
-  m_3_sel := ctrlPE.io.m_3_sel
-  m_4_sel := ctrlPE.io.m_4_sel
-  m_5_sel := ctrlPE.io.m_5_sel
-  m_6_sel := ctrlPE.io.m_6_sel
-  m_7_sel := ctrlPE.io.m_7_sel
-  m_8_sel := ctrlPE.io.m_8_sel
-  m_9_sel := ctrlPE.io.m_9_sel
+  ctrlPE.io.use_int := use_int   // NOT USED
+  // m_0_sel := ctrlPE.io.m_0_sel
+  // m_1_sel := ctrlPE.io.m_1_sel
+  // m_2_sel := ctrlPE.io.m_2_sel
+  // m_3_sel := ctrlPE.io.m_3_sel
+  // m_4_sel := ctrlPE.io.m_4_sel
+  // m_5_sel := ctrlPE.io.m_5_sel
+  // m_6_sel := ctrlPE.io.m_6_sel
+  // m_7_sel := ctrlPE.io.m_7_sel
+  // m_8_sel := ctrlPE.io.m_8_sel
+  // m_9_sel := ctrlPE.io.m_9_sel
 
   dbg_fsm := ctrlPE.io.dbg_fsm
 
@@ -202,24 +203,22 @@ val dbg_opt = RegInit(0.U(4.W))
   pe_8IP.io.Xi_7_in_1 := Xi_7_in_1
   pe_8IP.io.Yi_7_in_1 := Yi_7_in_1
 
-  pe_8IP.io.m_0_sel := m_0_sel
-  pe_8IP.io.m_1_sel := m_1_sel
-  pe_8IP.io.m_2_sel := m_2_sel
-  pe_8IP.io.m_3_sel := m_3_sel
-  pe_8IP.io.m_4_sel := m_4_sel
-  pe_8IP.io.m_5_sel := m_5_sel
-  pe_8IP.io.m_6_sel := m_6_sel
-  pe_8IP.io.m_7_sel := m_7_sel
-  pe_8IP.io.m_8_sel := m_8_sel
-  pe_8IP.io.m_9_sel := m_9_sel
+  pe_8IP.io.m_0_sel := ctrlPE.io.m_0_sel
+  pe_8IP.io.m_1_sel := ctrlPE.io.m_1_sel
+  pe_8IP.io.m_2_sel := ctrlPE.io.m_2_sel
+  pe_8IP.io.m_3_sel := ctrlPE.io.m_3_sel
+  pe_8IP.io.m_4_sel := ctrlPE.io.m_4_sel
+  pe_8IP.io.m_5_sel := ctrlPE.io.m_5_sel
+  pe_8IP.io.m_6_sel := ctrlPE.io.m_6_sel
+  pe_8IP.io.m_7_sel := ctrlPE.io.m_7_sel
+  pe_8IP.io.m_8_sel := ctrlPE.io.m_8_sel
+  pe_8IP.io.m_9_sel := ctrlPE.io.m_9_sel
 
   pe_8IP.io.addsub_0_op := ctrlPE.io.addsub_0_op
   pe_8IP.io.addsub_1_op := ctrlPE.io.addsub_1_op
 
-  val aggr0 = RegNext(pe_8IP.io.aggr0)
-  val aggr1 = RegNext(pe_8IP.io.aggr1)
-  val aggr2 = RegNext(pe_8IP.io.aggr2)
-  val aggr3 = RegNext(pe_8IP.io.aggr3)
+  dbg_aggr0 := pe_8IP.io.dbg_aggr0
+  dbg_aggr1 := pe_8IP.io.dbg_aggr1
 
   io.out := pe_8IP.io.out 
 }

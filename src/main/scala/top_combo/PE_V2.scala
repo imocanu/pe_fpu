@@ -210,10 +210,8 @@ class PE_V2 extends Module {
   pe_8IP.io.addsub_0_op := addsub_0_op
   pe_8IP.io.addsub_1_op := addsub_1_op
 
-  val aggr0 = RegNext(pe_8IP.io.aggr0)
-  val aggr1 = RegNext(pe_8IP.io.aggr1)
-  val aggr2 = RegNext(pe_8IP.io.aggr2)
-  val aggr3 = RegNext(pe_8IP.io.aggr3)
+  val dbg_aggr0 = RegNext(pe_8IP.io.dbg_aggr0)
+  val dbg_aggr1 = RegNext(pe_8IP.io.dbg_aggr1)
 
   out := pe_8IP.io.out
 
