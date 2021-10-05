@@ -60,33 +60,17 @@ class PE_8IP extends Module {
     val m_8_sel  = Input(UInt(2.W))
     val m_9_sel  = Input(UInt(2.W))
 
-    val addsub_0_op   = Input(UInt(2.W))
-    val addsub_1_op   = Input(UInt(2.W))
+    val addsub_0_op  = Input(UInt(2.W))
+    val addsub_1_op  = Input(UInt(2.W))
 
     val use_int       = Input(Bool())
     val tininess      = Input(UInt(1.W))
     val rounding      = Input(UInt(3.W))
 
-    val outAggr_0_0  = Output(Bits(Config.forIN.W))
-    val outAggr_0_1  = Output(Bits(Config.forIN.W))
-    val outAggr_0_2  = Output(Bits(Config.forIN.W))
-    val outAggr_0_3  = Output(Bits(Config.forIN.W))
-
-    val outAggr_1_0  = Output(Bits(Config.forIN.W))
-    val outAggr_1_1  = Output(Bits(Config.forIN.W))
-    val outAggr_1_2  = Output(Bits(Config.forIN.W))
-    val outAggr_1_3  = Output(Bits(Config.forIN.W))
-
-    val outAggr_2_0  = Output(Bits(Config.forIN.W))
-    val outAggr_2_1  = Output(Bits(Config.forIN.W))
-    val outAggr_2_2  = Output(Bits(Config.forIN.W))
-    val outAggr_2_3  = Output(Bits(Config.forIN.W))
-
-    val outAggr_3_0  = Output(Bits(Config.forIN.W))
-    val outAggr_3_1  = Output(Bits(Config.forIN.W))
-    val outAggr_3_2  = Output(Bits(Config.forIN.W))
-    val outAggr_3_3  = Output(Bits(Config.forIN.W))
-    
+    val aggr0  = Output(Bits(Config.forIN.W))
+    val aggr1  = Output(Bits(Config.forIN.W))
+    val aggr2  = Output(Bits(Config.forIN.W))
+    val aggr3  = Output(Bits(Config.forIN.W))
 
     val out  = Output(Bits(Config.forIN.W))  
   })
@@ -167,7 +151,7 @@ class PE_8IP extends Module {
   val aggr_7_in_3  = RegInit(0.U(Config.forIN.W))
 
 //====================================
-// MUX selectors
+// Registers for Selectors
 //====================================
   val m_0_sel  = RegNext(io.m_0_sel)
   val m_1_sel  = RegNext(io.m_1_sel)
@@ -179,17 +163,6 @@ class PE_8IP extends Module {
   val m_7_sel  = RegNext(io.m_7_sel)
   val m_8_sel  = RegNext(io.m_8_sel)
   val m_9_sel  = RegNext(io.m_9_sel)
-
-  // val m_0_sel  = RegInit(1.U(2.W))
-  // val m_1_sel  = RegInit(1.U(2.W))
-  // val m_2_sel  = RegInit(1.U(2.W))
-  // val m_3_sel  = RegInit(1.U(2.W))
-  // val m_4_sel  = RegInit(1.U(2.W))
-  // val m_5_sel  = RegInit(1.U(2.W))
-  // val m_6_sel  = RegInit(1.U(2.W))
-  // val m_7_sel  = RegInit(1.U(2.W))
-  // val m_8_sel  = RegInit(1.U(2.W))
-  // val m_9_sel  = RegInit(1.U(2.W))
 
   // AddSub operation : false "+" OR true "-"
   val addsub_0_op   = RegNext(io.addsub_0_op)
@@ -456,21 +429,6 @@ class PE_8IP extends Module {
   pe_7_out_0 := pe_7.io.out_0
   pe_7_out_1 := pe_7.io.out_1
 
-  // addsum_in_0 := pe_0_out_0
-  // addsum_in_1 := pe_0_out_1
-
-// // =======================================
-// // AddSum Module
-// // =======================================
-//   val addsubModule_0 = Module(new AddSubPE())
-//   addsubModule_0.io.op         := false.B
-//   addsubModule_0.io.rounding   := rounding	
-//   addsubModule_0.io.tininess   := tininess
-//   addsubModule_0.io.use_int    := use_int
-//   addsubModule_0.io.in_0       := addsum_in_0
-//   addsubModule_0.io.in_1       := addsum_in_1
-//   io.out  := addsubModule_0.io.out
-
 //=======================================
 // AGGREGATION
 //=======================================
@@ -479,6 +437,11 @@ class PE_8IP extends Module {
   aggr_0_in_1 := pe_1_out_1
   aggr_0_in_2 := pe_0_out_1
   aggr_0_in_3 := pe_1_out_0
+
+  io.aggr0 := pe_0_out_0
+  io.aggr1 := pe_0_out_1
+  io.aggr2 := pe_1_out_0
+  io.aggr3 := pe_1_out_1
 
   // nodes
   aggr_1_in_0 := pe_2_out_0
@@ -497,48 +460,21 @@ class PE_8IP extends Module {
   aggr_3_in_3 := pe_7_out_1
 
 
+// =======================================
+// AddSum Module
+// =======================================
+  val addsubModule_0 = Module(new AddSubPE())
+  addsubModule_0.io.op         := false.B
+  addsubModule_0.io.rounding   := rounding	
+  addsubModule_0.io.tininess   := tininess
+  addsubModule_0.io.use_int    := use_int
+  addsubModule_0.io.in_0       := addsum_in_0
+  addsubModule_0.io.in_1       := addsum_in_1
 
-  // io.outAggr_0_0 := aggr_0_in_0
-  // io.outAggr_0_1 := aggr_0_in_1
-  // io.outAggr_0_2 := aggr_0_in_2
-  // io.outAggr_0_3 := aggr_0_in_3
+  addsum_in_0 := pe_0_out_0
+  addsum_in_1 := pe_0_out_1  
 
-  // io.outAggr_1_0 := aggr_1_in_0
-  // io.outAggr_1_1 := aggr_1_in_1
-  // io.outAggr_1_2 := aggr_1_in_2
-  // io.outAggr_1_3 := aggr_1_in_3
-
-  // io.outAggr_2_0 := aggr_2_in_0
-  // io.outAggr_2_1 := aggr_2_in_1
-  // io.outAggr_2_2 := aggr_2_in_2
-  // io.outAggr_2_3 := aggr_2_in_3
-
-  // io.outAggr_3_0 := aggr_3_in_0
-  // io.outAggr_3_1 := aggr_3_in_1
-  // io.outAggr_3_2 := aggr_3_in_2
-  // io.outAggr_3_3 := aggr_3_in_3 
-
-  io.outAggr_0_0 := 0.U(32.W)
-  io.outAggr_0_1 := 0.U(32.W)
-  io.outAggr_0_2 := 0.U(32.W)
-  io.outAggr_0_3 := 0.U(32.W)
-
-  io.outAggr_1_0 := 0.U(32.W)
-  io.outAggr_1_1 := 0.U(32.W)
-  io.outAggr_1_2 := 0.U(32.W)
-  io.outAggr_1_3 := 0.U(32.W)
-
-  io.outAggr_2_0 := 0.U(32.W)
-  io.outAggr_2_1 := 0.U(32.W)
-  io.outAggr_2_2 := 0.U(32.W)
-  io.outAggr_2_3 := 0.U(32.W)
-
-  io.outAggr_3_0 := 0.U(32.W)
-  io.outAggr_3_1 := 0.U(32.W)
-  io.outAggr_3_2 := 0.U(32.W)
-  io.outAggr_3_3 := 0.U(32.W)     
-
- io.out := out
+  io.out  := addsubModule_0.io.out
 
 }
 

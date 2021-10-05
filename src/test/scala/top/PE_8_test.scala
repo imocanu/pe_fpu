@@ -784,17 +784,17 @@ class PE_8_test extends ChiselFlatSpec with Matchers {
     val targetDir = "diagram/" + vcdName
 
 
-  //   "run PE_8_test_manual" should "pass" in {
-  //   chisel3.iotesters.Driver.execute(Array(
-  //     "--fint-write-vcd",
-  //     "--backend-name", "firrtl",
-  //     "--target-dir", targetDir+"_MANUAL",
-  //     "--top-name" , vcdName,
-  //     "--output-file", vcdName),
-  //     () => new PE_8 ) { c =>
-  //     new PE_8_test_manual (c)
-  //   } should be (true)
-  // }
+    "run PE_8_test_manual" should "pass" in {
+    chisel3.iotesters.Driver.execute(Array(
+      "--fint-write-vcd",
+      "--backend-name", "firrtl",
+      "--target-dir", targetDir+"_MANUAL",
+      "--top-name" , vcdName,
+      "--output-file", vcdName),
+      () => new PE_8 ) { c =>
+      new PE_8_test_manual (c)
+    } should be (true)
+  }
 
 
   //   "run PE_8_test_INT_L2" should "pass" in {
@@ -833,17 +833,17 @@ class PE_8_test extends ChiselFlatSpec with Matchers {
   //   } should be (true)
   // }
 
-    "run PE_8_test_INT_WGT" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_INT_WGT",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_8 ) { c =>
-      new PE_8_test_INT_WGT (c)
-    } should be (true)
-  }
+  //   "run PE_8_test_INT_WGT" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_INT_WGT",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_8 ) { c =>
+  //     new PE_8_test_INT_WGT (c)
+  //   } should be (true)
+  // }
 
 
 

@@ -73,6 +73,9 @@ testPE_8IP:
 
 testPE_CTRL_8IP:
 	sbt "testOnly top_combo.PE_CTRL_8IP_test"
+
+testPE_V2:
+	sbt "testOnly top_combo.PE_V2_test"
 	
 
 show-config:

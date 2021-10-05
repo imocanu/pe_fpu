@@ -49,6 +49,13 @@ class PE_test_INT_L2(dut: PE) extends PeekPokeTester(dut) {
 
     step(50)
 
+    poke(dut.io.m_4_sel, "b10".U(2.W))
+    poke(dut.io.m_5_sel, "b10".U(2.W))
+    poke(dut.io.m_6_sel, "b10".U(2.W))
+    poke(dut.io.m_7_sel, "b10".U(2.W))
+
+    step(50)
+
     test_int   = "b"+"00000000000000000000000000000001"  // 1
 
     poke(dut.io.Xi_0, test_int.U(32.W))

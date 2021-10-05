@@ -139,7 +139,7 @@ val dbg_opt = RegInit(0.U(4.W))
 // CONTROLLER
 //=======================================
   val ctrlPE = Module(new PE_CTRL())
-  ctrlPE.io.op_type := 0.U(2.W) //op_type
+  ctrlPE.io.op_type := op_type
   ctrlPE.io.use_int := use_int
   m_0_sel := ctrlPE.io.m_0_sel
   m_1_sel := ctrlPE.io.m_1_sel
@@ -152,9 +152,6 @@ val dbg_opt = RegInit(0.U(4.W))
   m_8_sel := ctrlPE.io.m_8_sel
   m_9_sel := ctrlPE.io.m_9_sel
 
-  // addsub_0_op := ctrlPE.io.addsub_0_op
-  // addsub_1_op := ctrlPE.io.addsub_1_op
-
   dbg_fsm := ctrlPE.io.dbg_fsm
 
 //=======================================
@@ -166,80 +163,65 @@ val dbg_opt = RegInit(0.U(4.W))
   pe_8IP.io.rounding := rounding
 
   pe_8IP.io.Xi_0_in_0 := Xi_0_in_0
-  pe_8IP.io.Yi_0_in_0 := Xi_0_in_0
+  pe_8IP.io.Yi_0_in_0 := Yi_0_in_0
   pe_8IP.io.Xi_0_in_1 := Xi_0_in_1
   pe_8IP.io.Yi_0_in_1 := Yi_0_in_1
 
   pe_8IP.io.Xi_1_in_0 := Xi_1_in_0
-  pe_8IP.io.Yi_1_in_0 := Xi_1_in_0
+  pe_8IP.io.Yi_1_in_0 := Yi_1_in_0
   pe_8IP.io.Xi_1_in_1 := Xi_1_in_1
   pe_8IP.io.Yi_1_in_1 := Yi_1_in_1
 
   pe_8IP.io.Xi_2_in_0 := Xi_2_in_0
-  pe_8IP.io.Yi_2_in_0 := Xi_2_in_0
+  pe_8IP.io.Yi_2_in_0 := Yi_2_in_0
   pe_8IP.io.Xi_2_in_1 := Xi_2_in_1
   pe_8IP.io.Yi_2_in_1 := Yi_2_in_1
 
   pe_8IP.io.Xi_3_in_0 := Xi_3_in_0
-  pe_8IP.io.Yi_3_in_0 := Xi_3_in_0
+  pe_8IP.io.Yi_3_in_0 := Yi_3_in_0
   pe_8IP.io.Xi_3_in_1 := Xi_3_in_1
   pe_8IP.io.Yi_3_in_1 := Yi_3_in_1
 
   pe_8IP.io.Xi_4_in_0 := Xi_4_in_0
-  pe_8IP.io.Yi_4_in_0 := Xi_4_in_0
+  pe_8IP.io.Yi_4_in_0 := Yi_4_in_0
   pe_8IP.io.Xi_4_in_1 := Xi_4_in_1
   pe_8IP.io.Yi_4_in_1 := Yi_4_in_1
 
   pe_8IP.io.Xi_5_in_0 := Xi_5_in_0
-  pe_8IP.io.Yi_5_in_0 := Xi_5_in_0
+  pe_8IP.io.Yi_5_in_0 := Yi_5_in_0
   pe_8IP.io.Xi_5_in_1 := Xi_5_in_1
   pe_8IP.io.Yi_5_in_1 := Yi_5_in_1
 
   pe_8IP.io.Xi_6_in_0 := Xi_6_in_0
-  pe_8IP.io.Yi_6_in_0 := Xi_6_in_0
+  pe_8IP.io.Yi_6_in_0 := Yi_6_in_0
   pe_8IP.io.Xi_6_in_1 := Xi_6_in_1
   pe_8IP.io.Yi_6_in_1 := Yi_6_in_1
 
   pe_8IP.io.Xi_7_in_0 := Xi_7_in_0
-  pe_8IP.io.Yi_7_in_0 := Xi_7_in_0
+  pe_8IP.io.Yi_7_in_0 := Yi_7_in_0
   pe_8IP.io.Xi_7_in_1 := Xi_7_in_1
   pe_8IP.io.Yi_7_in_1 := Yi_7_in_1
 
-  pe_8IP.io.m_0_sel := ctrlPE.io.m_0_sel
-  pe_8IP.io.m_1_sel := ctrlPE.io.m_1_sel
-  pe_8IP.io.m_2_sel := ctrlPE.io.m_2_sel
-  pe_8IP.io.m_3_sel := ctrlPE.io.m_3_sel
-  pe_8IP.io.m_4_sel := ctrlPE.io.m_4_sel
-  pe_8IP.io.m_5_sel := ctrlPE.io.m_5_sel
-  pe_8IP.io.m_6_sel := ctrlPE.io.m_6_sel
-  pe_8IP.io.m_7_sel := ctrlPE.io.m_7_sel
-  pe_8IP.io.m_8_sel := ctrlPE.io.m_8_sel
-  pe_8IP.io.m_9_sel := ctrlPE.io.m_9_sel
+  pe_8IP.io.m_0_sel := m_0_sel
+  pe_8IP.io.m_1_sel := m_1_sel
+  pe_8IP.io.m_2_sel := m_2_sel
+  pe_8IP.io.m_3_sel := m_3_sel
+  pe_8IP.io.m_4_sel := m_4_sel
+  pe_8IP.io.m_5_sel := m_5_sel
+  pe_8IP.io.m_6_sel := m_6_sel
+  pe_8IP.io.m_7_sel := m_7_sel
+  pe_8IP.io.m_8_sel := m_8_sel
+  pe_8IP.io.m_9_sel := m_9_sel
 
   pe_8IP.io.addsub_0_op := ctrlPE.io.addsub_0_op
   pe_8IP.io.addsub_1_op := ctrlPE.io.addsub_1_op
 
-  val outAggr_0_0  = RegNext(pe_8IP.io.outAggr_0_0)
-  val outAggr_0_1  = RegNext(pe_8IP.io.outAggr_0_1)
-  val outAggr_0_2  = RegNext(pe_8IP.io.outAggr_0_2)
-  val outAggr_0_3  = RegNext(pe_8IP.io.outAggr_0_3)
+  val aggr0 = RegNext(pe_8IP.io.aggr0)
+  val aggr1 = RegNext(pe_8IP.io.aggr1)
+  val aggr2 = RegNext(pe_8IP.io.aggr2)
+  val aggr3 = RegNext(pe_8IP.io.aggr3)
 
-  val outAggr_1_0  = RegNext(pe_8IP.io.outAggr_1_0)
-  val outAggr_1_1  = RegNext(pe_8IP.io.outAggr_1_1)
-  val outAggr_1_2  = RegNext(pe_8IP.io.outAggr_1_2)
-  val outAggr_1_3  = RegNext(pe_8IP.io.outAggr_1_3)
-
-  val outAggr_2_0  = RegNext(pe_8IP.io.outAggr_2_0)
-  val outAggr_2_1  = RegNext(pe_8IP.io.outAggr_2_1)
-  val outAggr_2_2  = RegNext(pe_8IP.io.outAggr_2_2)
-  val outAggr_2_3  = RegNext(pe_8IP.io.outAggr_2_3)
-
-  val outAggr_3_0  = RegNext(pe_8IP.io.outAggr_3_0)
-  val outAggr_3_1  = RegNext(pe_8IP.io.outAggr_3_1)
-  val outAggr_3_2  = RegNext(pe_8IP.io.outAggr_3_2)
-  val outAggr_3_3  = RegNext(pe_8IP.io.outAggr_3_3)
-
-  io.out := pe_8IP.io.out  
+  io.out := pe_8IP.io.out 
 }
 
 object PE_CTRL_8IP extends App {
