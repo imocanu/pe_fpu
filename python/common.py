@@ -10,8 +10,8 @@ from bitstring import BitArray
 
 random.seed(123)
 ##### DEFAULT PARAMS ####
-totalNR = 5
-FLOAT_range =   5
+totalNR = 100
+FLOAT_range =   999999
 # SCALA - INT    -2,147,483,648 to 2,147,483,647   2147483648
 # SCALA - LONG   -9,223,372,036,854,775,808 to     9223372036854775807
 # SCALA - FLOAT  -1.40129846432481707e-45 to 3.40282346638528860e+38
@@ -21,8 +21,8 @@ min_INT16 = -32768
 max_INT32 = 2147483647
 min_INT32 = -2147483648
 
-max_INT_range =  max_INT16 / 1000
-min_INT_range =  min_INT16 / 1000
+max_INT_range =  max_INT16
+min_INT_range =  min_INT16
 
 DEBUG = False
 addConstants = False

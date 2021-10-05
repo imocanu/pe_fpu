@@ -90,23 +90,23 @@ class PE_CTRL extends Module {
   val WGT_cycles   = 15
   val WGT_counter  = Counter(WGT_cycles)
 
-  val AGGR_cycles  = 37
+  val AGGR_cycles  = 38
   val AGGR_counter = Counter(AGGR_cycles) 
 
-  val ADD_cycles   = 4
+  val ADD_cycles   = 3
   val ADD_counter  = Counter(ADD_cycles)    
 
 //=======================================
-// FSM:Startup->Idle->L2/L1/DOT/WGT->aggr
+// FSM:start->Idle->L2/L1/DOT/WGT->aggr
 //=======================================
-  val startup :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: final_add :: stop_aggr :: Nil = Enum (9)
-  val pe_step = RegInit ( startup )
+  val start :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: final_add :: stop_aggr :: Nil = Enum (9)
+  val pe_step = RegInit ( start )
 
   switch ( pe_step ) 
   {
-    is ( startup ) {
+    is ( start ) {
       
-      dbg_fsm := 9.U(4.W)        
+      dbg_fsm := 9.U(4.W)
       pe_step := idle
 
     }
@@ -125,17 +125,22 @@ class PE_CTRL extends Module {
             addsub_0_op := 1.U(2.W)
             addsub_1_op := 1.U(2.W) 
 
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: 0.U 3: 0.U
             m_0_sel := 1.U(2.W)
             m_1_sel := 1.U(2.W)
             m_2_sel := 1.U(2.W)
             m_3_sel := 1.U(2.W)
 
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: AGGR 3: 0.U
             m_4_sel := 0.U(2.W)
             m_5_sel := 0.U(2.W)
             m_6_sel := 0.U(2.W)
             m_7_sel := 0.U(2.W)
 
-            // output from Mult
+            // MUX selector  : 
+            // 0: from AddSub  1: from Mult  2: 0.U 3: 0.U
             m_8_sel := 1.U(2.W)
             m_9_sel := 1.U(2.W)
             
@@ -150,12 +155,15 @@ class PE_CTRL extends Module {
             addsub_0_op := 1.U(2.W)
             addsub_1_op := 1.U(2.W) 
 
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: AGGR 3: 0.U
             m_4_sel := 0.U(2.W)
             m_5_sel := 0.U(2.W)
             m_6_sel := 0.U(2.W)
             m_7_sel := 0.U(2.W)
 
-            // output from AddSub
+            // MUX selector  : 
+            // 0: from AddSub  1: from Mult  2: 0.U 3: 0.U
             m_8_sel := 0.U(2.W)
             m_9_sel := 0.U(2.W)
             
@@ -170,17 +178,22 @@ class PE_CTRL extends Module {
             addsub_0_op := 1.U(2.W)
             addsub_1_op := 1.U(2.W) 
 
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: 0.U 3: 0.U
             m_0_sel := 0.U(2.W)
             m_1_sel := 0.U(2.W)
             m_2_sel := 0.U(2.W)
             m_3_sel := 0.U(2.W)
 
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: AGGR 3: 0.U
             m_4_sel := 0.U(2.W)
             m_5_sel := 0.U(2.W)
             m_6_sel := 0.U(2.W)
             m_7_sel := 0.U(2.W)
 
-            // output from Mult
+            // MUX selector  : 
+            // 0: from AddSub  1: from Mult  2: 0.U 3: 0.U
             m_8_sel := 1.U(2.W)
             m_9_sel := 1.U(2.W)
 
@@ -195,17 +208,22 @@ class PE_CTRL extends Module {
             addsub_0_op := 0.U(2.W)
             addsub_1_op := 0.U(2.W)
 
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: 0.U 3: 0.U
             m_0_sel := 0.U(2.W)
             m_1_sel := 0.U(2.W)
             m_2_sel := 0.U(2.W)
             m_3_sel := 0.U(2.W)
 
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: AGGR 3: 0.U
             m_4_sel := 1.U(2.W)
             m_5_sel := 1.U(2.W)
             m_6_sel := 3.U(2.W)
             m_7_sel := 3.U(2.W)
 
-            // output from AddSub
+            // MUX selector  : 
+            // 0: from AddSub  1: from Mult  2: 0.U 3: 0.U
             m_8_sel := 0.U(2.W)
             m_9_sel := 3.U(2.W)
 
@@ -259,11 +277,15 @@ class PE_CTRL extends Module {
         addsub_0_op := 0.U(2.W)
         addsub_1_op := 0.U(2.W)
 
+        // MUX selector  : 
+        // 0: X/Y  1: from Mult  2: AGGR 3: 0.U
         m_4_sel := 2.U(2.W)
         m_5_sel := 2.U(2.W)
         m_6_sel := 2.U(2.W)
         m_7_sel := 2.U(2.W)
 
+        // MUX selector  : 
+        // 0: from AddSub  1: from Mult  2: 0.U 3: 0.U
         m_8_sel := 0.U(2.W)
         m_9_sel := 0.U(2.W) 
 
@@ -276,14 +298,22 @@ class PE_CTRL extends Module {
       AGGR_counter.inc()
       when (AGGR_counter.value === (AGGR_cycles - 1).U) {
         
+        // MUX selector  : 
+        // 0: X/Y  1: from Mult  2: 0.U 3: 0.U
         m_0_sel := 3.U(2.W)
         m_1_sel := 3.U(2.W)
         m_2_sel := 3.U(2.W)
         m_3_sel := 3.U(2.W)
+
+        // MUX selector  : 
+        // 0: X/Y  1: from Mult  2: AGGR 3: 0.U
         m_4_sel := 3.U(2.W)
         m_5_sel := 3.U(2.W)
         m_6_sel := 3.U(2.W)
         m_7_sel := 3.U(2.W)
+
+        // MUX selector  : 
+        // 0: from AddSub  1: from Mult  2: 0.U 3: 0.U
         m_8_sel := 2.U(2.W)
         m_9_sel := 2.U(2.W)
 
@@ -294,11 +324,11 @@ class PE_CTRL extends Module {
     is ( stop_aggr ) {
       dbg_fsm := 10.U(4.W)
 
-      ADD_counter.inc()
-      when (ADD_counter.value === (ADD_cycles - 1).U) {
-        pe_step := idle
-        ADD_counter.reset
-      }
+       ADD_counter.inc()
+       when (ADD_counter.value === (ADD_cycles - 1).U) {
+         pe_step := idle
+          ADD_counter.reset
+       }
     }
   }
 
