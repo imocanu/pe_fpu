@@ -9,10 +9,7 @@ lazy val hardfloat  = (project in file("berkeley-hardfloat"))
     publishArtifact := false,
     libraryDependencies ++= Seq(
       "edu.berkeley.cs" %% "chisel3" % "3.+",
-      "edu.berkeley.cs" %% "dsptools" % "1.4.+",
-      "edu.berkeley.cs" %% "treadle" % "1.3.+",
-      "org.easysoc" %% "layered-firrtl" % "1.1.+",
-      "edu.berkeley.cs" %% "chisel3-macros" % "3.4.+",
+      "org.easysoc"     %% "layered-firrtl" % "1.1.+",
       "edu.berkeley.cs" %% "firrtl" % "1.+",
       "edu.berkeley.cs" %% "firrtl-diagrammer" % "1.+",
       "edu.berkeley.cs" %% "chisel-iotesters" % "2.+" % "test"
@@ -34,17 +31,17 @@ lazy val hardfloat  = (project in file("berkeley-hardfloat"))
 lazy val root = (project in file("."))
   .settings(
     scalaVersion  := "2.12.15",
-    version := "3.0.0",
+    version := "4.0.0",
     name := "PE_IP",
     organization := "gig",
     libraryDependencies ++= Seq(
       "edu.berkeley.cs" %% "chisel3" % "3.+",
-      "edu.berkeley.cs" %% "dsptools" % "1.4.+",
-      "edu.berkeley.cs" %% "treadle" % "1.3.+",
-      "org.easysoc" %% "layered-firrtl" % "1.1.+",
-      "edu.berkeley.cs" %% "chisel3-macros" % "3.4.+",
-      "edu.berkeley.cs" %% "firrtl" % "1.+",
-      "edu.berkeley.cs" %% "firrtl-diagrammer" % "1.+",
+      // "edu.berkeley.cs" %% "dsptools" % "1.4.+",
+      // "edu.berkeley.cs" %% "treadle" % "1.3.+",
+      // "org.easysoc" %% "layered-firrtl" % "1.1.+",
+      // "edu.berkeley.cs" %% "chisel3-macros" % "3.4.+",
+      // "edu.berkeley.cs" %% "firrtl" % "1.+",
+      // "edu.berkeley.cs" %% "firrtl-diagrammer" % "1.+",
       //"org.scalatest" %% "scalatest" % "3.2.0",
       "edu.berkeley.cs" %% "chisel-iotesters" % "2.+" % "test"
     ),
