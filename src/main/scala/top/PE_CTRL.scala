@@ -93,13 +93,13 @@ class PE_CTRL extends Module {
   val AGGR_cycles  = 38
   val AGGR_counter = Counter(AGGR_cycles) 
 
-  val ADD_cycles   = 3
+  val ADD_cycles   = 2
   val ADD_counter  = Counter(ADD_cycles)    
 
 //=======================================
 // FSM:start->Idle->L2/L1/DOT/WGT->aggr
 //=======================================
-  val start :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: final_add :: stop_aggr :: Nil = Enum (9)
+  val start :: idle :: start_L2 :: start_L1 :: start_DOT :: start_WGT :: start_aggr :: final_add :: stop_aggr :: output :: Nil = Enum (10)
   val pe_step = RegInit ( start )
 
   switch ( pe_step ) 
@@ -326,9 +326,14 @@ class PE_CTRL extends Module {
 
        ADD_counter.inc()
        when (ADD_counter.value === (ADD_cycles - 1).U) {
-         pe_step := idle
+         pe_step := output
           ADD_counter.reset
        }
+    }
+    is ( output ) {
+      dbg_fsm := 11.U(4.W)
+
+      pe_step := idle
     }
   }
 

@@ -22,10 +22,10 @@ result_FP_DOT = []
 result_FP_WGT = []
 
 
-random_float_in_1 = numpy.random.uniform(-FLOAT_range, FLOAT_range, size=(1, totalNR)).reshape(-1)
-random_float_in_2 = numpy.random.uniform(-FLOAT_range, FLOAT_range, size=(1, totalNR)).reshape(-1)
-random_float_in_3 = numpy.random.uniform(-FLOAT_range, FLOAT_range, size=(1, totalNR)).reshape(-1)
-random_float_in_4 = numpy.random.uniform(-FLOAT_range, FLOAT_range, size=(1, totalNR)).reshape(-1)
+random_float_in_1 = numpy.random.uniform( min_FP_range, max_FP_range, size=(1, totalNR) ).reshape(-1)
+random_float_in_2 = numpy.random.uniform( min_FP_range, max_FP_range, size=(1, totalNR) ).reshape(-1)
+random_float_in_3 = numpy.random.uniform( min_FP_range, max_FP_range, size=(1, totalNR) ).reshape(-1)
+random_float_in_4 = numpy.random.uniform( min_FP_range, max_FP_range, size=(1, totalNR) ).reshape(-1)
 
 
 for i in random_float_in_1:

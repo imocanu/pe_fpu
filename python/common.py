@@ -10,16 +10,19 @@ from bitstring import BitArray
 
 random.seed(123)
 ##### DEFAULT PARAMS ####
-totalNR = 100
-FLOAT_range =   999999
+totalNR = 3
+
 # SCALA - INT    -2,147,483,648 to 2,147,483,647   2147483648
 # SCALA - LONG   -9,223,372,036,854,775,808 to     9223372036854775807
 # SCALA - FLOAT  -1.40129846432481707e-45 to 3.40282346638528860e+38
 # SCALA - DOUBLE -4.94065645841246544e-324 to 1.79769313486231570e+308
-max_INT16 = 32767 
+max_INT16 =  32767 
 min_INT16 = -32768 
-max_INT32 = 2147483647
+max_INT32 =  2147483647
 min_INT32 = -2147483648
+
+max_FP_range =  99999999
+min_FP_range = -99999999
 
 max_INT_range =  max_INT16
 min_INT_range =  min_INT16
@@ -106,7 +109,7 @@ def getContextInfo():
     #define_context = core.context_registry()
     #fp32context = define_context(8, 23, rounding=core.ROUND_HALF_UP)  
     print("[*]Total generated inputs : ", totalNR)
-    print(" > FLOAT range : ", -FLOAT_range, "  : ", FLOAT_range)  
+    print(" > FLOAT range : ", min_FP_range, "  : ", max_FP_range)  
     print(" > INT range   : ", min_INT_range, " : ", max_INT_range)
     print("--")
     print("[*] Root Dir   : ", rootDir)

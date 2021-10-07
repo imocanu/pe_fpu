@@ -52,10 +52,10 @@ for i in test_INT_4:
     random_INT_4.append(int(i))
     random_INT_4_bin.append(np.binary_repr(int(i), width=32)) 
 
-print("in_1. ", random_INT_1)
-print("in_2. ", random_INT_2)
-print("in_3. ", random_INT_3)
-print("in_4. ", random_INT_4)
+# print("in_1. ", random_INT_1)
+# print("in_2. ", random_INT_2)
+# print("in_3. ", random_INT_3)
+# print("in_4. ", random_INT_4)
 
 # Add / Sub / Mul
 for in1, in2 in zip(random_INT_1_bin, random_INT_2_bin):
@@ -140,7 +140,7 @@ for in1, in2, in3, in4 in zip(random_INT_1_bin, random_INT_2_bin, random_INT_3_b
 
     sum_pe  = np.sum([multOP_0 , multOP_1], dtype=np.int32)
     final = np.multiply(sum_pe , 8, dtype=np.int32)
-    print(final)
+    #print(final)
     result_INT_WGT.append(np.binary_repr(final, width=32))
 
 

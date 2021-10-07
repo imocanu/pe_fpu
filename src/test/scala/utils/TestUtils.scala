@@ -26,6 +26,19 @@ object TestUtils {
     var round_near_maxMag_UINT = "b000".asUInt(3.W)
     var round_odd_UINT         = "b000".asUInt(3.W)
 
+    // Constants
+    val L2_op  = 0.U(2.W);
+    val L1_op  = 1.U(2.W);
+    val DOT_op = 2.U(2.W);
+    val WGT_op = 3.U(2.W);
+
+    val L1_DOT_cycles = 52;
+    val L2_WGT_cycles = 57;
+
+    val USE_INT_op = true.B;
+    val USE_FP_op  = false.B;
+
+    // ROOT DIR for generated numbers
     val rootDir = "python/gen/"
 
     // FOR FP GENERATED INPUTS

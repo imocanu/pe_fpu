@@ -59,8 +59,8 @@ circuit PE_CTRL_8IP :
       reset => (reset, UInt<4>("h0")) @[Counter.scala 60:40]
     reg value_4 : UInt<6>, clock with :
       reset => (reset, UInt<6>("h0")) @[Counter.scala 60:40]
-    reg value_5 : UInt<2>, clock with :
-      reset => (reset, UInt<2>("h0")) @[Counter.scala 60:40]
+    reg value_5 : UInt<1>, clock with :
+      reset => (reset, UInt<1>("h0")) @[Counter.scala 60:40]
     reg pe_step : UInt<4>, clock with :
       reset => (reset, UInt<4>("h0")) @[PE_CTRL.scala 103:25]
     node _T = eq(UInt<4>("h0"), pe_step) @[PE_CTRL.scala 106:3]
@@ -227,16 +227,19 @@ circuit PE_CTRL_8IP :
                     node _T_17 = eq(UInt<4>("h8"), pe_step) @[PE_CTRL.scala 106:3]
                     when _T_17 : @[PE_CTRL.scala 106:3]
                       dbg_fsm <= UInt<4>("ha") @[PE_CTRL.scala 325:15]
-                      node wrap_5 = eq(value_5, UInt<2>("h2")) @[Counter.scala 72:24]
+                      node wrap_5 = eq(value_5, UInt<1>("h1")) @[Counter.scala 72:24]
                       node _value_T_10 = add(value_5, UInt<1>("h1")) @[Counter.scala 76:24]
                       node _value_T_11 = tail(_value_T_10, 1) @[Counter.scala 76:24]
                       value_5 <= _value_T_11 @[Counter.scala 76:15]
-                      when wrap_5 : @[Counter.scala 86:20]
-                        value_5 <= UInt<1>("h0") @[Counter.scala 86:28]
-                      node _T_18 = eq(value_5, UInt<2>("h2")) @[PE_CTRL.scala 328:32]
+                      node _T_18 = eq(value_5, UInt<1>("h1")) @[PE_CTRL.scala 328:32]
                       when _T_18 : @[PE_CTRL.scala 328:56]
-                        pe_step <= UInt<4>("h1") @[PE_CTRL.scala 329:18]
+                        pe_step <= UInt<4>("h9") @[PE_CTRL.scala 329:18]
                         value_5 <= UInt<1>("h0") @[Counter.scala 97:11]
+                    else :
+                      node _T_19 = eq(UInt<4>("h9"), pe_step) @[PE_CTRL.scala 106:3]
+                      when _T_19 : @[PE_CTRL.scala 106:3]
+                        dbg_fsm <= UInt<4>("hb") @[PE_CTRL.scala 334:15]
+                        pe_step <= UInt<4>("h1") @[PE_CTRL.scala 336:15]
 
   module MuxPE :
     input clock : Clock

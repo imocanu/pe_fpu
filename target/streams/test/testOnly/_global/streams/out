@@ -1,5 +1,13 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top_combo.PE_CTRL_8IP_test, org.scalatest.tools.Framework$$anon$1@466116a2, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(top_combo.PE_CTRL_8IP_test, org.scalatest.tools.Framework$$anon$1@1bc6aa16, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mPE_CTRL_8IP_test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_FP_L2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_FP_WGT[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_FP_DOT[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_FP_L1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_INT_L2[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_INT_L1[0m[0m
@@ -8,10 +16,10 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mrun PE_CTRL_8IP_test_INT_WGT[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 17 minutes, 12 seconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 minutes, 55 seconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 8[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 8, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	top_combo.PE_CTRL_8IP_test[0m
