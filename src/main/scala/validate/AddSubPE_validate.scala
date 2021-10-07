@@ -84,21 +84,21 @@ class AddSubPE_validate extends Module {
 
 }
 
-object AddSubPE_validate extends App {
- val verilogDir = "rtl"
- val verilogName = "AddSubPE_validate"
+// object AddSubPE_validate extends App {
+//  val verilogDir = "rtl"
+//  val verilogName = "AddSubPE_validate"
 
- (new ChiselStage).execute(
-   Array("--compiler", "verilog",
-     "--target-dir", verilogDir,
-     "--output-file", verilogName),
-    Seq(ChiselGeneratorAnnotation(() => new AddSubPE_validate))
- )
+//  (new ChiselStage).execute(
+//    Array("--compiler", "verilog",
+//      "--target-dir", verilogDir,
+//      "--output-file", verilogName),
+//     Seq(ChiselGeneratorAnnotation(() => new AddSubPE_validate))
+//  )
 
- val targetDir = "diagram"
- (new ElkStage).execute(Array("--target-dir", targetDir),
-    Seq(ChiselGeneratorAnnotation(() => new AddSubPE_validate))
- )
+//  val targetDir = "diagram"
+//  (new ElkStage).execute(Array("--target-dir", targetDir),
+//     Seq(ChiselGeneratorAnnotation(() => new AddSubPE_validate))
+//  )
 
-}
+// }
 

@@ -450,18 +450,18 @@ class PE_V2 extends Module {
   }
 }
 
-object PE_V2 extends App {
-  val verilogDir = "rtl"
-  val verilogName = "PE_V2"
-  (new ChiselStage).execute(
-    Array("--compiler", "verilog",
-      "--target-dir", verilogDir,
-      "--output-file", verilogName),
-    Seq(ChiselGeneratorAnnotation(() => new PE_V2))
-  )
+// object PE_V2 extends App {
+//   val verilogDir = "rtl"
+//   val verilogName = "PE_V2"
+//   (new ChiselStage).execute(
+//     Array("--compiler", "verilog",
+//       "--target-dir", verilogDir,
+//       "--output-file", verilogName),
+//     Seq(ChiselGeneratorAnnotation(() => new PE_V2))
+//   )
 
-  val targetDir = "diagram"
-  (new ElkStage).execute(Array("--target-dir", targetDir),
-    Seq(ChiselGeneratorAnnotation(() => new PE_V2))
-  )
-}
+//   val targetDir = "diagram"
+//   (new ElkStage).execute(Array("--target-dir", targetDir),
+//     Seq(ChiselGeneratorAnnotation(() => new PE_V2))
+//   )
+// }

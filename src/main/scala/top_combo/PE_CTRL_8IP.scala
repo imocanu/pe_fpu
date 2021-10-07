@@ -116,6 +116,7 @@ class PE_CTRL_8IP extends Module {
   // val m_8_sel  = RegInit(0.U(2.W))
   // val m_9_sel  = RegInit(0.U(2.W))
 
+  // PE_OPERATION type
   val op_type   = WireDefault(io.op_type)
 
   // AddSub operation : false "+" OR true "-"
@@ -141,7 +142,7 @@ class PE_CTRL_8IP extends Module {
 //=======================================
   val ctrlPE = Module(new PE_CTRL())
   ctrlPE.io.op_type := op_type
-  ctrlPE.io.use_int := use_int   // NOT USED
+  // ctrlPE.io.use_int := use_int   // NOT USED
   // m_0_sel := ctrlPE.io.m_0_sel
   // m_1_sel := ctrlPE.io.m_1_sel
   // m_2_sel := ctrlPE.io.m_2_sel

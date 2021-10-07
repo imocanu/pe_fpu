@@ -66,20 +66,20 @@ class FP32_addsub extends Module {
 
 }
 
-object FP32_addsub extends App {
- val verilogDir = "rtl"
- val verilogName = "FP32_addsub"
+// object FP32_addsub extends App {
+//  val verilogDir = "rtl"
+//  val verilogName = "FP32_addsub"
 
- (new ChiselStage).execute(
-   Array("--compiler", "verilog",
-     "--target-dir", verilogDir,
-     "--output-file", verilogName),
-   Seq(ChiselGeneratorAnnotation(() => new FP32_addsub))
- )
+//  (new ChiselStage).execute(
+//    Array("--compiler", "verilog",
+//      "--target-dir", verilogDir,
+//      "--output-file", verilogName),
+//    Seq(ChiselGeneratorAnnotation(() => new FP32_addsub))
+//  )
 
- val targetDir = "diagram"
- (new ElkStage).execute(Array("--target-dir", targetDir),
-   Seq(ChiselGeneratorAnnotation(() => new FP32_addsub))
- )
+//  val targetDir = "diagram"
+//  (new ElkStage).execute(Array("--target-dir", targetDir),
+//    Seq(ChiselGeneratorAnnotation(() => new FP32_addsub))
+//  )
 
-}
+// }

@@ -692,18 +692,18 @@ class PE_8_ADDERS extends Module {
   io.out_1 := out_1
 }
 
-object PE_8_ADDERS extends App {
-  val verilogDir = "rtl"
-  val verilogName = "PE_8_ADDERS"
-  (new ChiselStage).execute(
-    Array("--compiler", "verilog",
-      "--target-dir", verilogDir,
-      "--output-file", verilogName),
-    Seq(ChiselGeneratorAnnotation(() => new PE_8_ADDERS))
-  )
+// object PE_8_ADDERS extends App {
+//   val verilogDir = "rtl"
+//   val verilogName = "PE_8_ADDERS"
+//   (new ChiselStage).execute(
+//     Array("--compiler", "verilog",
+//       "--target-dir", verilogDir,
+//       "--output-file", verilogName),
+//     Seq(ChiselGeneratorAnnotation(() => new PE_8_ADDERS))
+//   )
 
-  val targetDir = "diagram"
-  (new ElkStage).execute(Array("--target-dir", targetDir),
-    Seq(ChiselGeneratorAnnotation(() => new PE_8_ADDERS))
-  )
-}
+//   val targetDir = "diagram"
+//   (new ElkStage).execute(Array("--target-dir", targetDir),
+//     Seq(ChiselGeneratorAnnotation(() => new PE_8_ADDERS))
+//   )
+// }

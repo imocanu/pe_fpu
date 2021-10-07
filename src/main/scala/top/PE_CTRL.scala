@@ -25,7 +25,6 @@ class PE_CTRL extends Module {
     val addsub_1_op   = Output(UInt(2.W))
 
     val op_type       = Input(UInt(2.W))
-    val use_int       = Input(Bool())
 
     val dbg_fsm = Output(UInt(4.W))
 
@@ -52,7 +51,7 @@ class PE_CTRL extends Module {
   val addsub_1_op   = RegInit("b11".U(2.W))
 
   // INTEGER flag
-  val use_int      = RegNext(io.use_int)   // NOT USED
+  // val use_int      = RegNext(io.use_int)   // NOT USED
 
 //====================================
 // DEBUG
