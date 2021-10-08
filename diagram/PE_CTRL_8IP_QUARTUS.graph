@@ -1,0 +1,457 @@
+// version: 1.1.1, chiselVersion: 3.4.3, for more information, visit https://github.com/easysoc/layered-firrtl
+algorithm: layered
+hierarchyHandling: INCLUDE_CHILDREN
+
+node PE_CTRL_8IP_QUARTUS {
+    portConstraints: FIXED_SIDE
+    nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+    nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+    label "PE_CTRL_8IP_QUARTUS"
+    
+    port clock {
+        ^port.side: WEST
+        label "clock"
+    }
+    port reset {
+        ^port.side: WEST
+        label "reset"
+    }
+    port io_Xi_0_in_0 {
+        ^port.side: WEST
+        label "io_Xi_0_in_0"
+    }
+    port io_op_type {
+        ^port.side: WEST
+        label "io_op_type"
+    }
+    port io_use_int {
+        ^port.side: WEST
+        label "io_use_int"
+    }
+    port io_tininess {
+        ^port.side: WEST
+        label "io_tininess"
+    }
+    port io_rounding {
+        ^port.side: WEST
+        label "io_rounding"
+    }
+    port io_out {
+        ^port.side: EAST
+        label "io_out"
+    }
+    node submodule_ctrlPE_PE_CTRL {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "ctrlPE"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port reset {
+            ^port.side: WEST
+            label "reset"
+        }    
+        port io_op_type {
+            ^port.side: WEST
+            label "io_op_type"
+        }    
+        port io_m_0_sel {
+            ^port.side: EAST
+            label "io_m_0_sel"
+        }    
+        port io_m_1_sel {
+            ^port.side: EAST
+            label "io_m_1_sel"
+        }    
+        port io_m_2_sel {
+            ^port.side: EAST
+            label "io_m_2_sel"
+        }    
+        port io_m_3_sel {
+            ^port.side: EAST
+            label "io_m_3_sel"
+        }    
+        port io_m_4_sel {
+            ^port.side: EAST
+            label "io_m_4_sel"
+        }    
+        port io_m_5_sel {
+            ^port.side: EAST
+            label "io_m_5_sel"
+        }    
+        port io_m_6_sel {
+            ^port.side: EAST
+            label "io_m_6_sel"
+        }    
+        port io_m_7_sel {
+            ^port.side: EAST
+            label "io_m_7_sel"
+        }    
+        port io_m_8_sel {
+            ^port.side: EAST
+            label "io_m_8_sel"
+        }    
+        port io_m_9_sel {
+            ^port.side: EAST
+            label "io_m_9_sel"
+        }    
+        port io_addsub_0_op {
+            ^port.side: EAST
+            label "io_addsub_0_op"
+        }    
+        port io_addsub_1_op {
+            ^port.side: EAST
+            label "io_addsub_1_op"
+        }
+    
+    
+    }
+
+    node submodule_pe08IP_PE_8IP {
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        nodeSize.constraints: "PORTS PORT_LABELS NODE_LABELS"
+        label "pe_8IP"
+            
+        port clock {
+            ^port.side: WEST
+            label "clock"
+        }    
+        port reset {
+            ^port.side: WEST
+            label "reset"
+        }    
+        port io_Xi_0_in_0 {
+            ^port.side: WEST
+            label "io_Xi_0_in_0"
+        }    
+        port io_Yi_0_in_0 {
+            ^port.side: WEST
+            label "io_Yi_0_in_0"
+        }    
+        port io_Xi_0_in_1 {
+            ^port.side: WEST
+            label "io_Xi_0_in_1"
+        }    
+        port io_Yi_0_in_1 {
+            ^port.side: WEST
+            label "io_Yi_0_in_1"
+        }    
+        port io_Xi_1_in_0 {
+            ^port.side: WEST
+            label "io_Xi_1_in_0"
+        }    
+        port io_Yi_1_in_0 {
+            ^port.side: WEST
+            label "io_Yi_1_in_0"
+        }    
+        port io_Xi_1_in_1 {
+            ^port.side: WEST
+            label "io_Xi_1_in_1"
+        }    
+        port io_Yi_1_in_1 {
+            ^port.side: WEST
+            label "io_Yi_1_in_1"
+        }    
+        port io_Xi_2_in_0 {
+            ^port.side: WEST
+            label "io_Xi_2_in_0"
+        }    
+        port io_Yi_2_in_0 {
+            ^port.side: WEST
+            label "io_Yi_2_in_0"
+        }    
+        port io_Xi_2_in_1 {
+            ^port.side: WEST
+            label "io_Xi_2_in_1"
+        }    
+        port io_Yi_2_in_1 {
+            ^port.side: WEST
+            label "io_Yi_2_in_1"
+        }    
+        port io_Xi_3_in_0 {
+            ^port.side: WEST
+            label "io_Xi_3_in_0"
+        }    
+        port io_Yi_3_in_0 {
+            ^port.side: WEST
+            label "io_Yi_3_in_0"
+        }    
+        port io_Xi_3_in_1 {
+            ^port.side: WEST
+            label "io_Xi_3_in_1"
+        }    
+        port io_Yi_3_in_1 {
+            ^port.side: WEST
+            label "io_Yi_3_in_1"
+        }    
+        port io_Xi_4_in_0 {
+            ^port.side: WEST
+            label "io_Xi_4_in_0"
+        }    
+        port io_Yi_4_in_0 {
+            ^port.side: WEST
+            label "io_Yi_4_in_0"
+        }    
+        port io_Xi_4_in_1 {
+            ^port.side: WEST
+            label "io_Xi_4_in_1"
+        }    
+        port io_Yi_4_in_1 {
+            ^port.side: WEST
+            label "io_Yi_4_in_1"
+        }    
+        port io_Xi_5_in_0 {
+            ^port.side: WEST
+            label "io_Xi_5_in_0"
+        }    
+        port io_Yi_5_in_0 {
+            ^port.side: WEST
+            label "io_Yi_5_in_0"
+        }    
+        port io_Xi_5_in_1 {
+            ^port.side: WEST
+            label "io_Xi_5_in_1"
+        }    
+        port io_Yi_5_in_1 {
+            ^port.side: WEST
+            label "io_Yi_5_in_1"
+        }    
+        port io_Xi_6_in_0 {
+            ^port.side: WEST
+            label "io_Xi_6_in_0"
+        }    
+        port io_Yi_6_in_0 {
+            ^port.side: WEST
+            label "io_Yi_6_in_0"
+        }    
+        port io_Xi_6_in_1 {
+            ^port.side: WEST
+            label "io_Xi_6_in_1"
+        }    
+        port io_Yi_6_in_1 {
+            ^port.side: WEST
+            label "io_Yi_6_in_1"
+        }    
+        port io_Xi_7_in_0 {
+            ^port.side: WEST
+            label "io_Xi_7_in_0"
+        }    
+        port io_Yi_7_in_0 {
+            ^port.side: WEST
+            label "io_Yi_7_in_0"
+        }    
+        port io_Xi_7_in_1 {
+            ^port.side: WEST
+            label "io_Xi_7_in_1"
+        }    
+        port io_Yi_7_in_1 {
+            ^port.side: WEST
+            label "io_Yi_7_in_1"
+        }    
+        port io_m_0_sel {
+            ^port.side: WEST
+            label "io_m_0_sel"
+        }    
+        port io_m_1_sel {
+            ^port.side: WEST
+            label "io_m_1_sel"
+        }    
+        port io_m_2_sel {
+            ^port.side: WEST
+            label "io_m_2_sel"
+        }    
+        port io_m_3_sel {
+            ^port.side: WEST
+            label "io_m_3_sel"
+        }    
+        port io_m_4_sel {
+            ^port.side: WEST
+            label "io_m_4_sel"
+        }    
+        port io_m_5_sel {
+            ^port.side: WEST
+            label "io_m_5_sel"
+        }    
+        port io_m_6_sel {
+            ^port.side: WEST
+            label "io_m_6_sel"
+        }    
+        port io_m_7_sel {
+            ^port.side: WEST
+            label "io_m_7_sel"
+        }    
+        port io_m_8_sel {
+            ^port.side: WEST
+            label "io_m_8_sel"
+        }    
+        port io_m_9_sel {
+            ^port.side: WEST
+            label "io_m_9_sel"
+        }    
+        port io_addsub_0_op {
+            ^port.side: WEST
+            label "io_addsub_0_op"
+        }    
+        port io_addsub_1_op {
+            ^port.side: WEST
+            label "io_addsub_1_op"
+        }    
+        port io_use_int {
+            ^port.side: WEST
+            label "io_use_int"
+        }    
+        port io_rounding {
+            ^port.side: WEST
+            label "io_rounding"
+        }    
+        port io_out {
+            ^port.side: EAST
+            label "io_out"
+        }
+    
+    
+    }
+
+    node Xi_0_in_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Xi_0_in_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node Yi_0_in_0 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Yi_0_in_0"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node Xi_0_in_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Xi_0_in_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node Yi_0_in_1 {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "Yi_0_in_1"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node rounding {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "rounding"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    node use_int {
+        layout [ size: 30, 40 ]
+        portConstraints: FIXED_SIDE
+        nodeLabels.placement: "H_CENTER V_TOP OUTSIDE"
+        label "use_int"
+        label "reg" { nodeLabels.placement: "H_LEFT V_CENTER INSIDE" }
+        port in {
+            ^port.side: "WEST"
+        }
+        port out {
+            ^port.side: "EAST"
+        }
+    }
+    edge e11 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_7_in_1
+    edge e12 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_5_in_0
+    edge e13 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_0_in_0
+    edge e14 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_1_in_1
+    edge e15 : PE_CTRL_8IP_QUARTUS.clock -> PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.clock
+    edge e16 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_0_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_0_sel
+    edge e17 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_addsub_1_op -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_addsub_1_op
+    edge e18 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_3_in_0
+    edge e19 : PE_CTRL_8IP_QUARTUS.reset -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.reset
+    edge e20 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_5_in_1
+    edge e21 : PE_CTRL_8IP_QUARTUS.io_rounding -> PE_CTRL_8IP_QUARTUS.rounding.in
+    edge e22 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_6_in_0
+    edge e23 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_4_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_4_sel
+    edge e24 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_0_in_1
+    edge e25 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_2_in_1
+    edge e26 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_8_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_8_sel
+    edge e27 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_1_in_0
+    edge e28 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Xi_0_in_0.in
+    edge e29 : PE_CTRL_8IP_QUARTUS.io_use_int -> PE_CTRL_8IP_QUARTUS.use_int.in
+    edge e30 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_4_in_0
+    edge e31 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Yi_0_in_1.in
+    edge e32 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_6_in_1
+    edge e33 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_7_in_0
+    edge e34 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_1_in_1
+    edge e35 : PE_CTRL_8IP_QUARTUS.reset -> PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.reset
+    edge e36 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_4_in_1
+    edge e37 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_3_in_1
+    edge e38 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_2_in_0
+    edge e39 : PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_out -> PE_CTRL_8IP_QUARTUS.io_out
+    edge e40 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_1_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_1_sel
+    edge e41 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_5_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_5_sel
+    edge e42 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_6_in_0
+    edge e43 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_5_in_0
+    edge e44 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_7_in_1
+    edge e45 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_2_in_1
+    edge e46 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_2_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_2_sel
+    edge e47 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_9_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_9_sel
+    edge e48 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_0_in_0
+    edge e49 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_3_in_0
+    edge e50 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_5_in_1
+    edge e51 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_addsub_0_op -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_addsub_0_op
+    edge e52 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_6_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_6_sel
+    edge e53 : PE_CTRL_8IP_QUARTUS.clock -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.clock
+    edge e54 : PE_CTRL_8IP_QUARTUS.io_op_type -> PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_op_type
+    edge e55 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_7_in_0
+    edge e56 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_1_in_0
+    edge e57 : PE_CTRL_8IP_QUARTUS.use_int.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_use_int
+    edge e58 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Xi_0_in_1.in
+    edge e59 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_3_in_1
+    edge e60 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Yi_0_in_0.in
+    edge e61 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_4_in_0
+    edge e62 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_6_in_1
+    edge e63 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_0_in_1
+    edge e64 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_3_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_3_sel
+    edge e65 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_4_in_1
+    edge e66 : PE_CTRL_8IP_QUARTUS.rounding.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_rounding
+    edge e67 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_2_in_0
+    edge e68 : PE_CTRL_8IP_QUARTUS.submodule_ctrlPE_PE_CTRL.io_m_7_sel -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_m_7_sel
+    
+}
+
