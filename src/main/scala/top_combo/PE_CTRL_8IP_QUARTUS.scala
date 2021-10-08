@@ -11,9 +11,9 @@ import utils._
 class PE_CTRL_8IP_QUARTUS extends Module {
   val io = IO(new Bundle {
     val Xi_0_in_0     = Input(Bits(Config.forIN.W))
-    // val Yi_0_in_0     = Input(Bits(Config.forIN.W))
-    // val Xi_0_in_1     = Input(Bits(Config.forIN.W))
-    // val Yi_0_in_1     = Input(Bits(Config.forIN.W))
+    val Yi_0_in_0     = Input(Bits(Config.forIN.W))
+    val Xi_0_in_1     = Input(Bits(Config.forIN.W))
+    val Yi_0_in_1     = Input(Bits(Config.forIN.W))
 
     val op_type       = Input(UInt(2.W))
 
@@ -28,9 +28,9 @@ class PE_CTRL_8IP_QUARTUS extends Module {
 // Registers for INPUTS
 //====================================
   val Xi_0_in_0  = RegNext(io.Xi_0_in_0)
-  val Yi_0_in_0  = RegNext(io.Xi_0_in_0)
-  val Xi_0_in_1  = RegNext(io.Xi_0_in_0)
-  val Yi_0_in_1  = RegNext(io.Xi_0_in_0)
+  val Yi_0_in_0  = RegNext(io.Yi_0_in_0)
+  val Xi_0_in_1  = RegNext(io.Xi_0_in_1)
+  val Yi_0_in_1  = RegNext(io.Yi_0_in_1)
 
   // PE_OPERATION type
   val op_type   = WireDefault(io.op_type)

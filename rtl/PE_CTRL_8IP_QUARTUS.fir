@@ -31968,20 +31968,20 @@ circuit PE_CTRL_8IP_QUARTUS :
   module PE_CTRL_8IP_QUARTUS :
     input clock : Clock
     input reset : UInt<1>
-    output io : { flip Xi_0_in_0 : UInt<32>, flip op_type : UInt<2>, flip use_int : UInt<1>, flip tininess : UInt<1>, flip rounding : UInt<3>, out : UInt<32>}
+    output io : { flip Xi_0_in_0 : UInt<32>, flip Yi_0_in_0 : UInt<32>, flip Xi_0_in_1 : UInt<32>, flip Yi_0_in_1 : UInt<32>, flip op_type : UInt<2>, flip use_int : UInt<1>, flip tininess : UInt<1>, flip rounding : UInt<3>, out : UInt<32>}
 
     reg Xi_0_in_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0_in_0) @[PE_CTRL_8IP_QUARTUS.scala 30:27]
     Xi_0_in_0 <= io.Xi_0_in_0 @[PE_CTRL_8IP_QUARTUS.scala 30:27]
     reg Yi_0_in_0 : UInt, clock with :
       reset => (UInt<1>("h0"), Yi_0_in_0) @[PE_CTRL_8IP_QUARTUS.scala 31:27]
-    Yi_0_in_0 <= io.Xi_0_in_0 @[PE_CTRL_8IP_QUARTUS.scala 31:27]
+    Yi_0_in_0 <= io.Yi_0_in_0 @[PE_CTRL_8IP_QUARTUS.scala 31:27]
     reg Xi_0_in_1 : UInt, clock with :
       reset => (UInt<1>("h0"), Xi_0_in_1) @[PE_CTRL_8IP_QUARTUS.scala 32:27]
-    Xi_0_in_1 <= io.Xi_0_in_0 @[PE_CTRL_8IP_QUARTUS.scala 32:27]
+    Xi_0_in_1 <= io.Xi_0_in_1 @[PE_CTRL_8IP_QUARTUS.scala 32:27]
     reg Yi_0_in_1 : UInt, clock with :
       reset => (UInt<1>("h0"), Yi_0_in_1) @[PE_CTRL_8IP_QUARTUS.scala 33:27]
-    Yi_0_in_1 <= io.Xi_0_in_0 @[PE_CTRL_8IP_QUARTUS.scala 33:27]
+    Yi_0_in_1 <= io.Yi_0_in_1 @[PE_CTRL_8IP_QUARTUS.scala 33:27]
     wire op_type : UInt
     op_type <= io.op_type
     reg rounding : UInt, clock with :

@@ -20,6 +20,18 @@ node PE_CTRL_8IP_QUARTUS {
         ^port.side: WEST
         label "io_Xi_0_in_0"
     }
+    port io_Yi_0_in_0 {
+        ^port.side: WEST
+        label "io_Yi_0_in_0"
+    }
+    port io_Xi_0_in_1 {
+        ^port.side: WEST
+        label "io_Xi_0_in_1"
+    }
+    port io_Yi_0_in_1 {
+        ^port.side: WEST
+        label "io_Yi_0_in_1"
+    }
     port io_op_type {
         ^port.side: WEST
         label "io_op_type"
@@ -414,7 +426,7 @@ node PE_CTRL_8IP_QUARTUS {
     edge e28 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Xi_0_in_0.in
     edge e29 : PE_CTRL_8IP_QUARTUS.io_use_int -> PE_CTRL_8IP_QUARTUS.use_int.in
     edge e30 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_4_in_0
-    edge e31 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Yi_0_in_1.in
+    edge e31 : PE_CTRL_8IP_QUARTUS.io_Yi_0_in_1 -> PE_CTRL_8IP_QUARTUS.Yi_0_in_1.in
     edge e32 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_6_in_1
     edge e33 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_7_in_0
     edge e34 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_1_in_1
@@ -441,9 +453,9 @@ node PE_CTRL_8IP_QUARTUS {
     edge e55 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_7_in_0
     edge e56 : PE_CTRL_8IP_QUARTUS.Xi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_1_in_0
     edge e57 : PE_CTRL_8IP_QUARTUS.use_int.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_use_int
-    edge e58 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Xi_0_in_1.in
+    edge e58 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_1 -> PE_CTRL_8IP_QUARTUS.Xi_0_in_1.in
     edge e59 : PE_CTRL_8IP_QUARTUS.Xi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Xi_3_in_1
-    edge e60 : PE_CTRL_8IP_QUARTUS.io_Xi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Yi_0_in_0.in
+    edge e60 : PE_CTRL_8IP_QUARTUS.io_Yi_0_in_0 -> PE_CTRL_8IP_QUARTUS.Yi_0_in_0.in
     edge e61 : PE_CTRL_8IP_QUARTUS.Yi_0_in_0.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_4_in_0
     edge e62 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_6_in_1
     edge e63 : PE_CTRL_8IP_QUARTUS.Yi_0_in_1.out -> PE_CTRL_8IP_QUARTUS.submodule_pe08IP_PE_8IP.io_Yi_0_in_1

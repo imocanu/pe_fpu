@@ -3783,6 +3783,9 @@ module PE_CTRL_8IP_QUARTUS(
   input         clock,
   input         reset,
   input  [31:0] io_Xi_0_in_0,
+  input  [31:0] io_Yi_0_in_0,
+  input  [31:0] io_Xi_0_in_1,
+  input  [31:0] io_Yi_0_in_1,
   input  [1:0]  io_op_type,
   input         io_use_int,
   input         io_tininess,
@@ -3989,9 +3992,9 @@ module PE_CTRL_8IP_QUARTUS(
   assign pe_8IP_io_rounding = rounding; // @[PE_CTRL_8IP_QUARTUS.scala 65:22]
   always @(posedge clock) begin
     Xi_0_in_0 <= io_Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 30:27]
-    Yi_0_in_0 <= io_Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 31:27]
-    Xi_0_in_1 <= io_Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 32:27]
-    Yi_0_in_1 <= io_Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 33:27]
+    Yi_0_in_0 <= io_Yi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 31:27]
+    Xi_0_in_1 <= io_Xi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 32:27]
+    Yi_0_in_1 <= io_Yi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 33:27]
     rounding <= io_rounding; // @[PE_CTRL_8IP_QUARTUS.scala 39:29]
     use_int <= io_use_int; // @[PE_CTRL_8IP_QUARTUS.scala 43:29]
   end
