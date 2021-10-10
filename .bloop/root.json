@@ -55,7 +55,6 @@
             "version": "2.12.15",
             "options": [
                 "-Xsource:2.11",
-                "-P:chiselplugin:useBundlePlugin",
                 "-language:reflectiveCalls",
                 "-unchecked",
                 "-deprecation",

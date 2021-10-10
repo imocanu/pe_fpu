@@ -1,7 +1,5 @@
 from common import *
 
-#https://github.com/robclewley/ieee754_simulation
-
 print("="*50)
 getContextInfo()
 print("="*50)
@@ -10,6 +8,7 @@ random_INT_1 = []
 random_INT_2 = []
 random_INT_3 = []
 random_INT_4 = []
+
 random_INT_ADD = []
 random_INT_SUB = []
 random_INT_MUL = []
@@ -19,10 +18,10 @@ result_INT_L1  = []
 result_INT_DOT = []
 result_INT_WGT = []
 
-test_INT_1 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
-test_INT_2 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
-test_INT_3 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
-test_INT_4 = numpy.random.uniform(min_INT_range, max_INT_range, size=(1, totalNR)).reshape(-1)
+test_INT_1 = numpy.random.uniform( min_INT_range, max_INT_range, size=(1, totalNR) ).reshape(-1)
+test_INT_2 = numpy.random.uniform( min_INT_range, max_INT_range, size=(1, totalNR) ).reshape(-1)
+test_INT_3 = numpy.random.uniform( min_INT_range, max_INT_range, size=(1, totalNR) ).reshape(-1)
+test_INT_4 = numpy.random.uniform( min_INT_range, max_INT_range, size=(1, totalNR) ).reshape(-1)
 
 random_INT_1_bin = []
 for i in test_INT_1:

@@ -1,16 +1,14 @@
 from common import *
 from bitstring import BitArray
 
-#https://github.com/robclewley/ieee754_simulation
-
 print("="*50)
 getContextInfo()
 print("="*50)
 
-
 random_float_ADD_bin = []
 random_float_SUB_bin = []
 random_float_MUL_bin = []
+
 random_float_in_1_bin = []
 random_float_in_2_bin = []
 random_float_in_3_bin = []
@@ -147,6 +145,7 @@ write2file(fpu32_genInput_2, random_float_in_2_bin)
 write2file(fpu32_genInput_3, random_float_in_3_bin)
 # INPUT_4
 write2file(fpu32_genInput_4, random_float_in_4_bin)
+
 # ADD
 write2file(fpu32_ADD_result, random_float_ADD_bin)
 # SUB

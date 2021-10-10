@@ -40,27 +40,9 @@ object Config {
    case 32 => 24
    case 64 => 53
   }
-
-
-  // def Mux3IN (sel: Bits, in0: Bits, in1: Bits, in2: Bits): Bits = {
-  //   var out = RegInit(0.U(32.W))
-  //   switch(sel){
-  //     is("b10".U) { out := in0 }
-  //     is("b01".U) { out := in1 }
-  //     is("b11".U) { out := in2 }
-  //   }
-  //   out
-  // }
 }
 
 object Utils{
   def ieee(x: UInt)   = hardfloat.fNFromRecFN(Config.EXP, Config.SIG, x)
   def recode(x: UInt) = hardfloat.recFNFromFN(Config.EXP, Config.SIG, x)
-  // def int2recode(x: UInt, s: Bool) = {
-  //       val iNToRecFN = Module(new INToRecFN(WIDTH, EXP, SIG))
-  //       iNToRecFN.io.signedIn := s.B
-  //       iNToRecFN.io.in := io.in
-  //       iNToRecFN.io.roundingMode   := io.roundingMode
-  //       iNToRecFN.io.detectTininess := io.detectTininess
-  // }
 }
