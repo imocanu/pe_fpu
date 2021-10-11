@@ -56,7 +56,7 @@ class PE_CTRL_test_manual(dut: PE_CTRL) extends PeekPokeTester(dut) {
     var inputTest_2 = test_int_2
     var inputTest_3 = test_int_3
 
-    poke(dut.io.use_int, true.B)
+    // poke(dut.io.use_int, true.B)
     poke(dut.io.op_type, test_op_type)
 
     poke(dut.io.m_0_sel, test_sel)
@@ -78,7 +78,7 @@ class PE_CTRL_test_manual(dut: PE_CTRL) extends PeekPokeTester(dut) {
     test_sel  = false.B
     test_op   = false.B
 
-    poke(dut.io.use_int, false.B)
+    // poke(dut.io.use_int, false.B)
     poke(dut.io.op_type, test_op_type)
 
     poke(dut.io.m_0_sel, test_sel)
