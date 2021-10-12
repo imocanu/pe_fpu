@@ -106,6 +106,33 @@ class PE_CTRL extends Module {
     is ( start ) {
       
       dbg_fsm := 9.U(4.W)
+
+            // AddSub operation : 
+            // false/0 "+" 
+            // true/1  "-"
+            addsub_0_op := 0.U(2.W)
+            addsub_1_op := 0.U(2.W) 
+
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: 0.U 3: 0.U
+            m_0_sel := 3.U(2.W)
+            m_1_sel := 3.U(2.W)
+            m_2_sel := 3.U(2.W)
+            m_3_sel := 3.U(2.W)
+
+            // MUX selector  : 
+            // 0: X/Y  1: from Mult  2: AGGR 3: 0.U
+            m_4_sel := 3.U(2.W)
+            m_5_sel := 3.U(2.W)
+            m_6_sel := 3.U(2.W)
+            m_7_sel := 3.U(2.W)
+
+            // MUX selector  : 
+            // 0: from AddSub  1: from Mult  2: 0.U 3: 0.U
+            m_8_sel := 3.U(2.W)
+            m_9_sel := 3.U(2.W)
+
+
       pe_step := idle
 
     }
@@ -323,11 +350,11 @@ class PE_CTRL extends Module {
     is ( stop_aggr ) {
       dbg_fsm := 10.U(4.W)
 
-       ADD_counter.inc()
-       when (ADD_counter.value === (ADD_cycles - 1).U) {
-         pe_step := output
-          ADD_counter.reset
-       }
+        ADD_counter.inc()
+        when (ADD_counter.value === (ADD_cycles - 1).U) {
+           pe_step := output
+           ADD_counter.reset
+        }
     }
     is ( output ) {
       dbg_fsm := 11.U(4.W)

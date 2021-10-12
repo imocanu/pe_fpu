@@ -898,8 +898,9 @@ class PE_CTRL_8IP_test_manual(dut: PE_CTRL_8IP) extends PeekPokeTester(dut) {
     // DOT => (-117) + 57 = -60 * 8 = -480 / 11111111111111111111111000100000
     // WGT => (-117) + 57 = -60 * 8 = -480 / 11111111111111111111111000100000
 
+
     // 0=L2 1=L1 2=DOT 3=WGT
-    var test_op_type = 0.U(2.W)
+    var test_op_type = 3.U(2.W)
 
     val test_INT32 = 1
     val test_FP32  = 0
@@ -909,7 +910,7 @@ class PE_CTRL_8IP_test_manual(dut: PE_CTRL_8IP) extends PeekPokeTester(dut) {
     var inputTest_2 = test_int_2
     var inputTest_3 = test_int_3
 
-
+    reset(1)
 
     poke(dut.io.use_int, true.B)
     poke(dut.io.rounding, "b111".U(3.W))
@@ -964,7 +965,7 @@ class PE_CTRL_8IP_test_manual(dut: PE_CTRL_8IP) extends PeekPokeTester(dut) {
     poke(dut.io.Yi_7_in_1, inputTest_3.U(32.W))  
   
 
-    step(20)
+    step(57)     // 52 or 57
 
 
     inputTest_0   = "b"+"00000000000000000000000000001001"  //  9
@@ -1119,7 +1120,7 @@ class PE_CTRL_8IP_test_manual(dut: PE_CTRL_8IP) extends PeekPokeTester(dut) {
     poke(dut.io.Yi_7_in_1, inputTest_3.U(32.W)) 
   }
 
-    step(200) 
+    step(20) 
     
 
 }
@@ -1130,68 +1131,68 @@ class PE_CTRL_8IP_test extends ChiselFlatSpec with Matchers {
     val targetDir = "diagram/" + vcdName
 
 
-  //"run PE_CTRL_8IP_test_manual" should "pass" in {
+  "run PE_CTRL_8IP_test_manual" should "pass" in {
+    chisel3.iotesters.Driver.execute(Array(
+      "--fint-write-vcd",
+      "--backend-name", "firrtl",
+      "--target-dir", targetDir+"_MANUAL",
+      "--top-name" , vcdName,
+      "--output-file", vcdName),
+      () => new PE_CTRL_8IP ) { c =>
+      new PE_CTRL_8IP_test_manual (c)
+    } should be (true)
+  }
+
+
+
+
+  // "run PE_CTRL_8IP_test_FP_L2" should "pass" in {
   //   chisel3.iotesters.Driver.execute(Array(
   //     "--fint-write-vcd",
   //     "--backend-name", "firrtl",
-  //     "--target-dir", targetDir+"_MANUAL",
+  //     "--target-dir", targetDir+"_FP_L2",
   //     "--top-name" , vcdName,
   //     "--output-file", vcdName),
   //     () => new PE_CTRL_8IP ) { c =>
-  //     new PE_CTRL_8IP_test_manual (c)
+  //     new PE_CTRL_8IP_test_FP_L2 (c)
   //   } should be (true)
   // }
 
+  // "run PE_CTRL_8IP_test_FP_L1" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_FP_L1",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_CTRL_8IP ) { c =>
+  //     new PE_CTRL_8IP_test_FP_L1 (c)
+  //   } should be (true)
+  // }
 
+  // "run PE_CTRL_8IP_test_FP_DOT" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_FP_DOT",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_CTRL_8IP ) { c =>
+  //     new PE_CTRL_8IP_test_FP_DOT (c)
+  //   } should be (true)
+  // }
 
-
-  "run PE_CTRL_8IP_test_FP_L2" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_FP_L2",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_FP_L2 (c)
-    } should be (true)
-  }
-
-  "run PE_CTRL_8IP_test_FP_L1" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_FP_L1",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_FP_L1 (c)
-    } should be (true)
-  }
-
-  "run PE_CTRL_8IP_test_FP_DOT" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_FP_DOT",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_FP_DOT (c)
-    } should be (true)
-  }
-
-  "run PE_CTRL_8IP_test_FP_WGT" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_FP_WGT",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_FP_WGT (c)
-    } should be (true)
-  }
+  // "run PE_CTRL_8IP_test_FP_WGT" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_FP_WGT",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_CTRL_8IP ) { c =>
+  //     new PE_CTRL_8IP_test_FP_WGT (c)
+  //   } should be (true)
+  // }
 
 
 
@@ -1202,53 +1203,53 @@ class PE_CTRL_8IP_test extends ChiselFlatSpec with Matchers {
 
 
 
-  "run PE_CTRL_8IP_test_INT_L2" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_INT_L2",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_INT_L2 (c)
-    } should be (true)
-  }
+  // "run PE_CTRL_8IP_test_INT_L2" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_INT_L2",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_CTRL_8IP ) { c =>
+  //     new PE_CTRL_8IP_test_INT_L2 (c)
+  //   } should be (true)
+  // }
 
-  "run PE_CTRL_8IP_test_INT_L1" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_INT_L1",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_INT_L1 (c)
-    } should be (true)
-  }
+  // "run PE_CTRL_8IP_test_INT_L1" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_INT_L1",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_CTRL_8IP ) { c =>
+  //     new PE_CTRL_8IP_test_INT_L1 (c)
+  //   } should be (true)
+  // }
 
-  "run PE_CTRL_8IP_test_INT_DOT" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_INT_DOT",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_INT_DOT (c)
-    } should be (true)
-  }
+  // "run PE_CTRL_8IP_test_INT_DOT" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_INT_DOT",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_CTRL_8IP ) { c =>
+  //     new PE_CTRL_8IP_test_INT_DOT (c)
+  //   } should be (true)
+  // }
 
-  "run PE_CTRL_8IP_test_INT_WGT" should "pass" in {
-    chisel3.iotesters.Driver.execute(Array(
-      "--fint-write-vcd",
-      "--backend-name", "firrtl",
-      "--target-dir", targetDir+"_INT_WGT",
-      "--top-name" , vcdName,
-      "--output-file", vcdName),
-      () => new PE_CTRL_8IP ) { c =>
-      new PE_CTRL_8IP_test_INT_WGT (c)
-    } should be (true)
-  }
+  // "run PE_CTRL_8IP_test_INT_WGT" should "pass" in {
+  //   chisel3.iotesters.Driver.execute(Array(
+  //     "--fint-write-vcd",
+  //     "--backend-name", "firrtl",
+  //     "--target-dir", targetDir+"_INT_WGT",
+  //     "--top-name" , vcdName,
+  //     "--output-file", vcdName),
+  //     () => new PE_CTRL_8IP ) { c =>
+  //     new PE_CTRL_8IP_test_INT_WGT (c)
+  //   } should be (true)
+  // }
 
 }
 
