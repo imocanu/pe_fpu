@@ -10,7 +10,7 @@ from bitstring import BitArray
 
 random.seed(123)
 ##### DEFAULT PARAMS ####
-totalNR = 20
+totalNR = 10000
 
 # SCALA - INT    -2,147,483,648 to 2,147,483,647   2147483648
 # SCALA - LONG   -9,223,372,036,854,775,808 to     9223372036854775807

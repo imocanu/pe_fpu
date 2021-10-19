@@ -41,8 +41,35 @@ testPE_CTRL:
 testPE_8IP:
 	sbt "testOnly top.PE_8IP_test"
 
-testPE_CTRL_8IP:
-	sbt "testOnly top_combo.PE_CTRL_8IP_test"
+# Manual test
+testPE_CTRL_8IP_MANUAL:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_MANUAL"
+
+# INT tests
+testPE_CTRL_8IP_INT_L2:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_INT_L2"
+
+testPE_CTRL_8IP_INT_L1:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_INT_L1"
+
+testPE_CTRL_8IP_INT_DOT:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_INT_DOT"
+
+testPE_CTRL_8IP_INT_WGT:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_INT_WGT"
+
+# FP tests
+testPE_CTRL_8IP_FP_L2:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_FP_L2"
+
+testPE_CTRL_8IP_FP_L1:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_FP_L1"
+
+testPE_CTRL_8IP_FP_DOT:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_FP_DOT"
+
+testPE_CTRL_8IP_FP_WGT:
+	sbt "testOnly top_combo.PE_CTRL_8IP_test_run_FP_WGT"
 
 
 VERILATOR = verilator

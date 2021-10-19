@@ -1,0 +1,423 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.02, Feb  3 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/imocanu/Music/gig_doc/quartus
+vAddRawFN
+Z1 !s110 1634649833
+!i10b 1
+!s100 KZCiE6I<hK4eBIGVK]B]A1
+I@f^jiBiLIm[UMOX93jX_`3
+R0
+Z2 w1633704046
+Z3 8C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v
+Z4 FC:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v
+!i122 138
+L0 1303 159
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1634649833.000000
+Z8 !s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@add@raw@f@n
+vAddRecFN
+R1
+!i10b 1
+!s100 M6[ED_JjFKIoPz77XzDgN0
+I5Ng7dT_iTR>;CFH[GY>Zn3
+R0
+R2
+R3
+R4
+!i122 138
+L0 1462 105
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@add@rec@f@n
+vAddSubPE
+R1
+!i10b 1
+!s100 7:PQV71nXV^j]Am;RF8GF0
+I0NoG0Kim5P^:YOlGacDiP3
+R0
+R2
+R3
+R4
+!i122 138
+L0 1567 302
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@add@sub@p@e
+vhalf_adder
+Z12 !s110 1634127010
+!i10b 1
+!s100 kPz_D>l=HT;WX0n;Z73c43
+IUT7R7V3PK0mko;YgaZdiG1
+R0
+w1634125795
+8C:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v
+FC:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v
+!i122 42
+L0 3 10
+R5
+R6
+r1
+!s85 0
+31
+Z13 !s108 1634127010.000000
+!s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v|
+!i113 1
+R10
+R11
+vhalf_adder_tb
+R12
+!i10b 1
+!s100 <J`ikY8o:Cm9PS:876LTT3
+IW2E5^2d?JgPP`l;<L5Nc=0
+R0
+w1634126059
+8C:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v
+FC:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v
+!i122 43
+L0 5 30
+R5
+R6
+r1
+!s85 0
+31
+R13
+!s107 C:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v|
+!i113 1
+R10
+R11
+vMulFullRawFN
+R1
+!i10b 1
+!s100 c`MQUd:@2aeY;8X:H4cA=0
+IB_O2;B3_QVZzkEnjM_QZA3
+R0
+R2
+R3
+R4
+!i122 138
+L0 633 34
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@mul@full@raw@f@n
+vMulRawFN
+R1
+!i10b 1
+!s100 RFl?6MG<k294RPPc4o4[12
+I6N<=DL:ToddzSYkGRJ6Cf1
+R0
+R2
+R3
+R4
+!i122 138
+L0 667 82
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@mul@raw@f@n
+vMulRecFN
+R1
+!i10b 1
+!s100 W8onClB]QiAb]A[[TFimg0
+IO@0haj;kDAz]RTGo?SmRk2
+R0
+R2
+R3
+R4
+!i122 138
+L0 916 98
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@mul@rec@f@n
+vMultPE
+R1
+!i10b 1
+!s100 WX^IHlBM5LV`lkzPZTH7g0
+I1IHhD7=jD[LULamzm_XjE2
+R0
+R2
+R3
+R4
+!i122 138
+L0 1014 289
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@mult@p@e
+vMuxPE
+R1
+!i10b 1
+!s100 7kklTc1@5SH;`FJAO5aVD3
+IBNm?O@iE8LMFoT0d5c8@H2
+R0
+R2
+R3
+R4
+!i122 138
+L0 542 91
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@mux@p@e
+vPE
+R1
+!i10b 1
+!s100 [^DeLbmG`jPl6_KiS4chl1
+IIc[IWFUl9UAfIQCbf`1EZ3
+R0
+R2
+R3
+R4
+!i122 138
+L0 1869 628
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@p@e
+vPE_8IP
+R1
+!i10b 1
+!s100 LEC7OVEe<`SH1WlhgM?ik2
+I[[5UVQ@zaBCV;?z[Ci6b=1
+R0
+R2
+R3
+R4
+!i122 138
+L0 2497 1285
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@p@e_8@i@p
+vPE_CTRL
+R1
+!i10b 1
+!s100 gSoVH3M;ToNlfD<zQF_;01
+ImaD`@M>i^7Sz@nHQha7NJ2
+R0
+R2
+R3
+R4
+!i122 138
+L0 1 541
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@p@e_@c@t@r@l
+vPE_CTRL_8IP_QUARTUS
+R1
+!i10b 1
+!s100 dnPF?TiJB:haXlcm@C8?n0
+IWTJ<h40Ubg5TzjOklXGn]1
+R0
+R2
+R3
+R4
+!i122 138
+L0 3782 275
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@p@e_@c@t@r@l_8@i@p_@q@u@a@r@t@u@s
+vPE_CTRL_8IP_QUARTUS_tb
+R1
+!i10b 1
+!s100 <=bOYO_ioX6m[6==?c`>B3
+IIkClGZ:fb=V>9DFhE=6063
+R0
+w1634649824
+Z14 8C:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v
+Z15 FC:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v
+!i122 139
+L0 3 86
+R5
+R6
+r1
+!s85 0
+31
+R7
+Z16 !s107 C:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v|
+Z17 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v|
+!i113 1
+R10
+R11
+n@p@e_@c@t@r@l_8@i@p_@q@u@a@r@t@u@s_tb
+vPE_CTRL_8IP_tb
+!s110 1634124371
+!i10b 1
+!s100 UfQ^L<ieL`>Y`oQS=c8iK1
+I?j7U80_F][?H?3n:E24H92
+R0
+w1634124366
+R14
+R15
+!i122 3
+L0 3 159
+R5
+R6
+r1
+!s85 0
+31
+!s108 1634124371.000000
+R16
+R17
+!i113 1
+R10
+R11
+n@p@e_@c@t@r@l_8@i@p_tb
+vRoundAnyRawFNToRecFN
+R1
+!i10b 1
+!s100 2KD?G;zj1;f9>@Q7m_GeP3
+IZMc4QoRR7;cUEFZN^eXNN3
+R0
+R2
+R3
+R4
+!i122 138
+L0 749 126
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@round@any@raw@f@n@to@rec@f@n
+vRoundRawFNToRecFN
+R1
+!i10b 1
+!s100 PW6903I5LfQmE?VflGXUl0
+IANigPn>3=8jHlE1H9BcHP3
+R0
+R2
+R3
+R4
+!i122 138
+L0 875 41
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@round@raw@f@n@to@rec@f@n
