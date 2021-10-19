@@ -14,8 +14,8 @@ verilatorC++ - folder used to build C++ version of project
 #### => [2] Basic commands ( from Makefile ):
 ```bash
 -> git submodule init && git submodule update   - init all git dependencies
--> make build    - build project (configuration ) without proxy
--> make buildVM  - run with Intel proxy
+-> make build    - build project without proxy
+-> make buildVM  - build project with Intel proxy
 -> make clean    - clean project
 ```
 
