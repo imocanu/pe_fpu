@@ -884,7 +884,7 @@ class PE_CTRL_8IP_test_manual(dut: PE_CTRL_8IP) extends PeekPokeTester(dut) {
     var test_int_1   = "b"+"00000000000000000000000000001011" // 11
     var test_int_2   = "b"+"11111111111111111111111111001001" // -55
     var test_int_3   = "b"+"11111111111111111111111111110101" // -11
-    // L2  => 144 + 1936 = 2080 * 8 = 16640
+    // L2  => 144 + 1936 = 2080 * 8 = 16640   / 00000000000000000100000100000000
     // L1  => 12 + (-44) = (-32) * 8 = -256 / 11111111111111111111111100000000
     // DOT => 253 + 605 = 858 * 8 = 6864
     // WGT => 253 + 605 = 858 * 8 = 6864
@@ -900,7 +900,7 @@ class PE_CTRL_8IP_test_manual(dut: PE_CTRL_8IP) extends PeekPokeTester(dut) {
 
 
     // 0=L2 1=L1 2=DOT 3=WGT
-    var test_op_type = 3.U(2.W)
+    var test_op_type = 0.U(2.W)
 
     val test_INT32 = 1
     val test_FP32  = 0

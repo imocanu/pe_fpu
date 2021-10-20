@@ -8,41 +8,41 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/imocanu/Music/gig_doc/quartus
+dC:/intelFPGA_pro/21.1
 vAddRawFN
-Z1 !s110 1634649833
+Z0 !s110 1634735772
 !i10b 1
-!s100 KZCiE6I<hK4eBIGVK]B]A1
-I@f^jiBiLIm[UMOX93jX_`3
-R0
-Z2 w1633704046
-Z3 8C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v
-Z4 FC:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v
-!i122 138
-L0 1303 159
+!s100 b5JY_2Of0RQk6ZX[jC8I_0
+IoccBj^?Gn_^g7:4a=TUB91
+Z1 dC:/Users/imocanu/Music/gig_doc/quartus
+Z2 w1634724966
+Z3 8C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP.v
+Z4 FC:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP.v
+!i122 147
+L0 762 159
 Z5 VDg1SIo80bB@j0V0VzS_@n1
 Z6 OV;L;2021.1;73
 r1
 !s85 0
 31
-Z7 !s108 1634649833.000000
-Z8 !s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v|
-Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v|
+Z7 !s108 1634735772.000000
+Z8 !s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP.v|
 !i113 1
 Z10 o-work work
 Z11 tCvgOpt 0
 n@add@raw@f@n
 vAddRecFN
-R1
-!i10b 1
-!s100 M6[ED_JjFKIoPz77XzDgN0
-I5Ng7dT_iTR>;CFH[GY>Zn3
 R0
+!i10b 1
+!s100 YUCh]Q9B;@DFGCZSbeZJ91
+Ig5l]ML]2DYKz:0XnK1:V;2
+R1
 R2
 R3
 R4
-!i122 138
-L0 1462 105
+!i122 147
+L0 921 105
 R5
 R6
 r1
@@ -56,16 +56,16 @@ R10
 R11
 n@add@rec@f@n
 vAddSubPE
-R1
-!i10b 1
-!s100 7:PQV71nXV^j]Am;RF8GF0
-I0NoG0Kim5P^:YOlGacDiP3
 R0
+!i10b 1
+!s100 aEV]dE``GODZ?TH3APiND3
+IEjTnKf^kg`44?AB1IG^9e1
+R1
 R2
 R3
 R4
-!i122 138
-L0 1567 302
+!i122 147
+L0 1026 302
 R5
 R6
 r1
@@ -78,61 +78,40 @@ R9
 R10
 R11
 n@add@sub@p@e
-vhalf_adder
-Z12 !s110 1634127010
+vAddSubPE_tb
+Z12 !s110 1634732504
 !i10b 1
-!s100 kPz_D>l=HT;WX0n;Z73c43
-IUT7R7V3PK0mko;YgaZdiG1
-R0
-w1634125795
-8C:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v
-FC:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v
-!i122 42
-L0 3 10
-R5
-R6
-r1
-!s85 0
-31
-Z13 !s108 1634127010.000000
-!s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/half_adder.v|
-!i113 1
-R10
-R11
-vhalf_adder_tb
-R12
-!i10b 1
-!s100 <J`ikY8o:Cm9PS:876LTT3
-IW2E5^2d?JgPP`l;<L5Nc=0
-R0
-w1634126059
-8C:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v
-FC:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v
-!i122 43
-L0 5 30
-R5
-R6
-r1
-!s85 0
-31
-R13
-!s107 C:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\imocanu\Music\gig_doc\quartus\verilog\half_adder_tb.v|
-!i113 1
-R10
-R11
-vMulFullRawFN
+!s100 4;OgW0h80M[UE?HEE[_GO2
+ILo4HI<TO]HSYjWLYFQGok2
 R1
-!i10b 1
-!s100 c`MQUd:@2aeY;8X:H4cA=0
-IB_O2;B3_QVZzkEnjM_QZA3
+w1634728188
+8C:/Users/imocanu/Music/gig_doc/quartus/verilog/AddSubPE_tb.v
+FC:/Users/imocanu/Music/gig_doc/quartus/verilog/AddSubPE_tb.v
+!i122 123
+L0 3 125
+R5
+R6
+r1
+!s85 0
+31
+Z13 !s108 1634732504.000000
+!s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/AddSubPE_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/AddSubPE_tb.v|
+!i113 1
+R10
+R11
+n@add@sub@p@e_tb
+vMulFullRawFN
 R0
+!i10b 1
+!s100 5o[>=ke>6O1;=`bm5<C]80
+I7_PbA;2@g8c>:@87BF>5o1
+R1
 R2
 R3
 R4
-!i122 138
-L0 633 34
+!i122 147
+L0 92 34
 R5
 R6
 r1
@@ -146,16 +125,16 @@ R10
 R11
 n@mul@full@raw@f@n
 vMulRawFN
-R1
-!i10b 1
-!s100 RFl?6MG<k294RPPc4o4[12
-I6N<=DL:ToddzSYkGRJ6Cf1
 R0
+!i10b 1
+!s100 bzOh4j=Edznh2f9jN@L?E1
+IM3j5b@PBYL3:f2HD=5^Z72
+R1
 R2
 R3
 R4
-!i122 138
-L0 667 82
+!i122 147
+L0 126 82
 R5
 R6
 r1
@@ -169,16 +148,16 @@ R10
 R11
 n@mul@raw@f@n
 vMulRecFN
-R1
-!i10b 1
-!s100 W8onClB]QiAb]A[[TFimg0
-IO@0haj;kDAz]RTGo?SmRk2
 R0
+!i10b 1
+!s100 TCG]5;9DN4fhnZ^>7W2FH0
+IgYPKY[K]03G37L7ma]Yjj0
+R1
 R2
 R3
 R4
-!i122 138
-L0 916 98
+!i122 147
+L0 375 98
 R5
 R6
 r1
@@ -192,16 +171,16 @@ R10
 R11
 n@mul@rec@f@n
 vMultPE
-R1
-!i10b 1
-!s100 WX^IHlBM5LV`lkzPZTH7g0
-I1IHhD7=jD[LULamzm_XjE2
 R0
+!i10b 1
+!s100 To_F?V;Td;o^a@122b[fb3
+I]V4Mo=nZCPd8m4id]I?fd2
+R1
 R2
 R3
 R4
-!i122 138
-L0 1014 289
+!i122 147
+L0 473 289
 R5
 R6
 r1
@@ -215,16 +194,16 @@ R10
 R11
 n@mult@p@e
 vMuxPE
-R1
-!i10b 1
-!s100 7kklTc1@5SH;`FJAO5aVD3
-IBNm?O@iE8LMFoT0d5c8@H2
 R0
+!i10b 1
+!s100 hLWb@aSFVk9`l9i_Whk5G2
+IlW2DgV4:1_KzAo12M6FWC0
+R1
 R2
 R3
 R4
-!i122 138
-L0 542 91
+!i122 147
+L0 1 91
 R5
 R6
 r1
@@ -238,16 +217,16 @@ R10
 R11
 n@mux@p@e
 vPE
-R1
-!i10b 1
-!s100 [^DeLbmG`jPl6_KiS4chl1
-IIc[IWFUl9UAfIQCbf`1EZ3
 R0
+!i10b 1
+!s100 o<^[Yn75hUUXm4AA]8:Bg2
+IjE1I>fW141Z_E`j;@JVf[2
+R1
 R2
 R3
 R4
-!i122 138
-L0 1869 628
+!i122 147
+L0 1328 628
 R5
 R6
 r1
@@ -261,16 +240,16 @@ R10
 R11
 n@p@e
 vPE_8IP
-R1
-!i10b 1
-!s100 LEC7OVEe<`SH1WlhgM?ik2
-I[[5UVQ@zaBCV;?z[Ci6b=1
 R0
+!i10b 1
+!s100 YoC9<[V_lM>50ASQS5lai1
+II0ERY^SMKokCBYhGk5]X>0
+R1
 R2
 R3
 R4
-!i122 138
-L0 2497 1285
+!i122 147
+L0 1956 1290
 R5
 R6
 r1
@@ -283,109 +262,109 @@ R9
 R10
 R11
 n@p@e_8@i@p
-vPE_CTRL
-R1
+vPE_8IP_tb
+!s110 1634737389
 !i10b 1
-!s100 gSoVH3M;ToNlfD<zQF_;01
-ImaD`@M>i^7Sz@nHQha7NJ2
-R0
-R2
-R3
-R4
-!i122 138
-L0 1 541
+!s100 FB0EKY?<6UFhC;[keIP=]1
+I5a;5<VHH?`in@QW4j2TC10
+R1
+w1634737112
+8C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v
+FC:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v
+!i122 158
+L0 3 225
 R5
 R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!s108 1634737389.000000
+!s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v|
+!i113 1
+R10
+R11
+n@p@e_8@i@p_tb
+vPE_CTRL
+R12
+!i10b 1
+!s100 VgIXRc<c8;aFakC5=[5GG0
+IaAnBcajNROmljPR4]B=6d2
+R1
+Z14 w1634715205
+Z15 8C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v
+Z16 FC:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v
+!i122 126
+L0 1 565
+R5
+R6
+r1
+!s85 0
+31
+R13
+Z17 !s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v|
+Z18 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v|
 !i113 1
 R10
 R11
 n@p@e_@c@t@r@l
 vPE_CTRL_8IP_QUARTUS
-R1
+R12
 !i10b 1
-!s100 dnPF?TiJB:haXlcm@C8?n0
-IWTJ<h40Ubg5TzjOklXGn]1
-R0
-R2
-R3
-R4
-!i122 138
-L0 3782 275
+!s100 eUjSFV6d2I;7i<5OF@nmn1
+I8^VVe9mGYHa?h>mD:QC_@3
+R1
+R14
+R15
+R16
+!i122 126
+L0 3806 279
 R5
 R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+R13
+R17
+R18
 !i113 1
 R10
 R11
 n@p@e_@c@t@r@l_8@i@p_@q@u@a@r@t@u@s
 vPE_CTRL_8IP_QUARTUS_tb
-R1
+R12
 !i10b 1
-!s100 <=bOYO_ioX6m[6==?c`>B3
-IIkClGZ:fb=V>9DFhE=6063
-R0
-w1634649824
-Z14 8C:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v
-Z15 FC:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v
-!i122 139
-L0 3 86
+!s100 EgFoPza60L3`Me1PcO7eN2
+IkfPUXRohkLHU>0ePjiDHZ1
+R1
+w1634732346
+8C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS_tb.v
+FC:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS_tb.v
+!i122 125
+L0 3 114
 R5
 R6
 r1
 !s85 0
 31
-R7
-Z16 !s107 C:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v|
-Z17 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\imocanu\Music\gig_doc\quartus\verilog\PE_CTRL_8IP_QUARTUS_tb.v|
+R13
+!s107 C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS_tb.v|
 !i113 1
 R10
 R11
 n@p@e_@c@t@r@l_8@i@p_@q@u@a@r@t@u@s_tb
-vPE_CTRL_8IP_tb
-!s110 1634124371
-!i10b 1
-!s100 UfQ^L<ieL`>Y`oQS=c8iK1
-I?j7U80_F][?H?3n:E24H92
-R0
-w1634124366
-R14
-R15
-!i122 3
-L0 3 159
-R5
-R6
-r1
-!s85 0
-31
-!s108 1634124371.000000
-R16
-R17
-!i113 1
-R10
-R11
-n@p@e_@c@t@r@l_8@i@p_tb
 vRoundAnyRawFNToRecFN
-R1
-!i10b 1
-!s100 2KD?G;zj1;f9>@Q7m_GeP3
-IZMc4QoRR7;cUEFZN^eXNN3
 R0
+!i10b 1
+!s100 zMl>``RA@6k8BBTVUk6zT0
+I3<25KJNMTPYYzmOA04]_X3
+R1
 R2
 R3
 R4
-!i122 138
-L0 749 126
+!i122 147
+L0 208 126
 R5
 R6
 r1
@@ -399,16 +378,16 @@ R10
 R11
 n@round@any@raw@f@n@to@rec@f@n
 vRoundRawFNToRecFN
-R1
-!i10b 1
-!s100 PW6903I5LfQmE?VflGXUl0
-IANigPn>3=8jHlE1H9BcHP3
 R0
+!i10b 1
+!s100 Hikaa5[5IdXX>H[jN5K[20
+I1=z1@aeF9_IleQgbAS=am1
+R1
 R2
 R3
 R4
-!i122 138
-L0 875 41
+!i122 147
+L0 334 41
 R5
 R6
 r1

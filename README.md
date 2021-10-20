@@ -1,13 +1,13 @@
-### [Steps to run/build project]
+### [ Steps to run/build project ]
 
 #### => [1] Structure :
 ```bash
-src       - source files 
-python    - folder to generate inputs
-rtl       - folder where verilog file are generated
-quartus   - project for Quartus
-Makefile  - basic commands to build and tun tests
-build.sbt - project configuration
+src          - source files 
+python       - folder to generate inputs
+rtl          - folder where verilog file are generated
+quartus      - project for Quartus
+Makefile     - basic commands to build and tun tests
+build.sbt    - project configuration
 verilatorC++ - folder used to build C++ version of project
 ```
 
@@ -19,7 +19,7 @@ verilatorC++ - folder used to build C++ version of project
 -> make clean    - clean project
 ```
 
-#### => [Run tests] :
+#### => [ Run tests ] :
 ```bash
 make testAddSubPE
 make testMultPE

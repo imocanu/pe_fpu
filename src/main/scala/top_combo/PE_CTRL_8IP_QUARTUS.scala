@@ -21,7 +21,8 @@ class PE_CTRL_8IP_QUARTUS extends Module {
     val tininess      = Input(UInt(1.W))
     val rounding      = Input(UInt(3.W))
 
-    val out  = Output(Bits(Config.forIN.W))  
+    val out     = Output(Bits(Config.forIN.W))
+    val dbg_fsm = Output(UInt(4.W))  
   })
 
 //====================================
@@ -45,7 +46,6 @@ class PE_CTRL_8IP_QUARTUS extends Module {
 //====================================
 // DEBUG
 //====================================
-  val dbg_fsm   = RegInit(0.U(4.W))
   val dbg_aggr0 = RegInit(0.U(Config.forIN.W))
   val dbg_aggr1 = RegInit(0.U(Config.forIN.W))
 
@@ -54,7 +54,7 @@ class PE_CTRL_8IP_QUARTUS extends Module {
 //=======================================
   val ctrlPE = Module(new PE_CTRL())
   ctrlPE.io.op_type := op_type
-  dbg_fsm := ctrlPE.io.dbg_fsm
+  io.dbg_fsm := ctrlPE.io.dbg_fsm
 
 //=======================================
 // PE_8IP module

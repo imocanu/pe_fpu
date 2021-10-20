@@ -1,0 +1,26 @@
+C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v {1 {vlog -work work -stats=none C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2021.1 Compiler 2021.02 Feb  3 2021
+-- Compiling module PE_8IP_tb
+
+Top level modules:
+	PE_8IP_tb
+
+} {} {}} C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP.v {1 {vlog -work work -stats=none C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2021.1 Compiler 2021.02 Feb  3 2021
+-- Compiling module MuxPE
+-- Compiling module MulFullRawFN
+-- Compiling module MulRawFN
+-- Compiling module RoundAnyRawFNToRecFN
+-- Compiling module RoundRawFNToRecFN
+-- Compiling module MulRecFN
+-- Compiling module MultPE
+-- Compiling module AddRawFN
+-- Compiling module AddRecFN
+-- Compiling module AddSubPE
+-- Compiling module PE
+-- Compiling module PE_8IP
+
+Top level modules:
+	PE_8IP
+
+} {} {}}

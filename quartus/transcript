@@ -1,0 +1,703 @@
+# Compile of PE_8IP_tb.v was successful.
+# Compile of PE_8IP.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Load canceled
+vsim -gui work.PE_CTRL_8IP_QUARTUS_tb
+# vsim -gui work.PE_CTRL_8IP_QUARTUS_tb 
+# Start time: 15:52:59 on Oct 20,2021
+# Loading work.PE_CTRL_8IP_QUARTUS_tb
+# Loading work.PE_CTRL_8IP_QUARTUS
+# Loading work.PE_CTRL
+# Loading work.PE_8IP
+# Loading work.PE
+# Loading work.MuxPE
+# Loading work.MultPE
+# Loading work.MulRecFN
+# Loading work.MulRawFN
+# Loading work.MulFullRawFN
+# Loading work.RoundRawFNToRecFN
+# Loading work.RoundAnyRawFNToRecFN
+# Loading work.AddSubPE
+# Loading work.AddRecFN
+# Loading work.AddRawFN
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'io_dbg_fsm'. The port definition is at: C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v(3818).
+#    Time: 0 ns  Iteration: 0  Instance: /PE_CTRL_8IP_QUARTUS_tb/UUT File: C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS_tb.v Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'pe_8IP'.  Expected 52, found 49.
+#    Time: 0 ns  Iteration: 0  Instance: /PE_CTRL_8IP_QUARTUS_tb/UUT/pe_8IP File: C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v Line: 3917
+# ** Warning: (vsim-3722) C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v(3917): [TFMPC] - Missing connection for port 'io_tininess'.
+# ** Warning: (vsim-3722) C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v(3917): [TFMPC] - Missing connection for port 'io_dbg_aggr0'.
+# ** Warning: (vsim-3722) C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_CTRL_8IP_QUARTUS.v(3917): [TFMPC] - Missing connection for port 'io_dbg_aggr1'.
+add wave -position insertpoint  \
+sim:/PE_CTRL_8IP_QUARTUS_tb/period \
+sim:/PE_CTRL_8IP_QUARTUS_tb/clock \
+sim:/PE_CTRL_8IP_QUARTUS_tb/reset \
+sim:/PE_CTRL_8IP_QUARTUS_tb/Xi_0_in_0 \
+sim:/PE_CTRL_8IP_QUARTUS_tb/Yi_0_in_0 \
+sim:/PE_CTRL_8IP_QUARTUS_tb/Xi_0_in_1 \
+sim:/PE_CTRL_8IP_QUARTUS_tb/Yi_0_in_1 \
+sim:/PE_CTRL_8IP_QUARTUS_tb/op_type \
+sim:/PE_CTRL_8IP_QUARTUS_tb/use_int \
+sim:/PE_CTRL_8IP_QUARTUS_tb/tininess \
+sim:/PE_CTRL_8IP_QUARTUS_tb/rounding \
+sim:/PE_CTRL_8IP_QUARTUS_tb/out \
+sim:/PE_CTRL_8IP_QUARTUS_tb/dbg_fsm
+run
+#                    0 << start simulation >>
+run
+quit -sim
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# End time: 15:53:57 on Oct 20,2021, Elapsed time: 0:00:58
+# Errors: 2, Warnings: 7
+vsim -gui work.PE_8IP_tb
+# vsim -gui work.PE_8IP_tb 
+# Start time: 15:54:10 on Oct 20,2021
+# Loading work.PE_8IP_tb
+# Loading work.PE_8IP
+# Loading work.PE
+# Loading work.MuxPE
+# Loading work.MultPE
+# Loading work.MulRecFN
+# Loading work.MulRawFN
+# Loading work.MulFullRawFN
+# Loading work.RoundRawFNToRecFN
+# Loading work.RoundAnyRawFNToRecFN
+# Loading work.AddSubPE
+# Loading work.AddRecFN
+# Loading work.AddRawFN
+add wave -position insertpoint  \
+sim:/PE_8IP_tb/period \
+sim:/PE_8IP_tb/clock \
+sim:/PE_8IP_tb/reset \
+sim:/PE_8IP_tb/m_0_sel \
+sim:/PE_8IP_tb/m_1_sel \
+sim:/PE_8IP_tb/m_2_sel \
+sim:/PE_8IP_tb/m_3_sel \
+sim:/PE_8IP_tb/m_4_sel \
+sim:/PE_8IP_tb/m_5_sel \
+sim:/PE_8IP_tb/m_6_sel \
+sim:/PE_8IP_tb/m_7_sel \
+sim:/PE_8IP_tb/m_8_sel \
+sim:/PE_8IP_tb/m_9_sel \
+sim:/PE_8IP_tb/addsub_0_op \
+sim:/PE_8IP_tb/addsub_1_op \
+sim:/PE_8IP_tb/use_int \
+sim:/PE_8IP_tb/tininess \
+sim:/PE_8IP_tb/rounding \
+sim:/PE_8IP_tb/Xi_0_in_0 \
+sim:/PE_8IP_tb/Yi_0_in_0 \
+sim:/PE_8IP_tb/Xi_0_in_1 \
+sim:/PE_8IP_tb/Yi_0_in_1 \
+sim:/PE_8IP_tb/out \
+sim:/PE_8IP_tb/dbg_aggr0 \
+sim:/PE_8IP_tb/dbg_aggr1
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# End time: 15:57:20 on Oct 20,2021, Elapsed time: 0:03:10
+# Errors: 2, Warnings: 1
+# Compile of PE_8IP_tb.v was successful.
+# Compile of PE_8IP.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.PE_8IP_tb
+# vsim -gui work.PE_8IP_tb 
+# Start time: 15:57:36 on Oct 20,2021
+# Loading work.PE_8IP_tb
+# Loading work.PE_8IP
+# Loading work.PE
+# Loading work.MuxPE
+# Loading work.MultPE
+# Loading work.MulRecFN
+# Loading work.MulRawFN
+# Loading work.MulFullRawFN
+# Loading work.RoundRawFNToRecFN
+# Loading work.RoundAnyRawFNToRecFN
+# Loading work.AddSubPE
+# Loading work.AddRecFN
+# Loading work.AddRawFN
+add wave -position insertpoint  \
+sim:/PE_8IP_tb/period \
+sim:/PE_8IP_tb/clock \
+sim:/PE_8IP_tb/reset \
+sim:/PE_8IP_tb/m_0_sel \
+sim:/PE_8IP_tb/m_1_sel \
+sim:/PE_8IP_tb/m_2_sel \
+sim:/PE_8IP_tb/m_3_sel \
+sim:/PE_8IP_tb/m_4_sel \
+sim:/PE_8IP_tb/m_5_sel \
+sim:/PE_8IP_tb/m_6_sel \
+sim:/PE_8IP_tb/m_7_sel \
+sim:/PE_8IP_tb/m_8_sel \
+sim:/PE_8IP_tb/m_9_sel \
+sim:/PE_8IP_tb/addsub_0_op \
+sim:/PE_8IP_tb/addsub_1_op \
+sim:/PE_8IP_tb/use_int \
+sim:/PE_8IP_tb/tininess \
+sim:/PE_8IP_tb/rounding \
+sim:/PE_8IP_tb/Xi_0_in_0 \
+sim:/PE_8IP_tb/Yi_0_in_0 \
+sim:/PE_8IP_tb/Xi_0_in_1 \
+sim:/PE_8IP_tb/Yi_0_in_1 \
+sim:/PE_8IP_tb/out \
+sim:/PE_8IP_tb/dbg_aggr0 \
+sim:/PE_8IP_tb/dbg_aggr1
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+#                    4 << start_Aggregation >>
+#                    4 << stop_Aggregation >>
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# End time: 15:58:34 on Oct 20,2021, Elapsed time: 0:00:58
+# Errors: 2, Warnings: 2
+# Compile of PE_8IP_tb.v was successful.
+# Compile of PE_8IP.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.PE_8IP_tb
+# vsim -gui work.PE_8IP_tb 
+# Start time: 15:58:55 on Oct 20,2021
+# Loading work.PE_8IP_tb
+# Loading work.PE_8IP
+# Loading work.PE
+# Loading work.MuxPE
+# Loading work.MultPE
+# Loading work.MulRecFN
+# Loading work.MulRawFN
+# Loading work.MulFullRawFN
+# Loading work.RoundRawFNToRecFN
+# Loading work.RoundAnyRawFNToRecFN
+# Loading work.AddSubPE
+# Loading work.AddRecFN
+# Loading work.AddRawFN
+add wave -position insertpoint  \
+sim:/PE_8IP_tb/period \
+sim:/PE_8IP_tb/clock \
+sim:/PE_8IP_tb/reset \
+sim:/PE_8IP_tb/m_0_sel \
+sim:/PE_8IP_tb/m_1_sel \
+sim:/PE_8IP_tb/m_2_sel \
+sim:/PE_8IP_tb/m_3_sel \
+sim:/PE_8IP_tb/m_4_sel \
+sim:/PE_8IP_tb/m_5_sel \
+sim:/PE_8IP_tb/m_6_sel \
+sim:/PE_8IP_tb/m_7_sel \
+sim:/PE_8IP_tb/m_8_sel \
+sim:/PE_8IP_tb/m_9_sel \
+sim:/PE_8IP_tb/addsub_0_op \
+sim:/PE_8IP_tb/addsub_1_op \
+sim:/PE_8IP_tb/use_int \
+sim:/PE_8IP_tb/tininess \
+sim:/PE_8IP_tb/rounding \
+sim:/PE_8IP_tb/Xi_0_in_0 \
+sim:/PE_8IP_tb/Yi_0_in_0 \
+sim:/PE_8IP_tb/Xi_0_in_1 \
+sim:/PE_8IP_tb/Yi_0_in_1 \
+sim:/PE_8IP_tb/out \
+sim:/PE_8IP_tb/dbg_aggr0 \
+sim:/PE_8IP_tb/dbg_aggr1
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+run
+#                   54 << start_Aggregation >>
+#                   54 << stop_Aggregation >>
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# $
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+#                   49 << start_Aggregation >>
+#                   49 << stop_Aggregation >>
+run
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# $
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+#                   49 << start_Aggregation >>
+run
+run
+run
+run
+run
+#                   94 << stop_Aggregation >>
+run
+run
+run
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+#                   49 << start_Aggregation >>
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# _2¸¨  /E8Pt/nu_N
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+#                   46 << start_Aggregation >>
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+#                  171 << stop_Aggregation >>
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# Compile of PE_8IP_tb.v was successful.
+# Compile of PE_8IP.v was successful.
+# 2 compiles, 0 failed with no errors.
+# ** Error: Acs sdne.
+# $
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+run -all
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+#                   46 << start_Aggregation >>
+#                  171 << stop_Aggregation >>
+#                 1171 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(210)
+#    Time: 1171 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 210
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# Compile of PE_8IP_tb.v was successful.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+# Loading work.PE_8IP
+# Loading work.PE
+# Loading work.MuxPE
+# Loading work.MultPE
+# Loading work.MulRecFN
+# Loading work.MulRawFN
+# Loading work.MulFullRawFN
+# Loading work.RoundRawFNToRecFN
+# Loading work.RoundAnyRawFNToRecFN
+# Loading work.AddSubPE
+# Loading work.AddRecFN
+# Loading work.AddRawFN
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+run -all
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+#                   46 << start_Aggregation >>
+#                  171 << stop_Aggregation >>
+#                  221 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(210)
+#    Time: 221 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 210
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# $
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+#                   46 << start_Aggregation >>
+run
+run
+run
+run
+run
+run
+run
+run
+run
+#                  131 << stop_Aggregation >>
+run
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run
+run
+run
+run
+#                   46 << start_Aggregation >>
+run
+run
+run
+run
+run
+run
+run
+run
+#                  126 << stop_Aggregation >>
+run -all
+#                  176 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(210)
+#    Time: 176 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 210
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+run -all
+#                   46 << start_Aggregation >>
+#                  121 << stop_Aggregation >>
+#                  171 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(210)
+#    Time: 171 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 210
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run -all
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+#                   46 << start_Aggregation >>
+#                  120 << stop_Aggregation >>
+#                  170 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(209)
+#    Time: 170 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 209
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run -all
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+#                   46 << start_Aggregation >>
+#                  120 << stop_Aggregation >>
+#                  120[debug]   check output ......
+#                  120[debug]   TEST FAIL !
+# [debug]   out(binary) = 11111111111111111111111110000000 && out(decimal) = 4294967168
+#                  170 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(224)
+#    Time: 170 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 224
+run
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+run
+run
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run -all
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+#                   46 << start_Aggregation >>
+#                  121 << stop_Aggregation >>
+#                  121[debug]   check output ......
+#                  121[debug]   TEST PASS !
+# [debug]   out(binary) = 00000000000000000100000100000000 && out(decimal) =      16640
+#                  171 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(224)
+#    Time: 171 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 224
+# image file format "bmp" is unknown
+# image file format "bmp" is unknown
+# image file format "bmp" is unknown
+# image file format "bmp" is unknown
+# image file format "bmp" is unknown
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# Compile of PE_8IP_tb.v was successful.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+restart -f
+# Closing VCD file "PE_8IP_tb.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PE_8IP_tb
+run -all
+#                    0 << start simulation >>
+#                    4 << input_INT >>
+#                    4 << start_L2 >>
+#                   46 << start_Aggregation >>
+#                  121 << stop_Aggregation >>
+#                  121[debug]   check output ......
+#                  121[debug]   TEST PASS !
+# [debug]   out(binary) = 00000000000000000100000100000000 && out(decimal) =      16640
+#                  171 << end simulation >>
+# ** Note: $finish    : C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v(224)
+#    Time: 171 ns  Iteration: 0  Instance: /PE_8IP_tb
+# 1
+# Break in Module PE_8IP_tb at C:/Users/imocanu/Music/gig_doc/quartus/verilog/PE_8IP_tb.v line 224
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/imocanu/Music/gig_doc/quartus/testbench.mpf).  File can not be renamed.
+# End time: 18:05:47 on Oct 20,2021, Elapsed time: 2:06:52
+# Errors: 2, Warnings: 1

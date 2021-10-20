@@ -13,7 +13,8 @@ module PE_CTRL(
   output [1:0] io_m_9_sel,
   output [1:0] io_addsub_0_op,
   output [1:0] io_addsub_1_op,
-  input  [1:0] io_op_type
+  input  [1:0] io_op_type,
+  output [3:0] io_dbg_fsm
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -36,6 +37,7 @@ module PE_CTRL(
   reg [31:0] _RAND_17;
   reg [31:0] _RAND_18;
   reg [31:0] _RAND_19;
+  reg [31:0] _RAND_20;
 `endif // RANDOMIZE_REG_INIT
   reg [1:0] m_0_sel; // @[PE_CTRL.scala 36:25]
   reg [1:0] m_1_sel; // @[PE_CTRL.scala 37:25]
@@ -50,6 +52,7 @@ module PE_CTRL(
   reg [1:0] op_type; // @[PE_CTRL.scala 47:25]
   reg [1:0] addsub_0_op; // @[PE_CTRL.scala 50:30]
   reg [1:0] addsub_1_op; // @[PE_CTRL.scala 51:30]
+  reg [3:0] dbg_fsm; // @[PE_CTRL.scala 59:24]
   reg [3:0] value; // @[Counter.scala 60:40]
   reg [3:0] value_1; // @[Counter.scala 60:40]
   reg [3:0] value_2; // @[Counter.scala 60:40]
@@ -133,9 +136,12 @@ module PE_CTRL(
   wire [5:0] _GEN_76 = wrap_4 ? 6'h0 : _GEN_64; // @[PE_CTRL.scala 325:57 Counter.scala 97:11]
   wire [3:0] _GEN_77 = value_5 ? 4'h9 : pe_step; // @[PE_CTRL.scala 354:57 355:20 102:25]
   wire  _GEN_78 = value_5 ? 1'h0 : value_5 + 1'h1; // @[PE_CTRL.scala 354:57 Counter.scala 97:11 76:15]
+  wire [3:0] _GEN_79 = 4'h9 == pe_step ? 4'hb : dbg_fsm; // @[PE_CTRL.scala 105:3 360:15 59:24]
   wire [3:0] _GEN_80 = 4'h9 == pe_step ? 4'h1 : pe_step; // @[PE_CTRL.scala 105:3 362:15 102:25]
+  wire [3:0] _GEN_81 = 4'h8 == pe_step ? 4'ha : _GEN_79; // @[PE_CTRL.scala 105:3 351:15]
   wire  _GEN_82 = 4'h8 == pe_step ? _GEN_78 : value_5; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
   wire [3:0] _GEN_83 = 4'h8 == pe_step ? _GEN_77 : _GEN_80; // @[PE_CTRL.scala 105:3]
+  wire [3:0] _GEN_84 = 4'h7 == pe_step ? 4'h8 : _GEN_81; // @[PE_CTRL.scala 105:3 322:15]
   wire [5:0] _GEN_85 = 4'h7 == pe_step ? _GEN_76 : value_4; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
   wire [1:0] _GEN_86 = 4'h7 == pe_step ? _GEN_65 : m_0_sel; // @[PE_CTRL.scala 105:3 36:25]
   wire [1:0] _GEN_87 = 4'h7 == pe_step ? _GEN_66 : m_1_sel; // @[PE_CTRL.scala 105:3 37:25]
@@ -149,6 +155,7 @@ module PE_CTRL(
   wire [1:0] _GEN_95 = 4'h7 == pe_step ? _GEN_74 : m_9_sel; // @[PE_CTRL.scala 105:3 45:25]
   wire [3:0] _GEN_96 = 4'h7 == pe_step ? _GEN_75 : _GEN_83; // @[PE_CTRL.scala 105:3]
   wire  _GEN_97 = 4'h7 == pe_step ? value_5 : _GEN_82; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
+  wire [3:0] _GEN_98 = 4'h6 == pe_step ? 4'h7 : _GEN_84; // @[PE_CTRL.scala 105:3 301:15]
   wire [1:0] _GEN_99 = 4'h6 == pe_step ? 2'h0 : addsub_0_op; // @[PE_CTRL.scala 105:3 303:21 50:30]
   wire [1:0] _GEN_100 = 4'h6 == pe_step ? 2'h0 : addsub_1_op; // @[PE_CTRL.scala 105:3 304:21 51:30]
   wire [1:0] _GEN_101 = 4'h6 == pe_step ? 2'h2 : _GEN_90; // @[PE_CTRL.scala 105:3 308:17]
@@ -164,6 +171,7 @@ module PE_CTRL(
   wire [1:0] _GEN_111 = 4'h6 == pe_step ? m_2_sel : _GEN_88; // @[PE_CTRL.scala 105:3 38:25]
   wire [1:0] _GEN_112 = 4'h6 == pe_step ? m_3_sel : _GEN_89; // @[PE_CTRL.scala 105:3 39:25]
   wire  _GEN_113 = 4'h6 == pe_step ? value_5 : _GEN_97; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
+  wire [3:0] _GEN_114 = 4'h5 == pe_step ? 4'h5 : _GEN_98; // @[PE_CTRL.scala 105:3 291:15]
   wire [3:0] _GEN_115 = 4'h5 == pe_step ? _GEN_63 : value_3; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
   wire [3:0] _GEN_116 = 4'h5 == pe_step ? _GEN_62 : _GEN_107; // @[PE_CTRL.scala 105:3]
   wire [1:0] _GEN_117 = 4'h5 == pe_step ? addsub_0_op : _GEN_99; // @[PE_CTRL.scala 105:3 50:30]
@@ -180,6 +188,7 @@ module PE_CTRL(
   wire [1:0] _GEN_128 = 4'h5 == pe_step ? m_2_sel : _GEN_111; // @[PE_CTRL.scala 105:3 38:25]
   wire [1:0] _GEN_129 = 4'h5 == pe_step ? m_3_sel : _GEN_112; // @[PE_CTRL.scala 105:3 39:25]
   wire  _GEN_130 = 4'h5 == pe_step ? value_5 : _GEN_113; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
+  wire [3:0] _GEN_131 = 4'h4 == pe_step ? 4'h4 : _GEN_114; // @[PE_CTRL.scala 105:3 281:15]
   wire [3:0] _GEN_132 = 4'h4 == pe_step ? _GEN_60 : value_2; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
   wire [3:0] _GEN_133 = 4'h4 == pe_step ? _GEN_59 : _GEN_116; // @[PE_CTRL.scala 105:3]
   wire [3:0] _GEN_134 = 4'h4 == pe_step ? value_3 : _GEN_115; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
@@ -197,6 +206,7 @@ module PE_CTRL(
   wire [1:0] _GEN_146 = 4'h4 == pe_step ? m_2_sel : _GEN_128; // @[PE_CTRL.scala 105:3 38:25]
   wire [1:0] _GEN_147 = 4'h4 == pe_step ? m_3_sel : _GEN_129; // @[PE_CTRL.scala 105:3 39:25]
   wire  _GEN_148 = 4'h4 == pe_step ? value_5 : _GEN_130; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
+  wire [3:0] _GEN_149 = 4'h3 == pe_step ? 4'h3 : _GEN_131; // @[PE_CTRL.scala 105:3 271:15]
   wire [3:0] _GEN_150 = 4'h3 == pe_step ? _GEN_57 : value; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
   wire [3:0] _GEN_151 = 4'h3 == pe_step ? _GEN_56 : _GEN_133; // @[PE_CTRL.scala 105:3]
   wire [3:0] _GEN_152 = 4'h3 == pe_step ? value_2 : _GEN_132; // @[PE_CTRL.scala 105:3 Counter.scala 60:40]
@@ -227,6 +237,7 @@ module PE_CTRL(
   assign io_m_9_sel = m_9_sel; // @[PE_CTRL.scala 70:14]
   assign io_addsub_0_op = addsub_0_op; // @[PE_CTRL.scala 72:18]
   assign io_addsub_1_op = addsub_1_op; // @[PE_CTRL.scala 73:18]
+  assign io_dbg_fsm = dbg_fsm; // @[PE_CTRL.scala 75:14]
   always @(posedge clock) begin
     if (reset) begin // @[PE_CTRL.scala 36:25]
       m_0_sel <= 2'h0; // @[PE_CTRL.scala 36:25]
@@ -385,6 +396,17 @@ module PE_CTRL(
     end else if (!(4'h2 == pe_step)) begin // @[PE_CTRL.scala 105:3]
       addsub_1_op <= _GEN_155;
     end
+    if (reset) begin // @[PE_CTRL.scala 59:24]
+      dbg_fsm <= 4'h0; // @[PE_CTRL.scala 59:24]
+    end else if (4'h0 == pe_step) begin // @[PE_CTRL.scala 105:3]
+      dbg_fsm <= 4'h9; // @[PE_CTRL.scala 108:15]
+    end else if (4'h1 == pe_step) begin // @[PE_CTRL.scala 105:3]
+      dbg_fsm <= 4'h1; // @[PE_CTRL.scala 141:17]
+    end else if (4'h2 == pe_step) begin // @[PE_CTRL.scala 105:3]
+      dbg_fsm <= 4'h2; // @[PE_CTRL.scala 261:15]
+    end else begin
+      dbg_fsm <= _GEN_149;
+    end
     if (reset) begin // @[Counter.scala 60:40]
       value <= 4'h0; // @[Counter.scala 60:40]
     end else if (!(4'h0 == pe_step)) begin // @[PE_CTRL.scala 105:3]
@@ -518,19 +540,21 @@ initial begin
   _RAND_12 = {1{`RANDOM}};
   addsub_1_op = _RAND_12[1:0];
   _RAND_13 = {1{`RANDOM}};
-  value = _RAND_13[3:0];
+  dbg_fsm = _RAND_13[3:0];
   _RAND_14 = {1{`RANDOM}};
-  value_1 = _RAND_14[3:0];
+  value = _RAND_14[3:0];
   _RAND_15 = {1{`RANDOM}};
-  value_2 = _RAND_15[3:0];
+  value_1 = _RAND_15[3:0];
   _RAND_16 = {1{`RANDOM}};
-  value_3 = _RAND_16[3:0];
+  value_2 = _RAND_16[3:0];
   _RAND_17 = {1{`RANDOM}};
-  value_4 = _RAND_17[5:0];
+  value_3 = _RAND_17[3:0];
   _RAND_18 = {1{`RANDOM}};
-  value_5 = _RAND_18[0:0];
+  value_4 = _RAND_18[5:0];
   _RAND_19 = {1{`RANDOM}};
-  pe_step = _RAND_19[3:0];
+  value_5 = _RAND_19[0:0];
+  _RAND_20 = {1{`RANDOM}};
+  pe_step = _RAND_20[3:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -3790,7 +3814,8 @@ module PE_CTRL_8IP_QUARTUS(
   input         io_use_int,
   input         io_tininess,
   input  [2:0]  io_rounding,
-  output [31:0] io_out
+  output [31:0] io_out,
+  output [3:0]  io_dbg_fsm
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -3815,6 +3840,7 @@ module PE_CTRL_8IP_QUARTUS(
   wire [1:0] ctrlPE_io_addsub_0_op; // @[PE_CTRL_8IP_QUARTUS.scala 55:22]
   wire [1:0] ctrlPE_io_addsub_1_op; // @[PE_CTRL_8IP_QUARTUS.scala 55:22]
   wire [1:0] ctrlPE_io_op_type; // @[PE_CTRL_8IP_QUARTUS.scala 55:22]
+  wire [3:0] ctrlPE_io_dbg_fsm; // @[PE_CTRL_8IP_QUARTUS.scala 55:22]
   wire  pe_8IP_clock; // @[PE_CTRL_8IP_QUARTUS.scala 62:22]
   wire  pe_8IP_reset; // @[PE_CTRL_8IP_QUARTUS.scala 62:22]
   wire [31:0] pe_8IP_io_Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 62:22]
@@ -3864,12 +3890,12 @@ module PE_CTRL_8IP_QUARTUS(
   wire  pe_8IP_io_use_int; // @[PE_CTRL_8IP_QUARTUS.scala 62:22]
   wire [2:0] pe_8IP_io_rounding; // @[PE_CTRL_8IP_QUARTUS.scala 62:22]
   wire [31:0] pe_8IP_io_out; // @[PE_CTRL_8IP_QUARTUS.scala 62:22]
-  reg [31:0] Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 30:27]
-  reg [31:0] Yi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 31:27]
-  reg [31:0] Xi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 32:27]
-  reg [31:0] Yi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 33:27]
-  reg [2:0] rounding; // @[PE_CTRL_8IP_QUARTUS.scala 39:29]
-  reg  use_int; // @[PE_CTRL_8IP_QUARTUS.scala 43:29]
+  reg [31:0] Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 31:27]
+  reg [31:0] Yi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 32:27]
+  reg [31:0] Xi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 33:27]
+  reg [31:0] Yi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 34:27]
+  reg [2:0] rounding; // @[PE_CTRL_8IP_QUARTUS.scala 40:29]
+  reg  use_int; // @[PE_CTRL_8IP_QUARTUS.scala 44:29]
   PE_CTRL ctrlPE ( // @[PE_CTRL_8IP_QUARTUS.scala 55:22]
     .clock(ctrlPE_clock),
     .reset(ctrlPE_reset),
@@ -3885,7 +3911,8 @@ module PE_CTRL_8IP_QUARTUS(
     .io_m_9_sel(ctrlPE_io_m_9_sel),
     .io_addsub_0_op(ctrlPE_io_addsub_0_op),
     .io_addsub_1_op(ctrlPE_io_addsub_1_op),
-    .io_op_type(ctrlPE_io_op_type)
+    .io_op_type(ctrlPE_io_op_type),
+    .io_dbg_fsm(ctrlPE_io_dbg_fsm)
   );
   PE_8IP pe_8IP ( // @[PE_CTRL_8IP_QUARTUS.scala 62:22]
     .clock(pe_8IP_clock),
@@ -3939,6 +3966,7 @@ module PE_CTRL_8IP_QUARTUS(
     .io_out(pe_8IP_io_out)
   );
   assign io_out = pe_8IP_io_out; // @[PE_CTRL_8IP_QUARTUS.scala 124:10]
+  assign io_dbg_fsm = ctrlPE_io_dbg_fsm; // @[PE_CTRL_8IP_QUARTUS.scala 57:14]
   assign ctrlPE_clock = clock;
   assign ctrlPE_reset = reset;
   assign ctrlPE_io_op_type = io_op_type; // @[PE_CTRL_8IP_QUARTUS.scala 56:21]
@@ -3991,12 +4019,12 @@ module PE_CTRL_8IP_QUARTUS(
   assign pe_8IP_io_use_int = use_int; // @[PE_CTRL_8IP_QUARTUS.scala 63:22]
   assign pe_8IP_io_rounding = rounding; // @[PE_CTRL_8IP_QUARTUS.scala 65:22]
   always @(posedge clock) begin
-    Xi_0_in_0 <= io_Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 30:27]
-    Yi_0_in_0 <= io_Yi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 31:27]
-    Xi_0_in_1 <= io_Xi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 32:27]
-    Yi_0_in_1 <= io_Yi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 33:27]
-    rounding <= io_rounding; // @[PE_CTRL_8IP_QUARTUS.scala 39:29]
-    use_int <= io_use_int; // @[PE_CTRL_8IP_QUARTUS.scala 43:29]
+    Xi_0_in_0 <= io_Xi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 31:27]
+    Yi_0_in_0 <= io_Yi_0_in_0; // @[PE_CTRL_8IP_QUARTUS.scala 32:27]
+    Xi_0_in_1 <= io_Xi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 33:27]
+    Yi_0_in_1 <= io_Yi_0_in_1; // @[PE_CTRL_8IP_QUARTUS.scala 34:27]
+    rounding <= io_rounding; // @[PE_CTRL_8IP_QUARTUS.scala 40:29]
+    use_int <= io_use_int; // @[PE_CTRL_8IP_QUARTUS.scala 44:29]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
