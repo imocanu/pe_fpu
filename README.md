@@ -31,7 +31,7 @@ make testPE_8IP
 make testPE_CTRL_8IP
 ```
 
-#### => [Run C++ project] :
+#### => [ Run C++ project ] :
 ```bash
 make verilatorTest
 ```
