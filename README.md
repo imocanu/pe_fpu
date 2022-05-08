@@ -1,3 +1,8 @@
+# pe_fpu
+
+#### => [0] Documentation  :
+> https://github.com/imocanu/pe_fpu/blob/main/PEx8_microarchitecture.pdf
+
 ### [ Steps to run/build project ]
 
 #### => [1] Structure :
