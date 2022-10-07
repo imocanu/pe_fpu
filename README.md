@@ -1,4 +1,5 @@
 # pe_fpu
+[ Process Element - Float Point Unit ]
 
 #### => [0] Documentation  :
 > https://github.com/imocanu/pe_fpu/blob/main/PEx8_microarchitecture.pdf
